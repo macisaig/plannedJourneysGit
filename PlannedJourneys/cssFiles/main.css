@@ -191,6 +191,25 @@ footer{
   color: #FFF;
 }
 
+footer h4{
+	margin: 0%;
+}
+
+.fa{
+	padding: 15px;
+	font-size: 30px;
+	color: #FFF;
+}
+.fa:hover{
+	color: #777;
+	text-decoration: none;
+}
+
+.icon { /*# is for id*/
+	max-width: 200px; /*Icons can only be 200 icons each*/
+	margin: 7% auto; /*1% margin & auto to left/right*/
+}
+
 @media (max-width: 767px) { /*This is for the mobile version*/
   .carousel-caption{
   } 
