@@ -151,23 +151,68 @@ h3
 	transform: translateY(+10%); /*Shifts down from very top*/
 }
 
+.form-group{
+  padding: 10px;
+  float: center;
+  margin: auto;
+  max-width: 1500px;
+}
+
+.btn-submitButton{
+  font-size: 15px;
+  color: #FFF;
+  padding: 5px 40px;
+  margin: 2px;
+  background: #3A6DA6;
+  border: 1px solid #FFF;
+  float: center;
+}
+
+#startParagraph{
+  margin: 10px 10px 0px 10px;
+  color: #3A6DA6; /*Off color white for when we aren't overing over the icons*/
+  padding: 0%;
+  font: 40px/1.5 Arial, Helvetica,sans-serif; /*Determines the text*/
+  float: center;
+}
+
+.beginningInput{
+  font: 20px/1.5 Arial, Helvetica,sans-serif; /*Determines the text*/
+}
+
+#submitButton1{
+  margin-top:-20px;
+}
+
+footer{
+  width: 100%;
+  background-color: #1281BD;
+  padding: 3%;
+  color: #FFF;
+}
+
 @media (max-width: 767px) { /*This is for the mobile version*/
   .carousel-caption{
   } 
+
   #icon {
     max-width: 150px;
   }
+
   h2{
     font-size: 80%;
   }
+
   .fa{
     font-size: 20px;
     padding: 0px;
   }
+
   .item h1{
     font-size: 1.6em;
     color: #FFF;
   }
+
   .dropdown-menu a{
     background-color: #FFF;
     padding: 0;
@@ -177,9 +222,11 @@ h3
     padding: 6px 12px;
     border: 2px solid black;
   }
+
   .dropdown-menu a:hover{
     background: #3A6DA6 !important;
   }
+
   .navbar-brand img{
     height: 48px;
 	width: 90px;
@@ -188,6 +235,15 @@ h3
 
   .navbar a{
     margin: 2px 0px 2px 1px;
+  }
+
+  #startParagraph{
+  margin: 10px 10px 0px 10px;
+  font: 20px/1.5 Arial, Helvetica,sans-serif; /*Determines the text*/
+  }
+
+  .beginningInput{
+  font: 13px/1.5 Arial, Helvetica,sans-serif; /*Determines the text*/
   }
 }
 
