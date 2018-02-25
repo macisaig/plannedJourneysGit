@@ -189,6 +189,7 @@ footer{
   background-color: #1281BD;
   padding: 3%;
   color: #FFF;
+  bottom: 0;
 }
 
 footer h4{
@@ -208,6 +209,71 @@ footer h4{
 .icon { /*# is for id*/
 	max-width: 200px; /*Icons can only be 200 icons each*/
 	margin: 7% auto; /*1% margin & auto to left/right*/
+}
+
+#inputEmail{
+  width: 300px;
+  height: 40px;
+  margin: auto;
+}
+
+#inputPassword{
+  width: 300px;
+  height: 40px;
+  margin: auto;
+}
+
+.mb-4{
+  margin: 40px 10px 10px 10px;
+}
+
+.form-signin{
+  vertical-align: middle;
+}
+
+.forgotPassword{
+  padding: 10px;
+  margin: 10px;
+}
+
+.panel-primary
+{
+  margin: 30px 0px 0px 0px;
+}
+
+.panel-primary>.panel-heading
+{
+  background:#3A6DA6;
+}
+
+.warning{
+  color: red;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+}
+
+#message{
+  display: none;
+}
+
+label small {
+    color: #678 !important;
 }
 
 @media (max-width: 767px) { /*This is for the mobile version*/
@@ -248,7 +314,7 @@ footer h4{
 
   .navbar-brand img{
     height: 48px;
-	width: 90px;
+	  width: 90px;
     transform: translateY(-5%); /*Shifts down from very top*/
   }
 
