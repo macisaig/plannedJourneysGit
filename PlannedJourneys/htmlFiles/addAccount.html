@@ -69,13 +69,13 @@
             <form name="myform">
               <div class="form-group">   
                 <label for="firstname"><span class="req">* </span> First name: </label>
-                  <input class="form-control" type="text" name="firstname" id = "txt" onkeyup = "validateName(this)" required /> 
+                  <input class="form-control" type="text" name="firstname" id = "firstName" onkeyup = "validateName(this)" required /> 
                   <div id="errFirst"></div>    
               </div>
 
               <div class="form-group">
                   <label for="lastname"><span class="req">* </span> Last name: </label> 
-                  <input class="form-control" type="text" name="lastname" id = "txt" onkeyup = "validateName(this)" required />  
+                  <input class="form-control" type="text" name="lastname" id = "lastName" onkeyup = "validateName(this)" required />  
                   <div id="errLast"></div>
               </div>
 
@@ -91,14 +91,14 @@
               </div>
 
               <div class="form-group">
-                <label for="username"><span class="req">* </span> User name:  <small>This will be your login user name</small> </label> 
-                <input class="form-control" type="text" name="username" id = "txt" onkeyup = "validateUsername(this)" placeholder="minimum 6 characters" required />  
+                <label for="username"><span class="req">* </span> User name:  <small>This will be your login user name; It can only be numbers, letters, and underscores</small> </label> 
+                <input class="form-control" type="text" name="username" id = "user" onkeyup = "validateUsername(this)" placeholder="minimum 6 characters" required />  
                 <div class = "errUser" id="errUser"></div>  
               </div>
               <div class="form-group">
                   <label for="password"><span class="req">* </span> Password:  <small>Minimum 6 characters with 1 special character, 1 uppercase, and 1 number</small></label>
-                  <input required name="password" placeholder="example: Pass1?" type="password" class="form-control inputpass" minlength="4" maxlength="16"  id="pass1" /> </p>
-
+                  <input required name="password" placeholder="example: Pass1?" type="password" class="form-control inputpass" minlength="4" maxlength="16"  id="pass1" onkeyup = "validatePassword(this)" /> </p>
+                  <span id="errPassInput" class="errPassInput"></span>
                   <!-- An element to toggle between password visibility -->
                   <input type="checkbox" onclick="showPassword()">Show Password
                   <br>
@@ -126,12 +126,11 @@
               </div>
 
               <div class="text-center centerForm">
-                <button id="submit" type="submit" value="submit" class="btn btn-firstDropdown aligncenter">Submit</button>
+                <button id="submit" type="submit" value="submit" class="btn btn-firstDropdown aligncenter" onClick="return checkValues()" />Submit</button>
               </div>
 
-              <h5><strong>You will receive an email to complete the registration and validation process.</strong> </h5>
+              <h5><strong>You will receive an email confirmation to complete the registration process.</strong> </h5>
               <h5>Be sure to check your spam folders. </h5>
-
             </form>
           </div>
         </div>
