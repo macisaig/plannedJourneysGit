@@ -277,6 +277,27 @@ label small {
     color: #678 !important;
 }
 
+.jumbotron {
+  color: #FFF;
+  border-radius: 0px;
+  background: url("../imageFiles/backgroundPhoto.jpg") no-repeat center center; 
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  width: 900px;
+  height: 400px;
+  margin: auto;
+}
+
+.jumbotron-sm { 
+  padding-top: 24px;
+  padding-bottom: 24px; 
+}
+.jumbotron small {
+  color: #FFF;
+}
+
 @media (max-width: 767px) { /*This is for the mobile version*/
   .carousel-caption{
   } 
