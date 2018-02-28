@@ -87,6 +87,11 @@ h3
   float: center;
 }
 
+#btnContactUs{
+  background: #3A6DA6;
+  color: #FFF;
+}
+
 .navbar{
   padding: 0px 0px 0px 5px;
   /*margin: auto;*/
@@ -280,12 +285,12 @@ label small {
 .jumbotron {
   color: #FFF;
   border-radius: 0px;
-  background: url("../imageFiles/backgroundPhoto.jpg") no-repeat center center; 
+  background: url("../imageFiles/city.jpg") no-repeat center center; 
   -webkit-background-size: 100% 100%;
   -moz-background-size: 100% 100%;
   -o-background-size: 100% 100%;
   background-size: 100% 100%;
-  width: 900px;
+  max-width: 1140px;
   height: 400px;
   margin: auto;
 }
@@ -299,8 +304,9 @@ label small {
 }
 
 @media (max-width: 767px) { /*This is for the mobile version*/
-  .carousel-caption{
-  } 
+  .jumbotron {
+	height: 260px;
+  }
 
   #icon {
     max-width: 150px;
