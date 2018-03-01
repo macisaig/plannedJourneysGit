@@ -318,6 +318,19 @@ label small {
   margin: auto;
 }
 
+.jumbotronAbout {
+  color: #FFF;
+  border-radius: 0px;
+  background: url("../imageFiles/backgroundPhoto.jpg") no-repeat center center; 
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  max-width: 940px;
+  height: 400px;
+  margin: auto;
+}
+
 .jumbotron-sm { 
   padding-top: 24px;
   padding-bottom: 24px; 
