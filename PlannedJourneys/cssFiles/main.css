@@ -212,6 +212,16 @@ footer h4{
 	text-decoration: none;
 }
 
+.mailToFooter{
+  color: #FFF;
+  font-size: 30px;
+}
+
+.mailToFooter:hover{
+  color: #777;
+  text-decoration: none;
+}
+
 .icon { /*# is for id*/
 	max-width: 200px; /*Icons can only be 200 icons each*/
 	margin: 7% auto; /*1% margin & auto to left/right*/
@@ -282,7 +292,20 @@ label small {
     color: #678 !important;
 }
 
-.jumbotron {
+#contactFooter{
+  color: #000;
+}
+
+.jumbotron{
+  color: #FFF;
+  border-radius: 0px;
+  max-width: 1140px;
+  height: 400px;
+  margin: auto;
+  background-color: #678;
+}
+
+.jumbotronContactUs {
   color: #FFF;
   border-radius: 0px;
   background: url("../imageFiles/city.jpg") no-repeat center center; 
