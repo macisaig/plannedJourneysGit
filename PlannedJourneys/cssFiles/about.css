@@ -2,13 +2,13 @@ body{
 	background: #f7f1f0;
 }
 
-h4{
-	font: 15px/1.5 Arial, Helvetica,sans-serif; /*Determines the text*/
+.topMessage{
+	font: 20px/1.5 Arial, Helvetica,sans-serif; /*Determines the text*/
 	padding: 0px 0px 0px 0px;
 	margin: -10px 0px 10px 0px;
 }
 
-h3{
+.topPage{
 	font: 30px/1.5 Arial, Helvetica,sans-serif; /*Determines the text*/
 }
 
@@ -23,3 +23,23 @@ h3{
 .backgroundColor{
 	background: #FFF;
 }
+
+.featureImg{
+	margin: auto;
+	max-width: 600px;
+	max-height: 400px;
+}
+
+.mapPicture{
+	padding: 15px 0px 0px 0px;
+}
+
+.featurette-divider{
+	border: 1px solid #000;
+}
+
+@media (max-width: 767px) { /*This is for the mobile version*/
+    h2{
+	  font: 22px/1.5 Arial, Helvetica,sans-serif; /*Determines the text*/
+	}
+}	

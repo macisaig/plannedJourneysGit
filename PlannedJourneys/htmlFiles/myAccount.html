@@ -29,7 +29,7 @@
             <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Plan a Journey</strong>
             <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="planATrip.html"><span class="dropdownItem"><strong>Plan a Trip</strong></span></a></li>
+              <li><a href="planAJourney.html"><span class="dropdownItem"><strong>Plan a Journey</strong></span></a></li>
               <li><a href="savedTrips.html"><span class="dropdownItem"><strong>Saved Trips</strong></span></a></li>
               <li><a href="discover.html"><span class="dropdownItem"><strong>Discover</strong></span></a></li>
             </ul>
@@ -62,360 +62,169 @@
     </nav>
 
     <div class="jumbotron jumbotron-sm jumbotronMyAccount">
-      <div class="container">
-          <div class="row">
-              <div class="col-sm-12 col-lg-12">
-                  <h3>Insert Your Travel Picture</h3>
+      <h1><strong>Account Settings</strong></h1>
+    </div>
+
+    <div class="container profileTabs">
+      <div class="row">
+        <div class="col-md-3">
+          <ul class="nav nav-pills nav-stacked admin-menu" >
+              <li class="active"><a href="" data-target-id="accountDetails"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
+              <li><a href="" data-target-id="savedJourneys"><i class="glyphicon glyphicon-lock"></i> Saved Journeys</a></li>
+              <li><a href="" data-target-id="settings"><i class="glyphicon glyphicon-cog"></i> Settings</a></li>
+              <li><a href="" data-target-id="logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+          </ul>
+        </div>
+        <div class="col-md-9 admin-content" id="accountDetails">
+          <div class="container marketing">
+            <div class="row">
+              <div class="col-lg-6 col-sm-6 col-med-6 backgroundColor">
+                <div class="left-side">
+                  <h3><strong>Account Details</strong></h3>
+                </div>
+                <hr class="featurette-divider">
+                <div class="accountcontent recentcontent">
+                  <div class="rows displayContainer inspectlet-sensitive" id="email_display" >
+                    <div class="left"><b>Email</b></div>
+                    <div class="right">
+                      email@hotmail.com <span class="edit">&nbsp;<a class="actionlink" href="javascript: editsection('username');">Change</a></span>
+                      &nbsp;&nbsp;&nbsp;
+                    </div>
+                  </div>
+                  <br>
+                  <div class="rows displayContainer inspectlet-sensitive" id="name_display" >
+                    <div class="left"><b>Name</b></div>
+                    <div class="right">
+                      Ian M. 
+                      &nbsp;&nbsp;&nbsp;
+                    </div>
+                  </div>
+                  <br>
+                  <div class="rows displayContainer inspectlet-sensitive" id="email_display" >
+                    <div class="left"><b>Username</b></div>
+                    <div class="right">
+                      Surama<span class="edit">&nbsp;<a class="actionlink" href="javascript: editsection('username');">Change</a></span>
+                      &nbsp;&nbsp;&nbsp;
+                    </div>
+                  </div>
+                  <br>
+                  <div class="rows displayContainer inspectlet-sensitive" id="email_display" >
+                    <div class="left"><b>SMS Protection: Phone Number</b></div>
+                    <div class="right">
+                      123-456-7890<span class="edit">&nbsp;<a class="actionlink" href="javascript: editsection('username');">Change</a></span>
+                      &nbsp;&nbsp;&nbsp;
+                    </div>
+                  </div>
+                  <br>
+                  <div class="rows displayContainer inspectlet-sensitive" id="email_display" >
+                    <div class="left"><b>Password</b></div>
+                    <div class="right">
+                      **********<span class="edit">&nbsp;<a class="actionlink" href="javascript: editsection('username');">Change</a></span>
+                      &nbsp;&nbsp;&nbsp;
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
           </div>
+        </div>
+        <div class="col-md-9 admin-content" id="savedJourneys">
+          <div class="container marketing">
+            <div class="row">
+              <div class="col-lg-6 col-sm-6 col-med-6 backgroundColor">
+                <div class="left-side">
+                  <h3><strong>Saved Journeys</strong></h3>
+                </div>
+                <hr class="featurette-divider">
+                <div class="accountcontent recentcontent">
+                  <h4>There are no saved journeys<br><a href="planAJourney.html">Start planning</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9 admin-content" id="settings">
+          <div class="container marketing">
+            <div class="row">
+              <div class="col-lg-6 col-sm-6 col-med-6 backgroundColor">
+                <div class="left-side">
+                  <h3><strong>Settings</strong></h3>
+                </div>
+                <hr class="featurette-divider">
+                <div class="accountcontent recentcontent">
+                  <div class="rows displayContainer inspectlet-sensitive" id="email_display" >
+                    <div class="left"><b>Change Email Address</b></div>
+                    <div class="right">
+                      email@hotmail.com <span class="edit">&nbsp;<a class="actionlink" href="javascript: editsection('username');">Change</a></span>
+                      &nbsp;&nbsp;&nbsp;
+                    </div>
+                  </div>
+                  <br>
+                  <div class="rows displayContainer inspectlet-sensitive" id="email_display" >
+                    <div class="left"><b>Change Password</b></div>
+                    <div class="right">
+                      ********<span class="edit">&nbsp;<a class="actionlink" href="javascript: editsection('username');">Change</a></span>
+                      &nbsp;&nbsp;&nbsp;
+                    </div>
+                  </div>
+                  <br>
+                  <div class="rows displayContainer inspectlet-sensitive" id="email_display" >
+                    <div class="left"><b>Communication Preferences</b></div>
+                    <div class="right">
+                      Adult Preferences<span class="edit">&nbsp;<a class="actionlink" href="javascript: editsection('username');">Change</a></span>
+                      &nbsp;&nbsp;&nbsp;
+                    </div>
+                  </div>
+                  <br>
+                  <div class="rows displayContainer inspectlet-sensitive" id="email_display" >
+                    <div class="left"><b>Parental Controls</b></div>
+                    <div class="right">
+                      Off<span class="edit">&nbsp;<a class="actionlink" href="javascript: editsection('username');">Change</a></span>
+                      &nbsp;&nbsp;&nbsp;
+                    </div>
+                  </div>
+                  <br>
+                  <div class="rows displayContainer inspectlet-sensitive" id="email_display" >
+                    <div class="left"><b>Contact & Shipping Addresses</b></div>
+                    <div class="right">
+                      Address: 123 Swift Lane, Seattle Washington, 41088<span class="edit">&nbsp;<a class="actionlink" href="javascript: editsection('username');">Change</a></span>
+                      &nbsp;&nbsp;&nbsp;
+                    </div>
+                    <br>
+                    <div class="right">
+                      Phone: 123-456-7890<span class="edit">&nbsp;<a class="actionlink" href="javascript: editsection('username');">Change</a></span>
+                      &nbsp;&nbsp;&nbsp;
+                    </div>
+                  </div>
+                </div>
+                <div class="accountcontent recentcontent">
+                  <h4><br><a href="planAJourney.html"></a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9 admin-content" id="logout">
+          <div class="container marketing">
+            <div class="row">
+              <div class="col-lg-6 col-sm-6 col-med-6 backgroundColor">
+                <div class="left-side">
+                  <h3><strong>Logout</strong></h3>
+                </div>
+                <hr class="featurette-divider">
+                <div class="accountcontent recentcontent">
+                  <h4>Do you want to logout?<br></h4>
+                  <button type="button" class="btn btn-firstDropdown" value="Input Button" onclick="location.href = '../../index.html';"><strong>Log Out</strong></button> <!-- Added a button -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-	<br><br><br>
- 
-  <div class="heading-container">  
-    <div class="left-side">
-      Preferences 
-    </div>
-    <div class="accountcontent recentcontent">
-      <div class="rows displayContainer inspectlet-sensitive" id="username_display" >
-        <div class="left"><b>Email Login</b></div>
-        <div class="right">
-          canadianrunna@hotmail.com <span class="edit">&nbsp;<a class="actionlink" href="javascript: editsection('username');">Change</a></span>
-          &nbsp;&nbsp;&nbsp;
-        </div>
-      </div>
-      <div class="rows editContainer " class="edit" id="username_edit" style="display: none" >
-        <form onSubmit="return verifyUsername()" name="username" method="post" autocomplete="off" action="/k/ident/accountsettings/username?nickoverride=true">
-        <input type="hidden" name="formtoken" value="V9mONkJQYYcy$btkmBqWdfsZ7UGLCiQNqy2tTJoaNT8-iS9j1ALkYRdpsc8_z7OGocaLZujvoY2F_m5pnqV3flI"/> 
-        <div class="left"><b>Email Login</b></div>
-        <div class="right">canadianrunna@hotmail.com</div>
-        <div class="left"><b>New Email</b></div>
-        <div class="right"><input type="text" name="changeemail" size="30" value=""/></div>
-        <div class="left"><b>Password</b></div>
-        <div class="right"><input type="password" size="30" name="passwd" id="passwd" maxlength="128"/></div>
-        <div class="left"></div>
-          <div class="right" style="padding-bottom:5px">
-            <input type="hidden" name="posted" value="true"/>
-            <button class="ui-button ui-button-gray" type="submit"
-              >
-              <span>Update</span>
-            </button>
-            &nbsp;
-            &nbsp;<a href="javascript:unedit('username');">Cancel</a>
-          </div>
-        </form>
-        </div>
-        <div class="rows displayContainer" id="password_display" >
-          <div class="left"><b>Password</b></div>
-          <div class="right">
-            &bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;
-            <span class="edit">&nbsp;<a class="actionlink" href="javascript: editsection('password');">Change</a></span>
-          </div>
-        </div>
-        <div class="rows editContainer " class="edit" id="password_edit" style="display: none" >
-          <form onSubmit="return verifyPassword()" name="password" method="post" autocomplete="off" action="/k/ident/accountsettings/password?nickoverride=true">
-          <input type="hidden" name="formtoken" value="V9mONkJQYYcy$btkmBqWdfsZ7UGLCiQNqy2tTJoaNT8-iS9j1ALkYRdpsc8_z7OGocaLZujvoY2F_m5pnqV3flI"/> <div class="left"><b>Current Password</b></div>
-          <div class="right"><input type="password" name="oldpass" id="oldpass" size="25" maxlength="128" /></div>
-          <div class="left"><b>New Password</b></div>
-          <div class="right"><input type="password" name="passwd1" id="passwd1" size="25" maxlength="128" /></div>
-          <div class="left"><b>New Password</b></div>
-          <div class="right"><input type="password" name="passwd2" id="passwd2" size="25" maxlength="128" /></div>
-          <div class="left"></div>
-          <div class="right" style="padding-bottom:5px">
-            <input type="hidden" name="posted" value="true"/>
-            <button class="ui-button ui-button-gray" type="submit"
-            >
-            <span>Update</span>
-            </button>
-            &nbsp;
-            <a href="javascript:unedit('password');">Cancel</a>
-          </div>
-        </form>
-        </div>
-      </div>
-    </div>
-  </div>
+    <br><br><br>
 
-
-<div class="container">
-  
-        <div class="row">
-
-            <div class="col-md-3">
-                <ul class="nav nav-pills nav-stacked admin-menu" >
-                    <li class="active"><a href="" data-target-id="profile"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
-                    <li><a href="" data-target-id="change-password"><i class="glyphicon glyphicon-lock"></i> Change Password</a></li>
-                    <li><a href="" data-target-id="settings"><i class="glyphicon glyphicon-cog"></i> Settings</a></li>
-                    <li><a href="" data-target-id="logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-9  admin-content" id="profile">
-              <div class="panel panel-info" style="margin: 1em;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Username</h3>
-                    </div>
-                    <div class="panel-body">
-                        coolUserName
-                    </div>
-                </div>
-                <div class="panel panel-info" style="margin: 1em;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Name</h3>
-                    </div>
-                    <div class="panel-body">
-                        FirstName LastName
-                    </div>
-                </div>
-                <div class="panel panel-info" style="margin: 1em;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Email</h3>
-                    </div>
-                    <div class="panel-body">
-                      email@email.com
-                    </div>
-                </div>
-                
-
-            </div>
-              <div class="col-md-9  admin-content" id="settings">
-                <div class="panel panel-info" style="margin: 1em;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Notification</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="label label-success">allowed</div>
-                    </div>
-                </div>
-                <div class="panel panel-info" style="margin: 1em;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Newsletter</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="badge">Monthly</div>
-                    </div>
-                </div>
-                <div class="panel panel-info" style="margin: 1em;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Admin</h3>
-
-                    </div>
-                    <div class="panel-body">
-                         <div class="label label-success">yes</div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-md-9  admin-content" id="change-password">
-                <form action="/password" method="post">
-
-           
-                    <div class="panel panel-info" style="margin: 1em;">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><label for="new_password" class="control-label panel-title">New Password</label></h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control" name="password" id="new_password" >
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-             
-                    <div class="panel panel-info" style="margin: 1em;">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><label for="confirm_password" class="control-label panel-title">Confirm password</label></h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control" name="password_confirmation" id="confirm_password" >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-           
-                    <div class="panel panel-info border" style="margin: 1em;">
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <div class="pull-left">
-                                    <input type="submit" class="form-control btn btn-primary" name="submit" id="submit">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-
-            <div class="col-md-9  admin-content" id="settings"></div>
-
-            <div class="col-md-9  admin-content" id="logout">
-                <div class="panel panel-info" style="margin: 1em;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Confirm Logout</h3>
-                    </div>
-                    <div class="panel-body">
-                        Do you really want to logout ?  
-                        <a  href="#" class="label label-danger"
-                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                            <span >   Yes   </span>
-                        </a>    
-                        <a href="/account" class="label label-success"> <span >  No   </span></a>
-                    </div>
-                    <form id="logout-form" action="#" method="POST" style="display: none;">
-                    </form>
-
-
-
-                </div>
-            </div>
-        </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-	
-	<div class="container">
-    <div class="row profile">
-		<div class="col-md-3">
-			<div class="profile-sidebar">
-				<!-- SIDEBAR USERPIC -->
-				<div class="profile-userpic">
-					<img src="../imageFiles/regularAccountIcon" class="img-responsive" alt="">
-				</div>
-				<!-- END SIDEBAR USERPIC -->
-				<!-- SIDEBAR USER TITLE -->
-				<div class="profile-usertitle">
-					<div class="profile-usertitle-name">
-						Marcus Doe
-					</div>
-					<div class="profile-usertitle-job">
-						Developer
-					</div>
-				</div>
-				<!-- END SIDEBAR USER TITLE -->
-				<!-- SIDEBAR BUTTONS -->
-				<div class="profile-userbuttons">
-					<button type="button" class="btn btn-success btn-sm">Follow</button>
-					<button type="button" class="btn btn-danger btn-sm">Message</button>
-				</div>
-				<!-- END SIDEBAR BUTTONS -->
-				<!-- SIDEBAR MENU -->
-				<div class="profile-usermenu">
-					<ul class="nav">
-						<li class="active">
-							<a href="#">
-							<i class="glyphicon glyphicon-home"></i>
-							Overview </a>
-						</li>
-						<li>
-							<a href="#">
-							<i class="glyphicon glyphicon-user"></i>
-							Account Settings </a>
-						</li>
-						<li>
-							<a href="#" target="_blank">
-							<i class="glyphicon glyphicon-ok"></i>
-							Tasks </a>
-						</li>
-						<li>
-							<a href="#">
-							<i class="glyphicon glyphicon-flag"></i>
-							Help </a>
-						</li>
-					</ul>
-				</div>
-				<!-- END MENU -->
-			</div>
-		</div>
-		<div class="col-md-9">
-            <div class="profile-content">
-			   Some user related content goes here...
-            </div>
-		</div>
-	</div>
-</div>
-<center>
-<strong>Powered by <a href="http://j.mp/metronictheme" target="_blank">KeenThemes</a></strong>
-</center>
-<br>
-<br>
-	
-	
-	
-	
-	
-	<!-- <div class="container">
-	<div class="row">
-		<div class="col-sm-4 col-md-4 user-details">
-            <div class="user-image">
-                <img src="http://www.gravatar.com/avatar/2ab7b2009d27ec37bffee791819a090c?s=100&d=mm&r=g" alt="Karan Singh Sisodia" title="Karan Singh Sisodia" class="img-circle">
-            </div>
-            <div class="user-info-block">
-                <div class="user-heading">
-                    <h3>Karan Singh Sisodia</h3>
-                    <span class="help-block">Chandigarh, IN</span>
-                </div>
-                <ul class="navigation">
-                    <li class="active">
-                        <a data-toggle="tab" href="#information">
-                            <span class="glyphicon glyphicon-user"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a data-toggle="tab" href="#settings">
-                            <span class="glyphicon glyphicon-cog"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a data-toggle="tab" href="#email">
-                            <span class="glyphicon glyphicon-envelope"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a data-toggle="tab" href="#events">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                        </a>
-                    </li>
-                </ul>
-                <div class="user-body">
-                    <div class="tab-content">
-                        <div id="information" class="tab-pane active">
-                            <h4>Account Information</h4>
-                        </div>
-                        <div id="settings" class="tab-pane">
-                            <h4>Settings</h4>
-                        </div>
-                        <div id="email" class="tab-pane">
-                            <h4>Send Message</h4>
-                        </div>
-                        <div id="events" class="tab-pane">
-                            <h4>Events</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-	</div>
-</div> -->
-	
-	
-	
     <footer class="container-fluid text-center">
       <div class="row">
     		<div class="col-sm-4">

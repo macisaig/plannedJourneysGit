@@ -327,7 +327,7 @@ label small {
   -o-background-size: 100% 100%;
   background-size: 100% 100%;
   max-width: 940px;
-  height: 400px;
+  height: 490px;
   margin: auto;
 }
 
@@ -342,6 +342,10 @@ label small {
 @media (max-width: 767px) { /*This is for the mobile version*/
   .jumbotron {
 	height: 260px;
+  }
+
+  .jumbotronAbout {
+    height: 300px;
   }
 
   #icon {

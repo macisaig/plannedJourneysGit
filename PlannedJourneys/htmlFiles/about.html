@@ -29,7 +29,7 @@
             <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Plan a Journey</strong>
             <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="planATrip.html"><span class="dropdownItem"><strong>Plan a Trip</strong></span></a></li>
+              <li><a href="planAJourney.html"><span class="dropdownItem"><strong>Plan a Journey</strong></span></a></li>
               <li><a href="savedTrips.html"><span class="dropdownItem"><strong>Saved Trips</strong></span></a></li>
               <li><a href="discover.html"><span class="dropdownItem"><strong>Discover</strong></span></a></li>
             </ul>
@@ -64,14 +64,14 @@
 	<div class="container topAbout text-center">
           <div class="row">
               <div class="col-lg-12">
-                <h3>
-                  <strong><u>Welcome</u></strong>
-				</h3>
-				<h4>We're Planned Journeys, a creative travel engine that simplifies travel planning</h4>
+                <h3 class = "topPage">
+                <strong><u>Welcome</u></strong>
+        				</h3>
+        				<h3 class="topMessage">We're Planned Journeys, a creative travel engine that simplifies travel planning</h3>
               </div>
           </div>
         </div>
-    <div class="jumbotron jumbotron-sm jumbotronAbout">
+        <div class="jumbotron jumbotron-sm jumbotronAbout">
     </div>
 
     <!-- Marketing messaging and featurettes
@@ -82,29 +82,36 @@
 	<!-- START THE FEATURETTES -->
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">It started as a Plan. <span class="text-muted">And became a Journey.</span></h2>
+          <p class="lead">This entire website was created from a passion for travelling, and a desire to cut out the amount of planning necessary an awesome trip. Every single time I would plan a new trip, it would take hours of planning to make sure that I had:</p>
+          <ul>
+            <li class="follow">1) Found all of the best places and activities to visit in the country</li>
+            <li class="follow">2) Found the best places to stay, usually for a cheap price</li>
+            <li class="follow">3) Mapped out all of the places to stay, visit, and activities</li>
+            <li class="follow">4) Found a route that let me see the most in the time span of my vacation</li>
+          </ul>
+          <p class="lead">After saying enough is enough, I set out to create an algorithm, this travel algorithm, to streamline the planning process. I don't promise that this website will cure all travel ills, but I hope it helps make your trip as awesome as possible in as little planning as possible!</p>
         </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
+        <container class="text-center">
+          <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto text-center" src="../imageFiles/newRiver.jpg" alt="replaceImg" width="340" height="470">
+          </div>
+        </container>
       </div>
 	
-	  <hr class="featurette-divider">
+	    <hr class="featurette-divider">
 	
       <!-- Three columns of text below the carousel -->
       <div class="row">
-        <div class="col-lg-6 backgroundColor">
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <div class="col-lg-6 backgroundColor text-center">
+          <img class="rounded-circle" src="../imageFiles/globeIcon.png" alt="" width="140" height="140">
+          <h2>How it Works</h2>
+          <p>This travel algorithm takes in any data you can provide; the location, activity, amount of hours spent on activity, days you'll be traveling, rankings on which locations and activities you want to do most, etc., and spits out a travel plan that's tailored to your needs. If you don't know what you want to do, you can also search by region to get options! It tailors the plan by determing how much time for each activity/travel, taking into account your rankings, and calculating the most efficient yet amazing travel plan (i.e. if your rank 1 and 2 activities are a 24 hour drive apart but you only have 12 hours, then it will choose one of your lower ranks)</p>
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-6 backgroundColor">
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <div class="col-lg-6 backgroundColor text-center">
+          <img class="rounded-circle mapPicture" src="../imageFiles/mapPhoto.png" alt="" width="230" height="140">
+          <h2>What is the Plan?</h2>
+          <p>Now that you've put in all of the information possible for your trip, what do you get back? Planed Journeys gives you a plan for each day of your vacation, including which locations to stay at, what activities to do, and recommendations on food. All of this is created based off of your top rankings, and it tries to make sure that you get the most out of your vacation while not feeling rushed. And if you aren't happy with the plan chosen for you, you can always mix-and-match any options that you want. Remember, this is your vacation, so if you really wanted to do something, then you should do it! After all is said and done, you can save off that project to access it later at any time.</p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
     </div>
