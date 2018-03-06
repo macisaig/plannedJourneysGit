@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Boostrap files -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Has certain icons that can be used -->
     <link rel="stylesheet" href="PlannedJourneys/cssFiles/main.css">
+    <link href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
   </head>
 
   <body>
@@ -107,6 +108,20 @@
     <p id="startParagraph" align="center"><strong>Start Planning your Journey!</strong></p>
 
     <form>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <div class='picker'>
+                <label for="fromperiod">From</label>
+                <input type="text" id="fromperiod" name="from">
+                <label for="toperiod">to</label>
+                <input type="text" id="toperiod" name="to">
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
       <div class="form-group">
         <label for="locationActivityTime" class="beginningInput" align="center"><strong>Enter a Location and Activity or Time Span</strong></label>
         <input class="form-control" id="enterLocation1" aria-describedby="emailHelp" placeholder="Enter a Location"><br>
@@ -152,7 +167,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- Jquery file -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- Boostrap JS -->
-   
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="PlannedJourneys/jsFiles/index.js"></script> <!-- Boostrap JS -->
 
   </body>
 </html>
