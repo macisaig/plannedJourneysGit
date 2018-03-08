@@ -8,6 +8,10 @@ h3
 
 }
 
+.bootstrap-datetimepicker-widget.dropdown-menu {
+  width: auto;
+}
+
 .carousel-inner > .item > img{
   /*height: 360px;
   width: 100%;*/

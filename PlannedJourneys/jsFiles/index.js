@@ -3,14 +3,11 @@ $(function () {
 
     $('#toDate').datetimepicker({
       format: 'DD-MM-YYYY HH:mm',
-      defaultDate:dateNow,
-      sideBySide:true,
       minDate:dateNow,
       stepping: 15
     });
     $('#fromDate').datetimepicker({
       useCurrent: false, //Important! See issue #1075
-      sideBySide:true,
       minDate:dateNow,
       stepping: 15
     });
