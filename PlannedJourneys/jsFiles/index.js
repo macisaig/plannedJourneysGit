@@ -1,24 +1,23 @@
+$(function () {
+    var dateNow = new Date();
 
-$(function() {
-  $("#fromperiod").datepicker({
-    minDate: +0,
-    defaultDate: "+1w",
-    changeMonth: true,
-    changeYear: true,
-    numberOfMonths: 1,
-    onClose: function(selectedDate) {
-      $("#toperiod").datepicker("option", "minDate", selectedDate);
-    }
-  });
-  $("#toperiod").datepicker({
-    minDate: +0,
-    defaultDate: "+1w",
-    changeMonth: true,
-    changeYear: true,
-    numberOfMonths: 1,
-    onClose: function(selectedDate) {
-      $("#fromperiod").datepicker("option", "maxDate", selectedDate);
-    }
-  });
+    $('#toDate').datetimepicker({
+      format: 'DD-MM-YYYY HH:mm',
+      defaultDate:dateNow,
+      sideBySide:true,
+      minDate:dateNow,
+      stepping: 15
+    });
+    $('#fromDate').datetimepicker({
+      useCurrent: false, //Important! See issue #1075
+      sideBySide:true,
+      minDate:dateNow,
+      stepping: 15
+    });
+    $("#toDate").on("dp.change", function (e) {
+        $('#fromDate').data("DateTimePicker").minDate(e.date);
+    });
+    $("#fromDate").on("dp.change", function (e) {
+        $('#toDate').data("DateTimePicker").maxDate(e.date);
+    });
 });
-
