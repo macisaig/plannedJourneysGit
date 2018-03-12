@@ -29,7 +29,7 @@
           <li class="dropdown">
             <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Plan a Journey</strong>
             <span class="caret"></span></a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu navbarDropdown">
               <li><a href="PlannedJourneys/htmlFiles/planAJourney.html"><span class="dropdownItem"><strong>Plan a Journey</strong></span></a></li>
               <li><a href="PlannedJourneys/htmlFiles/savedTrips.html"><span class="dropdownItem"><strong>Saved Trips</strong></span></a></li>
               <li><a href="PlannedJourneys/htmlFiles/discover.html"><span class="dropdownItem"><strong>Discover</strong></span></a></li>
@@ -38,7 +38,7 @@
           <li class="dropdown">
             <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Locations</strong>
             <span class="caret"></span></a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu navbarDropdown">
               <li><a href="PlannedJourneys/htmlFiles/exploreALocation.html"><span class="dropdownItem"><strong>Explore a Location</strong></span></a></li>
               <li><a href="PlannedJourneys/htmlFiles/featuredLocations.html"><span class="dropdownItem"><strong>Featured Locations</strong></span></a></li>
               <li><a href="PlannedJourneys/htmlFiles/hottestDestinations.html"><span class="dropdownItem"><strong>Hottest Destinations</strong></span></a></li>
@@ -52,7 +52,7 @@
             <li class="dropdown">
               <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>My Account</strong>
               <span class="caret"></span></a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu navbarDropdown">
                 <button type="button" class="btn btn-firstDropdown" value="Input Button" onclick="location.href = 'PlannedJourneys/htmlFiles/login.html';"><input type="image" src="PlannedJourneys/imageFiles/regularAccountIcon.png" id="regularAccount"/><strong>Log In</strong></button> <!-- Added a button -->
                 <button type="button" class="btn btn-secondDropdown" value="Input Button" onclick="location.href = 'PlannedJourneys/htmlFiles/addAccount.html';"><input type="image" src="PlannedJourneys/imageFiles/addAccountIcon.png" id="accountAdd"/><strong>Sign Up</strong></button> <!-- Added a button -->
               </ul>
@@ -74,7 +74,7 @@
           <div class="carousel-caption"> <!-- Captioning within the picture -->
             <h1>Start Planning Your Journey</h1>  <!-- Actual words -->
             <br>
-            <button type="button" class="btn btn-default"><strong>Get Started</strong></button> <!-- Added a button -->
+            <button type="button" class="btn btn-default"><a href="PlannedJourneys/htmlFiles/planAJourney.html"><strong>Get Started</strong></a></button> <!-- Added a button -->
           </div>
         </div>
         <div class="item">
@@ -82,7 +82,7 @@
           <div class="carousel-caption"> <!-- Captioning within the picture -->
             <h1>Start Planning Your Journey</h1>  <!-- Actual words -->
             <br>
-            <button type="button" class="btn btn-default"><strong>Get Started</strong></button> <!-- Added a button -->
+            <button type="button" class="btn btn-default"><a href="PlannedJourneys/htmlFiles/planAJourney.html"><strong>Get Started</strong></a></button> <!-- Added a button -->
           </div>
         </div>
         <div class="item">
@@ -90,7 +90,7 @@
           <div class="carousel-caption"> <!-- Captioning within the picture -->
             <h1>Start Planning Your Journey</h1>  <!-- Actual words -->
             <br>
-            <button type="button" class="btn btn-default"><strong>Get Started</strong></button> <!-- Added a button -->
+            <button type="button" class="btn btn-default"><a href="PlannedJourneys/htmlFiles/planAJourney.html"><strong>Get Started</strong></a></button> <!-- Added a button -->
           </div>
         </div>
       </div>
@@ -108,41 +108,53 @@
 
     <p id="startParagraph" align="center"><strong>Start Planning your Journey!</strong></p>
 
-    <form>
-  		<div class="container">
-    		<div class='col-md-4'>
-    			<div class="form-group">
-    				<div class='input-group date' id='toDate'>
-    					<input type='text' class="form-control" placeholder="MM/DD/YYYY" />
-    					<span class="input-group-addon">
-    						<span class="glyphicon glyphicon-calendar"></span>
-    					</span>
-    				</div>
-    			</div>
-    		</div>
-    		<div class='col-md-4'>
-    			<div class="form-group">
-    				<div class='input-group date' id='fromDate'>
-    					<input type='text' class="form-control" placeholder="MM/DD/YYYY"/>
-    					<span class="input-group-addon">
-    						<span class="glyphicon glyphicon-calendar"></span>
-    					</span>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
+    <form class="dataEnter">
+  		<div class="container-fluid text-center form-group">
+        <div class="row">
+          <div class='col-md-3 col-sm-6 col-lg-3'>
+            <div class="form-group">
+              <input class="form-control textInputGroup" id="enterStartLoc" aria-describedby="emailHelp" placeholder="Start Location">
+            </div>
+          </div>
+          <div class='col-md-3 col-sm-6 col-lg-3'>
+            <div class="form-group">
+              <input class="form-control textInputGroup" id="enterEndLoc" aria-describedby="emailHelp" placeholder="End Location">
+            </div>
+          </div>
+      		<div class='col-md-3 col-sm-6 col-lg-3'>
+      			<div class="form-group">
+      				<div class='input-group date' id='toDate'>
+      					<input type='text' class="form-control textInputGroup" placeholder="MM/DD/YYYY" />
+      					<span class="input-group-addon">
+      						<span class="glyphicon glyphicon-calendar"></span>
+      					</span>
+      				</div>
+      			</div>
+      		</div>
+      		<div class='col-md-3 col-sm-6 col-lg-3'>
+      			<div class="form-group">
+      				<div class='input-group date' id='fromDate'>
+      					<input type='text' class="form-control  textInputGroup" placeholder="MM/DD/YYYY"/>
+      					<span class="input-group-addon">
+      						<span class="glyphicon glyphicon-calendar textButtonGroup"></span>
+      					</span>
+      				</div>
+      			</div>
+      		</div>
+      	</div>
+      </div>
       <div class="form-group">
         <label for="locationActivityTime" class="beginningInput" align="center"><strong>Enter a Location and Activity or Time Span</strong></label>
-        <input class="form-control" id="enterLocation1" aria-describedby="emailHelp" placeholder="Enter a Location"><br>
-        <input class="form-control" id="enterActivity" aria-describedby="emailHelp" placeholder="Enter an Activity"><br>
-        <input class="form-control" id="enterTimeframe" aria-describedby="emailHelp" placeholder="Enter a Time Span"><br>
+        <input class="form-control  textInputGroup" id="enterLocation1" aria-describedby="emailHelp" placeholder="Enter a Location"><br>
+        <input class="form-control  textInputGroup" id="enterActivity" aria-describedby="emailHelp" placeholder="Enter an Activity"><br>
+        <input class="form-control  textInputGroup" id="enterTimeframe" aria-describedby="emailHelp" placeholder="Enter a Time Span"><br>
       </div>
       <div class="col-md-12 text-center"> 
         <button type="submit" class="btn btn-primary btn-submitButton" id="submitButton1"><strong>Submit Multi-Option</strong></button>
       </div>
       <div class="form-group">
         <label for="locationOnly" class="beginningInput"><strong>Enter Only a Location</strong></label>
-        <input type="password" class="form-control" id="enterLocationOnly" placeholder="Enter a Location">
+        <input type="password" class="form-control textInputGroup" id="enterLocationOnly" placeholder="Enter a Location">
       </div>
       <div class="col-md-12 text-center"> 
         <button type="submit" class="btn btn-primary btn-submitButton" id="submitButton2"><strong>Submit Location</strong></button>

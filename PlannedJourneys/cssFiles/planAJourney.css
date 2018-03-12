@@ -2,7 +2,17 @@
  * element that contains the map. */
 #map {
   height: 100%;
+  max-width: 600px;
+  max-height: 600px;
+  margin: auto;
+  padding: 10px 0px 0px 0px;
 }
+
+#journeyMap{
+  max-width: 600px;
+  max-height: 800px;
+}
+
 /* Optional: Makes the sample page fill the window. */
 html, body {
   height: 100%;
