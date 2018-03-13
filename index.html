@@ -111,53 +111,66 @@
     <form class="dataEnter">
   		<div class="container-fluid text-center form-group">
         <div class="row">
-          <div class='col-md-3 col-sm-6 col-lg-3'>
-            <div class="form-group">
-              <input class="form-control textInputGroup" id="enterStartLoc" aria-describedby="emailHelp" placeholder="Start Location">
+          <div class='col-md-6 col-sm-12 col-lg-6'>
+            <h4><strong>Start and End Location</strong></h4>
+            <div class='col-md-6 col-sm-12 col-lg-6'>
+              <div class="form-group">
+                <input class="form-control" id="enterStartLoc" aria-describedby="emailHelp" placeholder="Start Location">
+              </div>
+            </div>
+            <div class='col-md-6 col-sm-12 col-lg-6'>
+              <div class="form-group">
+                <input class="form-control textInputGroup" id="enterEndLoc" aria-describedby="emailHelp" placeholder="End Location">
+              </div>
             </div>
           </div>
-          <div class='col-md-3 col-sm-6 col-lg-3'>
-            <div class="form-group">
-              <input class="form-control textInputGroup" id="enterEndLoc" aria-describedby="emailHelp" placeholder="End Location">
-            </div>
+          <div class='col-md-6 col-sm-12 col-lg-6'>
+            <h4><strong>Start and End Date</strong></h4>
+        		<div class='col-md-6 col-sm-12 col-lg-6'>
+        			<div class="form-group">
+        				<div class='input-group date' id='toDate'>
+        					<input type='text' class="form-control" placeholder="MM/DD/YYYY" />
+        					<span class="input-group-addon">
+        						<span class="glyphicon glyphicon-calendar"></span>
+        					</span>
+        				</div>
+        			</div>
+        		</div>
+        		<div class='col-md-6 col-sm-12 col-lg-6'>
+        			<div class="form-group">
+        				<div class='input-group date' id='fromDate'>
+        					<input type='text' class="form-control" placeholder="MM/DD/YYYY"/>
+        					<span class="input-group-addon">
+        						<span class="glyphicon glyphicon-calendar textButtonGroup"></span>
+        					</span>
+        				</div>
+        			</div>
+        		</div>
           </div>
-      		<div class='col-md-3 col-sm-6 col-lg-3'>
-      			<div class="form-group">
-      				<div class='input-group date' id='toDate'>
-      					<input type='text' class="form-control textInputGroup" placeholder="MM/DD/YYYY" />
-      					<span class="input-group-addon">
-      						<span class="glyphicon glyphicon-calendar"></span>
-      					</span>
-      				</div>
-      			</div>
-      		</div>
-      		<div class='col-md-3 col-sm-6 col-lg-3'>
-      			<div class="form-group">
-      				<div class='input-group date' id='fromDate'>
-      					<input type='text' class="form-control  textInputGroup" placeholder="MM/DD/YYYY"/>
-      					<span class="input-group-addon">
-      						<span class="glyphicon glyphicon-calendar textButtonGroup"></span>
-      					</span>
-      				</div>
-      			</div>
-      		</div>
       	</div>
-      </div>
-      <div class="form-group">
-        <label for="locationActivityTime" class="beginningInput" align="center"><strong>Enter a Location and Activity or Time Span</strong></label>
-        <input class="form-control  textInputGroup" id="enterLocation1" aria-describedby="emailHelp" placeholder="Enter a Location"><br>
-        <input class="form-control  textInputGroup" id="enterActivity" aria-describedby="emailHelp" placeholder="Enter an Activity"><br>
-        <input class="form-control  textInputGroup" id="enterTimeframe" aria-describedby="emailHelp" placeholder="Enter a Time Span"><br>
-      </div>
-      <div class="col-md-12 text-center"> 
-        <button type="submit" class="btn btn-primary btn-submitButton" id="submitButton1"><strong>Submit Multi-Option</strong></button>
-      </div>
-      <div class="form-group">
-        <label for="locationOnly" class="beginningInput"><strong>Enter Only a Location</strong></label>
-        <input type="password" class="form-control textInputGroup" id="enterLocationOnly" placeholder="Enter a Location">
-      </div>
-      <div class="col-md-12 text-center"> 
-        <button type="submit" class="btn btn-primary btn-submitButton" id="submitButton2"><strong>Submit Location</strong></button>
+        <div class="row">
+          <div class='col-md-6 col-sm-6 col-lg-6 col-centered'>
+            <h4><strong>Add Location, Activity, and the Amount of Time for the Activity</strong></h4>
+            <div class='col-md-12 col-sm-12 col-lg-12'>
+              <div class="form-group">
+                <input class="form-control" id="enterLocation" aria-describedby="First Location" placeholder="Location">
+              </div>
+            </div>
+            <div class='col-md-12 col-sm-12 col-lg-12'>
+              <div class="form-group">
+                <input class="form-control" id="enterActivity" aria-describedby="First Location" placeholder="Type of Activity">
+              </div>
+            </div>
+            <div class='col-md-12 col-sm-12 col-lg-12'>
+              <div class="form-group">
+                <input class="form-control" id="enterTime" aria-describedby="First Location" placeholder="Time Spent on Activity">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 text-center"> 
+          <button type="submit" class="btn btn-primary btn-submitButton" id="submitButton1"><strong>Start Planning</strong></button>
+        </div>
       </div>
     </form>
 
