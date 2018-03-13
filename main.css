@@ -143,6 +143,10 @@ h3
   background: #FFF;
 }
 
+.provideRoom{
+	padding: 0px 0px 0px 0px;
+}
+
 .dropdownActive:link, .dropdownActive:visited, .dropdownActive:hover,
 .dropdownActive:focus, .dropdownActive:active{
   background: #1281BD !important;
@@ -186,8 +190,12 @@ h3
   float: center;
 }
 
+.featurette-divider{
+	border: 1px solid #000;
+}
+
 #startParagraph{
-  margin: 10px 10px 0px 10px;
+  margin: 0px 10px 0px 10px;
   color: #3A6DA6; /*Off color white for when we aren't overing over the icons*/
   padding: 0%;
   font: 40px/1.5 Arial, Helvetica,sans-serif; /*Determines the text*/
@@ -396,7 +404,7 @@ small {
 
   .navbar-brand img{
     height: 48px;
-	  width: 90px;
+	width: 90px;
     transform: translateY(-5%); /*Shifts down from very top*/
   }
 
@@ -405,7 +413,7 @@ small {
   }
 
   #startParagraph{
-  margin: 10px 10px 0px 10px;
+  margin: 0px 10px 0px 10px;
   font: 20px/1.5 Arial, Helvetica,sans-serif; /*Determines the text*/
   }
 
