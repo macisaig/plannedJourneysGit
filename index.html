@@ -112,7 +112,7 @@
   		<div class="container-fluid text-center form-group">
         <div class="row">
           <div class='col-md-6 col-sm-12 col-lg-6'>
-            <h4><strong>Start and End Location</strong></h4>
+            <h4><strong>Start and End Location</strong><br><small>If Start and End locations aren't provided, the shortest trip will be displayed</small></h4>
             <div class='col-md-6 col-sm-12 col-lg-6'>
               <div class="form-group">
                 <input class="form-control" id="enterStartLoc" aria-describedby="emailHelp" placeholder="Start Location">
@@ -125,7 +125,7 @@
             </div>
           </div>
           <div class='col-md-6 col-sm-12 col-lg-6'>
-            <h4><strong>Start and End Date</strong></h4>
+            <h4><strong>Start and End Date</strong><br><small>*At least one Start or End Date must be provided</small></h4>
         		<div class='col-md-6 col-sm-12 col-lg-6'>
         			<div class="form-group">
         				<div class='input-group date' id='toDate'>
@@ -148,9 +148,10 @@
         		</div>
           </div>
       	</div>
+		<br>
         <div class="row">
-          <div class='col-md-6 col-sm-6 col-lg-6 col-centered'>
-            <h4><strong>Add Location, Activity, and the Amount of Time for the Activity</strong></h4>
+          <div class='col-md-7 col-sm-7 col-lg-7 col-centered'>
+            <h4><strong>Add Location, Activity, and the Amount of Time for the Activity</strong><br><small>*If no Start or End location is provided above, this location is necessary</small></h4>
             <div class='col-md-12 col-sm-12 col-lg-12'>
               <div class="form-group">
                 <input class="form-control" id="enterLocation" aria-describedby="First Location" placeholder="Location">
