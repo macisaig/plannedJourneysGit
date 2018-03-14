@@ -2,7 +2,6 @@ $(function () {
     var dateNow = new Date();
 
     $('#toDate').datetimepicker({
-      format: 'DD-MM-YYYY HH:mm',
       minDate:dateNow,
       stepping: 15
     });

@@ -61,12 +61,97 @@
       </div>
     </nav>
 
+	<form class="dataEnter">
+		<p id="startParagraph" align="center"><strong>Plan your Journey!</strong></p>
+		<hr class="featurette-divider">
+  		<div class="container-fluid text-center form-group">
+        <div class="row">
+          <div class='col-md-6 col-sm-12 col-lg-6'>
+            <h4><strong>Start and End Location</strong><br><small>If Start and End locations aren't provided, they'll be based on shorest time</small></h4>
+            <div class='col-md-6 col-sm-12 col-lg-6'>
+              <div class="form-group">
+                <input class="form-control" id="enterStartLoc" aria-describedby="emailHelp" placeholder="Start Location">
+              </div>
+            </div>
+            <div class='col-md-6 col-sm-12 col-lg-6'>
+              <div class="form-group">
+                <input class="form-control textInputGroup" id="enterEndLoc" aria-describedby="emailHelp" placeholder="End Location">
+              </div>
+            </div>
+          </div>
+          <div class='col-md-6 col-sm-12 col-lg-6'>
+            <h4><strong>Start and End Date</strong><br><small>*The Start and/or End Date must be provided</small></h4>
+        		<div class='col-md-6 col-sm-12 col-lg-6'>
+        			<div class="form-group">
+        				<div class='input-group date' id='toDate'>
+        					<input type='text' class="form-control" placeholder="MM/DD/YYYY" />
+        					<span class="input-group-addon">
+        						<span class="glyphicon glyphicon-calendar"></span>
+        					</span>
+        				</div>
+        			</div>
+        		</div>
+        		<div class='col-md-6 col-sm-12 col-lg-6'>
+        			<div class="form-group">
+        				<div class='input-group date' id='fromDate'>
+        					<input type='text' class="form-control" placeholder="MM/DD/YYYY"/>
+        					<span class="input-group-addon">
+        						<span class="glyphicon glyphicon-calendar textButtonGroup"></span>
+        					</span>
+        				</div>
+        			</div>
+        		</div>
+          </div>
+      	</div>
+		<br>
+        <div class="row">
+          <div class='col-md-7 col-sm-7 col-lg-7 col-centered'>
+            <h4><strong>Add Location of Interest and Time Spent at the Location</strong><br><small>*If no Start or End location is provided above, the location is required below</small></h4>
+            <div class='col-md-12 col-sm-12 col-lg-12'>
+              <div class="form-group">
+                <input class="form-control" id="interestLocation" aria-describedby="Location of Interest" placeholder="Location of Interest">
+              </div>
+            </div>
+			<div class='col-md-12 col-sm-12 col-lg-12'>
+              <div class="form-group">
+                <input class="form-control" id="locationTime" aria-describedby="Time of Interest" placeholder="Time Spent at Location">
+              </div>
+            </div>
+		</div>
+		<div class="col-md-12 text-center"> 
+          <button type="submit" class="btn btn-primary btn-submitButton" id="submitLocation"><strong>Submit Location</strong></button>
+        </div>
+		<div class='col-md-12 col-sm-12 col-lg-12'>
+			<h4 class='provideRoom'><strong>Add an Activity and the Amount of Time for the Activity or Type of Activity</strong><br><small>*If no time length is provided for an activity, it will be autofilled by the activity type<small></h4>
+		</div>
+		<div class='col-md-7 col-sm-7 col-lg-7 col-centered'>
+			<div class='col-md-12 col-sm-12 col-lg-12'>
+              <div class="form-group">
+                <input class="form-control" id="activityLocation" aria-describedby="First Location" placeholder="Location of Activity">
+              </div>
+            </div>
+            <div class='col-md-12 col-sm-12 col-lg-12'>
+              <div class="form-group">
+                <input class="form-control" id="enterActivity" aria-describedby="activityType" placeholder="Type of Activity">
+              </div>
+            </div>
+            <div class='col-md-12 col-sm-12 col-lg-12'>
+              <div class="form-group">
+                <input class="form-control" id="enterTime" aria-describedby="timeOfActivity" placeholder="Time Spent on Activity">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 text-center"> 
+          <button type="submit" class="btn btn-primary btn-submitButton" id="submitActivity"><strong>Submit Activity</strong></button>
+        </div>
+      </div>
+    </form>
+	
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    <container class="journeyMap">
-      <div id="map"></div>
-    </container>
+	<div id="map"></div>
 
-	  <br><br><br>
+	<br><br><br>
 	
     <footer class="container-fluid text-center">
       <div class="row">
