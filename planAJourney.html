@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Speaking english -->
+  <head>
+	<link rel="icon" href="../imageFiles/plannedJourneysLogoMini.jpg">
+    <title>Planned Journeys</title>
+    <meta charset="utf-8"> <!-- Common throughout web -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This is for the phone scaling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Boostrap files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Has certain icons that can be used -->
+    <link rel="stylesheet" href="../cssFiles/main.css">
+    <link rel="stylesheet" href="../cssFiles/planAJourney.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle pull-right" id="accountIcon" data-toggle="collapse" data-target="#myNavbar">
+            <img src="../imageFiles/regularAccountIcon.png">
+          </button>
+          <a class="navbar-brand" href="../../index.html">
+            <div id="branding">
+             <img src="../imageFiles/plannedJourneysLogo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+            </div>
+          </a>
+        </div>
+        <ul class="nav navbar-nav"> <!-- Displays navbar item to the right -->
+          <li class="dropdown">
+            <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Plan a Journey</strong>
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="planAJourney.html"><span class="dropdownItem"><strong>Plan a Journey</strong></span></a></li>
+              <li><a href="savedTrips.html"><span class="dropdownItem"><strong>Saved Trips</strong></span></a></li>
+              <li><a href="discover.html"><span class="dropdownItem"><strong>Discover</strong></span></a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Locations</strong>
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="exploreALocation.html"><span class="dropdownItem"><strong>Explore a Location</strong></span></a></li>
+              <li><a href="featuredLocations.html"><span class="dropdownItem"><strong>Featured Locations</strong></span></a></li>
+              <li><a href="hottestDestinations.html"><span class="dropdownItem"><strong>Hottest Destinations</strong></span></a></li>
+            </ul>
+          </li>
+          <li><a href="about.html" class="navbar-text"><strong>About</strong></a></li>
+        </ul>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right"> <!-- Displays navbar item to the right -->
+            <li><a href="contactUs.html" class="navbar-text"><strong>Contact Us</strong></a></li>
+            <li class="dropdown">
+              <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>My Account</strong>
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <button type="button" class="btn btn-firstDropdown" value="Input Button" onclick="location.href = 'login.html';"><input type="image" src="../imageFiles/regularAccountIcon.png" id="regularAccount"/><strong>Log In</strong></button> <!-- Added a button -->
+                <button type="button" class="btn btn-secondDropdown" value="Input Button" onclick="location.href = 'addAccount.html';"><input type="image" src="../imageFiles/addAccountIcon.png" id="accountAdd"/><strong>Sign Up</strong></button> <!-- Added a button -->
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+	<form class="dataEnter2">
+		<p id="startParagraph2" align="center"><strong>Plan your Journey!</strong></p>
+		<hr class="featurette-divider">
+  		<div class="container-fluid text-center form-group">
+        <div class="row">
+          <div class='col-md-6 col-sm-12 col-lg-6'>
+            <h4><strong>Start and End Location</strong><br><small>If Start and End locations aren't provided, they'll be based on shorest time</small></h4>
+            <div class='col-md-6 col-sm-12 col-lg-6'>
+              <div class="form-group">
+                <input class="form-control" id="enterStartLoc" aria-describedby="emailHelp" placeholder="Start Location">
+              </div>
+            </div>
+            <div class='col-md-6 col-sm-12 col-lg-6'>
+              <div class="form-group">
+                <input class="form-control textInputGroup" id="enterEndLoc" aria-describedby="emailHelp" placeholder="End Location">
+              </div>
+            </div>
+          </div>
+          <div class='col-md-6 col-sm-12 col-lg-6'>
+            <h4><strong>Start and End Date</strong><br><small>*The Start and/or End Date must be provided</small></h4>
+        		<div class='col-md-6 col-sm-12 col-lg-6'>
+        			<div class="form-group">
+        				<div class='input-group date' id='toDate'>
+        					<input type='text' class="form-control" placeholder="MM/DD/YYYY" />
+        					<span class="input-group-addon">
+        						<span class="glyphicon glyphicon-calendar"></span>
+        					</span>
+        				</div>
+        			</div>
+        		</div>
+        		<div class='col-md-6 col-sm-12 col-lg-6'>
+        			<div class="form-group">
+        				<div class='input-group date' id='fromDate'>
+        					<input type='text' class="form-control" placeholder="MM/DD/YYYY"/>
+        					<span class="input-group-addon">
+        						<span class="glyphicon glyphicon-calendar textButtonGroup"></span>
+        					</span>
+        				</div>
+        			</div>
+        		</div>
+          </div>
+      	</div>
+		<br>
+        <div class="row">
+          <div class='col-md-7 col-sm-7 col-lg-7 col-centered'>
+            <h4><strong>Add Location of Interest and Time Spent at the Location</strong><br><small>*If no Start or End location is provided above, the location is required below</small></h4>
+            <div class='col-md-12 col-sm-12 col-lg-12'>
+              <div class="form-group">
+                <input class="form-control" id="interestLocation" aria-describedby="Location of Interest" placeholder="Location of Interest">
+              </div>
+            </div>
+			<div class='col-md-12 col-sm-12 col-lg-12'>
+              <div class="form-group">
+                <input class="form-control" id="locationTime" aria-describedby="Time of Interest" placeholder="Time Spent at Location">
+              </div>
+            </div>
+		</div>
+		<div class="col-md-12 text-center"> 
+          <button type="submit" class="btn btn-primary btn-submitButton" id="submitLocation"><strong>Submit Location</strong></button>
+        </div>
+		<div class='col-md-12 col-sm-12 col-lg-12'>
+			<h4 class='provideRoom'><strong>Add an Activity and the Amount of Time for the Activity or Type of Activity</strong><br><small>*If no time length is provided for an activity, it will be autofilled by the activity type<small></h4>
+		</div>
+		<div class='col-md-7 col-sm-7 col-lg-7 col-centered'>
+			<div class='col-md-12 col-sm-12 col-lg-12'>
+              <div class="form-group">
+                <input class="form-control" id="activityLocation" aria-describedby="First Location" placeholder="Location of Activity">
+              </div>
+            </div>
+            <div class='col-md-12 col-sm-12 col-lg-12'>
+              <div class="form-group">
+                <input class="form-control" id="enterActivity" aria-describedby="activityType" placeholder="Type of Activity">
+              </div>
+            </div>
+            <div class='col-md-12 col-sm-12 col-lg-12'>
+              <div class="form-group">
+                <input class="form-control" id="enterTime" aria-describedby="timeOfActivity" placeholder="Time Spent on Activity">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 text-center"> 
+          <button type="submit" class="btn btn-primary btn-submitButton" id="submitActivity"><strong>Submit Activity</strong></button>
+        </div>
+      </div>
+    </form>
+	
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+	<div id="map"></div>
+
+	<br><br><br>
+	
+    <footer class="container-fluid text-center">
+      <div class="row">
+    		<div class="col-sm-4">
+          <a href="../../index.html">
+            <img src="../imageFiles/plannedJourneysLogo.jpg" class="icon">
+          </a>
+        </div>
+        <div class="col-sm-4">
+          <h3>Social Media Links</h3>
+          <a href="#" class ="fa fa-facebook"></a>
+          <a href="#" class ="fa fa-twitter"></a>
+          <a href="#" class ="fa fa-google"></a>
+          <a href="#" class ="fa fa-linkedin"></a>
+          <a href="#" class ="fa fa-youtube"></a>
+        </div>
+    		<br>
+    		<div class="col-sm-4">
+          <h3>Contact Us</h3>
+          <a href="mailto:#" class="mailToFooter"><h4><strong>service@plannedjourneys.com<strong></h4></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- Jquery file -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- Boostrap JS -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHKAAf2EcI1kTvfUwWmdpO2zZLKUMilrA&libraries=places&callback=initAutocomplete"
+         async defer></script>
+    <script src="../jsFiles/planAJourney.js"></script>
+  </body>
+</html>

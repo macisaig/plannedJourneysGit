@@ -62,12 +62,12 @@
       </div>
     </nav>
 
-    <form class="dataEnter">
+    <form class="dataEnter" id='planDetails'>
 		<p id="startParagraph" align="center"><strong>Start Planning your Journey!</strong></p>
   		<div class="container-fluid text-center form-group">
         <div class="row">
           <div class='col-md-6 col-sm-12 col-lg-6'>
-            <h4><strong>Start and End Location</strong><br><small>If Start and End locations aren't provided, they'll be based on shorest time</small></h4>
+            <h4><strong>Start and End Location</strong><br><small><span class='offColor'>If Start and End locations aren't provided, they'll be based on shorest time</span></small></h4>
             <div class='col-md-6 col-sm-12 col-lg-6'>
               <div class="form-group">
                 <input class="form-control" id="enterStartLoc" aria-describedby="emailHelp" placeholder="Start Location">
@@ -80,11 +80,11 @@
             </div>
           </div>
           <div class='col-md-6 col-sm-12 col-lg-6'>
-            <h4><strong>Start and End Date</strong><br><small>*The Start and/or End Date must be provided</small></h4>
+            <h4><strong>Start and End Date</strong><br><small><span class='offColor'>*The Start and/or End Date must be provided</span></small></h4>
         		<div class='col-md-6 col-sm-12 col-lg-6'>
         			<div class="form-group">
         				<div class='input-group date' id='toDate'>
-        					<input type='text' class="form-control" placeholder="MM/DD/YYYY" name='firstDate' required/>
+        					<input type='text' class="form-control" placeholder="MM/DD/YYYY" name='firstDate' id='toDateValue'/>
         					<span class="input-group-addon">
         						<span class="glyphicon glyphicon-calendar"></span>
         					</span>
@@ -94,17 +94,18 @@
         		<div class='col-md-6 col-sm-12 col-lg-6'>
         			<div class="form-group">
         				<div class='input-group date' id='fromDate'>
-        					<input type='text' class="form-control" placeholder="MM/DD/YYYY" name='secondDate' required/>
+        					<input type='text' class="form-control" placeholder="MM/DD/YYYY" name='secondDate' id='fromDateValue'/>
         					<span class="input-group-addon">
         						<span class="glyphicon glyphicon-calendar textButtonGroup"></span>
         					</span>
         				</div>
         			</div>
         		</div>
+				<div id="errDate"></div>   
           </div>
       	</div>
         <div class="col-md-12 text-center"> 
-          <button type="submit" class="btn btn-primary btn-submitButton" id="submitButton1"><strong>Start Planning</strong></button>
+          <button type="submit" class="btn btn-primary btn-submitButton" id="submitButton1" onClick="return checkDates()"><strong>Start Planning</strong></button>
         </div>
       </div>
 	  <br>
