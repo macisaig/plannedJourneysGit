@@ -6,7 +6,7 @@
     <meta charset="utf-8"> <!-- Common throughout web -->
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This is for the phone scaling -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Boostrap files -->
-	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Has certain icons that can be used -->
     <link rel="stylesheet" href="PlannedJourneys/cssFiles/main.css">
     <link href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
@@ -62,20 +62,20 @@
       </div>
     </nav>
 
-    <form class="dataEnter" id='planDetails'>
-		<p id="startParagraph" align="center"><strong>Start Planning your Journey!</strong></p>
+    <form class="dataEnter">
+		<p class="startParagraph" align="center"><strong>Start Planning your Journey!</strong></p>
   		<div class="container-fluid text-center form-group">
         <div class="row">
           <div class='col-md-6 col-sm-12 col-lg-6'>
             <h4><strong>Start and End Location</strong><br><small><span class='offColor'>If Start and End locations aren't provided, they'll be based on shorest time</span></small></h4>
             <div class='col-md-6 col-sm-12 col-lg-6'>
               <div class="form-group">
-                <input class="form-control" id="enterStartLoc" aria-describedby="emailHelp" placeholder="Start Location">
+                <input class="form-control" id="enterStartLoc" type="text" aria-describedby="startLoc" placeholder="Enter a Start Location">
               </div>
             </div>
             <div class='col-md-6 col-sm-12 col-lg-6'>
               <div class="form-group">
-                <input class="form-control textInputGroup" id="enterEndLoc" aria-describedby="emailHelp" placeholder="End Location">
+                <input class="form-control textInputGroup" id="enterEndLoc" type="text" aria-describedby="endLoc" placeholder="Enter a End Location">
               </div>
             </div>
           </div>
@@ -179,11 +179,11 @@
     </footer>
 
     <script type="text/javascript" src="PlannedJourneys/jsFiles/jQuery.js"></script>
-	  <script type="text/javascript" src="PlannedJourneys/jsFiles/moment-develop/moment.js"></script>
+	<script type="text/javascript" src="PlannedJourneys/jsFiles/moment-develop/moment.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- Boostrap JS -->
-	  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHKAAf2EcI1kTvfUwWmdpO2zZLKUMilrA&libraries=places"></script>
     <script src="PlannedJourneys/jsFiles/index.js"></script> <!-- Boostrap JS -->
-
   </body>
 </html>

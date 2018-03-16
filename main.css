@@ -13,7 +13,7 @@ h4{
 }
 
 .smallWarning{
-	color: #cd1414;
+	color: #fe7b00;
 }
 
 .offColor{
@@ -206,17 +206,9 @@ h4{
 	border: 1px solid #000;
 }
 
-#startParagraph{
+.startParagraph{
   margin: 0px 10px 0px 10px;
   color: #f5f4f4; /*Off color white for when we aren't overing over the icons*/
-  padding: 0%;
-  font: 40px/1.5 Arial, Helvetica,sans-serif; /*Determines the text*/
-  float: center;
-}
-
-#startParagraph2{
-  margin: 0px 10px 0px 10px;
-  color: #3A6DA6; /*Off color white for when we aren't overing over the icons*/
   padding: 0%;
   font: 40px/1.5 Arial, Helvetica,sans-serif; /*Determines the text*/
   float: center;
@@ -432,9 +424,9 @@ small {
     margin: 2px 0px 2px 1px;
   }
 
-  #startParagraph{
+  .startParagraph{
   margin: 0px 10px 0px 10px;
-  font: 20px/1.5 Arial, Helvetica,sans-serif; /*Determines the text*/
+  font: 23px/1.5 Arial, Helvetica,sans-serif; /*Determines the text*/
   }
 
   .beginningInput{

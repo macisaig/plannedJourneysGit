@@ -36,3 +36,12 @@ function checkDates()
 	
 	return submitValue;
  }
+ 
+function initialize() {
+	var inputStart = document.getElementById('enterStartLoc');
+	var inputEnd = document.getElementById('enterEndLoc');
+	new google.maps.places.Autocomplete(inputStart);
+	new google.maps.places.Autocomplete(inputEnd);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
