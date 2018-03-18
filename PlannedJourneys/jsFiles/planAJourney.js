@@ -1,3 +1,10 @@
+function initialize() {
+  var inputStart = document.getElementById('reEnterStartLoc');
+  var inputEnd = document.getElementById('reEnterEndLoc');
+  new google.maps.places.Autocomplete(inputStart);
+  new google.maps.places.Autocomplete(inputEnd);
+}
+
 // This example adds a search box to a map, using the Google Place Autocomplete
 // feature. People can enter geographical searches. The search box will return a
 // pick list containing a mix of places and predicted search terms.
@@ -12,6 +19,8 @@ function initAutocomplete() {
     zoom: 9,
     mapTypeId: 'roadmap'
   });
+
+  google.maps.event.addDomListener(window, 'load', initialize);
 
   // Create the search box and link it to the UI element.
   var input = document.getElementById('pac-input');
@@ -72,3 +81,4 @@ function initAutocomplete() {
     map.fitBounds(bounds);
   });
 }
+

@@ -17,3 +17,31 @@ $(function () {
         $('#toDate').data("DateTimePicker").maxDate(e.date);
     });
 });
+
+function checkDates()
+ {
+	 var toDate = document.getElementById('toDateValue');
+	 var fromDate = document.getElementById('fromDateValue');
+	 var submitValue = false;
+	 
+	if ((toDate.value.length > 0) || (fromDate.value.length > 0))
+	{
+		submitValue = true;
+		document.getElementById("errDate").innerHTML = "";
+	}
+	else
+	{
+		document.getElementById("errDate").innerHTML = "<span class='smallWarning'><strong>*Please Enter a Start or End Date*<strong></span>";
+	}
+	
+	return submitValue;
+ }
+ 
+function initialize() {
+	var inputStart = document.getElementById('enterStartLoc');
+	var inputEnd = document.getElementById('enterEndLoc');
+	new google.maps.places.Autocomplete(inputStart);
+	new google.maps.places.Autocomplete(inputEnd);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);

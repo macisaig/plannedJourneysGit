@@ -8,9 +8,10 @@
   padding: 10px 0px 0px 0px;
 }
 
-#journeyMap{
-  max-width: 600px;
-  max-height: 800px;
+.mapProject{
+  height: 500px;
+  width: 500px;
+  margin: auto;
 }
 
 /* Optional: Makes the sample page fill the window. */
