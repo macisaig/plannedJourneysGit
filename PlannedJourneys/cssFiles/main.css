@@ -157,6 +157,9 @@ h4{
 
 .provideRoom{
 	padding: 0px 0px 0px 0px;
+  margin: auto;
+  float: center;
+  color: #1281BD;;
 }
 
 .dropdownActive:link, .dropdownActive:visited, .dropdownActive:hover,

@@ -1,3 +1,42 @@
+$(function () {
+    var dateNow = new Date();
+
+    $('#reToDate').datetimepicker({
+      minDate:dateNow,
+      stepping: 15
+    });
+    $('#reFromDate').datetimepicker({
+      useCurrent: false, //Important! See issue #1075
+      minDate:dateNow,
+      stepping: 15
+    });
+    $("#reToDate").on("dp.change", function (e) {
+        $('#reFromDate').data("DateTimePicker").minDate(e.date);
+    });
+    $("#reFromDate").on("dp.change", function (e) {
+        $('#reToDate').data("DateTimePicker").maxDate(e.date);
+    });
+});
+
+function checkDates()
+ {
+   var toDate = document.getElementById('reToDateValue');
+   var fromDate = document.getElementById('reFromDateValue');
+   var submitValue = false;
+   
+  if ((toDate.value.length > 0) || (fromDate.value.length > 0))
+  {
+    submitValue = true;
+    document.getElementById("reErrDate").innerHTML = "";
+  }
+  else
+  {
+    document.getElementById("reErrDate").innerHTML = "<span class='smallWarning'><strong>*Please Enter a Start or End Date*<strong></span>";
+  }
+  
+  return submitValue;
+ }
+
 function initialize() {
   var inputStart = document.getElementById('reEnterStartLoc');
   var inputEnd = document.getElementById('reEnterEndLoc');

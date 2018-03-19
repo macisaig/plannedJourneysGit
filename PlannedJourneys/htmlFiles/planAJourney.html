@@ -6,9 +6,11 @@
     <meta charset="utf-8"> <!-- Common throughout web -->
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This is for the phone scaling -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Boostrap files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Has certain icons that can be used -->
     <link rel="stylesheet" href="../cssFiles/main.css">
     <link rel="stylesheet" href="../cssFiles/planAJourney.css">
+    <link href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
   </head>
 
   <body>
@@ -82,7 +84,7 @@
             <h4><strong>Start and End Date</strong><br><small><span class='offColor'>*The Start and/or End Date must be provided</span></small></h4>
             <div class='col-md-6 col-sm-12 col-lg-6'>
               <div class="form-group">
-                <div class='input-group date' id='toDate'>
+                <div class='input-group date' id='reToDate'>
                   <input type='text' class="form-control" placeholder="MM/DD/YYYY" name='firstDate' id='reToDateValue'/>
                   <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
@@ -92,7 +94,7 @@
             </div>
             <div class='col-md-6 col-sm-12 col-lg-6'>
               <div class="form-group">
-                <div class='input-group date' id='fromDate'>
+                <div class='input-group date' id='reFromDate'>
                   <input type='text' class="form-control" placeholder="MM/DD/YYYY" name='secondDate' id='reFromDateValue'/>
                   <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar textButtonGroup"></span>
@@ -109,40 +111,24 @@
       </div>
     <br>
     </form>
-        <br>
+    <br>
     <form>
-        <div class="row">
-          <div class='col-md-7 col-sm-7 col-lg-7 col-centered'>
-            <h4><strong>Add Location of Interest and Time Spent at the Location</strong><br><small>*If no Start or End location is provided above, the location is required below</small></h4>
-            <div class='col-md-12 col-sm-12 col-lg-12'>
-              <div class="form-group">
-                <input class="form-control" id="interestLocation" aria-describedby="Location of Interest" placeholder="Location of Interest">
-              </div>
-            </div>
-			<div class='col-md-12 col-sm-12 col-lg-12'>
-              <div class="form-group">
-                <input class="form-control" id="locationTime" aria-describedby="Time of Interest" placeholder="Time Spent at Location">
-              </div>
-            </div>
-		</div>
-		<div class="col-md-12 text-center"> 
-          <button type="submit" class="btn btn-primary btn-submitButton" id="submitLocation"><strong>Submit Location</strong></button>
-        </div>
-		<div class='col-md-12 col-sm-12 col-lg-12'>
-			<h4 class='provideRoom'><strong>Add an Activity and the Amount of Time for the Activity or Type of Activity</strong><br><small>*If no time length is provided for an activity, it will be autofilled by the activity type<small></h4>
-		</div>
-		<div class='col-md-7 col-sm-7 col-lg-7 col-centered'>
-			<div class='col-md-12 col-sm-12 col-lg-12'>
+        <div class="row-md-6 row-lg-6 row-sm-12">
+      		<div class='col-md-12 col-sm-12 col-lg-12 col-center'>
+      			<h4 class='provideRoom text-center'><strong>Add to the Plan with a Location and (Activity Type or Time of Activity)</strong><br><small>*If no time length is provided for an activity, it will be autofilled by the activity type<small></h4>
+      		</div>
+      		<div class='col-md-12 col-sm-12 col-lg-12 col-centered'>
+      			<div class='col-md-6 col-sm-12 col-lg-6'>
               <div class="form-group">
                 <input class="form-control" id="activityLocation" aria-describedby="First Location" placeholder="Location of Activity">
               </div>
             </div>
-            <div class='col-md-12 col-sm-12 col-lg-12'>
+            <div class='col-md-6 col-sm-12 col-lg-6'>
               <div class="form-group">
                 <input class="form-control" id="enterActivity" aria-describedby="activityType" placeholder="Type of Activity">
               </div>
             </div>
-            <div class='col-md-12 col-sm-12 col-lg-12'>
+            <div class='col-md-6 col-sm-12 col-lg-6'>
               <div class="form-group">
                 <input class="form-control" id="enterTime" aria-describedby="timeOfActivity" placeholder="Time Spent on Activity">
               </div>
@@ -185,8 +171,11 @@
       </div>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- Jquery file -->
+    <script type="text/javascript" src="../jsFiles/jQuery.js"></script>
+    <script type="text/javascript" src="../jsFiles/moment-develop/moment.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- Boostrap JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHKAAf2EcI1kTvfUwWmdpO2zZLKUMilrA&libraries=places&callback=initAutocomplete"
          async defer></script>
     <script src="../jsFiles/planAJourney.js"></script>
