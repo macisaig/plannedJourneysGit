@@ -12,6 +12,10 @@ h4{
 	color: #FFF;
 }
 
+#collapseTutorial{
+	color: #FFF;
+}
+
 .smallWarning{
 	color: #fe7b00;
 }
@@ -89,7 +93,12 @@ h4{
   color: black;
   padding: 6px 12px;
   background: #FFF;
-  border: 2px solid #FFF;
+  border: 2px solid #000;
+}
+
+.planJourneyButton{
+	margin: 5px;
+  padding: 5px;
 }
 
 .btn-firstDropdown{
@@ -98,7 +107,7 @@ h4{
   padding: 5px 40px;
   margin: 2px;
   background: #3A6DA6;
-  border: 1px solid #FFF;
+  border: 1px solid #000;
   float: center;
 }
 
@@ -366,6 +375,11 @@ small {
   max-width: 940px;
   height: 490px;
   margin: auto;
+}
+
+.leaveMargin{
+	margin: auto;
+	padding: 15px 5px 0px 5px;
 }
 
 .jumbotron-sm { 

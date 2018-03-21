@@ -40,8 +40,12 @@ function checkDates()
 function initialize() {
   var inputStart = document.getElementById('reEnterStartLoc');
   var inputEnd = document.getElementById('reEnterEndLoc');
+  var inputActivity = document.getElementById('activityLocation');
+  var inputLocation = document.getElementById('stayLocation');
   new google.maps.places.Autocomplete(inputStart);
   new google.maps.places.Autocomplete(inputEnd);
+  new google.maps.places.Autocomplete(inputActivity);
+  new google.maps.places.Autocomplete(inputLocation);
 }
 
 // This example adds a search box to a map, using the Google Place Autocomplete

@@ -64,79 +64,102 @@
     </nav>
 
 	<form class="dataEnter">
-    <p class="startParagraph" align="center"><strong>Plan Your Journey!</strong></p>
-    <h3><a href="#andrewsDropdown" data-toggle="collapse" class="startParagraph text-center">Click to learn more</a></h4>
-      <div class="container-fluid text-center form-group" id='andrewsDropdown'>
-        <div class="row">
-          <div class='col-md-6 col-sm-12 col-lg-6'>
-            <h4><strong>Start and End Location</strong><br><small><span class='offColor'>If Start and End locations aren't provided, they'll be based on shorest time</span></small></h4>
-            <div class='col-md-6 col-sm-12 col-lg-6'>
-              <div class="form-group">
-                <input class="form-control" id="reEnterStartLoc" type="text" aria-describedby="startLoc" placeholder="Enter a Start Location">
-              </div>
-            </div>
-            <div class='col-md-6 col-sm-12 col-lg-6'>
-              <div class="form-group">
-                <input class="form-control textInputGroup" id="reEnterEndLoc" type="text" aria-describedby="endLoc" placeholder="Enter a End Location">
-              </div>
-            </div>
-          </div>
-          <div class='col-md-6 col-sm-12 col-lg-6'>
-            <h4><strong>Start and End Date</strong><br><small><span class='offColor'>*The Start and/or End Date must be provided</span></small></h4>
-            <div class='col-md-6 col-sm-12 col-lg-6'>
-              <div class="form-group">
-                <div class='input-group date' id='reToDate'>
-                  <input type='text' class="form-control" placeholder="MM/DD/YYYY" name='firstDate' id='reToDateValue'/>
-                  <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class='col-md-6 col-sm-12 col-lg-6'>
-              <div class="form-group">
-                <div class='input-group date' id='reFromDate'>
-                  <input type='text' class="form-control" placeholder="MM/DD/YYYY" name='secondDate' id='reFromDateValue'/>
-                  <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar textButtonGroup"></span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          <div id="reErrDate"></div>   
-          </div>
-        </div>
-        <div class="col-md-12 text-center"> 
-          <button type="submit" class="btn btn-primary btn-submitButton submitButton1" id="reSubmitButton2" onClick="return checkDates()"><strong>Start Planning</strong></button>
-        </div>
-      </div>
-    <br>
+		<div class="text-center leaveMargin"> 
+			<a class="btn btn-primary planJourneyButton" data-toggle="collapse" href="#collapseDateLocation" aria-expanded="false" aria-controls="collapseExample" id="startEndButton">
+			Change Dates / Locations
+			<span class="caret"></span>
+			</a>
+			<a class="btn btn-primary planJourneyButton" data-toggle="collapse" href="#collapseTutorial" aria-expanded="false" aria-controls="collapseExample" id="tutorialButton">
+			Tutorial
+			<span class="caret"></span>
+			</a>
+		</div>
+		<div class="container-fluid text-center form-group collapse" id='collapseDateLocation'>
+			<div class="row">
+			  <div class='col-md-6 col-sm-12 col-lg-6'>
+				<h4><strong>Start and End Location</strong><br><small><span class='offColor'>If Start and End locations aren't provided, they'll be based on shorest time</span></small></h4>
+				<div class='col-md-6 col-sm-12 col-lg-6'>
+				  <div class="form-group">
+					<input class="form-control" id="reEnterStartLoc" type="text" aria-describedby="startLoc" placeholder="Enter a Start Location">
+				  </div>
+				</div>
+				<div class='col-md-6 col-sm-12 col-lg-6'>
+				  <div class="form-group">
+					<input class="form-control textInputGroup" id="reEnterEndLoc" type="text" aria-describedby="endLoc" placeholder="Enter a End Location">
+				  </div>
+				</div>
+			  </div>
+			  <div class='col-md-6 col-sm-12 col-lg-6'>
+				<h4><strong>Start and End Date</strong><br><small><span class='offColor'>*The Start and/or End Date must be provided</span></small></h4>
+				<div class='col-md-6 col-sm-12 col-lg-6'>
+				  <div class="form-group">
+					<div class='input-group date' id='reToDate'>
+					  <input type='text' class="form-control" placeholder="MM/DD/YYYY" name='firstDate' id='reToDateValue'/>
+					  <span class="input-group-addon">
+						<span class="glyphicon glyphicon-calendar"></span>
+					  </span>
+					</div>
+				  </div>
+				</div>
+				<div class='col-md-6 col-sm-12 col-lg-6'>
+				  <div class="form-group">
+					<div class='input-group date' id='reFromDate'>
+					  <input type='text' class="form-control" placeholder="MM/DD/YYYY" name='secondDate' id='reFromDateValue'/>
+					  <span class="input-group-addon">
+						<span class="glyphicon glyphicon-calendar textButtonGroup"></span>
+					  </span>
+					</div>
+				  </div>
+				</div>
+			  <div id="reErrDate"></div>   
+			  </div>
+			</div>
+			<div class="col-md-12 text-center"> 
+			  <button type="submit" class="btn btn-primary btn-submitButton submitButton1" id="reSubmitButton2" onClick="return checkDates()"><strong>Add to Plan</strong></button>
+			</div>
+		</div>
+		<div class="container-fluid text-center form-group collapse" id='collapseTutorial'>
+			<div class="col-md-7 col-centered">
+				<br>
+				<p class='lead'>Add Start and End Dates / Locations</p>
+				<p>In order to start creating your plan, click on 'Change Dates / Locations'. If you haven't already, enter at least one Start or End date 
+				(if only a start or end date is entered, the number of travel days will be based off of the number of hours of activities and locations).
+				 If you have a set Start and/or End location, enter that as well, otherwise these locations will be determined based off of the most time efficient trip.</p>
+				<br>
+				<p class='lead'>Add Activities and Locations to Stay</p>
+				<p>This is where you start adding the different elements of your trip. Want to add scuba diving? Perfect; add in the location of the dive, along with either the time it will take to scuba dive OR the fact that you're scuba diving. The scuba diving option will automatically fill in the length of time for the activity. Instead of adding an activity, you can also add a place you'd rather stay the night, and how many nights you'd prefer to stay there. The Length of stay isn't necessary, but if you'd prefer to stay in a certain location for a set amount of nights it's best to put the number of days. If no length of stay is included, it will be computed based on the activities. Once you've added an activity or a place to stay, simply add it to the plan to continue.</p>
+        <br>
+        <p class='lead'>Your Planned Journey</p>
+        <p>Once some activities and locations have started being added, your journey will start being formulated. Within this table you'll have your whole list of activites and locations, along with a rating value of 1-5 on how badly you want this item to happen. Based off of your timeline, activities and locations will be chosen based off of rating, routes, and what's humanly possible to do in your time frame. Once you have all of the activities and locations that you can possibly hope to do, click the Create My Journey in order to run the algorithm and create your journey!</p>
+        <br>
+        <p class='lead'>Congratulations! You have a Journey!</p>
+        <p>Now that you have the journey, feel free to use our website to start booking reservations, or one of our partner sites. And then get out there and have an adventure!</p>
+			</div>
+		</div>
+	<br>
     </form>
-    <br>
     <form>
       <div class="row">
-  			<div class='col-md-12 col-sm-12 col-lg-6'>
+    	  <p class="startParagraph" id="secondStartParagraph" align="center"><strong>Plan Your Journey!</strong></p>
+    		<div class='col-md-12 col-sm-12 col-lg-6 createMargins'>
           <h4 class='provideRoom text-center'><strong>Add a Location and (Activity Type or Length of Time)</strong><br><small>*If no time length is provided for an activity, it will be autofilled by the activity type<small></h4>
-          <div class="form-group">
+          <div class="form-group createMargins">
             <input class="form-control" id="activityLocation" aria-describedby="First Location" placeholder="Location of Activity">
           </div>
-          <div class="form-group">
+          <div class="form-group createMargins">
             <input class="form-control" id="enterActivity" aria-describedby="activityType" placeholder="Type of Activity">
           </div>
-          <div class="form-group">
+          <div class="form-group createMargins">
             <input class="form-control" id="enterTime" aria-describedby="timeOfActivity" placeholder="Length of Time">
           </div>
         </div>
-        <div class='col-md-12 col-sm-12 col-lg-6'>
-          <h4 class='provideRoom text-center'><strong>Add a Location and (Activity Type or Length of Time)</strong><br><small>*If no time length is provided for an activity, it will be autofilled by the activity type<small></h4>
-          <div class="form-group">
-            <input class="form-control" id="activityLocation" aria-describedby="First Location" placeholder="Location of Activity">
+        <div class='col-md-12 col-sm-12 col-lg-6 createMargins'>
+          <h4 class='provideRoom text-center'><strong>Add a Location to Stay</strong><br><small>*Place where you plan to spend at least 1 night; If no Length of Stay is entered, it will be calculated by activities<small></h4>
+          <div class="form-group createMargins">
+            <input class="form-control" id="stayLocation" aria-describedby="Stay Location" placeholder="Location to Stay">
           </div>
-          <div class="form-group">
-            <input class="form-control" id="enterActivity" aria-describedby="activityType" placeholder="Type of Activity">
-          </div>
-          <div class="form-group">
-            <input class="form-control" id="enterTime" aria-describedby="timeOfActivity" placeholder="Length of Time">
+          <div class="form-group createMargins">
+            <input class="form-control" id="locationTime" aria-describedby="timeOfLocation" placeholder="Length of Stay">
           </div>
         </div>
       </div>

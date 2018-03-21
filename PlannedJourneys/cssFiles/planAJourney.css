@@ -14,6 +14,15 @@
   margin: auto;
 }
 
+.createMargins{
+  /*margin: 10px;*/
+  padding: 5px 10px 10px 10px;
+}
+
+#secondStartParagraph{
+  color: #3A6DA6;
+}
+
 /* Optional: Makes the sample page fill the window. */
 html, body {
   height: 100%;
