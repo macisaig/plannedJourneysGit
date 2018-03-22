@@ -139,37 +139,56 @@
 	<br>
     </form>
     <form>
-      <div class="row">
+        <div class="row">
     	  <p class="startParagraph" id="secondStartParagraph" align="center"><strong>Plan Your Journey!</strong></p>
     		<div class='col-md-12 col-sm-12 col-lg-6 createMargins'>
-          <h4 class='provideRoom text-center'><strong>Add a Location and (Activity Type or Length of Time)</strong><br><small>*If no time length is provided for an activity, it will be autofilled by the activity type<small></h4>
-          <div class="form-group createMargins">
-            <input class="form-control" id="activityLocation" aria-describedby="First Location" placeholder="Location of Activity">
-          </div>
-          <div class="form-group createMargins">
-            <input class="form-control" id="enterActivity" aria-describedby="activityType" placeholder="Type of Activity">
-          </div>
-          <div class="form-group createMargins">
-            <input class="form-control" id="enterTime" aria-describedby="timeOfActivity" placeholder="Length of Time">
-          </div>
-        </div>
-        <div class='col-md-12 col-sm-12 col-lg-6 createMargins'>
-          <h4 class='provideRoom text-center'><strong>Add a Location to Stay</strong><br><small>*Place where you plan to spend at least 1 night; If no Length of Stay is entered, it will be calculated by activities<small></h4>
-          <div class="form-group createMargins">
-            <input class="form-control" id="stayLocation" aria-describedby="Stay Location" placeholder="Location to Stay">
-          </div>
-          <div class="form-group createMargins">
-            <input class="form-control" id="locationTime" aria-describedby="timeOfLocation" placeholder="Length of Stay">
-          </div>
-        </div>
-      </div>
+			  <h4 class='provideRoom text-center'><strong>Add a Location and (Activity Type or Length of Time)</strong><br><small>*If no time length is provided for an activity, it will be autofilled by the activity type<small></h4>
+			  <div class="form-group createMargins">
+				<input class="form-control" id="activityLocation" aria-describedby="First Location" placeholder="Location of Activity">
+			  </div>
+			  <div class="form-group createMargins">
+				<input class="form-control" id="enterActivity" aria-describedby="activityType" placeholder="Type of Activity">
+			  </div>
+			</div>
+			<div class='col-md-12 col-sm-12 col-lg-6 createMargins'>
+			  <h4 class='provideRoom text-center'><strong>Add a Location to Stay</strong><br><small>*Location where you plan to spend at least 1 night; If no Length of Stay is entered, it will be calculated<small></h4>
+			  <div class="form-group createMargins">
+				<input class="form-control" id="stayLocation" aria-describedby="Stay Location" placeholder="Location to Stay">
+			  </div>
+			</div>
+	    </div>
+	    <div class="row createMargins">
+		<div class="col-sm-5 col-md-5 col-lg-5 col-centered">
+			<h4 class='provideRoom text-center'><strong>Length of Stay / Activity</strong></h4>
+			<div class="form-group createMargins">
+				<div class="col-sm-4 col-md-4 col-lg-4">
+					<h4 class='provideRoom text-center'><strong>Days:</strong></h4>
+					<div class="row">
+						<input type="number" name="quantity" class="form-control" min="1" max="365">
+					</div>
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4">
+					<h4 class='provideRoom text-center'><strong>Hours:</strong></h4>
+					<div class="row">
+						<input type="number" name="quantity" class="form-control" min="0" max="23">
+					</div>
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4">
+					<h4 class='provideRoom text-center'><strong>Minutes:</strong></h4>
+					<div class="row">
+						<input type="number" name="quantity" class="form-control" min="0" step="15" max="60">
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
     </form>
 	
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div class="mapProject">
     	<div id="map"></div>
     </div>
-
+	
 	  <br><br><br>
 	
     <footer class="container-fluid text-center">
