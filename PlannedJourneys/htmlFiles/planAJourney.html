@@ -140,18 +140,26 @@
     </form>
     <form>
         <div class="row">
-    	  <p class="startParagraph" id="secondStartParagraph" align="center"><strong>Plan Your Journey!</strong></p>
+    	  <p class="startParagraph" id="secondStartParagraph" align="center"><strong>Plan Your Journey!</strong>
+          <br><h4 class='provideRoom text-center timeColor'><strong>*Fill out Activity or Location; Estimate Length of Time*</strong></h4></p>
     		<div class='col-md-12 col-sm-12 col-lg-6 createMargins'>
-			  <h4 class='provideRoom text-center'><strong>Add a Location and (Activity Type or Length of Time)</strong><br><small>*If no time length is provided for an activity, it will be autofilled by the activity type<small></h4>
+			  <h4 class='provideRoom text-center'><strong>Add a Location and (Activity Type or Length of Time)</strong></h4>
 			  <div class="form-group createMargins">
 				<input class="form-control" id="activityLocation" aria-describedby="First Location" placeholder="Location of Activity">
 			  </div>
 			  <div class="form-group createMargins">
-				<input class="form-control" id="enterActivity" aria-describedby="activityType" placeholder="Type of Activity">
+          <h4 for="activitySelect" class="provideRoom text-center"><strong>Select Activity: <small><strong>*Used to Help Estimate Length of Time*</strong></small></strong></h4>
+          <select class="form-control" id="enterActivity" aria-describedby="activityType">
+            <option></option>
+            <option>Lunch</option>
+            <option>Cruise</option>
+            <option>Golf</option>
+            <option>Climb</option>
+          </select>
 			  </div>
 			</div>
 			<div class='col-md-12 col-sm-12 col-lg-6 createMargins'>
-			  <h4 class='provideRoom text-center'><strong>Add a Location to Stay</strong><br><small>*Location where you plan to spend at least 1 night; If no Length of Stay is entered, it will be calculated<small></h4>
+			  <h4 class='provideRoom text-center'><strong>Add a Location to Stay</strong></h4>
 			  <div class="form-group createMargins">
 				<input class="form-control" id="stayLocation" aria-describedby="Stay Location" placeholder="Location to Stay">
 			  </div>
@@ -162,21 +170,21 @@
 			<h4 class='provideRoom text-center'><strong>Length of Stay / Activity</strong></h4>
 			<div class="form-group createMargins">
 				<div class="col-sm-4 col-md-4 col-lg-4">
-					<h4 class='provideRoom text-center'><strong>Days:</strong></h4>
+					<h4 class='provideRoom text-center timeColor'><strong>Days:</strong></h4>
 					<div class="row">
-						<input type="number" name="quantity" class="form-control" min="1" max="365">
+						<input type="number" name="quantity" class="form-control dayMark" id="dayMark" min="1" max="365">
 					</div>
 				</div>
 				<div class="col-sm-4 col-md-4 col-lg-4">
-					<h4 class='provideRoom text-center'><strong>Hours:</strong></h4>
+					<h4 class='provideRoom text-center timeColor'><strong>Hours:</strong></h4>
 					<div class="row">
-						<input type="number" name="quantity" class="form-control" min="0" max="23">
+						<input type="number" name="quantity" class="form-control" id="hourMark" min="0" max="23">
 					</div>
 				</div>
 				<div class="col-sm-4 col-md-4 col-lg-4">
-					<h4 class='provideRoom text-center'><strong>Minutes:</strong></h4>
+					<h4 class='provideRoom text-center timeColor'><strong>Minutes:</strong></h4>
 					<div class="row">
-						<input type="number" name="quantity" class="form-control" min="0" step="15" max="60">
+						<input type="number" name="quantity" class="form-control" id="minuteMark" min="0" step="15">
 					</div>
 					</div>
 				</div>

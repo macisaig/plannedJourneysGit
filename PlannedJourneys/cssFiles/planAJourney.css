@@ -23,6 +23,12 @@
   color: #3A6DA6;
 }
 
+.timeColor{
+   font-size: 1.2em; /*Resize font*/
+   color: #5F5F5F;
+   padding: 0px 2px 0px 2px;
+}
+
 /* Optional: Makes the sample page fill the window. */
 html, body {
   height: 100%;
