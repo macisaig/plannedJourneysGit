@@ -29,6 +29,12 @@
    padding: 0px 2px 0px 2px;
 }
 
+.timeColor2{
+   font-size: 1.0em; /*Resize font*/
+   color: #5F5F5F;
+   padding: 0px 2px 0px 2px;
+}
+
 /* Optional: Makes the sample page fill the window. */
 html, body {
   height: 100%;
@@ -104,4 +110,12 @@ html, body {
 }
 #target {
   width: 345px;
+}
+
+select.form-control.first-option-selected {
+  color: #8e8e8e;
+}
+
+select.form-control > option {
+  color: #000;
 }

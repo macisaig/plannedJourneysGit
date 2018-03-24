@@ -1,3 +1,51 @@
+$('#hourMark').on('keydown keyup', function(e){
+    if ($(this).val() > 23 
+        && e.keyCode !== 46 // keycode for delete
+        && e.keyCode !== 8 // keycode for backspace
+       ) {
+       e.preventDefault();
+       $(this).val(23);
+    }
+});
+
+$('#minuteMark').on('keydown keyup', function(e){
+    if ($(this).val() > 60 
+        && e.keyCode !== 46 // keycode for delete
+        && e.keyCode !== 8 // keycode for backspace
+       ) {
+       e.preventDefault();
+       $(this).val(60);
+    }
+});
+
+$('#dayMark').on('keydown keyup', function(e){
+    if ($(this).val() > 999 
+        && e.keyCode !== 46 // keycode for delete
+        && e.keyCode !== 8 // keycode for backspace
+       ) {
+       e.preventDefault();
+       $(this).val(999);
+    }
+});
+
+$(function () {
+  var selectElement = $('select.form-control');
+
+  function ifFirstOptionGrey() {
+    if (selectElement[0].selectedIndex === 0) {
+      selectElement.addClass('first-option-selected');
+    } else {
+      selectElement.removeClass('first-option-selected');
+    }
+  }
+
+  ifFirstOptionGrey();
+
+  selectElement.on('change', function () {
+    ifFirstOptionGrey();
+  })
+});
+
 $(function () {
     var dateNow = new Date();
 
