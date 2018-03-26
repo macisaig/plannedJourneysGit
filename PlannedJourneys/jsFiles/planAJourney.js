@@ -85,17 +85,6 @@ function checkDates()
   return submitValue;
  }
 
-function initialize() {
-  var inputStart = document.getElementById('reEnterStartLoc');
-  var inputEnd = document.getElementById('reEnterEndLoc');
-  var inputActivity = document.getElementById('activityLocation');
-  var inputLocation = document.getElementById('stayLocation');
-  new google.maps.places.Autocomplete(inputStart);
-  new google.maps.places.Autocomplete(inputEnd);
-  new google.maps.places.Autocomplete(inputActivity);
-  new google.maps.places.Autocomplete(inputLocation);
-}
-
 // This example adds a search box to a map, using the Google Place Autocomplete
 // feature. People can enter geographical searches. The search box will return a
 // pick list containing a mix of places and predicted search terms.
@@ -111,23 +100,49 @@ function initAutocomplete() {
     mapTypeId: 'roadmap'
   });
 
-  google.maps.event.addDomListener(window, 'load', initialize);
-
   // Create the search box and link it to the UI element.
-  var input = document.getElementById('stayLocation');
-  var searchBox = new google.maps.places.SearchBox(input);
-  //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  var input1 = document.getElementById('activityLocation');
+  var searchBox1 = new google.maps.places.SearchBox(input1);
 
   // Bias the SearchBox results towards current map's viewport.
   map.addListener('bounds_changed', function() {
-    searchBox.setBounds(map.getBounds());
+    searchBox1.setBounds(map.getBounds());
   });
+
+  // Create the search box and link it to the UI element.
+  var input2 = document.getElementById('stayLocation');
+  var searchBox2 = new google.maps.places.SearchBox(input2);
+
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener('bounds_changed', function() {
+    searchBox2.setBounds(map.getBounds());
+  });
+
+  // Create the search box and link it to the UI element.
+  var input3 = document.getElementById('reEnterEndLoc');
+  var searchBox3 = new google.maps.places.SearchBox(input3);
+
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener('bounds_changed', function() {
+    searchBox3.setBounds(map.getBounds());
+  });
+
+  // Create the search box and link it to the UI element.
+  var input4 = document.getElementById('reEnterStartLoc');
+  var searchBox4 = new google.maps.places.SearchBox(input4);
+
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener('bounds_changed', function() {
+    searchBox4.setBounds(map.getBounds());
+  });
+
+  var locationButton = document.getElementById("addLocation");
 
   var markers = [];
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
-  searchBox.addListener('places_changed', function() {
-    var places = searchBox.getPlaces();
+  searchBox1.addListener('places_changed', function() {
+    var places = searchBox1.getPlaces();
 
     if (places.length == 0) {
       return;
@@ -170,6 +185,195 @@ function initAutocomplete() {
       }
     });
     map.fitBounds(bounds);
+
+    if (locationButton.classList.contains("hidden")) 
+    {
+      locationButton.classList.remove("hidden");
+    } 
+    else 
+    {
+        // No my-class :(
+    }
+  });
+
+  searchBox2.addListener('places_changed', function() {
+    var places = searchBox2.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // Clear out the old markers.
+    markers.forEach(function(marker) {
+      marker.setMap(null);
+    });
+    markers = [];
+
+    // For each place, get the icon, name and location.
+    var bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+      if (!place.geometry) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+      var icon = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+      };
+
+      // Create a marker for each place.
+      markers.push(new google.maps.Marker({
+        map: map,
+        icon: icon,
+        title: place.name,
+        position: place.geometry.location
+      }));
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
+
+    if (locationButton.classList.contains("hidden")) 
+    {
+      locationButton.classList.remove("hidden");
+    } 
+    else 
+    {
+        // No my-class :(
+    }
+  });
+
+  searchBox3.addListener('places_changed', function() {
+    var places = searchBox3.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // Clear out the old markers.
+    markers.forEach(function(marker) {
+      marker.setMap(null);
+    });
+    markers = [];
+
+    // For each place, get the icon, name and location.
+    var bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+      if (!place.geometry) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+      var icon = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+      };
+
+      // Create a marker for each place.
+      markers.push(new google.maps.Marker({
+        map: map,
+        icon: icon,
+        title: place.name,
+        position: place.geometry.location
+      }));
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
+
+    if (locationButton.classList.contains("hidden")) 
+    {
+      locationButton.classList.remove("hidden");
+    } 
+    else 
+    {
+        // No my-class :(
+    }
+  });
+
+  searchBox4.addListener('places_changed', function() {
+    var places = searchBox4.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // Clear out the old markers.
+    markers.forEach(function(marker) {
+      marker.setMap(null);
+    });
+    markers = [];
+
+    // For each place, get the icon, name and location.
+    var bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+      if (!place.geometry) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+      var icon = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+      };
+
+      // Create a marker for each place.
+      markers.push(new google.maps.Marker({
+        map: map,
+        icon: icon,
+        title: place.name,
+        position: place.geometry.location
+      }));
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
+
+    if (locationButton.classList.contains("hidden")) 
+    {
+      locationButton.classList.remove("hidden");
+    } 
+    else 
+    {
+        // No my-class :(
+    }
   });
 }
 
+function addToPlan() {
+  var locationButton = document.getElementById("addLocation");
+
+  if (locationButton.classList.contains("hidden")) 
+  {
+  } 
+  else 
+  {
+    locationButton.classList.add("hidden");
+  }
+}
+
+function showMap() {
+
+}
