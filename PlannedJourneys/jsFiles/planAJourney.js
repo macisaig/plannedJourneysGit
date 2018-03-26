@@ -100,6 +100,8 @@ function initAutocomplete() {
     mapTypeId: 'roadmap'
   });
 
+  var mapToggle = document.getElementById("hideMap");
+
   // Create the search box and link it to the UI element.
   var input1 = document.getElementById('activityLocation');
   var searchBox1 = new google.maps.places.SearchBox(input1);
@@ -142,6 +144,11 @@ function initAutocomplete() {
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
   searchBox1.addListener('places_changed', function() {
+    if (mapToggle.classList.contains("hidden")) 
+    {
+      mapToggle.classList.remove("hidden");
+    } 
+
     var places = searchBox1.getPlaces();
 
     if (places.length == 0) {
@@ -189,14 +196,15 @@ function initAutocomplete() {
     if (locationButton.classList.contains("hidden")) 
     {
       locationButton.classList.remove("hidden");
-    } 
-    else 
-    {
-        // No my-class :(
     }
   });
 
   searchBox2.addListener('places_changed', function() {
+    if (mapToggle.classList.contains("hidden")) 
+    {
+      mapToggle.classList.remove("hidden");
+    } 
+
     var places = searchBox2.getPlaces();
 
     if (places.length == 0) {
@@ -245,13 +253,14 @@ function initAutocomplete() {
     {
       locationButton.classList.remove("hidden");
     } 
-    else 
-    {
-        // No my-class :(
-    }
   });
 
   searchBox3.addListener('places_changed', function() {
+    if (mapToggle.classList.contains("hidden")) 
+    {
+      mapToggle.classList.remove("hidden");
+    } 
+
     var places = searchBox3.getPlaces();
 
     if (places.length == 0) {
@@ -300,13 +309,14 @@ function initAutocomplete() {
     {
       locationButton.classList.remove("hidden");
     } 
-    else 
-    {
-        // No my-class :(
-    }
   });
 
   searchBox4.addListener('places_changed', function() {
+    if (mapToggle.classList.contains("hidden")) 
+    {
+      mapToggle.classList.remove("hidden");
+    } 
+
     var places = searchBox4.getPlaces();
 
     if (places.length == 0) {
@@ -355,25 +365,48 @@ function initAutocomplete() {
     {
       locationButton.classList.remove("hidden");
     } 
-    else 
-    {
-        // No my-class :(
-    }
   });
 }
 
 function addToPlan() {
   var locationButton = document.getElementById("addLocation");
+  var minuteValue = document.getElementById('minuteMark');
+  var hourValue = document.getElementById('hourMark');
+  var dayValue = document.getElementById('dayMark');
+  var mapToggle = document.getElementById("hideMap");
+  var submitValue = false;
+   
+  if ((minuteValue.value.length > 0) || (hourValue.value.length > 0) || (dayValue.value.length > 0))
+  {
+    submitValue = true;
+    document.getElementById("errTime").innerHTML = "";
+    if (!locationButton.classList.contains("hidden")) 
+    {
+      locationButton.classList.add("hidden");
+    }
 
-  if (locationButton.classList.contains("hidden")) 
-  {
-  } 
-  else 
-  {
-    locationButton.classList.add("hidden");
+    if (!mapToggle.classList.contains("hidden")) 
+    {
+      mapToggle.classList.add("hidden");
+    }
   }
+  else
+  {
+    document.getElementById("errTime").innerHTML = "<span class='smallWarning'><strong>*Please Enter a Length of Time*<strong></span>";
+  }
+
+  return submitValue;
 }
 
 function showMap() {
+  var mapToggle = document.getElementById("hideMap");
 
+  if (mapToggle.classList.contains("hidden")) 
+  {
+    mapToggle.classList.remove("hidden");
+  } 
+  else 
+  {
+    mapToggle.classList.add("hidden");
+  }
 }

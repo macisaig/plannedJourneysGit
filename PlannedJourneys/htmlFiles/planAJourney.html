@@ -141,7 +141,7 @@
     <form>
         <div class="row">
     	  <p class="startParagraph" id="secondStartParagraph" align="center"><strong>Plan Your Journey!</strong>
-          <br><h4 class='provideRoom text-center timeColor2'><strong>*Fill out Activity or Location; Estimate Length of Time*</strong></h4></p>
+          <!-- <br><h4 class='provideRoom text-center timeColor2'><strong>*Fill out Activity or Location; Estimate Length of Time*</strong></h4></p> -->
     		<div class='col-md-12 col-sm-12 col-lg-6 createMargins'>
 			  <h4 class='provideRoom text-center'><strong>Add a Location and (Activity Type or Length of Time)</strong></h4>
 			  <div class="form-group createMargins">
@@ -188,16 +188,19 @@
     					</div>
   					</div>
   				</div>
+          <div class='text-center' id="errTime"></div>   
   			</div>
   		</div>
     </form>
 	 
     <div class="row">
       <div class="col-md-12 text-center"> 
-        <button type="submit" class="btn btn-primary btn-submitButton submitButton1 hidden" id="addLocation" onclick="addToPlan()"><strong>Add to Plan</strong></button>
+        <button type="submit" class="btn btn-primary btn-submitButton submitButton1" id="showMap" onclick="showMap()"><strong>Show/Hide Map</strong></button>
+        <button type="submit" class="btn btn-primary btn-submitButton submitButton1 hidden" id="addLocation" onclick="addToPlan()"><strong>Add Location to Plan</strong></button>
       </div>
     </div>
-    <div class="mapProject">
+    <br>
+    <div class="mapProject hidden" id="hideMap">
     	<div id="map"></div>
     </div>
 	

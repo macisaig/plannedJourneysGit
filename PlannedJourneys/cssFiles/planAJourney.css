@@ -2,7 +2,6 @@
  * element that contains the map. */
 #map {
   height: 100%;
-  max-width: 600px;
   max-height: 600px;
   margin: auto;
   padding: 10px 0px 0px 0px;
@@ -10,7 +9,7 @@
 
 .mapProject{
   height: 500px;
-  width: 500px;
+  width: 90%;
   margin: auto;
 }
 
@@ -118,4 +117,9 @@ select.form-control.first-option-selected {
 
 select.form-control > option {
   color: #000;
+}
+
+@media (max-width: 600px) { /*This is for the mobile version*/
+  #map {
+  max-height: 400px;
 }

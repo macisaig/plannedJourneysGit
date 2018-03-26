@@ -20,9 +20,9 @@ $(function () {
 
 function checkDates()
  {
-	 var toDate = document.getElementById('toDateValue');
-	 var fromDate = document.getElementById('fromDateValue');
-	 var submitValue = false;
+	var toDate = document.getElementById('toDateValue');
+	var fromDate = document.getElementById('fromDateValue');
+	var submitValue = false;
 	 
 	if ((toDate.value.length > 0) || (fromDate.value.length > 0))
 	{
