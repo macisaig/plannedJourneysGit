@@ -103,16 +103,7 @@ function initAutocomplete() {
   var mapToggle = document.getElementById("hideMap");
 
   // Create the search box and link it to the UI element.
-  var input1 = document.getElementById('activityLocation');
-  var searchBox1 = new google.maps.places.SearchBox(input1);
-
-  // Bias the SearchBox results towards current map's viewport.
-  map.addListener('bounds_changed', function() {
-    searchBox1.setBounds(map.getBounds());
-  });
-
-  // Create the search box and link it to the UI element.
-  var input2 = document.getElementById('stayLocation');
+  var input2 = document.getElementById('activityLocation');
   var searchBox2 = new google.maps.places.SearchBox(input2);
 
   // Bias the SearchBox results towards current map's viewport.
@@ -143,61 +134,6 @@ function initAutocomplete() {
   var markers = [];
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
-  searchBox1.addListener('places_changed', function() {
-    if (mapToggle.classList.contains("hidden")) 
-    {
-      mapToggle.classList.remove("hidden");
-    } 
-
-    var places = searchBox1.getPlaces();
-
-    if (places.length == 0) {
-      return;
-    }
-
-    // Clear out the old markers.
-    markers.forEach(function(marker) {
-      marker.setMap(null);
-    });
-    markers = [];
-
-    // For each place, get the icon, name and location.
-    var bounds = new google.maps.LatLngBounds();
-    places.forEach(function(place) {
-      if (!place.geometry) {
-        console.log("Returned place contains no geometry");
-        return;
-      }
-      var icon = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
-      };
-
-      // Create a marker for each place.
-      markers.push(new google.maps.Marker({
-        map: map,
-        icon: icon,
-        title: place.name,
-        position: place.geometry.location
-      }));
-
-      if (place.geometry.viewport) {
-        // Only geocodes have viewport.
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
-    });
-    map.fitBounds(bounds);
-
-    if (locationButton.classList.contains("hidden")) 
-    {
-      locationButton.classList.remove("hidden");
-    }
-  });
 
   searchBox2.addListener('places_changed', function() {
     if (mapToggle.classList.contains("hidden")) 
