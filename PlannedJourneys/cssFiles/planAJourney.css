@@ -119,6 +119,14 @@ select.form-control > option {
   color: #000;
 }
 
+.fa-question-circle{
+	color: #1281BD;
+}
+
+.faResize{
+	padding: 0px;
+}
+
 @media (max-width: 600px) { /*This is for the mobile version*/
   #map {
   max-height: 400px;
