@@ -145,7 +145,7 @@ select.form-control > option {
     content: attr(data-tooltip);
     display: none;
     position: absolute;
-    background: #000;
+    background: #888888;
     color: #fff;
     padding: 4px 8px;
     font-size: 14px;
