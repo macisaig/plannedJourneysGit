@@ -8,6 +8,12 @@ $('#hourMark').on('keydown keyup', function(e){
     }
 });
 
+// validates text only
+function validateName(txt) 
+{
+   txt.value = txt.value.replace(/[^0-9-'\n\r.]+/g, '');
+}
+
 $('#minuteMark').on('keydown keyup', function(e){
     if ($(this).val() > 60 
         && e.keyCode !== 46 // keycode for delete
@@ -310,7 +316,12 @@ function addToPlan() {
   var hourValue = document.getElementById('hourMark');
   var dayValue = document.getElementById('dayMark');
   var mapToggle = document.getElementById("hideMap");
+  var activityVal = document.getElementById("enterActivity").value;
   var submitValue = false;
+  
+  if (activityVal == "Stay the Night")
+  {
+  }
    
   if ((minuteValue.value.length > 0) || (hourValue.value.length > 0) || (dayValue.value.length > 0))
   {
