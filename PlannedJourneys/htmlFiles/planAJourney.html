@@ -75,7 +75,7 @@
 			</a>
 		</div>
 		<div class="container-fluid text-center form-group collapse" id='collapseDateLocation'>
-			<div class="row">
+			<div class="row container col-centered">
 			  <div class='col-md-6 col-sm-12 col-lg-6'>
 				<h4><strong>Start and End Location</strong><br><small><span class='offColor'>If Start and End locations aren't provided, they'll be based on shortest time</span></small></h4>
 				<div class='col-md-6 col-sm-12 col-lg-6'>
@@ -138,34 +138,34 @@
 		</div>
 	  <br>
     </form>
-    <form>
-      <div class="row">
-    	  <p class="startParagraph" id="secondStartParagraph" align="center"><strong>Plan Your Journey!</strong></p>
-    		<div class='col-md-12 col-sm-12 col-lg-6 createMargins'>
-  			  <h4 class='provideRoom text-center'><strong>Add a Location </strong><span data-tooltip="This is the location of where you'll stay the night or an activity 
-			  (eating, swimming, etc.) that you want to do" data-tooltip-position="bottom"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h4>
-  			  <div class="form-group createMargins">
-  				  <input class="form-control" id="activityLocation" aria-describedby="First Location" placeholder="Location of Activity">
-  			  </div>
+    <div class='limitWidth col-centered'>
+      <form>
+        <div class="row">
+      	  <p class="startParagraph" id="secondStartParagraph" align="center"><strong>Plan Your Journey!</strong></p>
+      		<div class='col-md-12 col-sm-12 col-lg-6 createMargins'>
+    			  <h4 class='provideRoom text-center'><strong>Add a Location </strong><span data-tooltip="This is the location of where you'll stay the night or an activity 
+    		  (eating, swimming, etc.) that you want to do" data-tooltip-position="bottom"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h4>
+    			  <div class="form-group createMargins">
+    				  <input class="form-control" id="activityLocation" aria-describedby="First Location" placeholder="Location of Activity">
+    			  </div>
+          </div>
+          <div class='col-md-12 col-sm-12 col-lg-6 createMargins'>
+    		    <div class="form-group createMargins">
+              <h4 for="activitySelect" class="provideRoom text-center"><strong>Select Activity </strong><span data-tooltip="Select Stay the Night if you plan on staying the night at this location,
+    		 otherwise you can choose an optional activity to help fill out length of time" data-tooltip-position="bottom"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h4>
+              <select class="form-control" id="enterActivity" aria-describedby="activityType">
+                <option>Select Activity</option>
+                <option>Stay the Night</option>
+                <option>------------------</option>
+                <option>Lunch</option>
+                <option>Cruise</option>
+                <option>Golf</option>
+                <option>Climb</option>
+              </select>
+    			  </div>
+    			</div>
         </div>
-        <div class='col-md-12 col-sm-12 col-lg-6 createMargins'>
-			    <div class="form-group createMargins">
-            <h4 for="activitySelect" class="provideRoom text-center"><strong>Select Activity </strong><span data-tooltip="Select Stay the Night if you plan on staying the night at this location,
-			 otherwise you can choose an optional activity to help fill out length of time" data-tooltip-position="bottom"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h4>
-            <select class="form-control" id="enterActivity" aria-describedby="activityType">
-              <option>Select Activity</option>
-              <option>Stay the Night</option>
-              <option>------------------</option>
-              <option>Lunch</option>
-              <option>Cruise</option>
-              <option>Golf</option>
-              <option>Climb</option>
-            </select>
-  			  </div>
-  			</div>
-	    </div>
-	    <div class="row createMargins">
-    		<div class="col-sm-5 col-md-5 col-lg-5 col-centered">
+    		<div class="col-sm-6 col-md-6 col-lg-6 col-centered">
     			<h4 class='provideRoom text-center'><strong>Length of Time</strong><span data-tooltip="Length of Time is the number of days (nights) you'll be sleeping at a location, or the estimated length of time for an activity" data-tooltip-position="bottom"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h4>
     			<div class="form-group createMargins">
     				<div class="col-sm-4 col-md-4 col-lg-4">
@@ -189,21 +189,19 @@
   				</div>
           <div class='text-center' id="errTime"></div>   
   			</div>
-  		</div>
-    </form>
-
-    <div class="row">
-      <div class="col-md-12 text-center"> 
+      </form>
+    </div>
+    <div class="row container col-centered">
+      <div class="col-sm-12 col-md-12 col-lg-12 text-center"> 
         <button type="submit" class="btn btn-primary btn-submitButton submitButton1" id="showMap" onclick="showMap()"><strong>Show/Hide Map</strong></button>
         <button type="submit" class="btn btn-primary btn-submitButton submitButton1 hidden" id="addLocation" onclick="addToPlan()"><strong>Add Location to Plan</strong></button>
       </div>
     </div>
     <br>
-    <div class="mapProject hidden" id="hideMap">
+    <div class="mapProject" id="hideMap">
     	<div id="map"></div>
     </div>
-	
-	  <br><br><br>
+    <br><br><br>
 	
     <footer class="container-fluid text-center">
       <div class="row">
@@ -223,7 +221,7 @@
     		<br>
     		<div class="col-sm-4">
           <h3>Contact Us</h3>
-          <a href="mailto:#" class="mailToFooter"><h4><strong>service@plannedjourneys.com<strong></h4></a>
+          <a href="mailto:#" class="mailToFooter"><h4><strong>service@plannedjourneys.com</strong></h4></a>
         </div>
       </div>
     </footer>
