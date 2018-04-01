@@ -14,199 +14,198 @@
   </head>
 
   <body>
-    
     <div class="wrapper">
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle pull-right" id="accountIcon" data-toggle="collapse" data-target="#myNavbar">
-            <img src="../imageFiles/regularAccountIcon.png">
-          </button>
-          <a class="navbar-brand" href="../../index.html">
-            <div id="branding">
-             <img src="../imageFiles/plannedJourneysLogo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
-            </div>
-          </a>
-        </div>
-        <ul class="nav navbar-nav"> <!-- Displays navbar item to the right -->
-          <li class="dropdown">
-            <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Plan a Journey</strong>
-            <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="planAJourney.html"><span class="dropdownItem"><strong>Plan a Journey</strong></span></a></li>
-              <li><a href="savedTrips.html"><span class="dropdownItem"><strong>Saved Trips</strong></span></a></li>
-              <li><a href="discover.html"><span class="dropdownItem"><strong>Discover</strong></span></a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Locations</strong>
-            <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="exploreALocation.html"><span class="dropdownItem"><strong>Explore a Location</strong></span></a></li>
-              <li><a href="featuredLocations.html"><span class="dropdownItem"><strong>Featured Locations</strong></span></a></li>
-              <li><a href="hottestDestinations.html"><span class="dropdownItem"><strong>Hottest Destinations</strong></span></a></li>
-            </ul>
-          </li>
-          <li><a href="about.html" class="navbar-text"><strong>About</strong></a></li>
-        </ul>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav navbar-right"> <!-- Displays navbar item to the right -->
-            <li><a href="contactUs.html" class="navbar-text"><strong>Contact Us</strong></a></li>
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle pull-right" id="accountIcon" data-toggle="collapse" data-target="#myNavbar">
+              <img src="../imageFiles/regularAccountIcon.png">
+            </button>
+            <a class="navbar-brand" href="../../index.html">
+              <div id="branding">
+               <img src="../imageFiles/plannedJourneysLogo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+              </div>
+            </a>
+          </div>
+          <ul class="nav navbar-nav"> <!-- Displays navbar item to the right -->
             <li class="dropdown">
-              <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>My Account</strong>
+              <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Plan a Journey</strong>
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <button type="button" class="btn btn-firstDropdown" value="Input Button" onclick="location.href = 'login.html';"><input type="image" src="../imageFiles/regularAccountIcon.png" id="regularAccount"/><strong>Log In</strong></button> <!-- Added a button -->
-                <button type="button" class="btn btn-secondDropdown" value="Input Button" onclick="location.href = 'addAccount.html';"><input type="image" src="../imageFiles/addAccountIcon.png" id="accountAdd"/><strong>Sign Up</strong></button> <!-- Added a button -->
+                <li><a href="planAJourney.html"><span class="dropdownItem"><strong>Plan a Journey</strong></span></a></li>
+                <li><a href="savedTrips.html"><span class="dropdownItem"><strong>Saved Trips</strong></span></a></li>
+                <li><a href="discover.html"><span class="dropdownItem"><strong>Discover</strong></span></a></li>
               </ul>
             </li>
+            <li class="dropdown">
+              <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Locations</strong>
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="exploreALocation.html"><span class="dropdownItem"><strong>Explore a Location</strong></span></a></li>
+                <li><a href="featuredLocations.html"><span class="dropdownItem"><strong>Featured Locations</strong></span></a></li>
+                <li><a href="hottestDestinations.html"><span class="dropdownItem"><strong>Hottest Destinations</strong></span></a></li>
+              </ul>
+            </li>
+            <li><a href="about.html" class="navbar-text"><strong>About</strong></a></li>
           </ul>
-        </div>
-      </div>
-    </nav>
-
-	<form class="dataEnter">
-		<div class="text-center leaveMargin"> 
-			<a class="btn btn-primary planJourneyButton" data-toggle="collapse" href="#collapseDateLocation" aria-expanded="false" aria-controls="collapseExample" id="startEndButton">
-			Change Dates / Locations
-			<span class="caret"></span>
-			</a>
-			<a class="btn btn-primary planJourneyButton" data-toggle="collapse" href="#collapseTutorial" aria-expanded="false" aria-controls="collapseExample" id="tutorialButton">
-			Tutorial
-			<span class="caret"></span>
-			</a>
-		</div>
-		<div class="container-fluid text-center form-group collapse" id='collapseDateLocation'>
-			<div class="row container col-centered">
-			  <div class='col-md-6 col-sm-12 col-lg-6'>
-				<h4><strong>Start and End Location</strong><br><small><span class='offColor'>If Start and End locations aren't provided, they'll be based on shortest time</span></small></h4>
-				<div class='col-md-6 col-sm-12 col-lg-6'>
-				  <div class="form-group">
-					<input class="form-control" id="reEnterStartLoc" type="text" aria-describedby="startLoc" placeholder="Enter a Start Location">
-				  </div>
-				</div>
-				<div class='col-md-6 col-sm-12 col-lg-6'>
-				  <div class="form-group">
-					<input class="form-control textInputGroup" id="reEnterEndLoc" type="text" aria-describedby="endLoc" placeholder="Enter a End Location">
-				  </div>
-				</div>
-			  </div>
-			  <div class='col-md-6 col-sm-12 col-lg-6'>
-				<h4><strong>Start and End Date</strong><br><small><span class='offColor'>*The Start and/or End Date must be provided</span></small></h4>
-				<div class='col-md-6 col-sm-12 col-lg-6'>
-				  <div class="form-group">
-					<div class='input-group date' id='reToDate'>
-					  <input type='text' class="form-control" placeholder="MM/DD/YYYY" name='firstDate' id='reToDateValue'/>
-					  <span class="input-group-addon">
-						<span class="glyphicon glyphicon-calendar"></span>
-					  </span>
-					</div>
-				  </div>
-				</div>
-				<div class='col-md-6 col-sm-12 col-lg-6'>
-				  <div class="form-group">
-					<div class='input-group date' id='reFromDate'>
-					  <input type='text' class="form-control" placeholder="MM/DD/YYYY" name='secondDate' id='reFromDateValue'/>
-					  <span class="input-group-addon">
-						<span class="glyphicon glyphicon-calendar textButtonGroup"></span>
-					  </span>
-					</div>
-				  </div>
-				</div>
-			  <div id="reErrDate"></div>   
-			  </div>
-			</div>
-			<div class="col-md-12 text-center"> 
-			  <button type="submit" class="btn btn-primary btn-submitButton submitButton1" id="reSubmitButton2" onClick="return checkDates()"><strong>Add to Plan</strong></button>
-			</div>
-		</div>
-		<div class="container-fluid text-center form-group collapse" id='collapseTutorial'>
-			<div class="col-md-7 col-centered">
-				<br>
-				<p class='lead'>Add Start and End Dates / Locations</p>
-				<p>In order to start creating your plan, click on 'Change Dates / Locations'. If you haven't already, enter at least one Start or End date 
-				(if only a start or end date is entered, the number of travel days will be based off of the number of hours of activities and locations).
-				 If you have a set Start and/or End location, enter that as well, otherwise these locations will be determined based off of the most time efficient trip.</p>
-				<br>
-				<p class='lead'>Add Activities and Locations to Stay</p>
-				<p>This is where you start adding the different elements of your trip. Want to add scuba diving? Perfect; add in the location of the dive, along with either the time it will take to scuba dive OR the fact that you're scuba diving. The scuba diving option will automatically fill in the length of time for the activity. Instead of adding an activity, you can also add a place you'd rather stay the night, and how many nights you'd prefer to stay there. The Length of stay isn't necessary, but if you'd prefer to stay in a certain location for a set amount of nights it's best to put the number of days. If no length of stay is included, it will be computed based on the activities. Once you've added an activity or a place to stay, simply add it to the plan to continue.</p>
-        <br>
-        <p class='lead'>Your Planned Journey</p>
-        <p>Once some activities and locations have started being added, your journey will start being formulated. Within this table you'll have your whole list of activites and locations, along with a rating value of 1-5 on how badly you want this item to happen. Based off of your timeline, activities and locations will be chosen based off of rating, routes, and what's humanly possible to do in your time frame. Once you have all of the activities and locations that you can possibly hope to do, click the Create My Journey in order to run the algorithm and create your journey!</p>
-        <br>
-        <p class='lead'>Congratulations! You have a Journey!</p>
-        <p>Now that you have the journey, feel free to use our website to start booking reservations, or one of our partner sites. And then get out there and have an adventure!</p>
-			</div>
-		</div>
-	  <br>
-    </form>
-    <div class='limitWidth col-centered'>
-      <form>
-        <div class="row">
-      	  <p class="startParagraph" id="secondStartParagraph" align="center"><strong>Plan Your Journey!</strong></p>
-      		<div class='col-md-12 col-sm-12 col-lg-6 createMargins'>
-    			  <h4 class='provideRoom text-center'><strong>Add a Location </strong><span data-tooltip="This is the location of where you'll stay the night or an activity 
-    		  (eating, swimming, etc.) that you want to do" data-tooltip-position="bottom"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h4>
-    			  <div class="form-group createMargins">
-    				  <input class="form-control" id="activityLocation" aria-describedby="First Location" placeholder="Location of Activity">
-    			  </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right"> <!-- Displays navbar item to the right -->
+              <li><a href="contactUs.html" class="navbar-text"><strong>Contact Us</strong></a></li>
+              <li class="dropdown">
+                <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>My Account</strong>
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <button type="button" class="btn btn-firstDropdown" value="Input Button" onclick="location.href = 'login.html';"><input type="image" src="../imageFiles/regularAccountIcon.png" id="regularAccount"/><strong>Log In</strong></button> <!-- Added a button -->
+                  <button type="button" class="btn btn-secondDropdown" value="Input Button" onclick="location.href = 'addAccount.html';"><input type="image" src="../imageFiles/addAccountIcon.png" id="accountAdd"/><strong>Sign Up</strong></button> <!-- Added a button -->
+                </ul>
+              </li>
+            </ul>
           </div>
-          <div class='col-md-12 col-sm-12 col-lg-6 createMargins'>
-    		    <div class="form-group createMargins">
-              <h4 for="activitySelect" class="provideRoom text-center"><strong>Select Activity </strong><span data-tooltip="Select Stay the Night if you plan on staying the night at this location,
-    		 otherwise you can choose an optional activity to help fill out length of time" data-tooltip-position="bottom"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h4>
-              <select class="form-control" id="enterActivity" aria-describedby="activityType">
-                <option>Select Activity</option>
-                <option>Stay the Night</option>
-                <option>------------------</option>
-                <option>Lunch</option>
-                <option>Cruise</option>
-                <option>Golf</option>
-                <option>Climb</option>
-              </select>
-    			  </div>
-    			</div>
         </div>
-    		<div class="col-sm-6 col-md-6 col-lg-6 col-centered">
-    			<h4 class='provideRoom text-center'><strong>Length of Time</strong><span data-tooltip="Length of Time is the number of days (nights) you'll be sleeping at a location, or the estimated length of time for an activity" data-tooltip-position="bottom"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h4>
-    			<div class="form-group createMargins">
-    				<div class="col-sm-4 col-md-4 col-lg-4">
-    					<h4 class='provideRoom text-center timeColor'><strong>Days:</strong></h4>
-    					<div class="row">
-    						<input type="number" name="quantity" class="form-control" id="dayMark" min="1" max="365" onkeyup="validateName(this)" />
-    					</div>
-    				</div>
-    				<div class="col-sm-4 col-md-4 col-lg-4">
-    					<h4 class='provideRoom text-center timeColor'><strong>Hours:</strong></h4>
-    					<div class="row">
-    						<input type="number" name="quantity" class="form-control" id="hourMark" min="0" max="23" onkeyup="validateName(this)" />
-    					</div>
-    				</div>
-    				<div class="col-sm-4 col-md-4 col-lg-4">
-    					<h4 class='provideRoom text-center timeColor'><strong>Minutes:</strong></h4>
-    					<div class="row">
-    						<input type="number" name="quantity" class="form-control" id="minuteMark" min="0" step="15" onkeyup="validateName(this)" />
-    					</div>
-  					</div>
-  				</div>
-          <div class='text-center' id="errTime"></div>   
-  			</div>
-      </form>
-    </div>
-    <div class="row container col-centered">
-      <div class="col-sm-12 col-md-12 col-lg-12 text-center"> 
-        <button type="submit" class="btn btn-primary btn-submitButton submitButton1" id="showMap" onclick="showMap()"><strong>Show/Hide Map</strong></button>
-        <button type="submit" class="btn btn-primary btn-submitButton submitButton1 hidden" id="addLocation" onclick="addToPlan()"><strong>Add Location to Plan</strong></button>
-      </div>
-    </div>
-    <br>
-    <div class="mapProject" id="hideMap">
-    	<div id="map"></div>
-    </div>
-    <br><br><br>
+      </nav>
 
-    <div class="push"></div>
-  </div>
+  	<form class="dataEnter">
+  		<div class="text-center leaveMargin"> 
+  			<a class="btn btn-primary planJourneyButton" data-toggle="collapse" href="#collapseDateLocation" aria-expanded="false" aria-controls="collapseExample" id="startEndButton">
+  			Change Dates / Locations
+  			<span class="caret"></span>
+  			</a>
+  			<a class="btn btn-primary planJourneyButton" data-toggle="collapse" href="#collapseTutorial" aria-expanded="false" aria-controls="collapseExample" id="tutorialButton">
+  			Tutorial
+  			<span class="caret"></span>
+  			</a>
+  		</div>
+  		<div class="container-fluid text-center form-group collapse" id='collapseDateLocation'>
+  			<div class="row container col-centered">
+  			  <div class='col-md-6 col-sm-12 col-lg-6'>
+  				<h4><strong>Start and End Location</strong><br><small><span class='offColor'>If Start and End locations aren't provided, they'll be based on shortest time</span></small></h4>
+  				<div class='col-md-6 col-sm-12 col-lg-6'>
+  				  <div class="form-group">
+  					<input class="form-control" id="reEnterStartLoc" type="text" aria-describedby="startLoc" placeholder="Enter a Start Location">
+  				  </div>
+  				</div>
+  				<div class='col-md-6 col-sm-12 col-lg-6'>
+  				  <div class="form-group">
+  					<input class="form-control textInputGroup" id="reEnterEndLoc" type="text" aria-describedby="endLoc" placeholder="Enter a End Location">
+  				  </div>
+  				</div>
+  			  </div>
+  			  <div class='col-md-6 col-sm-12 col-lg-6'>
+  				<h4><strong>Start and End Date</strong><br><small><span class='offColor'>*The Start and/or End Date must be provided</span></small></h4>
+  				<div class='col-md-6 col-sm-12 col-lg-6'>
+  				  <div class="form-group">
+  					<div class='input-group date' id='reToDate'>
+  					  <input type='text' class="form-control" placeholder="MM/DD/YYYY" name='firstDate' id='reToDateValue'/>
+  					  <span class="input-group-addon">
+  						<span class="glyphicon glyphicon-calendar"></span>
+  					  </span>
+  					</div>
+  				  </div>
+  				</div>
+  				<div class='col-md-6 col-sm-12 col-lg-6'>
+  				  <div class="form-group">
+  					<div class='input-group date' id='reFromDate'>
+  					  <input type='text' class="form-control" placeholder="MM/DD/YYYY" name='secondDate' id='reFromDateValue'/>
+  					  <span class="input-group-addon">
+  						<span class="glyphicon glyphicon-calendar textButtonGroup"></span>
+  					  </span>
+  					</div>
+  				  </div>
+  				</div>
+  			  <div id="reErrDate"></div>   
+  			  </div>
+  			</div>
+  			<div class="col-md-12 text-center"> 
+  			  <button type="submit" class="btn btn-primary btn-submitButton submitButton1" id="reSubmitButton2" onClick="return checkDates()"><strong>Add to Plan</strong></button>
+  			</div>
+  		</div>
+  		<div class="container-fluid text-center form-group collapse" id='collapseTutorial'>
+  			<div class="col-md-7 col-centered">
+  				<br>
+  				<p class='lead'>Add Start and End Dates / Locations</p>
+  				<p>In order to start creating your plan, click on 'Change Dates / Locations'. If you haven't already, enter at least one Start or End date 
+  				(if only a start or end date is entered, the number of travel days will be based off of the number of hours of activities and locations).
+  				 If you have a set Start and/or End location, enter that as well, otherwise these locations will be determined based off of the most time efficient trip.</p>
+  				<br>
+  				<p class='lead'>Add Activities and Locations to Stay</p>
+  				<p>This is where you start adding the different elements of your trip. Want to add scuba diving? Perfect; add in the location of the dive, along with either the time it will take to scuba dive OR the fact that you're scuba diving. The scuba diving option will automatically fill in the length of time for the activity. Instead of adding an activity, you can also add a place you'd rather stay the night, and how many nights you'd prefer to stay there. The Length of stay isn't necessary, but if you'd prefer to stay in a certain location for a set amount of nights it's best to put the number of days. If no length of stay is included, it will be computed based on the activities. Once you've added an activity or a place to stay, simply add it to the plan to continue.</p>
+          <br>
+          <p class='lead'>Your Planned Journey</p>
+          <p>Once some activities and locations have started being added, your journey will start being formulated. Within this table you'll have your whole list of activites and locations, along with a rating value of 1-5 on how badly you want this item to happen. Based off of your timeline, activities and locations will be chosen based off of rating, routes, and what's humanly possible to do in your time frame. Once you have all of the activities and locations that you can possibly hope to do, click the Create My Journey in order to run the algorithm and create your journey!</p>
+          <br>
+          <p class='lead'>Congratulations! You have a Journey!</p>
+          <p>Now that you have the journey, feel free to use our website to start booking reservations, or one of our partner sites. And then get out there and have an adventure!</p>
+  			</div>
+  		</div>
+  	  <br>
+      </form>
+      <div class='limitWidth col-centered'>
+        <form>
+          <div class="row">
+        	  <p class="startParagraph" id="secondStartParagraph" align="center"><strong>Plan Your Journey!</strong></p>
+        		<div class='col-md-12 col-sm-12 col-lg-6 createMargins'>
+      			  <h4 class='provideRoom text-center'><strong>Add a Location </strong><span data-tooltip="This is the location of where you'll stay the night or an activity 
+      		  (eating, swimming, etc.) that you want to do" data-tooltip-position="bottom"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h4>
+      			  <div class="form-group createMargins">
+      				  <input class="form-control" id="activityLocation" aria-describedby="First Location" placeholder="Location of Activity">
+      			  </div>
+            </div>
+            <div class='col-md-12 col-sm-12 col-lg-6 createMargins'>
+      		    <div class="form-group createMargins">
+                <h4 for="activitySelect" class="provideRoom text-center"><strong>Select Activity </strong><span data-tooltip="Select Stay the Night if you plan on staying the night at this location,
+      		 otherwise you can choose an optional activity to help fill out length of time" data-tooltip-position="bottom"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h4>
+                <select class="form-control" id="enterActivity" aria-describedby="activityType">
+                  <option>Select Activity</option>
+                  <option>Stay the Night</option>
+                  <option>------------------</option>
+                  <option>Lunch</option>
+                  <option>Cruise</option>
+                  <option>Golf</option>
+                  <option>Climb</option>
+                </select>
+      			  </div>
+      			</div>
+          </div>
+      		<div class="col-sm-6 col-md-6 col-lg-6 col-centered">
+      			<h4 class='provideRoom text-center'><strong>Length of Time</strong><span data-tooltip="Length of Time is the number of days (nights) you'll be sleeping at a location, or the estimated length of time for an activity" data-tooltip-position="bottom"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h4>
+      			<div class="form-group createMargins">
+      				<div class="col-sm-4 col-md-4 col-lg-4">
+      					<h4 class='provideRoom text-center timeColor'><strong>Days:</strong></h4>
+      					<div class="row">
+      						<input type="number" name="quantity" class="form-control" id="dayMark" min="1" max="365" onkeyup="validateName(this)" />
+      					</div>
+      				</div>
+      				<div class="col-sm-4 col-md-4 col-lg-4">
+      					<h4 class='provideRoom text-center timeColor'><strong>Hours:</strong></h4>
+      					<div class="row">
+      						<input type="number" name="quantity" class="form-control" id="hourMark" min="0" max="23" onkeyup="validateName(this)" />
+      					</div>
+      				</div>
+      				<div class="col-sm-4 col-md-4 col-lg-4">
+      					<h4 class='provideRoom text-center timeColor'><strong>Minutes:</strong></h4>
+      					<div class="row">
+      						<input type="number" name="quantity" class="form-control" id="minuteMark" min="0" step="15" onkeyup="validateName(this)" />
+      					</div>
+    					</div>
+    				</div>
+            <div class='text-center' id="errTime"></div>   
+    			</div>
+        </form>
+      </div>
+      <div class="row container col-centered">
+        <div class="col-sm-12 col-md-12 col-lg-12 text-center"> 
+          <button type="submit" class="btn btn-primary btn-submitButton submitButton1" id="showMap" onclick="showMap()"><strong>Show/Hide Map</strong></button>
+          <button type="submit" class="btn btn-primary btn-submitButton submitButton1 hidden" id="addLocation" onclick="addToPlan()"><strong>Add Location to Plan</strong></button>
+        </div>
+      </div>
+      <br>
+      <div class="mapProject" id="hideMap">
+      	<div id="map"></div>
+      </div>
+      <br><br><br>
+
+      <div class="push"></div>
+    </div>
     <footer class="container-fluid text-center">
       <div class="row">
     		<div class="col-sm-4">

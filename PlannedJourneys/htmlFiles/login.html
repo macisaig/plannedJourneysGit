@@ -11,75 +11,78 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle pull-right" id="accountIcon" data-toggle="collapse" data-target="#myNavbar">
-            <img src="../imageFiles/regularAccountIcon.png">
-          </button>
-          <a class="navbar-brand" href="../../index.html">
-            <div id="branding">
-             <img src="../imageFiles/plannedJourneysLogo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
-            </div>
-          </a>
-        </div>
-        <ul class="nav navbar-nav"> <!-- Displays navbar item to the right -->
-          <li class="dropdown">
-            <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Plan a Journey</strong>
-            <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="planAJourney.html"><span class="dropdownItem"><strong>Plan a Journey</strong></span></a></li>
-              <li><a href="savedTrips.html"><span class="dropdownItem"><strong>Saved Trips</strong></span></a></li>
-              <li><a href="discover.html"><span class="dropdownItem"><strong>Discover</strong></span></a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Locations</strong>
-            <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="exploreALocation.html"><span class="dropdownItem"><strong>Explore a Location</strong></span></a></li>
-              <li><a href="featuredLocations.html"><span class="dropdownItem"><strong>Featured Locations</strong></span></a></li>
-              <li><a href="hottestDestinations.html"><span class="dropdownItem"><strong>Hottest Destinations</strong></span></a></li>
-            </ul>
-          </li>
-          <li><a href="about.html" class="navbar-text"><strong>About</strong></a></li>
-        </ul>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav navbar-right"> <!-- Displays navbar item to the right -->
-            <li><a href="contactUs.html" class="navbar-text"><strong>Contact Us</strong></a></li>
+    <div class="wrapper">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle pull-right" id="accountIcon" data-toggle="collapse" data-target="#myNavbar">
+              <img src="../imageFiles/regularAccountIcon.png">
+            </button>
+            <a class="navbar-brand" href="../../index.html">
+              <div id="branding">
+               <img src="../imageFiles/plannedJourneysLogo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+              </div>
+            </a>
+          </div>
+          <ul class="nav navbar-nav"> <!-- Displays navbar item to the right -->
             <li class="dropdown">
-              <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>My Account</strong>
+              <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Plan a Journey</strong>
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <button type="button" class="btn btn-firstDropdown" value="Input Button" onclick="location.href = 'login.html';"><input type="image" src="../imageFiles/regularAccountIcon.png" id="regularAccount"/><strong>Log In</strong></button> <!-- Added a button -->
-                <button type="button" class="btn btn-secondDropdown" value="Input Button" onclick="location.href = 'addAccount.html';"><input type="image" src="../imageFiles/addAccountIcon.png" id="accountAdd"/><strong>Sign Up</strong></button> <!-- Added a button -->
+                <li><a href="planAJourney.html"><span class="dropdownItem"><strong>Plan a Journey</strong></span></a></li>
+                <li><a href="savedTrips.html"><span class="dropdownItem"><strong>Saved Trips</strong></span></a></li>
+                <li><a href="discover.html"><span class="dropdownItem"><strong>Discover</strong></span></a></li>
               </ul>
             </li>
+            <li class="dropdown">
+              <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Locations</strong>
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="exploreALocation.html"><span class="dropdownItem"><strong>Explore a Location</strong></span></a></li>
+                <li><a href="featuredLocations.html"><span class="dropdownItem"><strong>Featured Locations</strong></span></a></li>
+                <li><a href="hottestDestinations.html"><span class="dropdownItem"><strong>Hottest Destinations</strong></span></a></li>
+              </ul>
+            </li>
+            <li><a href="about.html" class="navbar-text"><strong>About</strong></a></li>
           </ul>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right"> <!-- Displays navbar item to the right -->
+              <li><a href="contactUs.html" class="navbar-text"><strong>Contact Us</strong></a></li>
+              <li class="dropdown">
+                <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>My Account</strong>
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <button type="button" class="btn btn-firstDropdown" value="Input Button" onclick="location.href = 'login.html';"><input type="image" src="../imageFiles/regularAccountIcon.png" id="regularAccount"/><strong>Log In</strong></button> <!-- Added a button -->
+                  <button type="button" class="btn btn-secondDropdown" value="Input Button" onclick="location.href = 'addAccount.html';"><input type="image" src="../imageFiles/addAccountIcon.png" id="accountAdd"/><strong>Sign Up</strong></button> <!-- Added a button -->
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
+
+      <div class="text-center centerForm">
+        <form class="form-signin">
+          <img class="mb-4" src="../imageFiles/plannedJourneysLogoMini.jpg" alt="" width="72" height="72">
+          <h1 class="h3 mb-3 font-weight-normal">Please Log In</h1>
+          <label for="inputEmail" class="sr-only">Email or Username</label>
+          <input type="text" id="inputText" class="form-control" placeholder="Email or Username" required autofocus>
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me" class="rememberMe"> Remember me
+            </label>
+          </div>
+          <button class="btn btn-firstDropdown" type="submit">Sign in</button>
+          <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+          <a href="javascript:;" class="forgotPassword">Forgot your password?</a>
+        </form>
       </div>
-    </nav>
 
-    <div class="text-center centerForm">
-      <form class="form-signin">
-        <img class="mb-4" src="../imageFiles/plannedJourneysLogoMini.jpg" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Please Log In</h1>
-        <label for="inputEmail" class="sr-only">Email or Username</label>
-        <input type="text" id="inputText" class="form-control" placeholder="Email or Username" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me" class="rememberMe"> Remember me
-          </label>
-        </div>
-        <button class="btn btn-firstDropdown" type="submit">Sign in</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
-        <a href="javascript:;" class="forgotPassword">Forgot your password?</a>
-      </form>
+  	  <br><br><br>
+      <div class="push"></div>
     </div>
-
-	  <br><br><br>
 	
     <footer class="container-fluid text-center">
       <div class="row">
