@@ -10,11 +10,11 @@ html, body{
 
   /* Equal to height of footer */
   /* But also accounting for potential margin-bottom of last child */
-  margin-bottom: -226px;
+  margin-bottom: -50px;
 }
 .footer,
 .push {
-  height: 226px;
+  height: 50px;
 }
 
 h4{
@@ -254,6 +254,7 @@ footer{
 
 footer h4{
 	margin: 0%;
+  bottom: 0px;
 }
 
 .fa{
@@ -267,13 +268,12 @@ footer h4{
 	text-decoration: none;
 }
 
-.mailToFooter{
+.mailToFooter h4{
   color: #FFF;
-  font-size: 30px;
 }
 
-.mailToFooter:hover{
-  color: #777;
+.mailToFooter h4:hover{
+  color: #444;
   text-decoration: none;
 }
 
@@ -461,6 +461,10 @@ small {
 
   .beginningInput{
   font: 13px/1.5 Arial, Helvetica,sans-serif; /*Determines the text*/
+  }
+  
+  .mailToFooter h4{
+    font-size: 15px;
   }
 }
 
