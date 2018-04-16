@@ -70,10 +70,10 @@
   			Change Dates / Locations
   			<span class="caret"></span>
   			</a>
-  			<a class="btn btn-primary planJourneyButton" data-toggle="collapse" href="#collapseTutorial" aria-expanded="false" aria-controls="collapseExample" id="tutorialButton">
+  			<!-- <a class="btn btn-primary planJourneyButton" data-toggle="collapse" href="#collapseTutorial" aria-expanded="false" aria-controls="collapseExample" id="tutorialButton">
   			Tutorial
   			<span class="caret"></span>
-  			</a>
+  			</a> -->
   		</div>
   		<div class="container-fluid text-center form-group collapse" id='collapseDateLocation'>
   			<div class="row container col-centered">
@@ -119,7 +119,7 @@
   			  <button type="submit" class="btn btn-primary btn-submitButton submitButton1" id="reSubmitButton2" onClick="return checkDates()"><strong>Add to Plan</strong></button>
   			</div>
   		</div>
-  		<div class="container-fluid text-center form-group collapse" id='collapseTutorial'>
+  		<!-- <div class="container-fluid text-center form-group collapse" id='collapseTutorial'>
   			<div class="col-md-7 col-centered">
   				<br>
   				<p class='lead'>Add Start and End Dates / Locations</p>
@@ -136,10 +136,31 @@
           <p class='lead'>Congratulations! You have a Journey!</p>
           <p>Now that you have the journey, feel free to use our website to start booking reservations, or one of our partner sites. And then get out there and have an adventure!</p>
   			</div>
-  		</div>
+  		</div> -->
   	  <br>
-      </form>
-      <div class='limitWidth col-centered'>
+    </form>
+    <div class='limitWidth col-centered'>
+      <p class="startParagraph" id="secondStartParagraph" align="center"><strong>Plan Your Journey!</strong></p>
+      <div class='text-center'>
+        <a class="btn btn-primary planJourneyButton" data-toggle="collapse" href="" aria-expanded="false" aria-controls="collapseExpand" id="destinationCol">
+          Add a Destination
+          <button type="submit" class="hidden" id="showMap" onclick="showMap()"></button>
+          <br>
+          <img src="../imageFiles/destinationImage1.jpeg" class="icon2">
+        </a>
+        <a class="btn btn-primary planJourneyButton" data-toggle="collapse" href="" aria-expanded="false" aria-controls="collapseExpand" id="activityCol">
+          Add a Activity
+          <br>
+          <img src="../imageFiles/activityImage.jpeg" class="icon2">
+        </a>
+        <a class="btn btn-primary planJourneyButton" data-toggle="collapse" href="" aria-expanded="false" aria-controls="collapseExpand" id="foodCol">
+          Add a Meal
+          <br>
+          <img src="../imageFiles/foodImage.jpeg" class="icon2">
+        </a>
+      </div>
+    </div>
+      <div class='limitWidth col-centered hidden'>
         <form>
           <div class="row">
         	  <p class="startParagraph" id="secondStartParagraph" align="center"><strong>Plan Your Journey!</strong></p>

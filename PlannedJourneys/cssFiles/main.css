@@ -282,6 +282,10 @@ footer h4{
 	margin: 7% auto; /*1% margin & auto to left/right*/
 }
 
+.icon2 { /*# is for id*/
+  max-width: 250px; /*Icons can only be 200 icons each*/
+}
+
 #inputText{
   width: 300px;
   height: 40px;
@@ -397,6 +401,12 @@ small {
 }
 .jumbotron small {
   color: #FFF;
+}
+
+@media (max-width: 845px){
+  .icon2{
+    max-width: 200px;
+  }
 }
 
 @media (max-width: 767px) { /*This is for the mobile version*/
