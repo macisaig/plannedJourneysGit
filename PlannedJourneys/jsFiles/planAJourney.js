@@ -366,3 +366,119 @@ function showMap() {
     mapToggle.classList.add("hidden");
   }
 }
+
+function displayDestination() {
+  var picture = document.getElementById("pictureToggle");
+  var destination = document.getElementById("destinationToggle");
+  var activity = document.getElementById("activityToggle");
+  var food = document.getElementById("foodToggle");
+  var back = document.getElementById("backToggle");
+
+  if (!picture.classList.contains("hidden")) 
+  {
+    picture.classList.add("hidden");
+  }
+  if (!activity.classList.contains("hidden")) 
+  {
+    activity.classList.add("hidden");
+  }
+  if (!food.classList.contains("hidden")) 
+  {
+    food.classList.add("hidden");
+  }
+  if (destination.classList.contains("hidden")) 
+  {
+    destination.classList.remove("hidden");
+  } 
+  if (back.classList.contains("hidden")) 
+  {
+    back.classList.remove("hidden");
+  }
+}
+
+function displayActivity() {
+  var picture = document.getElementById("pictureToggle");
+  var destination = document.getElementById("destinationToggle");
+  var activity = document.getElementById("activityToggle");
+  var food = document.getElementById("foodToggle");
+  var back = document.getElementById("backToggle");
+
+  if (!picture.classList.contains("hidden")) 
+  {
+    picture.classList.add("hidden");
+  }
+  if (!destination.classList.contains("hidden")) 
+  {
+    destination.classList.add("hidden");
+  }
+  if (!food.classList.contains("hidden")) 
+  {
+    food.classList.add("hidden");
+  }
+  if (activity.classList.contains("hidden")) 
+  {
+    activity.classList.remove("hidden");
+  } 
+  if (back.classList.contains("hidden")) 
+  {
+    back.classList.remove("hidden");
+  }
+}
+
+function displayFood() {
+  var picture = document.getElementById("pictureToggle");
+  var destination = document.getElementById("destinationToggle");
+  var activity = document.getElementById("activityToggle");
+  var food = document.getElementById("foodToggle");
+  var back = document.getElementById("backToggle");
+
+  if (!picture.classList.contains("hidden")) 
+  {
+    picture.classList.add("hidden");
+  }
+  if (!activity.classList.contains("hidden")) 
+  {
+    activity.classList.add("hidden");
+  }
+  if (!destination.classList.contains("hidden")) 
+  {
+    destination.classList.add("hidden");
+  }
+  if (food.classList.contains("hidden")) 
+  {
+    food.classList.remove("hidden");
+  } 
+  if (back.classList.contains("hidden")) 
+  {
+    back.classList.remove("hidden");
+  }
+}
+
+function displayPicture() {
+  var picture = document.getElementById("pictureToggle");
+  var destination = document.getElementById("destinationToggle");
+  var activity = document.getElementById("activityToggle");
+  var food = document.getElementById("foodToggle");
+  var back = document.getElementById("backToggle");
+
+  if (picture.classList.contains("hidden")) 
+  {
+    picture.classList.remove("hidden");
+  }
+  if (!activity.classList.contains("hidden")) 
+  {
+    activity.classList.add("hidden");
+  }
+  if (!destination.classList.contains("hidden")) 
+  {
+    destination.classList.add("hidden");
+  }
+  if (!food.classList.contains("hidden")) 
+  {
+    food.classList.add("hidden");
+  } 
+  if (!back.classList.contains("hidden")) 
+  {
+    back.classList.add("hidden");
+  }
+}
