@@ -460,6 +460,7 @@ function displayPicture() {
   var activity = document.getElementById("activityToggle");
   var food = document.getElementById("foodToggle");
   var back = document.getElementById("backToggle");
+  var location = document.getElementById("addLocation");
 
   if (picture.classList.contains("hidden")) 
   {
@@ -480,5 +481,9 @@ function displayPicture() {
   if (!back.classList.contains("hidden")) 
   {
     back.classList.add("hidden");
+  }
+  if (!location.classList.contains("hidden")) 
+  {
+    location.classList.add("hidden");
   }
 }
