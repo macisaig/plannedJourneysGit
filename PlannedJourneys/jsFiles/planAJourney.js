@@ -7,41 +7,11 @@ function tableFunction() {
     cell2.innerHTML = "NEW CELL2";
 }
 
-$('#hourMark').on('keydown keyup', function(e){
-    if ($(this).val() > 23 
-        && e.keyCode !== 46 // keycode for delete
-        && e.keyCode !== 8 // keycode for backspace
-       ) {
-       e.preventDefault();
-       $(this).val(23);
-    }
-});
-
 // validates text only
 function validateName(txt) 
 {
    txt.value = txt.value.replace(/[^0-9-'\n\r.]+/g, '');
 }
-
-$('#minuteMark').on('keydown keyup', function(e){
-    if ($(this).val() > 60 
-        && e.keyCode !== 46 // keycode for delete
-        && e.keyCode !== 8 // keycode for backspace
-       ) {
-       e.preventDefault();
-       $(this).val(60);
-    }
-});
-
-$('#dayMark').on('keydown keyup', function(e){
-    if ($(this).val() > 999 
-        && e.keyCode !== 46 // keycode for delete
-        && e.keyCode !== 8 // keycode for backspace
-       ) {
-       e.preventDefault();
-       $(this).val(999);
-    }
-});
 
 $(function () {
   var selectElement = $('select.form-control');
@@ -81,6 +51,22 @@ $(function () {
     });
 });
 
+$(function(){
+  var $day = $(".dayPick");
+  for(i=0;i<=100;i++){
+    $day.append($('<option></option>').val(i).html(i))
+  }
+  var $hour = $(".hourPick");
+  for(i=0;i<24;i++){
+    $hour.append($('<option></option>').val(i).html(i))
+  }
+  var $minute = $(".minutePick");
+  for(i=0;i<=4;i++){
+    x = i*15;
+    $minute.append($('<option></option>').val(i).html(x))
+  }
+});
+
 function checkDates()
  {
    var toDate = document.getElementById('reToDateValue');
@@ -118,6 +104,15 @@ function initAutocomplete() {
   var mapToggle = document.getElementById("hideMap");
 
   // Create the search box and link it to the UI element.
+  var input1 = document.getElementById('destinationLocation');
+  var searchBox1 = new google.maps.places.SearchBox(input1);
+
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener('bounds_changed', function() {
+    searchBox1.setBounds(map.getBounds());
+  });
+
+  // Create the search box and link it to the UI element.
   var input2 = document.getElementById('activityLocation');
   var searchBox2 = new google.maps.places.SearchBox(input2);
 
@@ -149,6 +144,62 @@ function initAutocomplete() {
   var markers = [];
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
+
+  searchBox1.addListener('places_changed', function() {
+    if (mapToggle.classList.contains("hidden")) 
+    {
+      mapToggle.classList.remove("hidden");
+    } 
+
+    var places = searchBox1.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // Clear out the old markers.
+    markers.forEach(function(marker) {
+      marker.setMap(null);
+    });
+    markers = [];
+
+    // For each place, get the icon, name and location.
+    var bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+      if (!place.geometry) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+      var icon = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+      };
+
+      // Create a marker for each place.
+      markers.push(new google.maps.Marker({
+        map: map,
+        icon: icon,
+        title: place.name,
+        position: place.geometry.location
+      }));
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
+
+    if (locationButton.classList.contains("hidden")) 
+    {
+      locationButton.classList.remove("hidden");
+    } 
+  });
 
   searchBox2.addListener('places_changed', function() {
     if (mapToggle.classList.contains("hidden")) 
@@ -373,6 +424,7 @@ function displayDestination() {
   var activity = document.getElementById("activityToggle");
   var food = document.getElementById("foodToggle");
   var back = document.getElementById("backToggle");
+  var time = document.getElementById("timeToggle");
 
   if (!picture.classList.contains("hidden")) 
   {
@@ -394,6 +446,10 @@ function displayDestination() {
   {
     back.classList.remove("hidden");
   }
+  if (time.classList.contains("hidden")) 
+  {
+    time.classList.remove("hidden");
+  }
 }
 
 function displayActivity() {
@@ -402,6 +458,7 @@ function displayActivity() {
   var activity = document.getElementById("activityToggle");
   var food = document.getElementById("foodToggle");
   var back = document.getElementById("backToggle");
+  var time = document.getElementById("timeToggle");
 
   if (!picture.classList.contains("hidden")) 
   {
@@ -423,6 +480,10 @@ function displayActivity() {
   {
     back.classList.remove("hidden");
   }
+  if (time.classList.contains("hidden")) 
+  {
+    time.classList.remove("hidden");
+  }
 }
 
 function displayFood() {
@@ -431,6 +492,7 @@ function displayFood() {
   var activity = document.getElementById("activityToggle");
   var food = document.getElementById("foodToggle");
   var back = document.getElementById("backToggle");
+  var time = document.getElementById("timeToggle");
 
   if (!picture.classList.contains("hidden")) 
   {
@@ -452,6 +514,10 @@ function displayFood() {
   {
     back.classList.remove("hidden");
   }
+  if (time.classList.contains("hidden")) 
+  {
+    time.classList.remove("hidden");
+  }
 }
 
 function displayPicture() {
@@ -461,6 +527,7 @@ function displayPicture() {
   var food = document.getElementById("foodToggle");
   var back = document.getElementById("backToggle");
   var location = document.getElementById("addLocation");
+  var time = document.getElementById("timeToggle");
 
   if (picture.classList.contains("hidden")) 
   {
@@ -485,5 +552,9 @@ function displayPicture() {
   if (!location.classList.contains("hidden")) 
   {
     location.classList.add("hidden");
+  }
+  if (!time.classList.contains("hidden")) 
+  {
+    time.classList.add("hidden");
   }
 }

@@ -1,3 +1,7 @@
+.numberWidth{
+  padding: 5px;
+}
+
 .limitWidth{
   max-width: 1700px;
 }
