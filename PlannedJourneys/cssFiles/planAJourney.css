@@ -1,9 +1,19 @@
+col-xs-4{
+  margin: auto;
+  float: none;
+}
+
+
 .numberWidth{
   padding: 5px;
 }
 
 .limitWidth{
   max-width: 1700px;
+}
+
+.numWidth{
+  width: 120px;
 }
 
 /* Always set the map height explicitly to define the size of the div

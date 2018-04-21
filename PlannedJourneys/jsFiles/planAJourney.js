@@ -139,6 +139,15 @@ function initAutocomplete() {
     searchBox4.setBounds(map.getBounds());
   });
 
+  // Create the search box and link it to the UI element.
+  var input5 = document.getElementById('foodLocation');
+  var searchBox5 = new google.maps.places.SearchBox(input5);
+
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener('bounds_changed', function() {
+    searchBox5.setBounds(map.getBounds());
+  });
+
   var locationButton = document.getElementById("addLocation");
 
   var markers = [];
@@ -320,6 +329,62 @@ function initAutocomplete() {
     } 
 
     var places = searchBox4.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // Clear out the old markers.
+    markers.forEach(function(marker) {
+      marker.setMap(null);
+    });
+    markers = [];
+
+    // For each place, get the icon, name and location.
+    var bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+      if (!place.geometry) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+      var icon = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+      };
+
+      // Create a marker for each place.
+      markers.push(new google.maps.Marker({
+        map: map,
+        icon: icon,
+        title: place.name,
+        position: place.geometry.location
+      }));
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
+
+    if (locationButton.classList.contains("hidden")) 
+    {
+      locationButton.classList.remove("hidden");
+    } 
+  });
+
+  searchBox5.addListener('places_changed', function() {
+    if (mapToggle.classList.contains("hidden")) 
+    {
+      mapToggle.classList.remove("hidden");
+    } 
+
+    var places = searchBox5.getPlaces();
 
     if (places.length == 0) {
       return;
