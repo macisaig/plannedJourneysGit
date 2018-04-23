@@ -31,6 +31,31 @@ col-xs-4{
   margin: auto;
 }
 
+.iw_table_row {
+  height: 18px;
+}
+.iw_attribute_name {
+  font-weight: bold;
+  text-align: right;
+}
+.iw_table_icon {
+  text-align: right;
+}
+#resultsTable {
+  border-collapse: collapse;
+  width: 240px;
+}
+#listing {
+  position: absolute;
+  width: 200px;
+  height: 470px;
+  overflow: auto;
+  left: 442px;
+  top: 0px;
+  cursor: pointer;
+  overflow-x: hidden;
+}
+
 .createMargins{
   /*margin: 10px;*/
   padding: 5px 10px 5px 10px;
