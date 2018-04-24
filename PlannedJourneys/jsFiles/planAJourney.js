@@ -219,229 +219,229 @@ function initAutocomplete() {
     } 
   });
 
-  searchBox2.addListener('places_changed', function() {
-    if (mapToggle.classList.contains("hidden")) 
-    {
-      mapToggle.classList.remove("hidden");
-    } 
+  // searchBox2.addListener('places_changed', function() {
+  //   if (mapToggle.classList.contains("hidden")) 
+  //   {
+  //     mapToggle.classList.remove("hidden");
+  //   } 
 
-    var places = searchBox2.getPlaces();
+  //   var places = searchBox2.getPlaces();
 
-    if (places.length == 0) {
-      return;
-    }
+  //   if (places.length == 0) {
+  //     return;
+  //   }
 
-    // Clear out the old markers.
-    markers.forEach(function(marker) {
-      marker.setMap(null);
-    });
-    markers = [];
+  //   // Clear out the old markers.
+  //   markers.forEach(function(marker) {
+  //     marker.setMap(null);
+  //   });
+  //   markers = [];
 
-    // For each place, get the icon, name and location.
-    var bounds = new google.maps.LatLngBounds();
-    places.forEach(function(place) {
-      if (!place.geometry) {
-        console.log("Returned place contains no geometry");
-        return;
-      }
-      var icon = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
-      };
+  //   // For each place, get the icon, name and location.
+  //   var bounds = new google.maps.LatLngBounds();
+  //   places.forEach(function(place) {
+  //     if (!place.geometry) {
+  //       console.log("Returned place contains no geometry");
+  //       return;
+  //     }
+  //     var icon = {
+  //       url: place.icon,
+  //       size: new google.maps.Size(71, 71),
+  //       origin: new google.maps.Point(0, 0),
+  //       anchor: new google.maps.Point(17, 34),
+  //       scaledSize: new google.maps.Size(25, 25)
+  //     };
 
-      // Create a marker for each place.
-      markers.push(new google.maps.Marker({
-        map: map,
-        icon: icon,
-        title: place.name,
-        position: place.geometry.location
-      }));
+  //     // Create a marker for each place.
+  //     markers.push(new google.maps.Marker({
+  //       map: map,
+  //       icon: icon,
+  //       title: place.name,
+  //       position: place.geometry.location
+  //     }));
 
-      if (place.geometry.viewport) {
-        // Only geocodes have viewport.
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
-    });
-    map.fitBounds(bounds);
+  //     if (place.geometry.viewport) {
+  //       // Only geocodes have viewport.
+  //       bounds.union(place.geometry.viewport);
+  //     } else {
+  //       bounds.extend(place.geometry.location);
+  //     }
+  //   });
+  //   map.fitBounds(bounds);
 
-    if (locationButton.classList.contains("hidden")) 
-    {
-      locationButton.classList.remove("hidden");
-    } 
-  });
+  //   if (locationButton.classList.contains("hidden")) 
+  //   {
+  //     locationButton.classList.remove("hidden");
+  //   } 
+  // });
 
-  searchBox3.addListener('places_changed', function() {
-    if (mapToggle.classList.contains("hidden")) 
-    {
-      mapToggle.classList.remove("hidden");
-    } 
+  // searchBox3.addListener('places_changed', function() {
+  //   if (mapToggle.classList.contains("hidden")) 
+  //   {
+  //     mapToggle.classList.remove("hidden");
+  //   } 
 
-    var places = searchBox3.getPlaces();
+  //   var places = searchBox3.getPlaces();
 
-    if (places.length == 0) {
-      return;
-    }
+  //   if (places.length == 0) {
+  //     return;
+  //   }
 
-    // Clear out the old markers.
-    markers.forEach(function(marker) {
-      marker.setMap(null);
-    });
-    markers = [];
+  //   // Clear out the old markers.
+  //   markers.forEach(function(marker) {
+  //     marker.setMap(null);
+  //   });
+  //   markers = [];
 
-    // For each place, get the icon, name and location.
-    var bounds = new google.maps.LatLngBounds();
-    places.forEach(function(place) {
-      if (!place.geometry) {
-        console.log("Returned place contains no geometry");
-        return;
-      }
-      var icon = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
-      };
+  //   // For each place, get the icon, name and location.
+  //   var bounds = new google.maps.LatLngBounds();
+  //   places.forEach(function(place) {
+  //     if (!place.geometry) {
+  //       console.log("Returned place contains no geometry");
+  //       return;
+  //     }
+  //     var icon = {
+  //       url: place.icon,
+  //       size: new google.maps.Size(71, 71),
+  //       origin: new google.maps.Point(0, 0),
+  //       anchor: new google.maps.Point(17, 34),
+  //       scaledSize: new google.maps.Size(25, 25)
+  //     };
 
-      // Create a marker for each place.
-      markers.push(new google.maps.Marker({
-        map: map,
-        icon: icon,
-        title: place.name,
-        position: place.geometry.location
-      }));
+  //     // Create a marker for each place.
+  //     markers.push(new google.maps.Marker({
+  //       map: map,
+  //       icon: icon,
+  //       title: place.name,
+  //       position: place.geometry.location
+  //     }));
 
-      if (place.geometry.viewport) {
-        // Only geocodes have viewport.
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
-    });
-    map.fitBounds(bounds);
+  //     if (place.geometry.viewport) {
+  //       // Only geocodes have viewport.
+  //       bounds.union(place.geometry.viewport);
+  //     } else {
+  //       bounds.extend(place.geometry.location);
+  //     }
+  //   });
+  //   map.fitBounds(bounds);
 
-    if (locationButton.classList.contains("hidden")) 
-    {
-      locationButton.classList.remove("hidden");
-    } 
-  });
+  //   if (locationButton.classList.contains("hidden")) 
+  //   {
+  //     locationButton.classList.remove("hidden");
+  //   } 
+  // });
 
-  searchBox4.addListener('places_changed', function() {
-    if (mapToggle.classList.contains("hidden")) 
-    {
-      mapToggle.classList.remove("hidden");
-    } 
+  // searchBox4.addListener('places_changed', function() {
+  //   if (mapToggle.classList.contains("hidden")) 
+  //   {
+  //     mapToggle.classList.remove("hidden");
+  //   } 
 
-    var places = searchBox4.getPlaces();
+  //   var places = searchBox4.getPlaces();
 
-    if (places.length == 0) {
-      return;
-    }
+  //   if (places.length == 0) {
+  //     return;
+  //   }
 
-    // Clear out the old markers.
-    markers.forEach(function(marker) {
-      marker.setMap(null);
-    });
-    markers = [];
+  //   // Clear out the old markers.
+  //   markers.forEach(function(marker) {
+  //     marker.setMap(null);
+  //   });
+  //   markers = [];
 
-    // For each place, get the icon, name and location.
-    var bounds = new google.maps.LatLngBounds();
-    places.forEach(function(place) {
-      if (!place.geometry) {
-        console.log("Returned place contains no geometry");
-        return;
-      }
-      var icon = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
-      };
+  //   // For each place, get the icon, name and location.
+  //   var bounds = new google.maps.LatLngBounds();
+  //   places.forEach(function(place) {
+  //     if (!place.geometry) {
+  //       console.log("Returned place contains no geometry");
+  //       return;
+  //     }
+  //     var icon = {
+  //       url: place.icon,
+  //       size: new google.maps.Size(71, 71),
+  //       origin: new google.maps.Point(0, 0),
+  //       anchor: new google.maps.Point(17, 34),
+  //       scaledSize: new google.maps.Size(25, 25)
+  //     };
 
-      // Create a marker for each place.
-      markers.push(new google.maps.Marker({
-        map: map,
-        icon: icon,
-        title: place.name,
-        position: place.geometry.location
-      }));
+  //     // Create a marker for each place.
+  //     markers.push(new google.maps.Marker({
+  //       map: map,
+  //       icon: icon,
+  //       title: place.name,
+  //       position: place.geometry.location
+  //     }));
 
-      if (place.geometry.viewport) {
-        // Only geocodes have viewport.
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
-    });
-    map.fitBounds(bounds);
+  //     if (place.geometry.viewport) {
+  //       // Only geocodes have viewport.
+  //       bounds.union(place.geometry.viewport);
+  //     } else {
+  //       bounds.extend(place.geometry.location);
+  //     }
+  //   });
+  //   map.fitBounds(bounds);
 
-    if (locationButton.classList.contains("hidden")) 
-    {
-      locationButton.classList.remove("hidden");
-    } 
-  });
+  //   if (locationButton.classList.contains("hidden")) 
+  //   {
+  //     locationButton.classList.remove("hidden");
+  //   } 
+  // });
 
-  searchBox5.addListener('places_changed', function() {
-    if (mapToggle.classList.contains("hidden")) 
-    {
-      mapToggle.classList.remove("hidden");
-    } 
+  // searchBox5.addListener('places_changed', function() {
+  //   if (mapToggle.classList.contains("hidden")) 
+  //   {
+  //     mapToggle.classList.remove("hidden");
+  //   } 
 
-    var places = searchBox5.getPlaces();
+  //   var places = searchBox5.getPlaces();
 
-    if (places.length == 0) {
-      return;
-    }
+  //   if (places.length == 0) {
+  //     return;
+  //   }
 
-    // Clear out the old markers.
-    markers.forEach(function(marker) {
-      marker.setMap(null);
-    });
-    markers = [];
+  //   // Clear out the old markers.
+  //   markers.forEach(function(marker) {
+  //     marker.setMap(null);
+  //   });
+  //   markers = [];
 
-    // For each place, get the icon, name and location.
-    var bounds = new google.maps.LatLngBounds();
-    places.forEach(function(place) {
-      if (!place.geometry) {
-        console.log("Returned place contains no geometry");
-        return;
-      }
-      var icon = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
-      };
+  //   // For each place, get the icon, name and location.
+  //   var bounds = new google.maps.LatLngBounds();
+  //   places.forEach(function(place) {
+  //     if (!place.geometry) {
+  //       console.log("Returned place contains no geometry");
+  //       return;
+  //     }
+  //     var icon = {
+  //       url: place.icon,
+  //       size: new google.maps.Size(71, 71),
+  //       origin: new google.maps.Point(0, 0),
+  //       anchor: new google.maps.Point(17, 34),
+  //       scaledSize: new google.maps.Size(25, 25)
+  //     };
 
-      // Create a marker for each place.
-      markers.push(new google.maps.Marker({
-        map: map,
-        icon: icon,
-        title: place.name,
-        position: place.geometry.location
-      }));
+  //     // Create a marker for each place.
+  //     markers.push(new google.maps.Marker({
+  //       map: map,
+  //       icon: icon,
+  //       title: place.name,
+  //       position: place.geometry.location
+  //     }));
 
-      if (place.geometry.viewport) {
-        // Only geocodes have viewport.
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
-    });
-    map.fitBounds(bounds);
+  //     if (place.geometry.viewport) {
+  //       // Only geocodes have viewport.
+  //       bounds.union(place.geometry.viewport);
+  //     } else {
+  //       bounds.extend(place.geometry.location);
+  //     }
+  //   });
+  //   map.fitBounds(bounds);
 
-    if (locationButton.classList.contains("hidden")) 
-    {
-      locationButton.classList.remove("hidden");
-    } 
-  });
+  //   if (locationButton.classList.contains("hidden")) 
+  //   {
+  //     locationButton.classList.remove("hidden");
+  //   } 
+  // });
 }
 
 function showInfoWindow() {
