@@ -93,6 +93,7 @@ function checkDates()
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+var infoWindow;
 
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -101,7 +102,7 @@ function initAutocomplete() {
     mapTypeId: 'roadmap'
   });
 
-  var infoWindow = new google.maps.InfoWindow({
+  infoWindow = new google.maps.InfoWindow({
     content: document.getElementById('info-content')
   });
 
@@ -153,6 +154,7 @@ function initAutocomplete() {
   var markers = [];
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
+  var results = new google.maps.places.PlacesService(map);
 
   searchBox1.addListener('places_changed', function() {
     places=searchBox1.getPlaces();
@@ -162,7 +164,7 @@ function initAutocomplete() {
     });
     markers = [];
 
-    placesChanged(places, markers, map);
+    placesChanged(places, markers, map, results);
   });
 
   searchBox2.addListener('places_changed', function() {
@@ -173,7 +175,7 @@ function initAutocomplete() {
     });
     markers = [];
 
-    placesChanged(places, markers, map);
+    placesChanged(places, markers, map, results);
   });
 
   searchBox3.addListener('places_changed', function() {
@@ -184,7 +186,7 @@ function initAutocomplete() {
     });
     markers = [];
 
-    placesChanged(places, markers, map);
+    placesChanged(places, markers, map, results);
   });
 
   searchBox4.addListener('places_changed', function() {
@@ -194,8 +196,9 @@ function initAutocomplete() {
       marker.setMap(null);
     });
     markers = [];
+    clearResults();
 
-    placesChanged(places, markers, map);
+    placesChanged(places, markers, map, results);
   });
 
   searchBox5.addListener('places_changed', function() {
@@ -206,14 +209,15 @@ function initAutocomplete() {
     });
     markers = [];
 
-    placesChanged(places, markers, map);
+    placesChanged(places, markers, map, results);
   });
 }
 
-function placesChanged(places, markers, map)
+function placesChanged(places, markers, map, results)
 {
   var locationButton = document.getElementById("addLocation");
   var mapToggle = document.getElementById("hideMap");
+  var i = 0;
 
   if (mapToggle.classList.contains("hidden")) 
   {
@@ -240,15 +244,15 @@ function placesChanged(places, markers, map)
     };
 
     // Create a marker for each place.
-    markers.push(new google.maps.Marker({
+    markers[i] = new google.maps.Marker({
       map: map,
       icon: icon,
       title: place.name,
       position: place.geometry.location
-    }));
+    });
+    markers[i].placeResult = place;
 
-    markers.placeResult = place;
-    google.maps.event.addListener(markers, 'click', showInfoWindow);
+    google.maps.event.addListener(markers[i], 'click', showInfoWindow(map, markers[i], results, place));
 
     if (place.geometry.viewport) {
       // Only geocodes have viewport.
@@ -256,6 +260,7 @@ function placesChanged(places, markers, map)
     } else {
       bounds.extend(place.geometry.location);
     }
+    i++;
   });
   map.fitBounds(bounds);
 
@@ -265,16 +270,49 @@ function placesChanged(places, markers, map)
   } 
 }
 
-function showInfoWindow() {
-  var marker = this;
+function showInfoWindow(map, markers, places, place) {
+  var marker = markers;
+
   places.getDetails({placeId: marker.placeResult.place_id},
-      function(place, status) {
-        if (status !== google.maps.places.PlacesServiceStatus.OK) {
-          return;
-        }
-        infoWindow.open(map, marker);
-        buildIWContent(place);
-      });
+    function(place, status) {
+      if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        return;
+      }
+      infoWindow.open(map, marker);
+      buildIWContent(place);
+    });
+}
+
+function addResult(result, i) {
+  var results = document.getElementById('results');
+  var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+  var markerIcon = MARKER_PATH + markerLetter + '.png';
+
+  var tr = document.createElement('tr');
+  tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
+  tr.onclick = function() {
+    google.maps.event.trigger(markers[i], 'click');
+  };
+
+  var iconTd = document.createElement('td');
+  var nameTd = document.createElement('td');
+  var icon = document.createElement('img');
+  icon.src = markerIcon;
+  icon.setAttribute('class', 'placeIcon');
+  icon.setAttribute('className', 'placeIcon');
+  var name = document.createTextNode(result.name);
+  iconTd.appendChild(icon);
+  nameTd.appendChild(name);
+  tr.appendChild(iconTd);
+  tr.appendChild(nameTd);
+  results.appendChild(tr);
+}
+
+function clearResults() {
+  var results = document.getElementById('results');
+  while (results.childNodes[0]) {
+    results.removeChild(results.childNodes[0]);
+  }
 }
 
 // Load the place information into the HTML elements used by the info window.
@@ -313,7 +351,7 @@ function buildIWContent(place) {
 
   // The regexp isolates the first part of the URL (domain plus subdomain)
   // to give a short URL for displaying in the info window.
-  if (place.website) {
+  if (place.website != 0) {
     var fullUrl = place.website;
     var website = hostnameRegexp.exec(place.website);
     if (website === null) {
