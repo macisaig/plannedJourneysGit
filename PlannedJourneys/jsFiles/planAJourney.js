@@ -93,10 +93,13 @@ function checkDates()
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-var infoWindow;
+var map, infoWindow, result;
+var markers = [];
+var hostnameRegexp = new RegExp('^https?://.+?/');
+var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
 
 function initAutocomplete() {
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 15, lng: 0},
     zoom: 2,
     mapTypeId: 'roadmap'
@@ -151,73 +154,53 @@ function initAutocomplete() {
     searchBox5.setBounds(map.getBounds());
   });
 
-  var markers = [];
+  markers = [];
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
-  var results = new google.maps.places.PlacesService(map);
+  result = new google.maps.places.PlacesService(map);
 
   searchBox1.addListener('places_changed', function() {
     places=searchBox1.getPlaces();
     // Clear out the old markers.
-    markers.forEach(function(marker) {
-      marker.setMap(null);
-    });
-    markers = [];
 
-    placesChanged(places, markers, map, results);
+    placesChanged(places);
   });
 
   searchBox2.addListener('places_changed', function() {
     places=searchBox2.getPlaces();
-    // Clear out the old markers.
-    markers.forEach(function(marker) {
-      marker.setMap(null);
-    });
-    markers = [];
 
-    placesChanged(places, markers, map, results);
+    placesChanged(places);
   });
 
   searchBox3.addListener('places_changed', function() {
     places=searchBox3.getPlaces();
-    // Clear out the old markers.
-    markers.forEach(function(marker) {
-      marker.setMap(null);
-    });
-    markers = [];
 
-    placesChanged(places, markers, map, results);
+    placesChanged(places);
   });
 
   searchBox4.addListener('places_changed', function() {
     places=searchBox4.getPlaces();
-    // Clear out the old markers.
-    markers.forEach(function(marker) {
-      marker.setMap(null);
-    });
-    markers = [];
-    clearResults();
 
-    placesChanged(places, markers, map, results);
+    placesChanged(places);
   });
 
   searchBox5.addListener('places_changed', function() {
     places=searchBox5.getPlaces();
-    // Clear out the old markers.
-    markers.forEach(function(marker) {
-      marker.setMap(null);
-    });
-    markers = [];
 
-    placesChanged(places, markers, map, results);
+    placesChanged(places);
   });
 }
 
-function placesChanged(places, markers, map, results)
+function placesChanged(places)
 {
   var locationButton = document.getElementById("addLocation");
   var mapToggle = document.getElementById("hideMap");
   var i = 0;
+
+  markers.forEach(function(marker) {
+    marker.setMap(null);
+  });
+  markers = [];
 
   if (mapToggle.classList.contains("hidden")) 
   {
@@ -243,16 +226,16 @@ function placesChanged(places, markers, map, results)
       scaledSize: new google.maps.Size(25, 25)
     };
 
+    var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+    var markerIcon = MARKER_PATH + markerLetter + '.png';
     // Create a marker for each place.
     markers[i] = new google.maps.Marker({
       map: map,
-      icon: icon,
+      icon: markerIcon,
       title: place.name,
       position: place.geometry.location
     });
     markers[i].placeResult = place;
-
-    google.maps.event.addListener(markers[i], 'click', showInfoWindow(map, markers[i], results, place));
 
     if (place.geometry.viewport) {
       // Only geocodes have viewport.
@@ -260,6 +243,8 @@ function placesChanged(places, markers, map, results)
     } else {
       bounds.extend(place.geometry.location);
     }
+    google.maps.event.addListener(markers[i], 'click', showInfoWindow(i, place));
+    addResult(place, markers[i], i);
     i++;
   });
   map.fitBounds(bounds);
@@ -270,10 +255,10 @@ function placesChanged(places, markers, map, results)
   } 
 }
 
-function showInfoWindow(map, markers, places, place) {
-  var marker = markers;
+function showInfoWindow(i, place) {
+  var marker = markers[i];
 
-  places.getDetails({placeId: marker.placeResult.place_id},
+  result.getDetails({placeId: marker.placeResult.place_id},
     function(place, status) {
       if (status !== google.maps.places.PlacesServiceStatus.OK) {
         return;
@@ -283,7 +268,7 @@ function showInfoWindow(map, markers, places, place) {
     });
 }
 
-function addResult(result, i) {
+function addResult(place, marker, i) {
   var results = document.getElementById('results');
   var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
   var markerIcon = MARKER_PATH + markerLetter + '.png';
@@ -291,7 +276,7 @@ function addResult(result, i) {
   var tr = document.createElement('tr');
   tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
   tr.onclick = function() {
-    google.maps.event.trigger(markers[i], 'click');
+    google.maps.event.trigger(marker, 'click');
   };
 
   var iconTd = document.createElement('td');
@@ -300,7 +285,7 @@ function addResult(result, i) {
   icon.src = markerIcon;
   icon.setAttribute('class', 'placeIcon');
   icon.setAttribute('className', 'placeIcon');
-  var name = document.createTextNode(result.name);
+  var name = document.createTextNode(place.name);
   iconTd.appendChild(icon);
   nameTd.appendChild(name);
   tr.appendChild(iconTd);
