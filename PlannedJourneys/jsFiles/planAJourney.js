@@ -243,7 +243,7 @@ function placesChanged(places)
     } else {
       bounds.extend(place.geometry.location);
     }
-    google.maps.event.addListener(markers[i], 'click', showInfoWindow(i, place));
+    google.maps.event.addListener(markers[i], 'click', showInfoWindow);
     addResult(place, markers[i], i);
     i++;
   });
@@ -255,8 +255,8 @@ function placesChanged(places)
   } 
 }
 
-function showInfoWindow(i, place) {
-  var marker = markers[i];
+function showInfoWindow() {
+  var marker = this;
 
   result.getDetails({placeId: marker.placeResult.place_id},
     function(place, status) {
