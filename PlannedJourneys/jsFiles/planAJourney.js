@@ -201,6 +201,7 @@ function placesChanged(places)
     marker.setMap(null);
   });
   markers = [];
+  clearResults();
 
   if (mapToggle.classList.contains("hidden")) 
   {
