@@ -3,9 +3,16 @@ col-xs-4{
   float: none;
 }
 
+.noPaddingTable{
+  padding: 0px 10px 0px 0px;
+}
+
+.noPaddingMap{
+  padding: 0px 0px 0px 10px;
+}
 
 .numberWidth{
-  padding: 5px;
+  padding: 10px;
 }
 
 .limitWidth{
@@ -21,12 +28,12 @@ col-xs-4{
 #map {
   height: 400px;
   max-width: 1700px;
-  margin: auto;
+  /*margin: auto;*/
   padding: 10px 0px 0px 0px;
 }
 
 .mapProject{
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 
@@ -42,16 +49,12 @@ col-xs-4{
 }
 #resultsTable {
   border-collapse: collapse;
-  width: 240px;
+  height: 400px;
 }
 #listing {
-  position: absolute;
-  width: 200px;
   height: 400px;
-  overflow: auto;
-  left: 442px;
-  top: 0px;
   cursor: pointer;
+  overflow: auto;
   overflow-x: hidden;
 }
 
@@ -184,6 +187,18 @@ select.form-control > option {
 @media (max-width: 767px) { /*This is for the mobile version*/
   .footerDown {
     position: relative;
+  }
+
+  .noPaddingMap
+  {
+    padding: 0px 10px 0px 10px;
+  }
+}
+
+@media only screen and (max-width: 767px)
+{
+  #listing{
+    display: none;
   }
 }
 

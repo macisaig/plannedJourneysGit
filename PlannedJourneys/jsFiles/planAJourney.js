@@ -105,9 +105,19 @@ function initAutocomplete() {
     mapTypeId: 'roadmap'
   });
 
-  infoWindow = new google.maps.InfoWindow({
-    content: document.getElementById('info-content')
-  });
+  if ($(window).width() < 767)
+  {
+    infoWindow = new google.maps.InfoWindow({
+      content: document.getElementById('info-content'),
+      maxWidth: 170
+    });
+  }
+  else
+  {
+    infoWindow = new google.maps.InfoWindow({
+      content: document.getElementById('info-content')
+    });
+  }
 
   // Create the search box and link it to the UI element.
   var input1 = document.getElementById('destinationLocation');
