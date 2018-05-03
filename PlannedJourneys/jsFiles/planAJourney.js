@@ -204,6 +204,8 @@ function initAutocomplete() {
 function placesChanged(places)
 {
   var locationButton = document.getElementById("addLocation");
+  var locationText = document.getElementById("confirmText");
+  var locationValue = document.getElementById("confirmValue");
   var mapToggle = document.getElementById("hideMap");
   var i = 0;
 
@@ -260,6 +262,16 @@ function placesChanged(places)
   });
   map.fitBounds(bounds);
 
+  alert(places[0].vicinity);
+
+  if (locationText.classList.contains("hidden")) 
+  {
+    locationText.classList.remove("hidden");
+  } 
+  if (places.length == 1)
+  {
+    locationValue.innerHTML = places[0].place_id.vicinity;
+  }
   if (locationButton.classList.contains("hidden")) 
   {
     locationButton.classList.remove("hidden");
@@ -274,6 +286,7 @@ function showInfoWindow() {
       if (status !== google.maps.places.PlacesServiceStatus.OK) {
         return;
       }
+      alert(place.vicinity);
       infoWindow.open(map, marker);
       buildIWContent(place);
     });

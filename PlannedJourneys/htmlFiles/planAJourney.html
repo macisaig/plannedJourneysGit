@@ -222,10 +222,14 @@
           <button type="submit" class="btn btn-primary btn-submitButton submitButton1" id="showMap" onclick="showMap()"><strong>Show/Hide Map</strong></button>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-12 text-center"> 
-          <div class="form-group createMargins hidden">
-              <input class="form-control" id="finalLocation" aria-describedby="Confirm Location" placeholder="">
+          <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+            <div class="form-group createMargins hidden" id="confirmText">
+                <div class='text-center' id="confirmValue" placeholder="Select Address"></div>  
             </div>
-          <button type="submit" class="btn btn-primary btn-submitButton submitButton1 hidden" id="addLocation" onclick="addToPlan()"><strong>Add Location to Plan</strong></button>
+          </div>
+          <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
+            <button type="submit" class="btn btn-primary btn-submitButton submitButton1 hidden" id="addLocation" onclick="addToPlan()"><strong>Add to Plan</strong></button>
+          </div>
         </div>
       </div>
       <br>
