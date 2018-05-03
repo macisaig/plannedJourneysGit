@@ -93,7 +93,7 @@ function checkDates()
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-var map, infoWindow, result;
+var map, infoWindow, result, numPlace;
 var markers = [];
 var hostnameRegexp = new RegExp('^https?://.+?/');
 var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
@@ -224,6 +224,8 @@ function placesChanged(places)
     return;
   }
 
+  numPlace = places.length;
+
   // For each place, get the icon, name and location.
   var bounds = new google.maps.LatLngBounds();
   places.forEach(function(place) {
@@ -268,10 +270,6 @@ function placesChanged(places)
   {
     locationText.classList.remove("hidden");
   } 
-  if (places.length == 1)
-  {
-    locationValue.innerHTML = places[0].place_id.vicinity;
-  }
   if (locationButton.classList.contains("hidden")) 
   {
     locationButton.classList.remove("hidden");
@@ -280,6 +278,8 @@ function placesChanged(places)
 
 function showInfoWindow() {
   var marker = this;
+  
+  alert(numPlace);
 
   result.getDetails({placeId: marker.placeResult.place_id},
     function(place, status) {
