@@ -11,16 +11,56 @@ col-xs-4{
   padding: 0px 0px 0px 10px;
 }
 
+.addPadding
+{
+  padding: 15px;
+}
+
+.addMargin
+{
+  padding: 13px 0px 0px 0px;
+}
+
+.padRight{
+  padding: 0px 10px 0px 0px;
+}
+
 .numberWidth{
-  padding: 10px;
+  padding: 5px;
+}
+
+#addLocation{
+  background: #1bb519;
 }
 
 .limitWidth{
   max-width: 1700px;
 }
 
+#myTable
+{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
 .numWidth{
   width: 120px;
+}
+
+#myTable th {
+  border: 1px solid #000;
+  background: #1bb519;
+  text-align: left;
+  padding: 8px;
+  color: #fff;
+}
+
+#myTable td {
+  border: 1px solid #000;
+  text-align: left;
+  padding: 8px;
+  color: #000;
 }
 
 /* Always set the map height explicitly to define the size of the div
@@ -65,6 +105,11 @@ col-xs-4{
 
 #secondStartParagraph{
   color: #3A6DA6;
+}
+
+#tableTitle{
+  color: #3A6DA6;
+  margin: 10px 0px -15px 0px;
 }
 
 .timeColor{
@@ -192,13 +237,6 @@ select.form-control > option {
   .noPaddingMap
   {
     padding: 0px 10px 0px 10px;
-  }
-}
-
-@media only screen and (max-width: 767px)
-{
-  #listing{
-    display: none;
   }
 }
 

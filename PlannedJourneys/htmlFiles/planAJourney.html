@@ -28,22 +28,14 @@
             </a>
           </div>
           <ul class="nav navbar-nav"> <!-- Displays navbar item to the right -->
-            <li class="dropdown">
-              <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Plan a Journey</strong>
-              <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="planAJourney.html"><span class="dropdownItem"><strong>Plan a Journey</strong></span></a></li>
-                <li><a href="savedTrips.html"><span class="dropdownItem"><strong>Saved Trips</strong></span></a></li>
-                <li><a href="discover.html"><span class="dropdownItem"><strong>Discover</strong></span></a></li>
-              </ul>
-            </li>
+            <li><a href="planAJourney.html" class="navbar-text"><strong>Plan A Journey</strong></a></li>
             <li class="dropdown">
               <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Locations</strong>
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="exploreALocation.html"><span class="dropdownItem"><strong>Explore a Location</strong></span></a></li>
-                <li><a href="featuredLocations.html"><span class="dropdownItem"><strong>Featured Locations</strong></span></a></li>
-                <li><a href="hottestDestinations.html"><span class="dropdownItem"><strong>Hottest Destinations</strong></span></a></li>
+                <li><a href="featuredLocations.html"><span class="dropdownItem"><strong>Hottest Destinations</strong></span></a></li>
+                <li><a href="hottestDestinations.html"><span class="dropdownItem"><strong>Discover</strong></span></a></li>
               </ul>
             </li>
             <li><a href="about.html" class="navbar-text"><strong>About</strong></a></li>
@@ -78,7 +70,7 @@
   		<div class="container-fluid text-center form-group collapse" id='collapseDateLocation'>
   			<div class="row container col-centered">
   			  <div class='col-md-6 col-sm-12 col-lg-6'>
-  				<h4><strong>Start and End Location</strong><br><small><span class='offColor'>If Start and End locations aren't provided, they'll be based on shortest time</span></small></h4>
+  				<h4><strong>Start and End Location</strong><br><small><span class='offColor'>*If Start and End locations aren't provided, they'll be based on the shortest possible trip</span></small></h4>
   				<div class='col-md-6 col-sm-12 col-lg-6'>
   				  <div class="form-group">
   					<input class="form-control" id="reEnterStartLoc" type="text" aria-describedby="startLoc" placeholder="Enter a Start Location">
@@ -213,36 +205,36 @@
               </div>
             </div>
           </div>
-          <div class='text-center' id="errTime"></div>  
       </form>
     </div>
+    <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+      <div class='text-center' id="errTime"></div>  
+    </div>
       <div class="row container col-centered">
-        <div class="col-sm-12 col-md-12 col-lg-12 text-center"> 
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center"> 
           <button type="submit" class="btn btn-primary btn-submitButton submitButton1 hidden" id="backToggle" onclick="displayPicture()"><strong>Back</strong></button>
           <button type="submit" class="btn btn-primary btn-submitButton submitButton1" id="showMap" onclick="showMap()"><strong>Show/Hide Map</strong></button>
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-12 text-center"> 
-          <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
-            <div class="form-group createMargins hidden" id="confirmText">
-                <div class='text-center' id="confirmValue" placeholder="Select Address"></div>  
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-6 col-xs-6 col-lg-6">
-            <button type="submit" class="btn btn-primary btn-submitButton submitButton1 hidden" id="addLocation" onclick="addToPlan()"><strong>Add to Plan</strong></button>
-          </div>
+      </div>
+      <div class="row container col-centered">
+        <div class="col-sm-10 col-md-10 col-lg-10 col-xs-12 text-center addMargin"> 
+          <input class="form-control hidden" id="addressValue" aria-describedby="First Location" placeholder="Click a Location">
+        </div>
+        <div class = "text-center">
+          <button type="submit" class="btn btn-primary btn-submitButton submitButton1 hidden" id="addLocation" onclick="addToPlan()"><strong>Add to Plan</strong></button>
         </div>
       </div>
       <br>
 
       <div class="row col-centered">
-        <div class="col-md-9 col-sm-9 col-lg-9 col-xs-9 noPaddingMap col-centered">
+        <div class="col-md-10 col-sm-10 col-lg-10 col-xs-10 noPaddingMap col-centered" id="removeCol">
           <div class="mapProject" id="hideMap">
           	<div id="map"></div>
           </div>
         </div>
       
-        <div class="col-md-3 col-sm-3 col-lg-3 col-xs-3 noPaddingTable">
-          <div id="listing">
+        <div class="col-md-2 col-sm-2 col-lg-2 col-xs-2 noPaddingTable">
+          <div class="hidden" id="listing">
             <table id="resultsTable">
               <tbody id="results"></tbody>
             </table>
@@ -277,11 +269,20 @@
         </div>
       </div>
 
-      <table id="myTable">
-      </table> 
-      <br>
+      <p class="startParagraph" id="tableTitle" align="center"><strong>Summary of Plans</strong></p>
 
-      <button onclick="tableFunction()">Try it</button>
+      <div class="row addPadding">
+        <table id="myTable">
+          <tbody id="overallList">
+            <tr>
+              <th>Location</th>
+              <th>Activity</th>
+              <th>Time Spent</th>
+            </tr>
+          </tbody>
+        </table> 
+      </div>
+      <br>
 
       <div class="push"></div>
     </div>

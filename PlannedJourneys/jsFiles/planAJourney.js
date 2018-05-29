@@ -97,6 +97,7 @@ var map, infoWindow, result, numPlace;
 var markers = [];
 var hostnameRegexp = new RegExp('^https?://.+?/');
 var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
+var tableCount = 0;
 
 function initAutocomplete() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -204,10 +205,11 @@ function initAutocomplete() {
 function placesChanged(places)
 {
   var locationButton = document.getElementById("addLocation");
-  var locationText = document.getElementById("confirmText");
   var locationValue = document.getElementById("confirmValue");
   var mapToggle = document.getElementById("hideMap");
   var i = 0;
+  var slideMap = document.getElementById("removeCol");
+  var addValue = document.getElementById("addressValue");
 
   markers.forEach(function(marker) {
     marker.setMap(null);
@@ -260,34 +262,56 @@ function placesChanged(places)
     }
     google.maps.event.addListener(markers[i], 'click', showInfoWindow);
     addResult(place, markers[i], i);
+    if(places.length == 1)
+    {
+      if (place.url == "")
+      {
+        addValue.value = place.vicinity;  
+      }
+      else
+      {
+        var additionalAdd = place.vicinity;
+        var combineAdd = place.name + ", " + place.vicinity;
+        addValue.value = combineAdd;
+      }
+    }
     i++;
   });
+  if (slideMap.classList.contains("col-centered")) 
+  {
+    slideMap.classList.remove("col-centered");
+  } 
+
   map.fitBounds(bounds);
 
-  alert(places[0].vicinity);
-
-  if (locationText.classList.contains("hidden")) 
-  {
-    locationText.classList.remove("hidden");
-  } 
   if (locationButton.classList.contains("hidden")) 
   {
     locationButton.classList.remove("hidden");
+  } 
+
+  if (addValue.classList.contains("hidden")) 
+  {
+    addValue.classList.remove("hidden");
   } 
 }
 
 function showInfoWindow() {
   var marker = this;
-  
-  alert(numPlace);
+
+  if (addressValue.classList.contains("hidden"))
+  {
+    addValue.classList.remove("hidden");
+  }
 
   result.getDetails({placeId: marker.placeResult.place_id},
     function(place, status) {
       if (status !== google.maps.places.PlacesServiceStatus.OK) {
         return;
       }
-      alert(place.vicinity);
       infoWindow.open(map, marker);
+      var additionalAdd = place.vicinity;
+      var combineAdd = place.name + ", " + place.vicinity;
+      document.getElementById("addressValue").value = combineAdd;
       buildIWContent(place);
     });
 }
@@ -296,6 +320,12 @@ function addResult(place, marker, i) {
   var results = document.getElementById('results');
   var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
   var markerIcon = MARKER_PATH + markerLetter + '.png';
+  var table = document.getElementById('listing');
+
+  if (table.classList.contains('hidden'))
+  {
+    table.classList.remove('hidden');
+  }
 
   var tr = document.createElement('tr');
   tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
@@ -379,38 +409,83 @@ function addToPlan() {
   var minuteValue = document.getElementById('minuteMark');
   var hourValue = document.getElementById('hourMark');
   var dayValue = document.getElementById('dayMark');
-  var mapToggle = document.getElementById("hideMap");
-  var activityVal = document.getElementById("enterActivity").value;
+  var addValue = document.getElementById("addressValue");
+  var table = document.getElementById("myTable");
+  var activityValue = document.getElementById("activity");
+  var selectFood = document.getElementById("enterFood");
+  var overallTime = "";
   var submitValue = false;
-  
-  if (activityVal == "Stay the Night")
-  {
-  }
    
-  if ((minuteValue.value.length > 0) || (hourValue.value.length > 0) || (dayValue.value.length > 0))
+  if ((minuteValue.value == 0) && (hourValue.value == 0) && (dayValue.value == 0))
   {
-    submitValue = true;
-    document.getElementById("errTime").innerHTML = "";
-    if (!locationButton.classList.contains("hidden")) 
-    {
-      locationButton.classList.add("hidden");
-    }
-
-    if (!mapToggle.classList.contains("hidden")) 
-    {
-      mapToggle.classList.add("hidden");
-    }
+    document.getElementById("errTime").innerHTML = "<span class='smallWarning'><strong>*Please Enter a Length of Time*<strong></span>";
+    return submitValue;
+  }
+  else if (addValue.value == "")
+  {
+    document.getElementById("errTime").innerHTML = "<span class='smallWarning'><strong>*Please Select a Location*<strong></span>";
+    return submitValue;
   }
   else
   {
-    document.getElementById("errTime").innerHTML = "<span class='smallWarning'><strong>*Please Enter a Length of Time*<strong></span>";
+    submitValue = true;
+    document.getElementById("errTime").innerHTML = "";
+    displayPicture();
   }
+
+  tableCount++;
+
+  var tr = document.createElement('tr');
+  var locationTd = document.createElement('td');
+  var activityTd = document.createElement('td');
+  var timeTd = document.createElement('td');
+  tr.style.backgroundColor = (tableCount % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
+  var name = document.createTextNode(addValue.value);
+  if (activityValue.value != "")
+  {
+    var actVal = document.createTextNode(activityValue.value);
+  }
+  else if (selectFood.value != "Select Food")
+  {
+    var actVal = document.createTextNode(selectFood.value);
+  }
+  else
+  {
+    var actVal = document.createTextNode("Destination");
+  }
+  if (dayValue.value > 0)
+  {
+    overallTime = overallTime + dayValue.value + " Days ";
+  }
+  if (hourValue.value > 0)
+  {
+    overallTime = overallTime + hourValue.value + " Hours ";
+  }
+  if (minuteValue.value > 0)
+  {
+    overallTime = overallTime + minuteValue.value*15 + " Minutes";
+  }
+  var timeSpent = document.createTextNode(overallTime);
+
+  minuteValue.value = 0;
+  hourValue.value = 0;
+  dayValue.value = 0;
+  addValue.value = "";
+
+  locationTd.appendChild(name);
+  activityTd.appendChild(actVal);
+  timeTd.appendChild(timeSpent);
+  tr.appendChild(locationTd);
+  tr.appendChild(activityTd);
+  tr.appendChild(timeTd);
+  table.appendChild(tr);
 
   return submitValue;
 }
 
 function showMap() {
   var mapToggle = document.getElementById("hideMap");
+  var listToggle = document.getElementById("listing");
 
   if (mapToggle.classList.contains("hidden")) 
   {
@@ -419,6 +494,15 @@ function showMap() {
   else 
   {
     mapToggle.classList.add("hidden");
+  }
+
+  if (listToggle.classList.contains("hidden")) 
+  {
+    listToggle.classList.remove("hidden");
+  } 
+  else 
+  {
+    listToggle.classList.add("hidden");
   }
 }
 
@@ -532,6 +616,9 @@ function displayPicture() {
   var back = document.getElementById("backToggle");
   var location = document.getElementById("addLocation");
   var time = document.getElementById("timeToggle");
+  var addValue = document.getElementById("addressValue");
+  var activityValue = document.getElementById("activity");
+  var selectFood = document.getElementById("enterFood");
 
   if (picture.classList.contains("hidden")) 
   {
@@ -560,5 +647,17 @@ function displayPicture() {
   if (!time.classList.contains("hidden")) 
   {
     time.classList.add("hidden");
+  }
+  if (!addValue.classList.contains("hidden")) 
+  {
+    addValue.classList.add("hidden");
+  }
+  if (activityValue.value != "")
+  {
+    activityValue.value = "";
+  }
+  else if (selectFood.value != "Select Food")
+  {
+    selectFood.value = "Select Food";
   }
 }

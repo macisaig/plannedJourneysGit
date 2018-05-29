@@ -26,39 +26,38 @@
 	            </div>
 	          </a>
 	        </div>
-	        <ul class="nav navbar-nav"> <!-- Displays navbar item to the right -->
-	          <li class="dropdown">
-	            <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Plan a Journey</strong>
-	            <span class="caret"></span></a>
-	            <ul class="dropdown-menu navbarDropdown">
-	              <li><a href="PlannedJourneys/htmlFiles/planAJourney.html"><span class="dropdownItem"><strong>Plan a Journey</strong></span></a></li>
-	              <li><a href="PlannedJourneys/htmlFiles/savedTrips.html"><span class="dropdownItem"><strong>Saved Trips</strong></span></a></li>
-	              <li><a href="PlannedJourneys/htmlFiles/discover.html"><span class="dropdownItem"><strong>Discover</strong></span></a></li>
-	            </ul>
-	          </li>
-	          <li class="dropdown">
-	            <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Locations</strong>
-	            <span class="caret"></span></a>
-	            <ul class="dropdown-menu navbarDropdown">
-	              <li><a href="PlannedJourneys/htmlFiles/exploreALocation.html"><span class="dropdownItem"><strong>Explore a Location</strong></span></a></li>
-	              <li><a href="PlannedJourneys/htmlFiles/featuredLocations.html"><span class="dropdownItem"><strong>Featured Locations</strong></span></a></li>
-	              <li><a href="PlannedJourneys/htmlFiles/hottestDestinations.html"><span class="dropdownItem"><strong>Hottest Destinations</strong></span></a></li>
-	            </ul>
-	          </li>
-	          <li><a href="PlannedJourneys/htmlFiles/about.html" class="navbar-text"><strong>About</strong></a></li>
+	        <ul class="nav navbar-nav"> <!-- Displays navbar item to the left -->
+	        	<li><a href="PlannedJourneys/htmlFiles/planAjourney.html" class="navbar-text"><strong>Plan A Journey</strong></a></li>
+	          	<li class="dropdown">
+		            <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Locations</strong>
+		            <span class="caret"></span></a>
+		            <ul class="dropdown-menu navbarDropdown">
+		              <li><a href="PlannedJourneys/htmlFiles/exploreALocation.html"><span class="dropdownItem"><strong>Explore a Location</strong></span></a></li>
+		              <li><a href="PlannedJourneys/htmlFiles/featuredLocations.html"><span class="dropdownItem"><strong>Discover</strong></span></a></li>
+		              <li><a href="PlannedJourneys/htmlFiles/hottestDestinations.html"><span class="dropdownItem"><strong>Popular Destinations</strong></span></a></li>
+		            </ul>
+				</li>
+				<li class="dropdown">
+		            <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>More</strong>
+		            <span class="caret"></span></a>
+		            <ul class="dropdown-menu navbarDropdown">
+		            	<li><a href="PlannedJourneys/htmlFiles/about.html"><span class="dropdownItem"><strong>About</strong></span></a></li>
+		            	<li><a href="PlannedJourneys/htmlFiles/contactUs.html"><span class="dropdownItem"><strong>Contact Us</strong></span></a></li>
+					</ul>
+				</li>
 	        </ul>
 	        <div class="collapse navbar-collapse" id="myNavbar">
-	          <ul class="nav navbar-nav navbar-right"> <!-- Displays navbar item to the right -->
-	            <li><a href="PlannedJourneys/htmlFiles/contactUs.html" class="navbar-text"><strong>Contact Us</strong></a></li>
-	            <li class="dropdown">
-	              <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>My Account</strong>
-	              <span class="caret"></span></a>
-	              <ul class="dropdown-menu navbarDropdown">
-	                <button type="button" class="btn btn-firstDropdown" value="Input Button" onclick="location.href = 'PlannedJourneys/htmlFiles/login.html';"><input type="image" src="PlannedJourneys/imageFiles/regularAccountIcon.png" id="regularAccount"/><strong>Log In</strong></button> <!-- Added a button -->
-	                <button type="button" class="btn btn-secondDropdown" value="Input Button" onclick="location.href = 'PlannedJourneys/htmlFiles/addAccount.html';"><input type="image" src="PlannedJourneys/imageFiles/addAccountIcon.png" id="accountAdd"/><strong>Sign Up</strong></button> <!-- Added a button -->
-	              </ul>
-	            </li>
-	          </ul>
+				<ul class="nav navbar-nav navbar-right"> <!-- Displays navbar item to the right -->
+					<li><a href="PlannedJourneys/htmlFiles/contactUs.html" class="navbar-text"><strong>Saved Trips</strong></a></li>
+					<li class="dropdown">
+						<a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>My Account</strong>
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu navbarDropdown">
+						<button type="button" class="btn btn-firstDropdown" value="Input Button" onclick="location.href = 'PlannedJourneys/htmlFiles/login.html';"><input type="image" src="PlannedJourneys/imageFiles/regularAccountIcon.png" id="regularAccount"/><strong>Log In</strong></button> <!-- Added a button -->
+						<button type="button" class="btn btn-secondDropdown" value="Input Button" onclick="location.href = 'PlannedJourneys/htmlFiles/addAccount.html';"><input type="image" src="PlannedJourneys/imageFiles/addAccountIcon.png" id="accountAdd"/><strong>Sign Up</strong></button> <!-- Added a button -->
+						</ul>
+					</li>
+				</ul>
 	        </div>
 	      </div>
 	    </nav>
@@ -67,7 +66,7 @@
 			  <p class="startParagraph" align="center"><strong>Start Planning Your Journey!</strong></p>
 	  		<div class="container-fluid text-center form-group">
 	          <div class='col-md-6 col-sm-12 col-lg-6'>
-	            <h4><strong>Start and End Location</strong><br><small><span class='offColor'>If Start and End locations aren't provided, they'll be based on shortest time</span></small></h4>
+	            <h4><strong>Start and End Location</strong><br><small><span class='offColor'>*If Start and End locations aren't provided, they'll be based on the shortest possible trip</span></small></h4>
 	            <div class='col-md-6 col-sm-12 col-lg-6'>
 	              <div class="form-group">
 	                <input class="form-control" id="enterStartLoc" type="text" aria-describedby="startLoc" placeholder="Enter a Start Location">
@@ -104,7 +103,8 @@
 				  	<div id="errDate"></div>   
 	          </div>
 	        <div class="col-md-12 text-center"> 
-	          <button type="submit" class="btn btn-primary btn-submitButton submitButton1" id="reSubmitButton1" onClick="return checkDates()"><strong>Start Planning</strong></button>
+	          <!-- <a href="PlannedJourneys/htmlFiles/planAJourney.html"><button type="submit" class="btn btn-primary btn-submitButton submitButton1" id="reSubmitButton1" onClick="return checkDates()"><strong>Start Planning</strong></button></a> -->
+	          <a href="PlannedJourneys/htmlFiles/planAJourney.html"><button type="button" class="btn btn-primary btn-submitButton submitButton1" id="reSubmitButton1"><strong>Start Planning</strong></button></a>
 	        </div>
 	      </div>
 		    <br>
