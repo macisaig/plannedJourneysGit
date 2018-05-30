@@ -29,7 +29,7 @@ col-xs-4{
   padding: 5px;
 }
 
-#addLocation{
+.finalButtons{
   background: #1bb519;
 }
 
@@ -211,6 +211,11 @@ select.form-control > option {
 
 .fa-question-circle{
 	color: #1281BD;
+}
+
+.fa-question-circle2
+{
+  color: #FFF;
 }
 
 .faResize{

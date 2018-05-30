@@ -413,8 +413,10 @@ function addToPlan() {
   var table = document.getElementById("myTable");
   var activityValue = document.getElementById("activity");
   var selectFood = document.getElementById("enterFood");
+  var calcPlan = document.getElementById("calcPlan");
   var overallTime = "";
   var submitValue = false;
+  var numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
    
   if ((minuteValue.value == 0) && (hourValue.value == 0) && (dayValue.value == 0))
   {
@@ -433,6 +435,11 @@ function addToPlan() {
     displayPicture();
   }
 
+  if (calcPlan.classList.contains("hidden"))
+  {
+    calcPlan.classList.remove("hidden");
+  }
+
   tableCount++;
 
   var tr = document.createElement('tr');
@@ -441,6 +448,8 @@ function addToPlan() {
   var timeTd = document.createElement('td');
   tr.style.backgroundColor = (tableCount % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
   var name = document.createTextNode(addValue.value);
+  var selectTd = document.createElement('td');
+  var selectList = document.createElement("select");
   if (activityValue.value != "")
   {
     var actVal = document.createTextNode(activityValue.value);
@@ -466,7 +475,14 @@ function addToPlan() {
     overallTime = overallTime + minuteValue.value*15 + " Minutes";
   }
   var timeSpent = document.createTextNode(overallTime);
-
+  for (var k = 0; k < numArray.length; k++)
+  {
+    var numOption = document.createElement("option");
+    numOption.value = numArray[k];
+    numOption.text = numArray[k];
+    selectList.appendChild(numOption);
+  }
+  
   minuteValue.value = 0;
   hourValue.value = 0;
   dayValue.value = 0;
@@ -475,9 +491,11 @@ function addToPlan() {
   locationTd.appendChild(name);
   activityTd.appendChild(actVal);
   timeTd.appendChild(timeSpent);
+  selectTd.appendChild(selectList);
   tr.appendChild(locationTd);
   tr.appendChild(activityTd);
   tr.appendChild(timeTd);
+  tr.appendChild(selectTd);
   table.appendChild(tr);
 
   return submitValue;

@@ -24,39 +24,38 @@
               </div>
             </a>
           </div>
-          <ul class="nav navbar-nav"> <!-- Displays navbar item to the right -->
-            <li class="dropdown">
-              <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Plan a Journey</strong>
-              <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="planAJourney.html"><span class="dropdownItem"><strong>Plan a Journey</strong></span></a></li>
-                <li><a href="savedTrips.html"><span class="dropdownItem"><strong>Saved Trips</strong></span></a></li>
-                <li><a href="discover.html"><span class="dropdownItem"><strong>Discover</strong></span></a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Locations</strong>
-              <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="exploreALocation.html"><span class="dropdownItem"><strong>Explore a Location</strong></span></a></li>
-                <li><a href="featuredLocations.html"><span class="dropdownItem"><strong>Featured Locations</strong></span></a></li>
-                <li><a href="hottestDestinations.html"><span class="dropdownItem"><strong>Hottest Destinations</strong></span></a></li>
-              </ul>
-            </li>
-            <li><a href="about.html" class="navbar-text"><strong>About</strong></a></li>
-          </ul>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right"> <!-- Displays navbar item to the right -->
-              <li><a href="contactUs.html" class="navbar-text"><strong>Contact Us</strong></a></li>
+          <ul class="nav navbar-nav"> <!-- Displays navbar item to the left -->
+            <li><a href="../htmlFiles/planAjourney.html" class="navbar-text"><strong>Plan A Journey</strong></a></li>
               <li class="dropdown">
-                <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>My Account</strong>
+                <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>Locations</strong>
                 <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <button type="button" class="btn btn-firstDropdown" value="Input Button" onclick="location.href = 'login.html';"><input type="image" src="../imageFiles/regularAccountIcon.png" id="regularAccount"/><strong>Log In</strong></button> <!-- Added a button -->
-                  <button type="button" class="btn btn-secondDropdown" value="Input Button" onclick="location.href = 'addAccount.html';"><input type="image" src="../imageFiles/addAccountIcon.png" id="accountAdd"/><strong>Sign Up</strong></button> <!-- Added a button -->
+                <ul class="dropdown-menu navbarDropdown">
+                  <li><a href="../htmlFiles/exploreALocation.html"><span class="dropdownItem"><strong>Explore a Location</strong></span></a></li>
+                  <li><a href="../htmlFiles/featuredLocations.html"><span class="dropdownItem"><strong>Discover</strong></span></a></li>
+                  <li><a href="../htmlFiles/hottestDestinations.html"><span class="dropdownItem"><strong>Popular Destinations</strong></span></a></li>
                 </ul>
               </li>
-            </ul>
+              <li class="dropdown">
+                      <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>More</strong>
+                      <span class="caret"></span></a>
+                      <ul class="dropdown-menu navbarDropdown">
+                        <li><a href="../htmlFiles/about.html"><span class="dropdownItem"><strong>About</strong></span></a></li>
+                        <li><a href="../htmlFiles/contactUs.html"><span class="dropdownItem"><strong>Contact Us</strong></span></a></li>
+                </ul>
+              </li>
+                </ul>
+                <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right"> <!-- Displays navbar item to the right -->
+                <li><a href="../htmlFiles/contactUs.html" class="navbar-text"><strong>Saved Trips</strong></a></li>
+                <li class="dropdown">
+                  <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>My Account</strong>
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu navbarDropdown">
+                  <button type="button" class="btn btn-firstDropdown" value="Input Button" onclick="location.href = '../htmlFiles/login.html';"><input type="image" src="../imageFiles/regularAccountIcon.png" id="regularAccount"/><strong>Log In</strong></button> <!-- Added a button -->
+                  <button type="button" class="btn btn-secondDropdown" value="Input Button" onclick="location.href = '../htmlFiles/addAccount.html';"><input type="image" src="../imageFiles/addAccountIcon.png" id="accountAdd"/><strong>Sign Up</strong></button> <!-- Added a button -->
+                  </ul>
+                </li>
+              </ul>
           </div>
         </div>
       </nav>
@@ -147,24 +146,24 @@
 
     <footer class="container-fluid text-center">
       <div class="row">
-    		<div class="col-sm-4">
-          <a href="../../index.html">
+        <div class="col-sm-4">
+          <a href="index.html">
             <img src="../imageFiles/plannedJourneysLogo.jpg" class="icon">
           </a>
         </div>
         <div class="col-sm-4">
           <h3>Social Media Links</h3>
-          <a href="#" class ="fa fa-facebook"></a>
-          <a href="#" class ="fa fa-twitter"></a>
-          <a href="#" class ="fa fa-google"></a>
-          <a href="#" class ="fa fa-linkedin"></a>
-          <a href="#" class ="fa fa-youtube"></a>
+          <a href="https://www.facebook.com/PlannedJourneys-222086925035409/" class ="fa fa-facebook"></a>
+          <a href="https://twitter.com/PlannedJourneys" class ="fa fa-twitter"></a>
+          <a href="https://www.instagram.com/plannedjourneys/?hl=en" class ="fa fa-instagram"></a>
+          <a href="https://www.linkedin.com/in/planned-journeys-9053a715b/" class ="fa fa-linkedin"></a>
+          <a href="https://www.youtube.com/channel/UCCBDTcQADAt_Hg2dETKlF3w" class ="fa fa-youtube"></a>
         </div>
-    		<br>
-    		<div class="col-sm-4">
+        <br>
+        <div class="col-sm-4">
           <h3>Contact Us</h3>
-          <a href="mailto:#" class="mailToFooter"><h4><strong>service@plannedjourneys.com<strong></h4></a>
-        </div>
+          <a href="mailto:service@plannedjourneys.com" class="mailToFooter"><h4><strong>service@plannedjourneys.com</strong></h4></a>
+        </div> 
       </div>
     </footer>
 
