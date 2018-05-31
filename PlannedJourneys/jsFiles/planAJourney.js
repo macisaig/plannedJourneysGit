@@ -403,6 +403,7 @@ function buildIWContent(place) {
     document.getElementById('iw-website-row').style.display = 'none';
   }
 }
+var count = "1";
 
 function addToPlan() {
   var locationButton = document.getElementById("addLocation");
@@ -446,6 +447,7 @@ function addToPlan() {
   var locationTd = document.createElement('td');
   var activityTd = document.createElement('td');
   var timeTd = document.createElement('td');
+  var deleteTd = document.createElement('td');
   tr.style.backgroundColor = (tableCount % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
   var name = document.createTextNode(addValue.value);
   var selectTd = document.createElement('td');
@@ -488,6 +490,10 @@ function addToPlan() {
   dayValue.value = 0;
   addValue.value = "";
 
+  var strHtml5 = "<INPUT TYPE=\"Button\" CLASS=\"Button\" onClick=\"delRow()\" VALUE=\"Delete\">";
+  deleteTd.innerHTML = strHtml5.replace(/!count!/g,count);
+  count = parseInt(count) + 1;
+
   locationTd.appendChild(name);
   activityTd.appendChild(actVal);
   timeTd.appendChild(timeSpent);
@@ -496,9 +502,18 @@ function addToPlan() {
   tr.appendChild(activityTd);
   tr.appendChild(timeTd);
   tr.appendChild(selectTd);
+  tr.appendChild(deleteTd);
   table.appendChild(tr);
 
   return submitValue;
+}
+
+function delRow()
+{
+  var current = window.event.srcElement;
+  //here we will delete the line
+  while ( (current = current.parentElement)  && current.tagName !="TR");
+       current.parentElement.removeChild(current);
 }
 
 function showMap() {
