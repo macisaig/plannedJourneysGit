@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This is for the phone scaling -->
     <link rel="stylesheet" href="cssFiles/Bootstrap/bootstrap.min.css"> <!-- Boostrap files -->
   	<link rel="stylesheet" href="cssFiles/indexCss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>	
@@ -14,7 +15,10 @@
     	<div id="limitWidth">
     		<nav class="navbar navbar-default navbarValues">
     			<div class="container-fluid">
-    				<div class="navbar-header">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" id="accountIcon" data-toggle="collapse" data-target="#myNavbar">
+                <img src="imgFiles/regularAccountIcon.png">
+              </button>
               <a class="navbar-brand" href="index.html">
                 <div id="branding">
                  <img src="imgFiles/plannedJourneysLogo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -22,8 +26,31 @@
               </a>
             </div>
             <ul class="nav navbar-nav"> <!-- Displays navbar item to the left -->
-              <li><a href="htmlFiles/planAjourney.html" class="navbar-text"><strong>Plan A Journey</strong></a></li>
+              <li><a href="" class="navbar-text"><strong>Plan A Journey</strong></a></li>
+              <li><a href="" class="navbar-text"><strong>Destinations</strong></a></li>
+              <li class="dropdown">
+                <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>More</strong>
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu navbarDropdown">
+                  <li><a href="PlannedJourneys/htmlFiles/about.html"><span class="dropdownItem"><strong>About</strong></span></a></li>
+                  <li><a href="PlannedJourneys/htmlFiles/contactUs.html"><span class="dropdownItem"><strong>Contact Us</strong></span></a></li>
+                </ul>
+              </li>
             </ul>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right"> <!-- Displays navbar item to the right -->
+                <li class="dropdown">
+                  <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>My Account</strong>
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu navbarDropdown">
+                    <button type="button" class="btn btn-firstDropdown" value="Input Button" onclick="location.href = 'PlannedJourneys/htmlFiles/login.html';"><input type="image" src="imgFiles/regularAccountIcon.png" id="regularAccount"/><strong>Log In</strong></button> <!-- Added a button -->
+                    <button type="button" class="btn btn-secondDropdown" value="Input Button" onclick="location.href = 'PlannedJourneys/htmlFiles/addAccount.html';"><input type="image" src="imgFiles/addAccountIcon.png" id="accountAdd"/><strong>Sign Up</strong></button> <!-- Added a button -->
+                    <li><a href="PlannedJourneys/htmlFiles/contactUs.html" class="navbar-text"><strong>Saved Trips</strong></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
     		</nav>
     	</div>
     </div>

@@ -15,10 +15,16 @@ a
 /*///////////////////////////////////////////////////////////////////*/
 
 /*Limits the width of whatever is inside to max and centers*/
-#limitWidth
+.limitWidth
 {
 	max-width: 1100px;
 	margin: auto;
+}
+
+/*Limits the height*/
+.limitHeight
+{
+	max-height: 1100px;
 }
 
 /*Cover image*/
@@ -27,12 +33,14 @@ a
 	background-image: url("../imgFiles/pointSign.jpg"); 	
 	background-repeat: no-repeat;
 	background-position: center -100px;
-	background-size: 100% 100%;
+	background-size: cover;
 	height: 900px;
+	max-height: 900px;
 }
 
 /*The color of the text in navbar*/
 .navbarValues a
 {
-	color: #000;
+	color: #FFF;
 }
+
