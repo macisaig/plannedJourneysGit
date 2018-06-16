@@ -1,0 +1,15 @@
+body
+{
+	background-color: #18191a;
+	background-image: url("../imgFiles/iceland.jpg"); 	
+	background-repeat: no-repeat;
+	background-position: center -50px;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+#limitWidth
+{
+	max-width: 1100px;
+	margin: auto;
+}
