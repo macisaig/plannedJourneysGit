@@ -5,55 +5,61 @@
     <title>Plan Your Adventure</title>
     <meta charset="utf-8"> <!-- Common throughout web -->
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This is for the phone scaling -->
-    <link rel="stylesheet" href="cssFiles/Bootstrap/bootstrap.min.css"> <!-- Boostrap files -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   	<link rel="stylesheet" href="cssFiles/indexCss.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>	
     <div id="coverImg">
-    	<div id="limitWidth">
-    		<nav class="navbar navbar-default navbarValues">
-    			<div class="container-fluid">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" id="accountIcon" data-toggle="collapse" data-target="#myNavbar">
-                <img src="imgFiles/regularAccountIcon.png">
-              </button>
-              <a class="navbar-brand" href="index.html">
-                <div id="branding">
-                 <img src="imgFiles/plannedJourneysLogo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
-                </div>
-              </a>
+    		<nav class="navbar navbar-expand-sm navbar-light bg-light">
+          <div class="container" id="limitWidth">     
+            <div class="navbar-brand brandParam">
+              <img src="imgFiles/plannedJourneysLogoMini.jpg">
             </div>
-            <ul class="nav navbar-nav"> <!-- Displays navbar item to the left -->
-              <li><a href="" class="navbar-text"><strong>Plan A Journey</strong></a></li>
-              <li><a href="" class="navbar-text"><strong>Destinations</strong></a></li>
-              <li class="dropdown">
-                <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>More</strong>
-                <span class="caret"></span></a>
-                <ul class="dropdown-menu navbarDropdown">
-                  <li><a href="PlannedJourneys/htmlFiles/about.html"><span class="dropdownItem"><strong>About</strong></span></a></li>
-                  <li><a href="PlannedJourneys/htmlFiles/contactUs.html"><span class="dropdownItem"><strong>Contact Us</strong></span></a></li>
-                </ul>
-              </li>
-            </ul>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav navbar-right"> <!-- Displays navbar item to the right -->
-                <li class="dropdown">
-                  <a class="navbar-text dropdownActive" data-toggle="dropdown" href="#"><strong>My Account</strong>
-                  <span class="caret"></span></a>
-                  <ul class="dropdown-menu navbarDropdown">
-                    <button type="button" class="btn btn-firstDropdown" value="Input Button" onclick="location.href = 'PlannedJourneys/htmlFiles/login.html';"><input type="image" src="imgFiles/regularAccountIcon.png" id="regularAccount"/><strong>Log In</strong></button> <!-- Added a button -->
-                    <button type="button" class="btn btn-secondDropdown" value="Input Button" onclick="location.href = 'PlannedJourneys/htmlFiles/addAccount.html';"><input type="image" src="imgFiles/addAccountIcon.png" id="accountAdd"/><strong>Sign Up</strong></button> <!-- Added a button -->
-                    <li><a href="PlannedJourneys/htmlFiles/contactUs.html" class="navbar-text"><strong>Saved Trips</strong></a></li>
-                  </ul>
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+            <div class="navbar-nav" id="shiftCheck">
+              <a class="nav-item nav-link" id="shiftCheck" href="#"><strong>Plan a Journey</strong></a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".myNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse myNavbar">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Destinations</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">About</a>
+                    <a class="dropdown-item" href="#">Contact Us</a>
+                  </div>
                 </li>
               </ul>
             </div>
-          </div>
-    		</nav>
+            <!-- <form class="form-inline">
+              <div class="collapse navbar-collapse myNavbar">
+                <li class="nav-item dropdown navbar-nav">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    My Account
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Login</a>
+                    <a class="dropdown-item" href="#">Sign Up</a>
+                    <a class="dropdown-item" href="#">Saved Trips</a>
+                  </div>
+                </li>
+              </div>
+            </form>
+          </div> -->
+        </nav>
     	</div>
     </div>
   </body>
-  <script src="jsFiles/Bootstrap/bootstrap.min.js"></script> <!-- Boostrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>
