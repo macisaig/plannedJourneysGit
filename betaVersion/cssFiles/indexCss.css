@@ -1,23 +1,31 @@
 /*Globals*/
 /*///////////////////////////////////////////////////////////////////*/
 
+/*Grey background in case nothing else loads*/
 body
 {
 	background-color: #0E0E0E;
 }
 
+/*States the size and type of the fonts*/
 a
 {
 	font: 15px/1.5 Helvetica,sans-serif; /*Determines the text*/
 }
 
+/*Causes all images to fill out their container*/
+img
+{
+	max-width: 100%;
+	max-height: 100%;
+}
 /*Classes and IDs*/
 /*///////////////////////////////////////////////////////////////////*/
 
 /*Limits the width of whatever is inside to max and centers*/
 .limitWidth
 {
-	max-width: 700px;
+	max-width: 900px;
 	margin: auto;
 }
 
@@ -38,21 +46,24 @@ a
 	max-height: 900px;
 }
 
-
-img
-{
-	max-width: 100%;
-	max-height: 100%;
-}
-
+/*The size of the branding image*/
 .brandParam
 {
 	width: 60px;
 	height: 60px;
 }
 
+/*Shifting over the Plan a Journey in the nav*/
 #shiftCheck
 {
 	margin: 0px 10px 0px -10px;
 	padding: 0px;
+}
+
+/*Making the search bar transparent*/
+#destinationLocation, #destinationLocation:focus
+{
+	background: transparent;
+	border: none;
+	outline: none;
 }
