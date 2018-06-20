@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This is for the phone scaling -->
     <link rel="stylesheet" href="cssFiles/Bootstrap/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   	<link rel="stylesheet" href="cssFiles/indexCss.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   </head>
 
   <body>	
@@ -55,11 +55,14 @@
           </form>
         </div>
       </nav>
-      <div class="limitWidth">
-        <form class="form-inline">
-          <input class="form-control col-md-12 col-lg-12 col-sm-12 col-xs-12" type="search" placeholder="Search" aria-label="Search" id=destinationLocation>
-          <button class="btn btn-outline-success col-md-12 col-lg-12 col-sm-12 col-xs-12" type="submit">Search</button>
+      <div class="limitWidth vertShift">
+        <div class="col-sm-2 col-md-2 col-lg-2 col-xs-2">
+        <form class="form-inline resizeSearch">
+          <i class="fas fa-search"></i>
+          <input class="form-control" type="search" placeholder="search..." aria-label="search..." id=destinationLocation>
+          <button class="btn" type="submit">Search</button>
         </form>
+      </div>
     	</div>
     </div>
   </body>
@@ -72,7 +75,6 @@
         </a>
       </div>
       <div class="col-sm-4">
-        <h3>Social Media Links</h3>
         <a href="https://www.facebook.com/PlannedJourneys-222086925035409/" class ="fa fa-facebook"></a>
         <a href="https://twitter.com/PlannedJourneys" class ="fa fa-twitter"></a>
         <a href="https://www.instagram.com/plannedjourneys/?hl=en" class ="fa fa-instagram"></a>

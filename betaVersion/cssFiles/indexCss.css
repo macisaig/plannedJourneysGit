@@ -61,9 +61,40 @@ img
 }
 
 /*Making the search bar transparent*/
-#destinationLocation, #destinationLocation:focus
+#destinationLocation
 {
 	background: transparent;
 	border: none;
 	outline: none;
+	color: #FFF;
+	font-size: 60px;
+	margin: 0px;
+}
+
+.vertShift
+{
+	margin-top: 150px;
+}
+
+.resizeSearch
+{
+	padding: 10px;
+}
+
+.fa-search
+{
+	font-size: 25px;
+	color: #FFF;
+	margin: 20px 0px 0px 0px;
+}
+
+@media (max-width: 600px) { /*This is for the mobile version*/
+  .fa-search
+  {
+  	font-size: 15px;
+  }
+  #destinationLocation
+  {
+  	font-size: 30px;
+  }
 }
