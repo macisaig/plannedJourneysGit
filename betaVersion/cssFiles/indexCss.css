@@ -25,7 +25,7 @@ img
 /*Limits the width of whatever is inside to max and centers*/
 .limitWidth
 {
-	max-width: 900px;
+	max-width: 1100px;
 	margin: auto;
 }
 
@@ -66,14 +66,17 @@ img
 	background: transparent;
 	border: none;
 	outline: none;
-	color: #FFF;
+	color: #000;
 	font-size: 60px;
 	margin: 0px;
+	width: 80%;
+	font-weight: bold;
+	border-bottom: 1px solid black;
 }
 
 .vertShift
 {
-	margin-top: 150px;
+	margin-top: 220px;
 }
 
 .resizeSearch
@@ -83,7 +86,7 @@ img
 
 .fa-search
 {
-	font-size: 25px;
+	font-size: 35px;
 	color: #FFF;
 	margin: 20px 0px 0px 0px;
 }
@@ -92,6 +95,8 @@ img
   .fa-search
   {
   	font-size: 15px;
+  	margin-top: 3px;
+  	margin-right: -5px
   }
   #destinationLocation
   {
