@@ -91,6 +91,16 @@ img
 	margin: 20px 0px 0px 0px;
 }
 
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #000;
+    margin: 1em 0;
+    padding: 0;
+    margin: -5px 0px 0px 0px;
+}
+
 @media (max-width: 600px) { /*This is for the mobile version*/
   .fa-search
   {
@@ -102,4 +112,23 @@ img
   {
   	font-size: 30px;
   }
+}
+
+footer
+{
+	width: 100%;
+	padding: 3%;
+	color: #FFF;
+}
+
+footer a, footer a:hover
+{
+	text-decoration: none;
+	color: #FFF;
+}
+
+.addPadding
+{
+	padding: 5px;
+	margin: auto;
 }
