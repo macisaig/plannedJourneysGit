@@ -121,10 +121,14 @@ footer
 	color: #FFF;
 }
 
-footer a, footer a:hover
+footer a
+{
+	color: #FFF;
+}
+footer a:hover
 {
 	text-decoration: none;
-	color: #FFF;
+	color: #777
 }
 
 .addPadding
