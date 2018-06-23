@@ -19,6 +19,39 @@ img
 	max-width: 100%;
 	max-height: 100%;
 }
+
+
+/*Solid line across screen*/
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #000;
+    margin: 1em 0;
+    padding: 0;
+    margin: -5px 0px 0px 0px;
+}
+
+/*Footer values for width, padding*/
+footer
+{
+	width: 100%;
+	padding: 3%;
+}
+
+/*Color of the footer text*/
+footer a
+{
+	color: #FFF;
+}
+
+/*Color of the footer text when cursor is over top*/
+footer a:hover
+{
+	text-decoration: none;
+	color: #777
+}
+
 /*Classes and IDs*/
 /*///////////////////////////////////////////////////////////////////*/
 
@@ -71,19 +104,33 @@ img
 	margin: 0px;
 	width: 80%;
 	font-weight: bold;
+	padding: 10px;
+}
+
+/*Adds a bottom border*/
+.bottomBorder
+{
 	border-bottom: 1px solid black;
 }
 
-.vertShift
+.form-inline
 {
-	margin-top: 220px;
+	padding-left: 5px;
 }
 
+/*Shifts the search #px from top*/
+.vertShift
+{
+	margin-top: 190px;
+}
+
+/*Adds padding*/
 .resizeSearch
 {
 	padding: 10px;
 }
 
+/*Determines the size of the "Search" magnifying glass*/
 .fa-search
 {
 	font-size: 35px;
@@ -91,46 +138,52 @@ img
 	margin: 20px 0px 0px 0px;
 }
 
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #000;
-    margin: 1em 0;
-    padding: 0;
-    margin: -5px 0px 0px 0px;
+/*Solid line underneath Search when media is small*/
+.display
+{
+	margin-top: -24px;
 }
 
-@media (max-width: 600px) { /*This is for the mobile version*/
+@media (max-width: 680px) { /*This is for the mobile version*/
+  /*Determines the size of the "Search" magnifying glass*/
   .fa-search
   {
-  	font-size: 15px;
+  	font-size: 20px;
   	margin-top: 3px;
   	margin-right: -5px
   }
+  /*Determines the size of the "Search" text*/
   #destinationLocation
   {
-  	font-size: 30px;
+  	font-size: 35px;
   }
 }
 
-footer
+/*Shows the button on bottom and has a solid line*/
+@media (max-width: 581px)
 {
-	width: 100%;
-	padding: 3%;
-	color: #FFF;
+	/*Takes away border on search*/
+	.bottomBorder
+	{
+		border-bottom: none;
+	}
+	/*Doesn't display initial button*/
+	.noDisplay
+	{
+		display: none;
+	}
 }
 
-footer a
+@media (min-width: 581px)
 {
-	color: #FFF;
-}
-footer a:hover
-{
-	text-decoration: none;
-	color: #777
+	/*Hides secondary button when it's larger*/
+	.display
+	{
+		display: none;
+	}
 }
 
+/*Adding padding and margin to the footer*/
 .addPadding
 {
 	padding: 5px;
