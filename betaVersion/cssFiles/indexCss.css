@@ -13,6 +13,11 @@ a
 	font: 15px/1.5 Helvetica,sans-serif; /*Determines the text*/
 }
 
+a:hover
+{
+	text-decoration: none;
+}
+
 /*Causes all images to fill out their container*/
 img
 {
@@ -61,6 +66,11 @@ h5
 	font-size: 17px;
 }
 
+h3
+{
+	font-size: 23px;
+}
+
 /*Classes and IDs*/
 /*///////////////////////////////////////////////////////////////////*/
 
@@ -75,6 +85,12 @@ h5
 .limitHeight
 {
 	max-height: 1100px;
+}
+
+/*Adds padding to the cards*/
+.addPadding2
+{
+	padding: 15px;
 }
 
 /*Cover image*/
@@ -122,11 +138,6 @@ h5
 	border-bottom: 1px solid black;
 }
 
-.padForm
-{
-	padding: 10px;
-}
-
 /*Add some padding to the side of the search form*/
 .form-inline
 {
@@ -160,7 +171,13 @@ h5
 	margin-top: -24px;
 }
 
-@media (max-width: 680px) { /*This is for the mobile version*/
+.card
+{
+	height: 400px;
+}
+
+@media (max-width: 680px) 
+{ 
   /*Determines the size of the "Search" magnifying glass*/
   .fa-search
   {
@@ -177,6 +194,22 @@ h5
   {
   	font-size: 13px;
   }
+}
+
+/*Prevents images in cards from being too large*/
+.card img
+{
+	max-height: 250px;
+}
+
+.card h4, .card h3
+{
+	color: #FFF;
+}
+
+.card h4:hover, .card h3:hover
+{
+	color: #FFF
 }
 
 /*Shows the button on bottom and has a solid line*/
@@ -201,6 +234,14 @@ h5
 	.display
 	{
 		display: none;
+	}
+}
+
+@media (max-width: 1400px)
+{
+	.addPadding2
+	{
+		margin-top: -100px;
 	}
 }
 
