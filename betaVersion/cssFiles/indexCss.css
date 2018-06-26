@@ -171,9 +171,36 @@ h3
 	margin-top: -24px;
 }
 
+/*Sets height and background color*/
 .card
 {
 	height: 400px;
+	background: #F14E02;
+}
+
+/*Prevents images in cards from being too large*/
+.card img
+{
+	max-height: 250px;
+}
+
+/*Sets the color of the text*/
+.card h4, .card h3
+{
+	color: #FFF;
+}
+
+/*Sets the color of the text when hovered over*/
+.card h4:hover, .card h3:hover
+{
+	color: #FFF
+}
+
+/*Adding padding and margin to the footer*/
+.addPadding
+{
+	padding: 5px;
+	margin: auto;
 }
 
 @media (max-width: 680px) 
@@ -194,22 +221,6 @@ h3
   {
   	font-size: 13px;
   }
-}
-
-/*Prevents images in cards from being too large*/
-.card img
-{
-	max-height: 250px;
-}
-
-.card h4, .card h3
-{
-	color: #FFF;
-}
-
-.card h4:hover, .card h3:hover
-{
-	color: #FFF
 }
 
 /*Shows the button on bottom and has a solid line*/
@@ -243,11 +254,4 @@ h3
 	{
 		margin-top: -100px;
 	}
-}
-
-/*Adding padding and margin to the footer*/
-.addPadding
-{
-	padding: 5px;
-	margin: auto;
 }
