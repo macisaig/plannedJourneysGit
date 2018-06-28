@@ -1,96 +1,88 @@
 <!DOCTYPE html>
 <html lang="en"> <!-- Speaking english -->
   <head>
-  	<link rel="icon" href="imgFiles/plannedJourneysLogoMini.jpg">
+    <link rel="icon" href="../imgFiles/plannedJourneysLogoMini.jpg">
     <title>Plan Your Adventure</title>
     <meta charset="utf-8"> <!-- Common throughout web -->
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This is for the phone scaling -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  	<link rel="stylesheet" href="cssFiles/indexCss.css">
+    <link rel="stylesheet" href="../cssFiles/indexCss.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   </head>
 
-  <body>	
-    <div id="coverImg">
-  		<nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <div class="container limitWidth">     
-          <div class="navbar-brand brandParam">
-            <img src="imgFiles/plannedJourneysLogoMini.jpg">
-          </div>
-          <div class="navbar-nav" id="shiftCheck">
-            <a class="nav-item nav-link" href="#"><strong>Plan a Trip</strong></a>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".myNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse myNavbar">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Destinations</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  More
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">About</a>
-                  <a class="dropdown-item" href="#">Contact Us</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <form class="form-inline">
-            <div class="collapse navbar-collapse myNavbar">
-              <li class="nav-item dropdown navbar-nav">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  My Account
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Login</a>
-                  <a class="dropdown-item" href="#">Sign Up</a>
-                  <a class="dropdown-item" href="#">Saved Trips</a>
-                </div>
-              </li>
+  <body>  
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">  <!-- Navbar -->
+      <div class="container limitWidth">       <!-- Limits text to a certain width -->
+        <div class="navbar-brand brandParam">
+          <a href="../index.html">
+            <img src="../imgFiles/plannedJourneysLogoMini.jpg">
+          </a>
+        </div>
+        <div class="navbar-nav" id="shiftCheck">
+          <a class="nav-item nav-link" href="PlanATrip.html"><strong>Plan a Trip</strong></a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".myNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse myNavbar" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="Destinations.html">Destinations</a>
+            </li>
+            <li class="nav-item dropdown navbar-nav">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                More
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="PopularTrips.html">Popular Trips</a>
+                <a class="dropdown-item" href="About.html">About</a>
+                <a class="dropdown-item" href="ContactUs.html">Contact Us</a>
+              </div>
+            </li>
+          </ul>
+          <li class="nav-item dropdown navbar-nav">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              My Account
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="Login.html">Login</a>
+              <a class="dropdown-item" href="SignUp.html">Sign Up</a>
+              <a class="dropdown-item" href="SavedTrips.html">Saved Trips</a>
             </div>
-          </form>
+          </li>
         </div>
-      </nav>
-      
+      </div>
+    </nav>
 
-      <!-- <div class="limitWidth vertShift">
-        <div class="col-sm-12 col-md-12 col-lg-12 col-xs-2">
-          <form class="form-inline resizeSearch">
-            <i class="fas fa-search"></i>
-            <input class="form-control" type="search" placeholder="search..." aria-label="search..." id=destinationLocation>
-            <button class="btn" type="submit">Search</button>
-          </form>
-        </div>
-    	</div> -->
-
-
-
+    <div class="jumbotron">
+      <h2 class="text-center">Start Planning Your Journey!</h2>
+      <hr class="my-4">
+      <div class="text-center">
+        <a class="btn btn-primary btn-lg" href="SignUp.html" role="button">Sign Up Now</a>
+      </div>
     </div>
+
+    <footer class="container-fluid text-center">
+      <div class="row limitWidth">
+        <div class="col-sm-3 addPadding">
+          <a href="../index.html"><h2>Voiyag Onward</h2></a>
+        </div>
+        <div class="col-sm-6 addPadding">
+          <a href="ContactUs.html" class="addPadding">Contact Us</a>
+          <a href="About.html" class="addPadding">About Us</a>
+          <a href="Help.html" class="addPadding">Help</a>
+        </div>
+        <div class="col-sm-3 addPadding">
+          <a href="https://www.facebook.com/PlannedJourneys-222086925035409/" class ="fab fa-facebook-f addPadding"></a>
+          <a href="https://twitter.com/PlannedJourneys" class ="fab fa-twitter addPadding"></a>
+          <a href="https://www.instagram.com/plannedjourneys/?hl=en" class ="fab fa-instagram addPadding"></a>
+          <a href="https://www.linkedin.com/in/planned-journeys-9053a715b/" class ="fab fa-linkedin addPadding"></a>
+          <a href="https://www.youtube.com/channel/UCCBDTcQADAt_Hg2dETKlF3w" class ="fab fa-youtube addPadding"></a>
+        </div>
+      </div>
+    </footer>
   </body>
-
-  <footer class="container-fluid text-center">
-    <div class="row limitWidth">
-      <div class="col-sm-3 addPadding">
-        <a href="#"><h2>Voiyag Onward</h2></a>
-      </div>
-      <div class="col-sm-6 addPadding">
-        <a href="#" class="addPadding">Contact Us</a>
-        <a href="#" class="addPadding">About Us</a>
-        <a href="#" class="addPadding">Help</a>
-      </div>
-      <div class="col-sm-3 addPadding">
-        <a href="https://www.facebook.com/PlannedJourneys-222086925035409/" class ="fab fa-facebook-f addPadding"></a>
-        <a href="https://twitter.com/PlannedJourneys" class ="fab fa-twitter addPadding"></a>
-        <a href="https://www.instagram.com/plannedjourneys/?hl=en" class ="fab fa-instagram addPadding"></a>
-        <a href="https://www.linkedin.com/in/planned-journeys-9053a715b/" class ="fab fa-linkedin addPadding"></a>
-        <a href="https://www.youtube.com/channel/UCCBDTcQADAt_Hg2dETKlF3w" class ="fab fa-youtube addPadding"></a>
-      </div>
-    </div>
-  </footer>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
