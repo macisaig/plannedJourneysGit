@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Speaking english -->
+  <head>
+    <link rel="icon" href="../imgFiles/plannedJourneysLogoMini.jpg">
+    <title>Plan Your Adventure</title>
+    <meta charset="utf-8"> <!-- Common throughout web -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This is for the phone scaling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../cssFiles/indexCss.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  </head>
+
+  <body>  
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">  <!-- Navbar -->
+      <div class="container limitWidth">       <!-- Limits text to a certain width -->
+        <div class="navbar-brand brandParam">
+          <a href="../index.html">
+            <img src="../imgFiles/plannedJourneysLogoMini.jpg">
+          </a>
+        </div>
+        <div class="navbar-nav" id="shiftCheck">
+          <a class="nav-item nav-link" href="PlanATrip.html"><strong>Plan a Trip</strong></a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".myNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse myNavbar" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="Destinations.html">Destinations</a>
+            </li>
+            <li class="nav-item dropdown navbar-nav">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                More
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="PopularTrips.html">Popular Trips</a>
+                <a class="dropdown-item" href="About.html">About</a>
+                <a class="dropdown-item" href="ContactUs.html">Contact Us</a>
+              </div>
+            </li>
+          </ul>
+          <li class="nav-item dropdown navbar-nav">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              My Account
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="Login.html">Login</a>
+              <a class="dropdown-item" href="SignUp.html">Sign Up</a>
+              <a class="dropdown-item" href="SavedTrips.html">Saved Trips</a>
+            </div>
+          </li>
+        </div>
+      </div>
+    </nav>
+
+    <div class="jumbotron limitWidth jumbotronContactUs">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-lg-12">
+            <h1 class="h1">
+              Contact us <br><small>Tell Us About Your Journey</small></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="limitWidth addPadding">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="well well-sm">
+            <form id="changeContact">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-group">
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                      <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" class="form-control" required="required">
+                      <option value="na" selected="">Choose One:</option>
+                      <option value="service">General Customer Service</option>
+                      <option value="comments">General Comments</option>
+                      <option value="suggestions">Suggestions</option>
+                      <option value="product">Product Support</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="name">Message</label>
+                    <textarea name="message" id="contactMessage" class="form-control" rows="8" cols="25" required="required" placeholder="Message"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-12 text-center">
+                  <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <form>
+            <br>
+            <legend><span class="glyphicon glyphicon-globe"></span> Our office</legend>
+            <address>
+              <strong>Planned Journeys</strong><br>
+              Address Coming<br>
+              In the Future<br>
+              <abbr title="Phone"> P:</abbr>
+              (Phone Coming in Future) <!--(123) 456-7890 -->
+            </address>
+            <address>
+              <strong>Planned Journeys</strong><br>
+              <a href="mailto:#">service@plannedjourneys.com</a>
+            </address>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <h2 class="text-center">Start Planning Your Journey!</h2>
+      <hr class="my-4">
+      <div class="text-center">
+        <a class="btn btn-primary btn-lg" href="SignUp.html" role="button">Sign Up Now</a>
+      </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+      <div class="row limitWidth">
+        <div class="col-sm-3 addPadding">
+          <a href="../index.html"><h2>Voiyag Onward</h2></a>
+        </div>
+        <div class="col-sm-6 addPadding">
+          <a href="ContactUs.html" class="addPadding">Contact Us</a>
+          <a href="About.html" class="addPadding">About Us</a>
+          <a href="Help.html" class="addPadding">Help</a>
+        </div>
+        <div class="col-sm-3 addPadding">
+          <a href="https://www.facebook.com/PlannedJourneys-222086925035409/" class ="fab fa-facebook-f addPadding"></a>
+          <a href="https://twitter.com/PlannedJourneys" class ="fab fa-twitter addPadding"></a>
+          <a href="https://www.instagram.com/plannedjourneys/?hl=en" class ="fab fa-instagram addPadding"></a>
+          <a href="https://www.linkedin.com/in/planned-journeys-9053a715b/" class ="fab fa-linkedin addPadding"></a>
+          <a href="https://www.youtube.com/channel/UCCBDTcQADAt_Hg2dETKlF3w" class ="fab fa-youtube addPadding"></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>

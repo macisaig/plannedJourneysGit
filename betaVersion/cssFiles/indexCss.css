@@ -255,3 +255,22 @@ h3
 		margin-top: -100px;
 	}
 }
+
+/*/////////////////////////////////////////////////////////////////////////*/
+
+/*Contact Us*/
+.jumbotronContactUs {
+  color: #FFF;
+  background: url("../imgFiles/city.jpg") no-repeat center center; 
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  height: 400px;
+  margin: auto;
+}
+
+#changeContact
+{
+	color: #FFF;
+}
