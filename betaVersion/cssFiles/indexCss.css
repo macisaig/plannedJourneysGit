@@ -87,12 +87,6 @@ h3
 	max-height: 1100px;
 }
 
-/*Adds padding to the cards*/
-.addPadding2
-{
-	padding: 15px;
-}
-
 /*Cover image*/
 #coverImg
 {
@@ -203,6 +197,17 @@ h3
 	margin: auto;
 }
 
+/*Adds padding to the cards*/
+.addPadding2
+{
+	padding: 15px;
+}
+
+.addPaddingVert
+{
+	padding: 5px 0px 5px 0px;
+}
+
 .addPadMargin
 {
 	padding: 10px;
@@ -280,25 +285,38 @@ h3
 #changeContact
 {
 	color: #FFF;
-	background: #04065F;
+	/*background: #04065F;*/
 }
 
 /*/////////////////////////////////////////////////////////////////////////*/
 
-/*Log In*/
-.form-signin
-{
-  vertical-align: middle;
+/*Sign Up*/
+
+fieldset {
+    border: thin solid #ccc; 
+    border-radius: 4px;
+    padding: 5px;
+    background: #fbfbfb;
+}
+legend {
+   color: #678;
+}
+.form-control {
+    width: 95%;
+}
+label small {
+    color: #678 !important;
+}
+span.req {
+    color:maroon;
+    font-size: 112%;
 }
 
-.limitForm{
-  width: 300px;
-  height: 40px;
-  margin: auto;
+.warning{
+  color: red;
 }
 
-.formPadMargin
-{
-	padding: 10px;
-	margin: auto;
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
 }
