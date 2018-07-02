@@ -161,7 +161,7 @@ function checkPass()
   }
 } 
 
-function validatePhone(phone) 
+function validatephone(phone) 
 {
   var maintainplus = '';
   var numval = phone.value
@@ -178,8 +178,12 @@ function validatePhone(phone)
 // validates text only
 function validateName(txt) 
 {
-  txt.value = txt.value.replace(/[^a-zA-Z-'\n\r.]+/g, '');
+  txt.value = txt.value.replace(/[^a-zA-Z-'\n\r.]+/g-, '');
 }
+
+
+  alert("WOAH");
+
 
 // validates text only
 function validateUsername(txt)
@@ -235,4 +239,80 @@ function email_validate(email)
   }
 }
 
-document.getElementById("field_terms").setCustomValidity("Please indicate that you accept the Terms and Conditions");
+// validate date of birth
+function dob_validate(dob)
+{
+  var regDOB = /^(\d{1,2})[-\/](\d{1,2})[-\/](\d{4})$/;
+
+  if(regDOB.test(dob) == false)
+  {
+      document.getElementById("statusDOB").innerHTML  = "<span class='warning'>DOB is only used to verify your age.</span>";
+  }
+  else
+  {
+      document.getElementById("statusDOB").innerHTML  = "<span class='valid'>Thanks, you have entered a valid DOB!</span>";   
+  }
+}
+
+// validate address
+function add_validate(address)
+{
+  var regAdd = /^(?=.*\d)[a-zA-Z\s\d\/]+$/;
+  
+  if(regAdd.test(address) == false)
+  {
+      document.getElementById("statusAdd").innerHTML  = "<span class='warning'>Address is not valid yet.</span>";
+  }
+  else
+  {
+      document.getElementById("statusAdd").innerHTML  = "<span class='valid'>Thanks, Address looks valid!</span>";    
+  }
+}
+
+ document.getElementById("field_terms").setCustomValidity("Please indicate that you accept the Terms and Conditions");
+
+ function checkValues()
+ {
+  var submitValue = false;
+  var confirmPass2 = checkPass();
+  var firstPass = document.getElementById('pass1');
+  var confirmPass = validatePassword(firstPass);
+  var emailVar = document.getElementById('email');
+  var confirmEmail = email_validate(emailVar.value);
+  var username = document.getElementById('user');
+  var confirmUser = validateUsername(username);
+  var initialName = document.getElementById('firstName');
+  var secondName = document.getElementById('lastName');
+  var confirmName = false;
+
+  if ((initialName.value.length > 0) && (secondName.value.length > 0))
+  {
+    confirmName = true;
+  }
+  else
+  {
+    if (initialName.value.length == 0)
+    {
+      document.getElementById("errFirst").innerHTML = "<span class='warning'>Please enter a first name</span>";
+    }
+    else
+    {
+      document.getElementById("errFirst").innerHTML = "";
+    }
+    if (secondName.value.length == 0)
+    {
+      document.getElementById("errLast").innerHTML = "<span class='warning'>Please enter a last name</span>";
+    }
+    else
+    {
+      document.getElementById("errLast").innerHTML = "";
+    }
+  }
+
+  if ((confirmPass == true) & (confirmPass2 == true) & (confirmEmail == true) & (confirmUser == true) & (confirmName == true))
+  {
+    submitValue = true;
+  }
+
+  return submitValue;
+ }

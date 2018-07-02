@@ -289,9 +289,9 @@ h3
 }
 
 /*/////////////////////////////////////////////////////////////////////////*/
-
 /*Sign Up*/
 
+/*Sets the border and overall look of the 'sign up' modal*/
 fieldset {
     border: thin solid #ccc; 
     border-radius: 4px;
@@ -312,6 +312,7 @@ span.req {
     font-size: 112%;
 }
 
+/*Makes the 'warning' class red*/
 .warning{
   color: red;
 }
@@ -319,4 +320,35 @@ span.req {
 /* Add a green text color and a checkmark when the requirements are right */
 .valid {
     color: green;
+}
+
+/*Makes the initial rules for the password hidden*/
+#message{
+  display: none;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+}
+
+/*/////////////////////////////////////////////////////////////////////////*/
+/*Load Trip*/
+
+.selectTrip
+{
+	display: none;
 }
