@@ -166,28 +166,22 @@ h3
 }
 
 /*Sets height and background color*/
-.card
+.manipCard
 {
 	height: 400px;
 	background: #F14E02;
 }
 
 /*Prevents images in cards from being too large*/
-.card img
+.manipCard img
 {
 	max-height: 250px;
 }
 
 /*Sets the color of the text*/
-.card h4, .card h3
+.manipCard h4, .manipCard h3, .manipCard h4:hover, .manipCard h3:hover
 {
 	color: #FFF;
-}
-
-/*Sets the color of the text when hovered over*/
-.card h4:hover, .card h3:hover
-{
-	color: #FFF
 }
 
 /*Adding padding and margin to the footer*/
@@ -380,6 +374,8 @@ span.req {
 
 .aboutColor
 {
-	background: #2E2E2E;
-	color: #FFF;
+	background: #eff1f2;
+	color: #000;
+	padding: 10px;
+	margin: auto;
 }
