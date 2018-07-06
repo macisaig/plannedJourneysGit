@@ -408,7 +408,7 @@ span.req {
 /*Sets map height*/
 #mapdiv 
 {
-  height: 400px;
+  height: 550px;
 }
 
 /*Sets the size of the internal map so that it changes with width of html*/
@@ -464,4 +464,10 @@ span.req {
   {
   	font-size: 17px;
   }
+
+  #mapdiv 
+  {
+	height: 350px;
+  }
+
 }
