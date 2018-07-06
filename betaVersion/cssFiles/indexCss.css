@@ -230,7 +230,7 @@ h3
 }
 
 /*Shows the button on bottom and has a solid line*/
-@media (max-width: 583px)
+@media (max-width: 685px)
 {
 	/*Takes away border on search*/
 	.bottomBorder
@@ -245,7 +245,7 @@ h3
 	/*Resizes all H5*/
 }
 
-@media (min-width: 581px)
+@media (min-width: 686px)
 {
 	/*Hides secondary button when it's larger*/
 	.display
@@ -351,6 +351,7 @@ span.req {
 /*/////////////////////////////////////////////////////////////////////////*/
 /*About*/
 
+/*Jumbotron picture*/
 .jumbotronAbout 
 {
   color: #FFF;
@@ -364,6 +365,7 @@ span.req {
   padding: 10px;
 }
 
+/*Resize the jumbotron height*/
 @media (min-width: 800px)
 {
 	.jumbotronAbout
@@ -372,10 +374,94 @@ span.req {
 	}
 }
 
+/*Background color for about*/
 .aboutColor
 {
 	background: #eff1f2;
 	color: #000;
 	padding: 10px;
 	margin: auto;
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////*/
+/*Popular Trips*/
+
+/*Provides all of the picture sizing*/
+.popularImg
+{
+	height: 250px;
+	width: 40%;
+	margin: auto;
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////*/
+/*Destinations*/
+
+.destinationsColor
+{
+	background: #eff1f2;
+	margin: auto;
+}
+
+/*Sets map height*/
+#mapdiv 
+{
+  height: 400px;
+}
+
+/*Sets the size of the internal map so that it changes with width of html*/
+.mapContents
+{
+  width: 100%;
+  margin: auto;
+  font-size: 70%; 
+}
+
+/*Shifts the search #px from top*/
+.vertShift2
+{
+	margin-top: 60px;
+}
+
+/*Makes the magnifying glass black*/
+.colorMag
+{
+	color: #000;
+}
+
+#destinationHeader
+{
+	padding: 0px 2px 0px 2px;
+}
+
+/*Making the search bar transparent*/
+#countryLocation
+{
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #000;
+	font-size: 50px;
+	margin: 0px;
+	width: 80%;
+	font-weight: bold;
+	padding: 10px 0px 10px 10px;
+}
+
+@media (max-width: 680px) 
+{ 
+  /*Determines the size of the "Search" text*/
+  #countryLocation
+  {
+  	font-size: 35px;
+  	margin-top: 10px;
+  }
+
+  /*resize header size*/
+  #destinationHeader h3
+  {
+  	font-size: 17px;
+  }
 }

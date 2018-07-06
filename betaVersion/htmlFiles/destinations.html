@@ -67,6 +67,137 @@
       </div>
     </nav>
 
+    <!-- Destinations HTML ===================================== -->
+    <div class="destinationsColor">
+      <div class="limitWidth text-center" id="destinationHeader">
+        <h1 class = "topPage">
+          <strong><u>Destinations</u></strong>
+        </h1>
+        <h3>Search for or Click on a country to view their top rated trips</h3>
+
+        <!-- Search Bar -->
+        <div class="limitWidth resizeSearch vertShift2">
+          <h5>SEARCH FOR A COUNTRY</h5>
+          <form class="form-inline bottomBorder">
+            <i class="fas fa-search colorMag"></i>
+            <input class="" type="search" placeholder="search..." aria-label="search..." id=countryLocation>
+            <div class="noDisplay">
+              <a class="btn btn-success btn-lg" href="" role="button">Search</a>
+            </div>
+          </form>
+          <div class="display">
+            <hr class="my-4">
+            <div class="text-center">
+              <a class="btn btn-success btn-lg" href="" role="button">Search</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div id="mapdiv"></div>
+        <div id="mapContents"></div>
+        <h2 class = "topPage">
+          <strong>List of Trips</strong>
+        </h2>
+        <hr>
+        <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-primary">New River Gorge</strong>
+              <div class="mb-1">
+                <div class="mb-1 text-muted">4 Day Trip</div>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star-half"></span>
+                <div class="mb-1 text-muted">112 Reviews</div>
+              </div>
+              <p class="card-text mb-auto">Awesome trip of climbing and swimming in the new river gorge</p>
+              <div class="container text-center">
+                <a class="btn btn-success btn-sm" href="" role="button">Load Trip</a>
+              </div>
+            </div>
+            <img class="card-img-right flex-auto d-sm-block popularImg" src="../imgFiles/newRiver.jpg" alt="Card image cap">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card flex-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-success">Patagonia</strong>
+              <div class="mb-1">
+                <div class="mb-1 text-muted">10 Day Trip</div>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="far fa-star"></span>
+                <div class="mb-1 text-muted">201 Reviews</div>
+              </div>
+              <p class="card-text mb-auto">Hiking the O in Patagonia. Beautiful views of Glaciers, Mountains, and Llamas</p>
+              <div class="container text-center">
+                <a class="btn btn-success btn-sm" href="" role="button">Load Trip</a>
+              </div>
+            </div>
+            <img class="card-img-right flex-auto d-sm-block popularImg" src="../imgFiles/argentina.jpg" alt="Card image cap">
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-primary">New Zealand</strong>
+              <div class="mb-1">
+                <div class="mb-1 text-muted">21 Day Trip</div>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="far fa-star"></span>
+                <div class="mb-1 text-muted">98 Reviews</div>
+              </div>
+              <p class="card-text mb-auto">It's fricken New Zealand. Run the gambit around both the North and South island with this plan</p>
+              <div class="container text-center">
+                <a class="btn btn-success btn-sm" href="" role="button">Load Trip</a>
+              </div>
+            </div>
+            <img class="card-img-right flex-auto d-sm-block popularImg" src="../imgFiles/climbingRocks.jpg" alt="Card image cap">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card flex-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-success">Iceland</strong>
+              <div class="mb-1">
+                <div class="mb-1 text-muted">8 Day Trip</div>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="far fa-star"></span>
+                <div class="mb-1 text-muted">67 Reviews</div>
+              </div>
+              <p class="card-text mb-auto">Can it get any more beautiful than Iceland? Wonderful people, wonderful landscape, and a light show</p>
+              <div class="container text-center">
+                <a class="btn btn-success btn-sm" href="" role="button">Load Trip</a>
+              </div>
+            </div>
+            <img class="card-img-right flex-auto d-sm-block popularImg" src="../imgFiles/puffin.jpg" alt="Card image cap">
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a class="btn btn-primary btn-lg" href="" role="button">Show More Trips</a>
+      </div>
+      </div>
+      <br>
+    </div>
+    <!-- End Destinations HTML ================================== -->
+
     <!-- Login Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -256,4 +387,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="../jsFiles/signUp.js"></script>
+  <script src="https://www.amcharts.com/lib/3/ammap.js" type="text/javascript"></script>
+  <script src="https://www.amcharts.com/lib/3/maps/js/worldHigh.js" type="text/javascript"></script>
+  <script src="https://www.amcharts.com/lib/3/themes/dark.js" type="text/javascript"></script>
+  <script src="../jsFiles/maps.js"></script>
 </html>
