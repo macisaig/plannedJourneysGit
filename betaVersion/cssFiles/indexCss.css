@@ -119,7 +119,7 @@ h3
 	border: none;
 	outline: none;
 	color: #000;
-	font-size: 50px;
+	font-size: 45px;
 	margin: 0px;
 	width: 80%;
 	font-weight: bold;
@@ -207,7 +207,7 @@ h3
 	padding: 10px;
 	margin: 10px;
 }
-}
+
 
 @media (max-width: 680px) 
 { 
@@ -399,6 +399,7 @@ span.req {
 /*/////////////////////////////////////////////////////////////////////////*/
 /*Destinations*/
 
+/*Background color*/
 .destinationsColor
 {
 	background: #eff1f2;
@@ -431,6 +432,7 @@ span.req {
 	color: #000;
 }
 
+/*Pads the sides of the top part of destinations*/
 #destinationHeader
 {
 	padding: 0px 2px 0px 2px;
@@ -465,9 +467,35 @@ span.req {
   	font-size: 17px;
   }
 
+  /*Changes the height of the map*/
   #mapdiv 
   {
 	height: 350px;
   }
 
+}
+
+/*/////////////////////////////////////////////////////////////////////////*/
+/*Help Page*/
+
+/*This makes the text white, changes the background color, makes it centered, 
+and makes it so that the text isn't flush with the sides*/
+.helpMargin
+{
+	margin: auto;
+	color: #fff;
+	background: #181c1e;
+	padding: 20px;
+}
+
+/*White solid line across the screen*/
+.helpMargin hr
+{
+	border-top: 1px solid #fff;	
+}
+
+/*Makes it so that the help box is not taking up the entire body*/
+.autoMargin
+{
+	margin: 10px;
 }
