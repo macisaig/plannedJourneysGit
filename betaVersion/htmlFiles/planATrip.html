@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
     <!-- Scripts for Calendar -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <!-- End Calendar Scripts -->
   </head>
 
@@ -72,28 +72,19 @@
     </nav>
 
     <!-- Starting Plan a Trip Code -->
-    <form class="dataEnter">
-      <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
-        <div class="form-group">
-          <div class='input-group date' id='reToDate'>
-            <input type='text' class="form-control" placeholder="MM/DD/YYYY" name='firstDate'/>
-            <span class="input-group-addon">
-            <span class="glyphicon glyphicon-calendar"></span>
-            </span>
+    <div class="topColor">
+    <br><br>
+      <div class="limitWidth">
+        <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+          <div id="datePicker" class="planTop">
+            <i class="fa fa-calendar"></i>&nbsp;
+            <span></span> <i class="fa fa-caret-down"></i>
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
-        <div class="form-group">
-          <div class='input-group date' id='reFromDate'>
-            <input type='text' class="form-control" placeholder="MM/DD/YYYY" name='secondDate'/>
-            <span class="input-group-addon">
-            <span class="glyphicon glyphicon-calendar textButtonGroup"></span>
-            </span>
-          </div>
-        </div>
-      </div>
-    </form>
+
+    <br><br>
+    </div>
     <!-- Ending Plan a Trip Code -->
 
     <!-- Login Modal -->
@@ -287,9 +278,9 @@
   <script src="../jsFiles/signUp.js"></script>
 
   <!-- Calendar Javascript -->
-  <script type="text/javascript" src="../jsFiles//Jquery/jQuery.min.js"></script>
-  <script type="text/javascript" src="../jsFiles/moment-develop/min/moment.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
-  <script src="../jsFiles/planAJourney.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <script src="../jsFiles/planATrip.js"></script>
   <!-- End Calendar Javascript -->
 </html>

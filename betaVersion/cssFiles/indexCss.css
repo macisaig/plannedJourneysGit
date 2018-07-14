@@ -499,3 +499,20 @@ and makes it so that the text isn't flush with the sides*/
 {
 	margin: 10px;
 }
+
+
+/*/////////////////////////////////////////////////////////////////////////*/
+/*Plan a Trip Page*/
+
+.topColor
+{
+	background: #1359D9;
+}
+
+.planTop
+{
+	background: #3F86DC; 
+	cursor: pointer; 
+	padding: 5px 5px; 
+	color: #FFF;
+}
