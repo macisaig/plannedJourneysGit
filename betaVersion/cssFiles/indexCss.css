@@ -515,4 +515,17 @@ and makes it so that the text isn't flush with the sides*/
 	cursor: pointer; 
 	padding: 5px 5px; 
 	color: #FFF;
+	height: 60px;
+	font-weight: bold;
+}
+
+#datePicker
+{
+	margin: 10px 0px 0px 0px;
+	background: #3F86DC; 
+	cursor: pointer; 
+	padding: 5px 5px; 
+	color: #FFF;
+	height: 60px;
+	font-weight: bold;
 }

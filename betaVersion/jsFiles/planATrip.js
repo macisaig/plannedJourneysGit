@@ -5,14 +5,14 @@ $(function() {
     var minDate = moment();
 
     function cb(start, end) {
-        $('#datePicker span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        $('#datePicker span').html(start.format('MM/DD/YYYY') + ' - ' + end.format('MM/DD/YYYY'));
     }
 
     $('#datePicker').daterangepicker({
       startDate: start,
       endDate: end,
       minDate: moment(),
-      autoApply: true
+      autoApply: true      
     }, cb);
 
     cb(start, end);
