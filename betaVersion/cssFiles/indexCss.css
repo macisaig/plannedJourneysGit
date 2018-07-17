@@ -504,11 +504,13 @@ and makes it so that the text isn't flush with the sides*/
 /*/////////////////////////////////////////////////////////////////////////*/
 /*Plan a Trip Page*/
 
+/*Adds blue background at the top*/
 .topColor
 {
 	background: #1359D9;
 }
 
+/*Adds CSS to the calendar*/
 .topValue
 {
 	background: #3F86DC; 
@@ -519,22 +521,26 @@ and makes it so that the text isn't flush with the sides*/
 	padding: 12px 10px;
 }
 
+/*Floats to the right*/
 .floatRight
 {
 	float: right;
 }
 
+/*Lowers down symbols*/
 .centerI
 {
 	margin-top: 5px;
 	float: none;
 }
 
+/*Adds exchange symbol*/
 .fa-exchange-alt
 {
 	font-size: 20px;
 }
 
+/*Adds CSS to the To & From*/
 .tripLocation
 {
     background: #3F86DC; 
@@ -548,9 +554,36 @@ and makes it so that the text isn't flush with the sides*/
 	padding: 10px;
 }
 
+/*Adds padding to to & from & calendar*/
 .addPlanPadding
 {
-	padding-top: 2px;
-	padding-bottom: 2px;
-	width: 100%;
+	padding: 2px;
+}
+
+/*Changing color of placeholder*/
+.placeholderColor input::-webkit-input-placeholder 
+{
+color: #FFF !important;
+}
+ 
+.placeholderColor input:-moz-placeholder 
+{ /* Firefox 18- */
+color: #FFF !important;  
+}
+ 
+.placeholderColor input::-moz-placeholder 
+{  /* Firefox 19+ */
+color: #FFF !important;  
+}
+ 
+.placeholderColor input:-ms-input-placeholder 
+{  
+color: #FFF !important;  
+}
+
+/*Pulls To/From/Calendar slightly away from sides*/
+.padSides
+{
+	width: 95%;
+	margin: auto;
 }

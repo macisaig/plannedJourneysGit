@@ -23,3 +23,14 @@ $(function() {
     cb(start, end);
 
 });
+
+function initialize()
+{
+
+  var planStart = document.getElementById('toLocation');
+  var planEnd = document.getElementById('fromLocation');
+  new google.maps.places.Autocomplete(planStart);
+  new google.maps.places.Autocomplete(planEnd);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
