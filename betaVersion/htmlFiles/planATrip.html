@@ -74,7 +74,10 @@
     <!-- Starting Plan a Trip Code -->
     <div class="topColor">
       <br>
-      <div class="limitWidth">
+      <div class="text-center">
+        <h3 class="colorWhite">Update Start and End of Trip Information</h3>
+      </div>
+      <div class="limitWidth collapse show" id="infoCollapse">
         <div class="row padSides">
           <div class="col-md-6 col-lg-3 col-sm-12 col-xs-12 addPlanPadding placeholderColor">
             <input class="tripLocation" id="fromLocation" type="search" placeholder="From?" aria-label="search...">
@@ -91,16 +94,15 @@
           </div>
         </div>
       </div>
+      <div class="text-center">
+        <a class="btn btn-danger btn-md" data-toggle="collapse" href="#infoCollapse" role="button" aria-expanded="false" aria-controls="infoCollapse">
+          Toggle Info <i class="fa fa-caret-down floatRight centerI"></i>
+        </a>
+        <a class="btn btn-success btn-md" href="" role="button" data-toggle="" data-target="">Update Info</a>
+      </div>
       <br>
     </div>
 
-     <!-- <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 noMarginPadding">
-            <div class="topValue">
-              <input class="tripLocation" type="search" placeholder="From?" aria-label="search...">
-              <i class="fas fa-exchange-alt centerI"></i>
-              <input class="tripLocation" type="search" placeholder="To?" aria-label="search...">
-            </div>
-          </div> -->
     <!-- Ending Plan a Trip Code -->
 
     <!-- Login Modal -->
@@ -287,10 +289,10 @@
       </div>
     </footer>
   </body>
-  
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="../jsFiles/signUp.js"></script>
 
   <!-- Calendar Javascript -->
@@ -305,5 +307,4 @@
 
   <!-- Total JS for this page including calendar / google maps -->
   <script src="../jsFiles/planATrip.js"></script>
-
 </html>
