@@ -34,3 +34,11 @@ function initialize()
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+$('.placeholderColor').on('click','.triplocation',function() {
+  $(this).closest('.placeholderColor').find('.placeholderColor--active').removeClass('placeholderColor--active');
+  alert('hello');
+  $(this).addClass('placeholderColor--active');
+}).on('click','.placeholderColor--active',function() {
+  $(this).removeClass('placeholderColor--active');
+});
