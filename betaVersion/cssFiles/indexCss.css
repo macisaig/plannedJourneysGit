@@ -588,7 +588,14 @@ color: #FFF !important;
 	margin: auto;
 }
 
+/*Literally just providing the color white*/
 .colorWhite
 {
 	color: #fff;
+}
+
+/*Literally just providing an off-white color*/
+.colorCream
+{
+	background: #fbfbfb;
 }
