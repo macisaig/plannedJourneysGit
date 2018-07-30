@@ -719,3 +719,29 @@ color: #FFF !important;
     display: block;
     z-index: 50;
 }
+
+/*Adds CSS to the To & From*/
+.searchLocation
+{
+    background: #3F86DC; 
+	border: none;
+	outline: none;
+	color: #FFF;
+	font-size: 18px;
+	font-weight: bold;
+	height: 50px;
+	width: 90%;
+	padding: 10px;
+}
+
+.searchMag
+{
+	background: #3F86DC; 
+	color: #FFF;
+	font-weight: bold;
+	height: 50px;
+	width: 10%;
+	padding: 10px;
+	margin: 0px;
+	border-right: 1px solid white;
+}
