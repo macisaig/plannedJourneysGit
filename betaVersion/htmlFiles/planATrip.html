@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-sm navbar-light bg-light">  <!-- Navbar -->
       <div class="container limitWidth">       <!-- Limits text to a certain width -->
         <div class="navbar-brand brandParam">
-          <a href="../index.html">
+          <a href="../index.html" id="plannedLogo">
             <img src="../imgFiles/plannedJourneysLogoMini.jpg">
           </a>
         </div>
@@ -102,18 +102,22 @@
     <div class="colorCream">
       <div class="limitWidth padSides text-center">
         <br>
-        <h2>Add Activities to your Plan</h2>
+        <h2>Add to your Plan</h2>
         <hr>
         <br>
-        <h4 class='addPadding text-center'>Location of Activity <span data-tooltip="Location where the activity will take place" data-tooltip-position="left"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h4>
-
         <form class="form-inline">
-          <i class="fas fa-search searchMag"></i>
+          <a class="provideWidth" href="">
+            <i class="fas fa-search searchMag"></i>
+          </a>
           <input class="searchLocation" id="activityLocation" aria-describedby="First Location" placeholder="Location of Activity" type="search">
         </form>
         
         <h5>Don't know what to do? <a href="">Find suggestions</a></h5>
         <br>
+
+        <div class="mapProject">
+          <div id="map"></div>
+        </div>
       </div>
     </div>
     <!-- Ending Plan a Trip Code -->

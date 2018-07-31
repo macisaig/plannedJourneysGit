@@ -42,3 +42,9 @@ $('.placeholderColor').on('click','.triplocation',function() {
 }).on('click','.placeholderColor--active',function() {
   $(this).removeClass('placeholderColor--active');
 });
+
+var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 15, lng: 0},
+    zoom: 2,
+    mapTypeId: 'roadmap'
+  });
