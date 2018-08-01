@@ -735,14 +735,14 @@ color: #FFF !important;
 
 .searchMag
 {
-	background: #3F86DC; 
-	color: #FFF;
+	background: #FFF; 
+	color: #2eaa00;
 	font-weight: bold;
 	height: 100%;
 	width: 100%;
 	padding: 10px;
 	margin: 0px;
-	border-left: 1px solid white;
+	border-left: 1px solid black;
 }
 
 .provideWidth
@@ -800,8 +800,9 @@ color: #FFF !important;
 
 #addBackground
 {
-	background-image: url("../imgFiles/pointSign.jpg"); 	
-	background-position: center -100px;
+	background-image: url("../imgFiles/hawaii.jpg"); 	
+	background-position: center -120px;
+	background-repeat: no-repeat;
 	height: 300px;
 	width: 100%;
 }
