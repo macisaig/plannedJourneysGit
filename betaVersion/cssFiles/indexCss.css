@@ -626,7 +626,7 @@ color: #FFF !important;
     content: attr(data-tooltip);
     display: none;
     position: absolute;
-    background: #ED7E08;
+    background: #2eaa00;
     color: #fff;
     padding: 4px 8px;
     font-size: 14px;
@@ -695,22 +695,22 @@ color: #FFF !important;
 [data-tooltip-position="top"]:after {
     bottom: 100%;
     border-width: 6px 6px 0;
-    border-top-color: #ED7E08;
+    border-top-color: #000;
 }
 [data-tooltip-position="right"]:after {
     left: 100%;
     border-width: 6px 6px 6px 0;
-    border-right-color: #ED7E08;
+    border-right-color: #000;
 }
 [data-tooltip-position="bottom"]:after {
     top: 100%;
     border-width: 0 6px 6px;
-    border-bottom-color: #ED7E08;
+    border-bottom-color: #000;
 }
 [data-tooltip-position="left"]:after {
     right: 100%;
     border-width: 6px 0 6px 6px;
-    border-left-color: #ED7E08;
+    border-left-color: #000;
 }
 /* Show the tooltip when hovering */
 [data-tooltip]:hover:before,
@@ -742,7 +742,7 @@ color: #FFF !important;
 	width: 100%;
 	padding: 10px;
 	margin: 0px;
-	border-right: 1px solid white;
+	border-left: 1px solid white;
 }
 
 .provideWidth
@@ -767,6 +767,11 @@ color: #FFF !important;
 	{
 		width: 85%;
 	}
+	#activityLocation
+	{
+		font-size: 14px;
+		padding: 3px;	
+	}
 }
 
 /* Always set the map height explicitly to define the size of the div
@@ -781,4 +786,22 @@ color: #FFF !important;
 .mapProject{
   width: 100%;
   margin: auto;
+}
+
+.addPadding3
+{
+	padding: 10px 0px 10px 0px;
+}
+
+.faResize
+{
+	color: #2eaa00;
+}
+
+#addBackground
+{
+	background-image: url("../imgFiles/pointSign.jpg"); 	
+	background-position: center -100px;
+	height: 300px;
+	width: 100%;
 }
