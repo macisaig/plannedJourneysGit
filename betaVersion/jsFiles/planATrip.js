@@ -48,3 +48,27 @@ var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 2,
     mapTypeId: 'roadmap'
   });
+
+$(function () 
+{
+  var selectElement = $('select.form-control');
+
+  ifFirstOptionGrey();
+
+  selectElement.on('change', function () 
+  {
+    ifFirstOptionGrey();
+  })
+});
+
+function ifFirstOptionGrey() 
+{
+  if (selectElement[0].selectedIndex === 0) 
+  {
+    selectElement.addClass('first-option-selected');
+  } 
+  else 
+  {
+    selectElement.removeClass('first-option-selected');
+  }
+}

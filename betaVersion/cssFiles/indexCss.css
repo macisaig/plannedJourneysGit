@@ -806,3 +806,16 @@ color: #FFF !important;
 	height: 300px;
 	width: 100%;
 }
+
+select:required:invalid 
+{
+	color: #999;
+}
+option[value=””][disabled] 
+{
+	display: none;
+}
+option 
+{
+	color: #000;
+}
