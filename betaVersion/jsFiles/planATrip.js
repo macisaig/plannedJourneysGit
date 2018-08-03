@@ -43,32 +43,9 @@ $('.placeholderColor').on('click','.triplocation',function() {
   $(this).removeClass('placeholderColor--active');
 });
 
-var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 15, lng: 0},
-    zoom: 2,
-    mapTypeId: 'roadmap'
-  });
-
-$(function () 
+var map = new google.maps.Map(document.getElementById('map'), 
 {
-  var selectElement = $('select.form-control');
-
-  ifFirstOptionGrey();
-
-  selectElement.on('change', function () 
-  {
-    ifFirstOptionGrey();
-  })
+  center: {lat: 15, lng: 0},
+  zoom: 2,
+  mapTypeId: 'roadmap'
 });
-
-function ifFirstOptionGrey() 
-{
-  if (selectElement[0].selectedIndex === 0) 
-  {
-    selectElement.addClass('first-option-selected');
-  } 
-  else 
-  {
-    selectElement.removeClass('first-option-selected');
-  }
-}
