@@ -102,30 +102,107 @@
     <div class="colorCream">
       <div id="addBackground">
         <div class="limitWidth padSides text-center">
-          <h2 class="addPadding3">Add to your Plan<span data-tooltip="Add Activities / Locations or Destinations to your plan. Simply search, i.e. Hotels near Sydney, Australia / Kayaking in Virginia / Tokyo, then add the amount of time intended for the destination or activity, and finally confirm the details" data-tooltip-position="left"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h2>
+          <h2 class="addPadding3">Add to your Plan<span data-tooltip="Add Activities / Locations or Destinations to your plan. Simply search, i.e. Hotels near Sydney, Australia / Kayaking in Virginia / Tokyo, choose the type of activity, then add the amount of time intended for the destination or activity, and finally confirm the details" data-tooltip-position="left"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h2>
           <hr>
           <form class="form-inline">
             <input class="searchLocation" id="activityLocation" aria-describedby="First Location" placeholder="Activity / Location or Destination" type="search">
-            <a class="provideWidth" href="">
-              <i class="fas fa-search searchMag"></i>
-            </a>
+            <!-- <a class="provideWidth" href="">
+              <i class="fas fa-search searchMag" id="addressSearch" onclick="searchMap()"></i>
+            </a> -->
           </form>
           
           <h5>Don't know what to do? <a href="">Find suggestions</a></h5>
           <br>
-          <select name=”browsers” required>
-            <option value=”” disabled selected>Choose a Browser</option>
-            <option value=”chrome”>CHROME</option>
-            <option value=”safari”>SAFARI</option>
-            <option value=”opera”>OPERA</option>
+          <select name=”browsers” id="selectActivity">
+            <option value=”” disabled selected>Type of Activity</option>
+            <option value=”stay”>Stay 1+ Nights</option>
+            <option value=”single”>Single Day Activity</option>
+            <option value=”multi”>Multi-Day Activity</option>
           </select>
+          <br>
+          <h4 class="colorBlack">Length of Time</h4>
+          <div class="container addPadding">
+            <select id="dayMark">
+              <option value=”” disabled selected>Days</option>
+            </select>
+            <select id="hourMark">
+              <option value=”” disabled selected>Hrs</option>
+            </select>
+            <select id="minuteMark">
+              <option value=”” disabled selected>Mins</option>
+            </select>
+          </div>
+          <div class='text-center' id="errTime"></div> 
+          <input class="searchLocation" id="descriptVal" aria-describedby="Decription of Location" placeholder="Optional description:">
+          <div class="hidden addPadding" id="inputValue">
+            <h4 class="colorBlack"><strong>Confirm Address</strong></h4>
+            <div class="row">
+              <input class="searchLocation" id="addressValue" aria-describedby="Confirm Location" placeholder="Confirm location">
+              <button class="btn btn-success btn-md" id="addButton" onclick="addToPlan()"><strong>Add to Plan</strong></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: none">
+        <div id="info-content">
+          <table>
+            <tr id="iw-url-row" class="iw_table_row">
+              <td id="iw-icon" class="iw_table_icon"></td>
+              <td id="iw-url"></td>
+            </tr>
+            <tr id="iw-address-row" class="iw_table_row">
+              <td class="iw_attribute_name">Address:</td>
+              <td id="iw-address"></td>
+            </tr>
+            <tr id="iw-phone-row" class="iw_table_row">
+              <td class="iw_attribute_name">Telephone:</td>
+              <td id="iw-phone"></td>
+            </tr>
+            <tr id="iw-rating-row" class="iw_table_row">
+              <td class="iw_attribute_name">Rating:</td>
+              <td id="iw-rating"></td>
+            </tr>
+            <tr id="iw-website-row" class="iw_table_row">
+              <td class="iw_attribute_name">Website:</td>
+              <td id="iw-website"></td>
+            </tr>
+          </table>
         </div>
       </div>
       <div class="limitWidth padSides text-center">
         <br>
+        <div class="hidden" id="itinerary">
+          <p class="startParagraph" id="tableTitle" align="center"><strong>Summary of Plans</strong><span data-tooltip="Summary of destinations, activities, etc. that will be used to calculate your itinerary" data-tooltip-position="left"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></p>
+
+          <div class="row addPadding">
+            <table id="myTable">
+              <tbody id="overallList">
+                <tr>
+                  <th>Location</th>
+                  <th>Activity</th>
+                  <th>Time Spent</th>
+                  <th>Priority<span data-tooltip="Rate each item; Higher rated items are given higher priority when creating your plan" data-tooltip-position="left"><i class="fa fa-question-circle faResize fa-question-circle2" style="font-size:20px"></i>
+                  <th>Delete</th>
+                  </span></th>
+                </tr>
+              </tbody>
+            </table> 
+          </div>
+
+          <div class = "text-center">
+            <button type="submit" class="btn btn-primary btn-submitButton submitButton1 finalButtons hidden" id="calcPlan"><strong>Calculate Itinerary</strong></button>
+          </div>
+          <br>
+        </div>
         <div class="mapProject">
           <div id="map"></div>
         </div>
+        <div id="listing">
+            <table id="resultsTable">
+              <tbody id="results"></tbody>
+            </table>
+          </div> 
       </div>
     </div>
     <!-- Ending Plan a Trip Code -->
@@ -327,7 +404,8 @@
   <!-- End Calendar Javascript -->
 
   <!-- Google Maps -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHKAAf2EcI1kTvfUwWmdpO2zZLKUMilrA&libraries=places"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHKAAf2EcI1kTvfUwWmdpO2zZLKUMilrA&libraries=places&callback=initAutocomplete"
+         async defer></script>
   <!-- End Google Maps -->
 
   <!-- Total JS for this page including calendar / google maps -->

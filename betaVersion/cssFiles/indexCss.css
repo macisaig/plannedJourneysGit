@@ -729,7 +729,7 @@ color: #FFF !important;
 	font-size: 18px;
 	font-weight: bold;
 	height: 50px;
-	width: 90%;
+	width: 100%;
 	padding: 10px;
 }
 
@@ -747,7 +747,7 @@ color: #FFF !important;
 
 .provideWidth
 {
-	width: 10%;
+	width: 20%;
 	height: 50px;
 }
 
@@ -763,14 +763,14 @@ color: #FFF !important;
 		margin: 0px;
 		padding-top: 15px;
 	}
-	.searchLocation
-	{
-		width: 85%;
-	}
 	#activityLocation
 	{
 		font-size: 14px;
 		padding: 3px;	
+	}
+	option
+	{
+		font-size: 12px;
 	}
 }
 
@@ -803,13 +803,13 @@ color: #FFF !important;
 	background-image: url("../imgFiles/hawaii.jpg"); 	
 	background-position: center -120px;
 	background-repeat: no-repeat;
-	height: 300px;
+	height: 460px;
 	width: 100%;
 }
 
 select:required:invalid 
 {
-	color: #999;
+	color: #FFF;
 }
 option[value=””][disabled] 
 {
@@ -817,5 +817,85 @@ option[value=””][disabled]
 }
 option 
 {
+	color: #FFF;
+	font-size: 18px;
+	padding: 2px
+}
+
+select
+{
+	color: #FFF;
+	font-weight: bold;
+	padding: 2px 5px 2px 5px;
+	background: #3F86DC;
+
+}
+
+.colorBlack
+{
 	color: #000;
+}
+
+.select-picker
+{
+	height: 100px;
+}
+
+@media (max-width: 680px) 
+{
+	select
+	{
+		font-size: 14px;
+		padding: 1px 2px 1px 2px;
+	}
+	option
+	{
+		padding: 2px 0px 2px 0px;
+	}
+}
+
+#listing 
+{
+  height: 200px;
+  cursor: pointer;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+#resultsTable
+{
+	width: 100%;
+}
+
+#addButton
+{
+	width: 20%;
+}
+
+#addressValue
+{
+	padding: 5px;
+	width: 80%;
+}
+
+@media (max-width: 680px)
+{
+	#infoContent table
+	{
+		width: 100px;
+	}
+	#addButton
+	{
+		width: 100%;
+	}
+	#addressValue
+	{
+		font-size: 14px;	
+		width: 100%;
+	}
+}
+
+.hidden
+{
+	display: none;
 }
