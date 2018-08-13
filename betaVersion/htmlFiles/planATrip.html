@@ -119,30 +119,34 @@
             <option value=”single”>Single Day Activity</option>
             <option value=”multi”>Multi-Day Activity</option>
           </select>
-          <br>
-          <h4 class="colorBlack">Length of Time</h4>
-          <div class="container addPadding">
+          <div class='text-center' id="errActivity"></div> 
+          <div class="container addPadding5">
+            <h4 class="colorWhite"><strong>Length of Time</strong></h4>
             <select id="dayMark">
-              <option value=”” disabled selected>Days</option>
+              <option id="dayValue" value=”” disabled selected>Days</option>
             </select>
             <select id="hourMark">
-              <option value=”” disabled selected>Hrs</option>
+              <option id="hourValue" value=”” disabled selected>Hrs</option>
             </select>
             <select id="minuteMark">
-              <option value=”” disabled selected>Mins</option>
+              <option id="minuteValue" value=”” disabled selected>Mins</option>
             </select>
           </div>
           <div class='text-center' id="errTime"></div> 
           <input class="searchLocation" id="descriptVal" aria-describedby="Decription of Location" placeholder="Optional description:">
-          <div class="hidden addPadding" id="inputValue">
-            <h4 class="colorBlack"><strong>Confirm Address</strong></h4>
-            <div class="row">
+          <br>
+          <br>
+          <div class="hidden searchLocation" id="inputValue">
+            <h4 class="colorWhite"><strong>Confirm Address</strong></h4> 
+            <hr>
+            <div class="row addPadding4">
               <input class="searchLocation" id="addressValue" aria-describedby="Confirm Location" placeholder="Confirm location">
               <button class="btn btn-success btn-md" id="addButton" onclick="addToPlan()"><strong>Add to Plan</strong></button>
             </div>
           </div>
         </div>
       </div>
+      <div class='text-center' id="errAdd"></div>
 
       <div style="display: none">
         <div id="info-content">
@@ -171,18 +175,18 @@
         </div>
       </div>
       <div class="limitWidth padSides text-center">
-        <br>
         <div class="hidden" id="itinerary">
           <p class="startParagraph" id="tableTitle" align="center"><strong>Summary of Plans</strong><span data-tooltip="Summary of destinations, activities, etc. that will be used to calculate your itinerary" data-tooltip-position="left"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></p>
 
-          <div class="row addPadding">
+          <div class="row addPadding" id="tableWrapper">
             <table id="myTable">
               <tbody id="overallList">
                 <tr>
                   <th>Location</th>
                   <th>Activity</th>
-                  <th>Time Spent</th>
-                  <th>Priority<span data-tooltip="Rate each item; Higher rated items are given higher priority when creating your plan" data-tooltip-position="left"><i class="fa fa-question-circle faResize fa-question-circle2" style="font-size:20px"></i>
+                  <th>Time</th>
+                  <th>Priority<span data-tooltip="Rate each item; Higher rated items are given higher priority when creating your plan" data-tooltip-position="left"><i class="fa fa-question-circle faResize fa-question-circle2" style="font-size:20px; color: #fff"></i>
+                  <th>Description</th>
                   <th>Delete</th>
                   </span></th>
                 </tr>
@@ -405,7 +409,7 @@
 
   <!-- Google Maps -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHKAAf2EcI1kTvfUwWmdpO2zZLKUMilrA&libraries=places&callback=initAutocomplete"
-         async defer></script>
+  async defer></script>
   <!-- End Google Maps -->
 
   <!-- Total JS for this page including calendar / google maps -->

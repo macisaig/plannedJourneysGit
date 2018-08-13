@@ -391,34 +391,46 @@ function addToPlan() {
   var activityValue = document.getElementById("selectActivity");
   var description = document.getElementById("descriptVal");
   var itin = document.getElementById("itinerary");
+  var inValue = document.getElementById("inputValue");
   var overallTime = "";
   var submitValue = false;
   var numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  var descript = document.getElementById("descriptVal");
    
-  if ((minuteValue.value == 0) && (hourValue.value == 0) && (dayValue.value == 0))
+
+  if ((minuteValue.options[0].selected === true)  && (hourValue.options[0].selected === true) && (dayValue.options[0].selected === true))
   {
     document.getElementById("errTime").innerHTML = "<span class='smallWarning'><strong>*Please Enter a Length of Time*<strong></span>";
     return submitValue;
   }
-  else if (addValue.value == "")
+  else if (activityValue.options[0].selected === true)
   {
-    document.getElementById("errTime").innerHTML = "<span class='smallWarning'><strong>*Please Select a Location*<strong></span>";
+    document.getElementById("errActivity").innerHTML = "<span class='smallWarning'><strong>*Please Select an Activity Type*<strong></span>";
+    document.getElementById("errTime").innerHTML = "";
     return submitValue;
   }
-  else if (activityValue.value = "Type of Activity")
+  else if (addValue.value === "")
   {
-    document.getElementById("errTime").innerHTML = "<span class='smallWarning'><strong>*Please Select a Type of Activity*<strong></span>";
+    document.getElementById("errAdd").innerHTML = "<span class='smallWarning'><strong>*Please Enter a Location*</strong></span>";
+    document.getElementById("errTime").innerHTML = "";
+    document.getElementById("errActivity").innerHTML = "";
     return submitValue;
   }
   else
   {
     submitValue = true;
     document.getElementById("errTime").innerHTML = "";
+    document.getElementById("errActivity").innerHTML = "";
+    document.getElementById("errAdd").innerHTML = "";
   }
 
   if (itin.classList.contains("hidden"))
   {
     itin.classList.remove("hidden");
+  }
+  if (!inValue.classList.contains("hidden"))
+  {
+    inValue.classList.add("hidden");
   }
 
   tableCount++;
@@ -427,6 +439,7 @@ function addToPlan() {
   var locationTd = document.createElement('td');
   var activityTd = document.createElement('td');
   var timeTd = document.createElement('td');
+  var descriptTd = document.createElement('td');
   var deleteTd = document.createElement('td');
   tr.style.backgroundColor = (tableCount % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
   var name = document.createTextNode(addValue.value);
@@ -434,7 +447,7 @@ function addToPlan() {
   var selectList = document.createElement("select");
   if (activityValue.value != "")
   {
-    var actVal = document.createTextNode(activityValue.value);
+    var actVal = document.createTextNode(activityValue.options[activityValue.selectedIndex].innerHTML);
   }
   
   if (dayValue.value > 0)
@@ -450,6 +463,7 @@ function addToPlan() {
     overallTime = overallTime + minuteValue.value*15 + " Minutes";
   }
   var timeSpent = document.createTextNode(overallTime);
+
   for (var k = 0; k < numArray.length; k++)
   {
     var numOption = document.createElement("option");
@@ -458,33 +472,36 @@ function addToPlan() {
     selectList.appendChild(numOption);
   }
   
-  minuteValue.value = 0;
-  hourValue.value = 0;
-  dayValue.value = 0;
-  addValue.value = "";
+  var descriptText = document.createTextNode(descript.value);
 
-  var strHtml5 = "<INPUT TYPE=\"Button\" CLASS=\"Button\" onClick=\"delRow()\" VALUE=\"Delete\">";
+  minuteValue.value = 1;
+  hourValue.value = 1;
+  dayValue.value = 1;
+  addValue.value = "";
+  descript.value = "";
+
+  var strHtml5 = "<INPUT TYPE=\"Button\" CLASS=\"Button\" onClick=\"delRow(this)\" VALUE=\"Delete\">";
   deleteTd.innerHTML = strHtml5.replace(/!count!/g,count);
   count = parseInt(count) + 1;
 
   locationTd.appendChild(name);
   activityTd.appendChild(actVal);
   timeTd.appendChild(timeSpent);
+  descriptTd.appendChild(descriptText);
   selectTd.appendChild(selectList);
   tr.appendChild(locationTd);
   tr.appendChild(activityTd);
   tr.appendChild(timeTd);
   tr.appendChild(selectTd);
+  tr.appendChild(descriptTd);
   tr.appendChild(deleteTd);
   table.appendChild(tr);
 
   return submitValue;
 }
 
-function delRow()
+function delRow(rowItem)
 {
-  var current = window.event.srcElement;
-  //here we will delete the line
-  while ( (current = current.parentElement)  && current.tagName !="TR");
-       current.parentElement.removeChild(current);
+  var parent = rowItem.parentNode.parentNode;
+  parent.parentNode.removeChild(parent);
 }

@@ -786,6 +786,7 @@ color: #FFF !important;
 .mapProject{
   width: 100%;
   margin: auto;
+  padding-top: 10px;
 }
 
 .addPadding3
@@ -803,7 +804,7 @@ color: #FFF !important;
 	background-image: url("../imgFiles/hawaii.jpg"); 	
 	background-position: center -120px;
 	background-repeat: no-repeat;
-	height: 460px;
+	height: 480px;
 	width: 100%;
 }
 
@@ -874,7 +875,6 @@ select
 
 #addressValue
 {
-	padding: 5px;
 	width: 80%;
 }
 
@@ -893,9 +893,69 @@ select
 		font-size: 14px;	
 		width: 100%;
 	}
+	#descriptVal
+	{
+		font-size: 14px;
+	}
+	#addBackground
+	{
+		height: 520px;
+	}
 }
 
 .hidden
 {
 	display: none;
+}
+
+.addPadding4
+{
+	padding: 4px;
+}
+
+.smallWarning
+{
+	color: #e30d0d;
+}
+
+.addPadding5
+{
+	padding: 0px 4px 4px 4px;
+}
+
+#myTable
+{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.numWidth{
+  width: 120px;
+}
+
+#myTable th {
+  border: 1px solid #000;
+  background: #1bb519;
+  text-align: left;
+  padding: 8px;
+  color: #fff;
+}
+
+#myTable td {
+  border: 1px solid #000;
+  text-align: left;
+  padding: 8px 8px 0px 8px;
+  color: #000;
+}
+
+#tableWrapper
+{
+	max-height: 300px;
+	overflow: auto;
+}
+
+#tableTitle
+{
+	height: 10px;
+	font-size: 20px;
 }
