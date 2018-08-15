@@ -733,6 +733,7 @@ color: #FFF !important;
 	padding: 10px;
 }
 
+/*Currently hidden search mag for starting map searches*/
 .searchMag
 {
 	background: #FFF; 
@@ -745,6 +746,7 @@ color: #FFF !important;
 	border-left: 1px solid black;
 }
 
+/*Provides the correct with ffor the search mag*/
 .provideWidth
 {
 	width: 20%;
@@ -753,52 +755,58 @@ color: #FFF !important;
 
 @media (max-width: 680px) 
 {
+	/*Change size of search mag*/
 	.provideWidth
 	{
 		width: 15%;
 	}
-
+	/*Change spacing of search mag*/
 	.searchMag
 	{
 		margin: 0px;
 		padding-top: 15px;
 	}
+	/*Change address search font size and padding*/
 	#activityLocation
 	{
 		font-size: 14px;
 		padding: 3px;	
 	}
+	/*Change size of dropdown options with size change*/
 	option
 	{
 		font-size: 12px;
 	}
 }
 
-/* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
-#map {
+/*The map itself, setting a max height and padding*/
+#map 
+{
   height: 400px;
-  max-width: 1700px;
   /*margin: auto;*/
   padding: 10px 0px 0px 0px;
 }
 
+/*Allows the map to span the entirety of the page, centers map*/
 .mapProject{
   width: 100%;
   margin: auto;
   padding-top: 10px;
 }
 
+/*Padding for the 'Add to your plan'*/
 .addPadding3
 {
 	padding: 10px 0px 10px 0px;
 }
 
+/*Tooltip color change*/
 .faResize
 {
 	color: #2eaa00;
 }
 
+/*Background picture for the Plan a Trip page*/
 #addBackground
 {
 	background-image: url("../imgFiles/hawaii.jpg"); 	
@@ -808,14 +816,17 @@ color: #FFF !important;
 	width: 100%;
 }
 
+/*Sets the color of the first invalid dropdown option*/
 select:required:invalid 
 {
 	color: #FFF;
 }
+/*Doesn't let you pick the first option*/
 option[value=””][disabled] 
 {
 	display: none;
 }
+/*Changes colors of dropdowns and font size*/
 option 
 {
 	color: #FFF;
@@ -823,38 +834,37 @@ option
 	padding: 2px
 }
 
+/*Changes the color and sizing of the select*/
 select
 {
 	color: #FFF;
 	font-weight: bold;
 	padding: 2px 5px 2px 5px;
 	background: #3F86DC;
-
 }
 
+/*Color black*/
 .colorBlack
 {
 	color: #000;
 }
 
-.select-picker
-{
-	height: 100px;
-}
-
 @media (max-width: 680px) 
 {
+	/*Change select size*/
 	select
 	{
 		font-size: 14px;
 		padding: 1px 2px 1px 2px;
 	}
+	/*Change option spacing*/
 	option
 	{
 		padding: 2px 0px 2px 0px;
 	}
 }
 
+/*Setting the height, cursor, and overflow for the results of the map search*/
 #listing 
 {
   height: 200px;
@@ -863,16 +873,19 @@ select
   overflow-x: hidden;
 }
 
+/*Fills out the page width for the map search*/
 #resultsTable
 {
 	width: 100%;
 }
 
+/*Setting width of the button for adding to project*/
 #addButton
 {
 	width: 20%;
 }
 
+/*Setting wdth for the address confirmation*/
 #addressValue
 {
 	width: 80%;
@@ -880,59 +893,66 @@ select
 
 @media (max-width: 680px)
 {
+	/*Pop up size of info when an item is clicked*/
 	#infoContent table
 	{
 		width: 100px;
 	}
+	/*Full size button when it's smaller*/
 	#addButton
 	{
 		width: 100%;
 	}
+	/*Full size address confirm and smaller text*/
 	#addressValue
 	{
 		font-size: 14px;	
 		width: 100%;
 	}
+	/*Smaller text for description*/
 	#descriptVal
 	{
 		font-size: 14px;
 	}
+	/*Slightly larger picture in background to account for dropped down items*/
 	#addBackground
 	{
 		height: 520px;
 	}
 }
 
+/*Literally a class that hides the object*/
 .hidden
 {
 	display: none;
 }
 
+/*Adds padding for the confirm address*/
 .addPadding4
 {
 	padding: 4px;
 }
 
+/*Class for a red warning object*/
 .smallWarning
 {
 	color: #e30d0d;
 }
 
+/*Padding for time*/
 .addPadding5
 {
 	padding: 0px 4px 4px 4px;
 }
 
+/*Table to display your plans*/
 #myTable
 {
   margin-left: auto;
   margin-right: auto;
 }
 
-.numWidth{
-  width: 120px;
-}
-
+/*Internal header details for the planning table*/
 #myTable th {
   border: 1px solid #000;
   background: #1bb519;
@@ -941,6 +961,7 @@ select
   color: #fff;
 }
 
+/*Internal TD to the planning table*/
 #myTable td {
   border: 1px solid #000;
   text-align: left;
@@ -948,12 +969,14 @@ select
   color: #000;
 }
 
+/*Planning tables max height and allowed overflow*/
 #tableWrapper
 {
 	max-height: 300px;
 	overflow: auto;
 }
 
+/*Title size for the full plan*/
 #tableTitle
 {
 	height: 10px;

@@ -1,5 +1,7 @@
+// Datepicker function that autopopulates the calendars for choosing the dates
 $(function() {
 
+    // Sets the very minimum date (today) and adds an auto end-date in 29 days; Sets the weekday names
     var start = moment();
     var end = moment().add(29, 'days');
     var minDate = moment();
@@ -7,6 +9,7 @@ $(function() {
     var startDay;
     var endDay;
 
+    // Sets start and end date visible in correct format
     function cb(start, end) 
     {
         startDay = weekday[start.day()];
@@ -14,6 +17,7 @@ $(function() {
         $('#datePicker span').html(startDay + " " + start.format('MM/DD') + ' - ' + endDay + " " + end.format('MM/DD'));
     }
 
+    // Datepicker options filled in
     $('#datePicker').daterangepicker(
     {
       startDate: start,
@@ -26,14 +30,18 @@ $(function() {
 
 });
 
-$('.placeholderColor').on('click','.triplocation',function() {
+// Adds the coloring for the datepicker for the active dates & inbetween
+$('.placeholderColor').on('click','.triplocation',function() 
+{
   $(this).closest('.placeholderColor').find('.placeholderColor--active').removeClass('placeholderColor--active');
-  alert('hello');
   $(this).addClass('placeholderColor--active');
-}).on('click','.placeholderColor--active',function() {
+})
+$('.placeholderColor').on('click','.placeholderColor--active',function() 
+{
   $(this).removeClass('placeholderColor--active');
 });
 
+// Fills in the selection options for days, hours, and minutes
 $(function()
 {
   var $day = $("#dayMark");
@@ -55,25 +63,23 @@ $(function()
   }
 });
 
-// This example adds a search box to a map, using the Google Place Autocomplete
-// feature. People can enter geographical searches. The search box will return a
-// pick list containing a mix of places and predicted search terms.
-
-// This example requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+// Google map API that is added to this 
+// These are globals that are used throughout the functions
 var map, infoWindow, result, numPlace;
 var markers = [];
 var hostnameRegexp = new RegExp('^https?://.+?/');
 var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
 var tableCount = 0;
 
+// This function is launched automatically when a new items clicked in the map search
 function initAutocomplete() {
+  // The 3 map search inputs
   var activeLoc = document.getElementById('activityLocation');
   var planStart = document.getElementById('toLocation');
   var planEnd = document.getElementById('fromLocation');
   var i;
 
+  // Checks window width in order to make the size of the pop-up when object clicked
    if ($(window).width() < 767)
   {
     infoWindow = new google.maps.InfoWindow(
@@ -90,6 +96,7 @@ function initAutocomplete() {
     });
   }
 
+  // Initializes the map
   map = new google.maps.Map(document.getElementById('map'), 
   {
     center: {lat: 15, lng: 0},
@@ -117,7 +124,8 @@ function initAutocomplete() {
   var searchBox3 = new google.maps.places.SearchBox(planStart);
 
   // Bias the SearchBox results towards current map's viewport.
-  map.addListener('bounds_changed', function() {
+  map.addListener('bounds_changed', function() 
+  {
     searchBox3.setBounds(map.getBounds());
   });
 
@@ -126,60 +134,59 @@ function initAutocomplete() {
   // more details for that place.
   result = new google.maps.places.PlacesService(map);
 
-  searchBox1.addListener('places_changed', function() {
+  // Listener for when map searches are changed to initiate the search
+  searchBox1.addListener('places_changed', function() 
+  {
     places=searchBox1.getPlaces();
-    // Clear out the old markers.
 
     placesChanged(places);
   });
-  
-  searchBox2.addListener('places_changed', function() {
+
+  // Listener for when map searches are changed to initiate the search
+  searchBox2.addListener('places_changed', function() 
+  {
     places=searchBox2.getPlaces();
-    // Clear out the old markers.
 
     placesChanged(places);
   });
 
-  searchBox3.addListener('places_changed', function() {
+  // Listener for when map searches are changed to initiate the search
+  searchBox3.addListener('places_changed', function() 
+  {
     places=searchBox3.getPlaces();
-    // Clear out the old markers.
 
     placesChanged(places);
   });
 }
 
-function searchMap()
-{
-  places=searchBox1.getPlaces();
-    // Clear out the old markers.
-
-  placesChanged(places);
-
-  return false;
-}
-
+// This function changes the actual map 
 function placesChanged(places)
 {
   var i=0
   var addValue = document.getElementById("addressValue");
   var inputVal = document.getElementById("inputValue");
 
-  markers.forEach(function(marker) {
+  // Clears markers and results
+  markers.forEach(function(marker) 
+  {
     marker.setMap(null);
   });
   markers = [];
   clearResults(); 
 
+  // If place is empty, don't initiate
   if (places.length == 0)
   {
     return;
   }
 
+  // Find number of places in the search result
   numPlace = places.length;
 
   // For each place, get the icon, name and location.
   var bounds = new google.maps.LatLngBounds();
 
+  // For each place in the search...
   places.forEach(function(place) 
   {
     if (!place.geometry) 
@@ -187,6 +194,7 @@ function placesChanged(places)
       console.log("Returned place contains no geometry");
       return;
     }
+    // Set icon values
     var icon = 
     {
       url: place.icon,
@@ -196,9 +204,11 @@ function placesChanged(places)
       scaledSize: new google.maps.Size(25, 25)
     };
 
+    // Sets the marker image
     var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
     var markerIcon = MARKER_PATH + markerLetter + '.png';
-    // Create a marker for each place.
+
+    // Create a marker for each place which includes the icons
     markers[i] = new google.maps.Marker(
     {
       map: map,
@@ -208,6 +218,7 @@ function placesChanged(places)
     });
     markers[i].placeResult = place;
 
+    // Sets the map boundaries
     if (place.geometry.viewport) 
     {
       // Only geocodes have viewport.
@@ -218,9 +229,12 @@ function placesChanged(places)
       bounds.extend(place.geometry.location);
     }
 
+    // Adds listener for when a marker is clicked
     google.maps.event.addListener(markers[i], 'click', showInfoWindow);
+    // Adds result to table
     addResult(place, markers[i], i);
 
+    // If only one place, then set the confirm address value to the place address
     if(places.length == 1)
     {
       if (place.url == "")
@@ -237,14 +251,17 @@ function placesChanged(places)
     i++;
   });
 
+  // Shows the plan if it's hidden
   if (inputVal.classList.contains("hidden")) 
   {
     inputVal.classList.remove("hidden");
   } 
 
+  // Fit map to the bounds
   map.fitBounds(bounds);
 }
 
+// This is the info window that is shown if an icon is clicked
 function showInfoWindow() 
 {
   var marker = this;
@@ -268,6 +285,7 @@ function showInfoWindow()
   });
 }
 
+// Adds each place to the Map Results Table underneath the Map
 function addResult(place, marker, i) 
 {
   var results = document.getElementById('results');
@@ -305,6 +323,7 @@ function addResult(place, marker, i)
   results.appendChild(tr);
 }
 
+// Clears all current results
 function clearResults() 
 {
   var results = document.getElementById('results');
@@ -315,6 +334,7 @@ function clearResults()
 }
 
 // Load the place information into the HTML elements used by the info window.
+// This is the window shown if you click on the marker
 function buildIWContent(place) 
 {
   document.getElementById('iw-icon').innerHTML = '<img class="hotelIcon" ' +
@@ -379,8 +399,7 @@ function buildIWContent(place)
   }
 }
 
-var count = "1";
-
+// This is adding the activity to your planned itinerary
 function addToPlan() {
   var locationButton = document.getElementById("addLButton");
   var minuteValue = document.getElementById('minuteMark');
@@ -396,6 +415,7 @@ function addToPlan() {
   var submitValue = false;
   var numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   var descript = document.getElementById("descriptVal");
+  var count = "1";
    
 
   if ((minuteValue.options[0].selected === true)  && (hourValue.options[0].selected === true) && (dayValue.options[0].selected === true))
@@ -500,6 +520,7 @@ function addToPlan() {
   return submitValue;
 }
 
+// Delete button deletes the row of the table
 function delRow(rowItem)
 {
   var parent = rowItem.parentNode.parentNode;

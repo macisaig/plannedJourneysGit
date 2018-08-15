@@ -72,6 +72,7 @@
     </nav>
 
     <!-- Starting Plan a Trip Code -->
+    <!-- Top start / end trip dates -->
     <div class="topColor">
       <div class="limitWidth collapse show" id="infoCollapse">
         <br>
@@ -91,6 +92,7 @@
           </div>
         </div>
       </div>
+      <!-- Buttons for toggling and adding info -->
       <div class="text-center addPadding">
         <a class="btn btn-danger btn-md" data-toggle="collapse" href="#infoCollapse" role="button" aria-expanded="false" aria-controls="infoCollapse">
           Toggle Info <i class="fa fa-caret-down floatRight centerI"></i>
@@ -102,24 +104,29 @@
     <div class="colorCream">
       <div id="addBackground">
         <div class="limitWidth padSides text-center">
+          <!-- Add to your plan header -->
           <h2 class="addPadding3">Add to your Plan<span data-tooltip="Add Activities / Locations or Destinations to your plan. Simply search, i.e. Hotels near Sydney, Australia / Kayaking in Virginia / Tokyo, choose the type of activity, then add the amount of time intended for the destination or activity, and finally confirm the details" data-tooltip-position="left"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h2>
           <hr>
+          <!-- Map search bar for adding an activity or destination -->
           <form class="form-inline">
             <input class="searchLocation" id="activityLocation" aria-describedby="First Location" placeholder="Activity / Location or Destination" type="search">
             <!-- <a class="provideWidth" href="">
               <i class="fas fa-search searchMag" id="addressSearch" onclick="searchMap()"></i>
             </a> -->
           </form>
-          
+          <!-- Suggestion Link -->
           <h5>Don't know what to do? <a href="">Find suggestions</a></h5>
           <br>
+          <!-- Dropdown for selecting type of activity -->
           <select name=”browsers” id="selectActivity">
             <option value=”” disabled selected>Type of Activity</option>
             <option value=”stay”>Stay 1+ Nights</option>
             <option value=”single”>Single Day Activity</option>
             <option value=”multi”>Multi-Day Activity</option>
           </select>
+          <!-- Activity error message -->
           <div class='text-center' id="errActivity"></div> 
+          <!-- Timing values -->
           <div class="container addPadding5">
             <h4 class="colorWhite"><strong>Length of Time</strong></h4>
             <select id="dayMark">
@@ -132,10 +139,13 @@
               <option id="minuteValue" value=”” disabled selected>Mins</option>
             </select>
           </div>
+          <!-- Timing error message -->
           <div class='text-center' id="errTime"></div> 
+          <!-- Optional description -->
           <input class="searchLocation" id="descriptVal" aria-describedby="Decription of Location" placeholder="Optional description:">
           <br>
           <br>
+          <!-- Address confirmation and add to plan button -->
           <div class="hidden searchLocation" id="inputValue">
             <h4 class="colorWhite"><strong>Confirm Address</strong></h4> 
             <hr>
@@ -148,6 +158,7 @@
       </div>
       <div class='text-center' id="errAdd"></div>
 
+      <!-- This is the displayable content that appears when you click on an object in the map -->
       <div style="display: none">
         <div id="info-content">
           <table>
@@ -174,7 +185,9 @@
           </table>
         </div>
       </div>
+
       <div class="limitWidth padSides text-center">
+        <!-- This is the Plan Table -->
         <div class="hidden" id="itinerary">
           <p class="startParagraph" id="tableTitle" align="center"><strong>Summary of Plans</strong><span data-tooltip="Summary of destinations, activities, etc. that will be used to calculate your itinerary" data-tooltip-position="left"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></p>
 
@@ -194,14 +207,17 @@
             </table> 
           </div>
 
+          <!-- Calculate itinerary button -->
           <div class = "text-center">
-            <button type="submit" class="btn btn-primary btn-submitButton submitButton1 finalButtons hidden" id="calcPlan"><strong>Calculate Itinerary</strong></button>
+            <button type="submit" class="btn btn-primary btn-submitButton submitButton1 finalButtons" id="calcPlan"><strong>Calculate Itinerary</strong></button>
           </div>
           <br>
         </div>
+        <!-- Google map -->
         <div class="mapProject">
           <div id="map"></div>
         </div>
+        <!-- Table that appears when you search the map -->
         <div id="listing">
             <table id="resultsTable">
               <tbody id="results"></tbody>
