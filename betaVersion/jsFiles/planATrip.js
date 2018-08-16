@@ -1,3 +1,5 @@
+var rowCount = 0;
+
 // Datepicker function that autopopulates the calendars for choosing the dates
 $(function() {
 
@@ -416,6 +418,7 @@ function addToPlan() {
   var numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   var descript = document.getElementById("descriptVal");
   var count = "1";
+  var countRows = table.getElementsByTagName("tr");
    
 
   if ((minuteValue.options[0].selected === true)  && (hourValue.options[0].selected === true) && (dayValue.options[0].selected === true))
@@ -465,6 +468,52 @@ function addToPlan() {
   var name = document.createTextNode(addValue.value);
   var selectTd = document.createElement('td');
   var selectList = document.createElement("select");
+
+  if (rowCount == 0)
+  {
+    var trStart = document.createElement('tr');
+    var firstLoc = document.createElement('td');
+    var firstAct = document.createElement('td');
+    var firstTime = document.createElement('td');
+    var firstPri = document.createElement('td');
+    var firstDesc = document.createElement('td');
+    var firstDel = document.createElement('td');
+    firstLoc.appendChild(document.createTextNode('Starting Location'));
+    firstAct.appendChild(document.createTextNode('Start of Trip'));
+    firstTime.appendChild(document.createTextNode('Beginning'));
+    firstDesc.appendChild(document.createTextNode('Starting Location of the Trip'));
+    trStart.appendChild(firstLoc);
+    trStart.appendChild(firstAct);
+    trStart.appendChild(firstTime);
+    trStart.appendChild(firstPri);
+    trStart.appendChild(firstDesc);
+    trStart.appendChild(firstDel);
+
+    var trEnd = document.createElement('tr');
+    var lastLoc = document.createElement('td');
+    var lastAct = document.createElement('td');
+    var lastTime = document.createElement('td');
+    var lastPri = document.createElement('td');
+    var lastDesc = document.createElement('td');
+    var lastDel = document.createElement('td');
+    lastLoc.appendChild(document.createTextNode('Ending Location'));
+    lastAct.appendChild(document.createTextNode('End of Trip'));
+    lastTime.appendChild(document.createTextNode('Ending'));
+    lastDesc.appendChild(document.createTextNode('Ending Location of the Trip'));
+    trEnd.appendChild(lastLoc);
+    trEnd.appendChild(lastAct);
+    trEnd.appendChild(lastTime);
+    trEnd.appendChild(lastPri);
+    trEnd.appendChild(lastDesc);
+    trEnd.appendChild(lastDel);
+
+    table.appendChild(trStart);
+    table.appendChild(trEnd);
+
+    countRows = countRows + 2;
+    rowCount++;
+  }
+
   if (activityValue.value != "")
   {
     var actVal = document.createTextNode(activityValue.options[activityValue.selectedIndex].innerHTML);
@@ -515,7 +564,8 @@ function addToPlan() {
   tr.appendChild(selectTd);
   tr.appendChild(descriptTd);
   tr.appendChild(deleteTd);
-  table.appendChild(tr);
+
+  table.insertBefore(tr, table.childNodes[countRows - 2]);
 
   return submitValue;
 }
