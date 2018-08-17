@@ -403,7 +403,6 @@ function buildIWContent(place)
 
 // This is adding the activity to your planned itinerary
 function addToPlan() {
-  var locationButton = document.getElementById("addLButton");
   var minuteValue = document.getElementById('minuteMark');
   var hourValue = document.getElementById('hourMark');
   var dayValue = document.getElementById('dayMark');
@@ -418,7 +417,7 @@ function addToPlan() {
   var numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   var descript = document.getElementById("descriptVal");
   var count = "1";
-  var countRows = table.getElementsByTagName("tr");
+  var countRows = table.getElementsByTagName("tr").length;
    
 
   if ((minuteValue.options[0].selected === true)  && (hourValue.options[0].selected === true) && (dayValue.options[0].selected === true))
@@ -479,7 +478,7 @@ function addToPlan() {
     var firstDesc = document.createElement('td');
     var firstDel = document.createElement('td');
     firstLoc.appendChild(document.createTextNode('Starting Location'));
-    firstAct.appendChild(document.createTextNode('Start of Trip'));
+    firstAct.appendChild(document.createTextNode('Set Starting Destination at Top of Page'));
     firstTime.appendChild(document.createTextNode('Beginning'));
     firstDesc.appendChild(document.createTextNode('Starting Location of the Trip'));
     trStart.appendChild(firstLoc);
@@ -497,7 +496,7 @@ function addToPlan() {
     var lastDesc = document.createElement('td');
     var lastDel = document.createElement('td');
     lastLoc.appendChild(document.createTextNode('Ending Location'));
-    lastAct.appendChild(document.createTextNode('End of Trip'));
+    lastAct.appendChild(document.createTextNode('Set Ending Destination at Top of Page'));
     lastTime.appendChild(document.createTextNode('Ending'));
     lastDesc.appendChild(document.createTextNode('Ending Location of the Trip'));
     trEnd.appendChild(lastLoc);
@@ -510,7 +509,7 @@ function addToPlan() {
     table.appendChild(trStart);
     table.appendChild(trEnd);
 
-    countRows = countRows + 2;
+    countRows = parseInt(countRows) + 2;
     rowCount++;
   }
 
@@ -565,7 +564,7 @@ function addToPlan() {
   tr.appendChild(descriptTd);
   tr.appendChild(deleteTd);
 
-  table.insertBefore(tr, table.childNodes[countRows - 2]);
+  table.insertBefore(tr, table.rows[countRows - 1]);
 
   return submitValue;
 }
@@ -575,4 +574,74 @@ function delRow(rowItem)
 {
   var parent = rowItem.parentNode.parentNode;
   parent.parentNode.removeChild(parent);
+}
+
+function updateEnd()
+{
+  var table = document.getElementById("myTable");
+  var startingLoc = document.getElementById("fromLocation");
+  var endingLoc = document.getElementById("toLocation");
+  var itin = document.getElementById("itinerary");
+  var submitValue = false;
+
+  if (startingLoc.innerHTML == "" || endingLoc.innerHTML == "")
+  {
+    document.getElementById("errStart").innerHTML = "<span class='smallWarning'><strong>*Please Enter a Start and End Location*</strong></span>";
+    alert('Im in here?');
+    return;
+  }
+
+  var trStart = document.createElement('tr');
+  var firstLoc = document.createElement('td');
+  var firstAct = document.createElement('td');
+  var firstTime = document.createElement('td');
+  var firstPri = document.createElement('td');
+  var firstDesc = document.createElement('td');
+  var firstDel = document.createElement('td');
+  firstLoc.appendChild(document.createTextNode(startingLoc.innerHTML));
+  firstAct.appendChild(document.createTextNode('Set Starting Destination at Top of Page'));
+  firstTime.appendChild(document.createTextNode('Beginning'));
+  firstDesc.appendChild(document.createTextNode('Starting Location of the Trip'));
+  trStart.appendChild(firstLoc);
+  trStart.appendChild(firstAct);
+  trStart.appendChild(firstTime);
+  trStart.appendChild(firstPri);
+  trStart.appendChild(firstDesc);
+  trStart.appendChild(firstDel);
+
+  var trEnd = document.createElement('tr');
+  var lastLoc = document.createElement('td');
+  var lastAct = document.createElement('td');
+  var lastTime = document.createElement('td');
+  var lastPri = document.createElement('td');
+  var lastDesc = document.createElement('td');
+  var lastDel = document.createElement('td');
+  lastLoc.appendChild(document.createTextNode(endingLoc.innerHTML));
+  lastAct.appendChild(document.createTextNode('Set Ending Destination at Top of Page'));
+  lastTime.appendChild(document.createTextNode('Ending'));
+  lastDesc.appendChild(document.createTextNode('Ending Location of the Trip'));
+  trEnd.appendChild(lastLoc);
+  trEnd.appendChild(lastAct);
+  trEnd.appendChild(lastTime);
+  trEnd.appendChild(lastPri);
+  trEnd.appendChild(lastDesc);
+  trEnd.appendChild(lastDel);
+
+  if (rowCount == 0)
+  {
+    table.appendChild(trStart);
+    table.appendChild(trEnd);
+    rowCount++;
+  }
+  else
+  {
+    table.deleteTd(2);
+    table.insertBefore(trStart, table.rows[2]);
+    table.appendChild(trEnd);
+  }
+
+  if (itin.classList.contains("hidden"))
+  {
+    itin.classList.remove("hidden");
+  }
 }
