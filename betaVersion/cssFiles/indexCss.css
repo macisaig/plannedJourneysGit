@@ -982,3 +982,17 @@ select
 	height: 10px;
 	font-size: 20px;
 }
+
+/*Find suggestions code to make it clickable*/
+#findActivity
+{
+	color:  #000090;
+	cursor: pointer;
+}
+
+/*Changes color and underlines when hovering over find suggestions*/
+#findActivity:hover
+{
+	color:  #000060;
+	border-bottom: 1px solid #000060;;
+}

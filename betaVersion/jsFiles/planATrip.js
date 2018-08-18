@@ -423,12 +423,14 @@ function addToPlan() {
   if ((minuteValue.options[0].selected === true)  && (hourValue.options[0].selected === true) && (dayValue.options[0].selected === true))
   {
     document.getElementById("errTime").innerHTML = "<span class='smallWarning'><strong>*Please Enter a Length of Time*<strong></span>";
+    document.getElementById("errLocation").innerHTML = "";
     return submitValue;
   }
   else if (activityValue.options[0].selected === true)
   {
     document.getElementById("errActivity").innerHTML = "<span class='smallWarning'><strong>*Please Select an Activity Type*<strong></span>";
     document.getElementById("errTime").innerHTML = "";
+    document.getElementById("errLocation").innerHTML = "";
     return submitValue;
   }
   else if (addValue.value === "")
@@ -436,6 +438,7 @@ function addToPlan() {
     document.getElementById("errAdd").innerHTML = "<span class='smallWarning'><strong>*Please Enter a Location*</strong></span>";
     document.getElementById("errTime").innerHTML = "";
     document.getElementById("errActivity").innerHTML = "";
+    document.getElementById("errLocation").innerHTML = "";
     return submitValue;
   }
   else
@@ -444,6 +447,7 @@ function addToPlan() {
     document.getElementById("errTime").innerHTML = "";
     document.getElementById("errActivity").innerHTML = "";
     document.getElementById("errAdd").innerHTML = "";
+    document.getElementById("errLocation").innerHTML = "";
   }
 
   if (itin.classList.contains("hidden"))
@@ -576,21 +580,30 @@ function delRow(rowItem)
   parent.parentNode.removeChild(parent);
 }
 
+// This updates the start and end of the trip locations
 function updateEnd()
 {
   var table = document.getElementById("myTable");
   var startingLoc = document.getElementById("fromLocation");
   var endingLoc = document.getElementById("toLocation");
   var itin = document.getElementById("itinerary");
+  var countRows = table.getElementsByTagName("tr").length;
   var submitValue = false;
+  countRows = parseInt(countRows);
+  alert(countRows);
 
-  if (startingLoc.innerHTML == "" || endingLoc.innerHTML == "")
+  // If there are no values to update with...
+  if (startingLoc.value == "" || endingLoc.value == "")
   {
     document.getElementById("errStart").innerHTML = "<span class='smallWarning'><strong>*Please Enter a Start and End Location*</strong></span>";
-    alert('Im in here?');
     return;
   }
+  else
+  {
+    document.getElementById("errStart").innerHTML = ""
+  }
 
+  // Creates the start location row
   var trStart = document.createElement('tr');
   var firstLoc = document.createElement('td');
   var firstAct = document.createElement('td');
@@ -598,9 +611,9 @@ function updateEnd()
   var firstPri = document.createElement('td');
   var firstDesc = document.createElement('td');
   var firstDel = document.createElement('td');
-  firstLoc.appendChild(document.createTextNode(startingLoc.innerHTML));
-  firstAct.appendChild(document.createTextNode('Set Starting Destination at Top of Page'));
-  firstTime.appendChild(document.createTextNode('Beginning'));
+  firstLoc.appendChild(document.createTextNode(startingLoc.value));
+  firstAct.appendChild(document.createTextNode('Starting Trip'));
+  firstTime.appendChild(document.createTextNode('Start of Trip'));
   firstDesc.appendChild(document.createTextNode('Starting Location of the Trip'));
   trStart.appendChild(firstLoc);
   trStart.appendChild(firstAct);
@@ -609,6 +622,7 @@ function updateEnd()
   trStart.appendChild(firstDesc);
   trStart.appendChild(firstDel);
 
+  // Creates the end location row
   var trEnd = document.createElement('tr');
   var lastLoc = document.createElement('td');
   var lastAct = document.createElement('td');
@@ -616,9 +630,9 @@ function updateEnd()
   var lastPri = document.createElement('td');
   var lastDesc = document.createElement('td');
   var lastDel = document.createElement('td');
-  lastLoc.appendChild(document.createTextNode(endingLoc.innerHTML));
-  lastAct.appendChild(document.createTextNode('Set Ending Destination at Top of Page'));
-  lastTime.appendChild(document.createTextNode('Ending'));
+  lastLoc.appendChild(document.createTextNode(endingLoc.value));
+  lastAct.appendChild(document.createTextNode('Ending Trip'));
+  lastTime.appendChild(document.createTextNode('End of Trip'));
   lastDesc.appendChild(document.createTextNode('Ending Location of the Trip'));
   trEnd.appendChild(lastLoc);
   trEnd.appendChild(lastAct);
@@ -627,6 +641,7 @@ function updateEnd()
   trEnd.appendChild(lastDesc);
   trEnd.appendChild(lastDel);
 
+  // If the table hasn't been created
   if (rowCount == 0)
   {
     table.appendChild(trStart);
@@ -635,13 +650,45 @@ function updateEnd()
   }
   else
   {
-    table.deleteTd(2);
-    table.insertBefore(trStart, table.rows[2]);
+    // Deletes previous start / end locations and adds the rows
+    table.deleteRow(countRows - 1);
+    table.deleteRow(1);
+    table.insertBefore(trStart, table.rows[1]);
     table.appendChild(trEnd);
   }
 
   if (itin.classList.contains("hidden"))
   {
     itin.classList.remove("hidden");
+  }
+}
+
+// Clicking on Find Suggestions launches travelocity with the correct query
+function findActivity()
+{
+  // Map search bar
+  var addLocation = document.getElementById("activityLocation").value;
+  alert(dateTime);
+  // If it's empty, then leave an error
+  if (addLocation == "")
+  {
+    document.getElementById("errLocation").innerHTML = "<span class='smallWarning'><strong>*Please Add a Location to get Suggestions*<strong></span>";
+  }
+  else
+  {
+    // Replaces all spaces and commas in the string to allow travelocity to search
+    var travelQuery = "https://www.travelocity.com/things-to-do/search?location="
+    var stringReplace = addLocation.replace(/ /g,"&");
+    stringReplace = stringReplace.replace(/,/g, "");
+    var totalString = travelQuery + stringReplace;
+
+    // Launches a new tab with the travelocity search
+    window.open(totalString, '_blank');
+    
+    // Clears all errors
+    document.getElementById("errTime").innerHTML = "";
+    document.getElementById("errActivity").innerHTML = "";
+    document.getElementById("errAdd").innerHTML = "";
+    document.getElementById("errLocation").innerHTML = "";
   }
 }
