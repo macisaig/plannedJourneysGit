@@ -1,4 +1,9 @@
+// Used for stating whether to add start / end dates or not
 var rowCount = 0;
+// Global used for the start date of the trip
+var startTripDate;
+// Global used for the end date of the trip
+var endTripDate;
 
 // Datepicker function that autopopulates the calendars for choosing the dates
 $(function() {
@@ -14,9 +19,12 @@ $(function() {
     // Sets start and end date visible in correct format
     function cb(start, end) 
     {
-        startDay = weekday[start.day()];
-        endDay = weekday[end.day()];
-        $('#datePicker span').html(startDay + " " + start.format('MM/DD') + ' - ' + endDay + " " + end.format('MM/DD'));
+      startDay = weekday[start.day()];
+      endDay = weekday[end.day()];
+      // Dates used for filling out the start / end dates in the plan per 'Update Trip'
+      startTripDate = (startDay + " " + start.format('MM/DD/YYYY'));
+      endTripDate = (endDay + " " + end.format('MM/DD/YYYY'));
+      $('#datePicker span').html(startDay + " " + start.format('MM/DD') + ' - ' + endDay + " " + end.format('MM/DD'));
     }
 
     // Datepicker options filled in
@@ -590,7 +598,6 @@ function updateEnd()
   var countRows = table.getElementsByTagName("tr").length;
   var submitValue = false;
   countRows = parseInt(countRows);
-  alert(countRows);
 
   // If there are no values to update with...
   if (startingLoc.value == "" || endingLoc.value == "")
@@ -613,7 +620,7 @@ function updateEnd()
   var firstDel = document.createElement('td');
   firstLoc.appendChild(document.createTextNode(startingLoc.value));
   firstAct.appendChild(document.createTextNode('Starting Trip'));
-  firstTime.appendChild(document.createTextNode('Start of Trip'));
+  firstTime.appendChild(document.createTextNode(startTripDate));
   firstDesc.appendChild(document.createTextNode('Starting Location of the Trip'));
   trStart.appendChild(firstLoc);
   trStart.appendChild(firstAct);
@@ -632,7 +639,7 @@ function updateEnd()
   var lastDel = document.createElement('td');
   lastLoc.appendChild(document.createTextNode(endingLoc.value));
   lastAct.appendChild(document.createTextNode('Ending Trip'));
-  lastTime.appendChild(document.createTextNode('End of Trip'));
+  lastTime.appendChild(document.createTextNode(endTripDate));
   lastDesc.appendChild(document.createTextNode('Ending Location of the Trip'));
   trEnd.appendChild(lastLoc);
   trEnd.appendChild(lastAct);
@@ -668,7 +675,6 @@ function findActivity()
 {
   // Map search bar
   var addLocation = document.getElementById("activityLocation").value;
-  alert(dateTime);
   // If it's empty, then leave an error
   if (addLocation == "")
   {
