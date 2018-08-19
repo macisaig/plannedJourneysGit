@@ -21,7 +21,7 @@
     			</div>
           <!-- Toggles for Plan a Trip and the collapsable button in the toolbar -->
     			<div class="navbar-nav" id="shiftCheck">
-    			  <a class="nav-item nav-link" href="htmlFiles/PlanATrip.html"><strong>Plan a Trip</strong></a>
+    			  <a class="nav-item nav-link" href="PlanATrip.html"><strong>Plan a Trip</strong></a>
     			</div>
     			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".myNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     			  <span class="navbar-toggler-icon"></span>
@@ -31,16 +31,16 @@
     			<div class="collapse navbar-collapse myNavbar" id="navbarSupportedContent">
     			  <ul class="navbar-nav mr-auto">
       				<li class="nav-item">
-      				  <a class="nav-link" href="htmlFiles/Destinations.html">Destinations</a>
+      				  <a class="nav-link" href="Destinations.html">Destinations</a>
       				</li>
       				<li class="nav-item dropdown navbar-nav">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   More
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="htmlFiles/PopularTrips.html">Popular Trips</a>
-                  <a class="dropdown-item" href="htmlFiles/About.html">About</a>
-                  <a class="dropdown-item" href="htmlFiles/ContactUs.html">Contact Us</a>
+                  <a class="dropdown-item" href="PopularTrips.html">Popular Trips</a>
+                  <a class="dropdown-item" href="About.html">About</a>
+                  <a class="dropdown-item" href="ContactUs.html">Contact Us</a>
                 </div>
               </li>
     			  </ul>
@@ -78,13 +78,13 @@
           <i class="fas fa-search"></i>
           <input class="" type="search" placeholder="search..." aria-label="search..." id="destinationLocation">
           <div class="noDisplay">
-            <a class="btn btn-primary btn-lg" href="htmlFiles/PlanATrip.html" role="button">Search</a>
+            <a class="btn btn-primary btn-lg" href="PlanATrip.html" role="button">Search</a>
           </div>
         </form>
         <div class="display">
           <hr class="my-4">
           <div class="text-center">
-            <a class="btn btn-primary btn-lg" href="htmlFiles/PlanATrip.html" role="button">Search</a>
+            <a class="btn btn-primary btn-lg" href="PlanATrip.html" role="button">Search</a>
           </div>
         </div>
       </div>
@@ -143,15 +143,9 @@
                   <fieldset><legend class="text-center">Sign Up Information <br><span class="req"><small>* required</small></span></legend>
 
                     <div class="form-group">   
-                      <label for="firstname"><span class="req">* </span> First name: </label>
+                      <label for="firstname"><span class="req">* </span> Name: </label>
                       <input class="form-control" type="text" name="firstName" id = "txt" onkeyup = "validateName(this)" required /> 
                       <div id="errFirst"></div>    
-                    </div>
-
-                    <div class="form-group">
-                      <label for="lastname"><span class="req">* </span> Last name: </label> 
-                      <input class="form-control" type="text" name="lastname" id = "txt" onkeyup = "validateName(this)" placeholder="" required />  
-                      <div id="errLast"></div>
                     </div>
 
                     <div class="form-group">
@@ -161,15 +155,8 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="username"><span class="req">* </span> User name:  <small>Minimum 6 letters, numbers, or underscores</small> </label> 
-                      <input class="form-control" type="text" name="username" id = "txt" onkeyup = "validateUsername(this)" placeholder="" required /> 
-                      <div id="errUser"></div>
-                    </div>
-
-                    <div class="form-group">
                       <label for="password"><span class="req">* </span> Password:  <small>Minimum 6 characters with 1 special, 1 uppercase, and 1 number</small></label>
                       <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="16"  id="pass1" onkeyup = "validatePassword(this)"/> </p>
-                      <input type="checkbox" onclick="showPassword()"> Show Password <br>
 
                       <div id="message">
                         <h4>Password must contain the following:</h4>
@@ -179,14 +166,11 @@
                         <p id="length" class="invalid">Minimum <b>6 characters</b></p>
                       </div>
 
-                      <label for="password"><span class="req">* </span>Password Confirm: </label>
+                      <label for="password"><span class="req">* </span>Confirm Password: </label>
                       <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="16" placeholder="Enter again to validate"  id="pass2" onkeyup="checkPass(); return false;" />
                       <span id="confirmMessage" class="confirmMessage"></span>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="phonenumber"> Phone Number:   <small>This can be used for two-factor authentication</small> </label>
-                      <input name="phonenumber" id="phone" class="form-control phone" maxlength="28" onkeyup="validatePhone(this);" placeholder="i.e. 123-456-7890"/> 
+                      <br>
+                      <input type="checkbox" onclick="showPassword()"> Show Password <br>
                     </div>
 
                     <div class="form-group">
@@ -248,7 +232,7 @@
     <div class="container limitWidth addPadding2">
       <div class="row">
         <div class="col-xs-4 col-md-4 col-sm-4 col-lg-4 addPadding">
-          <a href="htmlFiles/PlanATrip.html">
+          <a href="PlanATrip.html">
             <div class="card manipCard">
               <div class="text-center addPadding">
                 <h3>Planning a Trip</h3>
@@ -261,7 +245,7 @@
           </a>
         </div>
         <div class="col-xs-4 col-md-4 col-sm-4 col-lg-4 addPadding">
-          <a href="htmlFiles/Destinations.html">
+          <a href="Destinations.html">
             <div class="card manipCard">
               <div class="text-center addPadding">
                 <h3>Destinations</h3>
@@ -274,7 +258,7 @@
           </a>
         </div>
         <div class="col-xs-4 col-md-4 col-sm-4 col-lg-4 addPadding">
-          <a href="htmlFiles/PopularTrips.html">
+          <a href="PopularTrips.html">
             <div class="card manipCard">
               <div class="text-center addPadding">
                 <h3>Popular Trips</h3>
@@ -306,9 +290,9 @@
           <a href="index.html"><h2>Voiyag Onward</h2></a>
         </div>
         <div class="col-sm-6 addPadding">
-          <a href="htmlFiles/ContactUs.html" class="addPadding">Contact Us</a>
-          <a href="htmlFiles/About.html" class="addPadding">About Us</a>
-          <a href="htmlFiles/Help.html" class="addPadding">Help</a>
+          <a href="ContactUs.html" class="addPadding">Contact Us</a>
+          <a href="About.html" class="addPadding">About Us</a>
+          <a href="Help.html" class="addPadding">Help</a>
         </div>
         <div class="col-sm-3 addPadding">
           <a href="https://www.facebook.com/PlannedJourneys-222086925035409/" class ="fab fa-facebook-f addPadding"></a>

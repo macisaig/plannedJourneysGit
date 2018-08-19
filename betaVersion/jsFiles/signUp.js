@@ -178,7 +178,7 @@ function validatePhone(phone)
 // validates text only
 function validateName(txt) 
 {
-  txt.value = txt.value.replace(/[^a-zA-Z-'\n\r.]+/g, '');
+  txt.value = txt.value.replace(/[^a-zA-Z-'' '\n\r.]+/g, '');
 }
 
 // validates text only

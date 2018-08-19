@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"> <!-- Speaking english -->
   <head>
-    <link rel="icon" href="../imgFiles/plannedJourneysLogoMini.jpg">
+    <link rel="icon" href="imgFiles/plannedJourneysLogoMini.jpg">
     <title>Plan Your Adventure</title>
     <meta charset="utf-8"> <!-- Common throughout web -->
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This is for the phone scaling -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../cssFiles/indexCss.css">
+    <link rel="stylesheet" href="cssFiles/indexCss.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
-    <!-- Scripts for Calendar -->
-    <link rel="stylesheet" type="text/css" href="../cssFiles/dateRangePicker.css" />
-    <!-- End Calendar Scripts -->
   </head>
 
-  <body>  
+  <body >  
     <nav class="navbar navbar-expand-sm navbar-light bg-light">  <!-- Navbar -->
       <div class="container limitWidth">       <!-- Limits text to a certain width -->
         <div class="navbar-brand brandParam">
-          <a href="../index.html" id="plannedLogo">
-            <img src="../imgFiles/plannedJourneysLogoMini.jpg">
+          <a href="index.html" id="plannedLogo">
+            <img src="imgFiles/plannedJourneysLogoMini.jpg">
           </a>
         </div>
         <div class="navbar-nav" id="shiftCheck">
@@ -71,163 +67,44 @@
       </div>
     </nav>
 
-    <!-- Starting Plan a Trip Code -->
-    <!-- Top start / end trip dates -->
-    <div class="topColor">
-      <div class="limitWidth collapse show" id="infoCollapse">
-        <br>
-        <div class="row padSides">
-          <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12 addPlanPadding placeholderColor">
-            <input class="tripLocation" id="fromLocation" type="search" placeholder="From?" aria-label="search...">
-          </div>
-          <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12 addPlanPadding placeholderColor">
-            <input class="tripLocation" id="toLocation" type="search" placeholder="To?" aria-label="search...">
-          </div>
-          <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 addPlanPadding">
-            <div id="datePicker" class="topValue">
-              <i class="fa fa-calendar"></i>&nbsp;
-              <span></span> 
-              <div class="floatRight"><i class="fa fa-caret-down floatRight centerI"></i></div>
+    <!-- About Code ====================================================== -->
+    <div class="aboutColor">
+      <div class="limitWidth">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-lg-12">
+              <h1 class = "topPage">
+              <strong><u>Welcome</u></strong>
+              </h1>
+              <h3>We're Voiyag, a creative travel engine that simplifies travel planning</h3>
             </div>
           </div>
         </div>
-      </div>
-      <div class='text-center' id="errStart"></div> 
-      <!-- Buttons for toggling and adding info -->
-      <div class="text-center addPadding">
-        <a class="btn btn-danger btn-md" data-toggle="collapse" href="#infoCollapse" role="button" aria-expanded="false" aria-controls="infoCollapse">
-          Toggle Info <i class="fa fa-caret-down floatRight centerI"></i>
-        </a>
-        <a class="btn btn-success btn-md" role="button" data-toggle="" data-target="" onclick="updateEnd()">Update Trip</a>
-      </div>
-    </div>
+        <div class="jumbotron jumbotron-sm jumbotronAbout"></div>
 
-    <div class="colorCream">
-      <div id="addBackground">
-        <div class="limitWidth padSides text-center">
-          <!-- Add to your plan header -->
-          <h2 class="addPadding3">Add to your Plan<span data-tooltip="Add Activities / Locations or Destinations to your plan. Simply search, i.e. Hotels near Sydney, Australia / Kayaking in Virginia / Tokyo, choose the type of activity, then add the amount of time intended for the destination or activity, and finally confirm the details" data-tooltip-position="left"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h2>
-          <hr>
-          <!-- Map search bar for adding an activity or destination -->
-          
-          <input class="searchLocation" id="activityLocation" aria-describedby="First Location" placeholder="Activity / Location or Destination" type="search">
-          <!-- <a class="provideWidth" href="">
-            <i class="fas fa-search searchMag" id="addressSearch" onclick="searchMap()"></i>
-          </a> -->
-          
-          <div class='text-center' id="errLocation"></div>
-          <!-- Suggestion Link -->
-          <h5>Don't know what to do? <a id="findActivity" onClick="findActivity()">Find suggestions</a></h5>
-          <br>
-          <!-- Dropdown for selecting type of activity -->
-          <select name=”browsers” id="selectActivity">
-            <option value=”” disabled selected>Type of Activity</option>
-            <option value=”stay”>Stay 1+ Nights</option>
-            <option value=”single”>Single Day Activity</option>
-            <option value=”multi”>Multi-Day Activity</option>
-          </select>
-          <!-- Activity error message -->
-          <div class='text-center' id="errActivity"></div> 
-          <!-- Timing values -->
-          <div class="container addPadding5">
-            <h4 class="colorWhite"><strong>Length of Time</strong></h4>
-            <select id="dayMark">
-              <option id="dayValue" value=”” disabled selected>Days</option>
-            </select>
-            <select id="hourMark">
-              <option id="hourValue" value=”” disabled selected>Hrs</option>
-            </select>
-            <select id="minuteMark">
-              <option id="minuteValue" value=”” disabled selected>Mins</option>
-            </select>
-          </div>
-          <!-- Timing error message -->
-          <div class='text-center' id="errTime"></div> 
-          <!-- Optional description -->
-          <input class="searchLocation" id="descriptVal" aria-describedby="Decription of Location" placeholder="Optional description:">
-          <br>
-          <br>
-          <!-- Address confirmation and add to plan button -->
-          <div class="hidden searchLocation" id="inputValue">
-            <h4 class="colorWhite"><strong>Confirm Address</strong></h4> 
-            <hr>
-            <div class="row addPadding4">
-              <input class="searchLocation" id="addressValue" aria-describedby="Confirm Location" placeholder="Confirm location">
-              <button class="btn btn-success btn-md" id="addButton" onclick="addToPlan()"><strong>Add to Plan</strong></button>
+        <div class="container marketing">
+      <!-- START THE FEATURETTES -->
+          <div class="row featurette">
+            <h2 class="featurette-heading">It started as a Plan. <span class="text-muted">And became a Journey.</span></h2>
+            <p class="lead">This entire website was created from a passion for travelling, and a desire to cut out the amount of planning necessary for an awesome trip. That drive led to the creation of this travel algorithm, with the goal of making the planning process more streamlined and efficient, while providing results expected from a travel agency.</p>
+            <div id="hidden1" class="collapse">
+              <p class="lead"> Every single time I would plan a new trip, it would take hours of planning to make sure that I had:</p>
+              <ul>
+                <li class="follow">1) Found all of the best places and activities to visit in the country</li>
+                <li class="follow">2) Found the best places to stay, usually for a cheap price</li>
+                <li class="follow">3) Mapped out all of the places to stay, visit, and activities</li>
+                <li class="follow">4) Found a route that let me see everything possible within the time span of my vacation</li>
+              </ul>
+              <p class="lead">After saying enough is enough, I set out to create an algorithm, this travel algorithm, to streamline the planning process. I don't promise that this website will cure all travel ills, but I hope it helps make your trip as awesome as possible in as little planning as possible!</p>
             </div>
           </div>
         </div>
-      </div>
-      <div class='text-center' id="errAdd"></div>
-
-      <!-- This is the displayable content that appears when you click on an object in the map -->
-      <div style="display: none">
-        <div id="info-content">
-          <table>
-            <tr id="iw-url-row" class="iw_table_row">
-              <td id="iw-icon" class="iw_table_icon"></td>
-              <td id="iw-url"></td>
-            </tr>
-            <tr id="iw-address-row" class="iw_table_row">
-              <td class="iw_attribute_name">Address:</td>
-              <td id="iw-address"></td>
-            </tr>
-            <tr id="iw-phone-row" class="iw_table_row">
-              <td class="iw_attribute_name">Telephone:</td>
-              <td id="iw-phone"></td>
-            </tr>
-            <tr id="iw-rating-row" class="iw_table_row">
-              <td class="iw_attribute_name">Rating:</td>
-              <td id="iw-rating"></td>
-            </tr>
-            <tr id="iw-website-row" class="iw_table_row">
-              <td class="iw_attribute_name">Website:</td>
-              <td id="iw-website"></td>
-            </tr>
-          </table>
+        <div class="text-center">
+          <h4><a href="#hidden1" data-toggle="collapse">Click to learn more</a></h4> <!-- Referencing to ID hidden, and it toggles the hidden ID when clicked -->
         </div>
-      </div>
-
-      <div class="limitWidth padSides text-center">
-        <!-- This is the Plan Table -->
-        <div class="hidden" id="itinerary">
-          <p class="startParagraph" id="tableTitle" align="center"><strong>Summary of Plans</strong><span data-tooltip="Summary of destinations, activities, etc. that will be used to calculate your itinerary" data-tooltip-position="left"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></p>
-
-          <div class="row addPadding" id="tableWrapper">
-            <table id="myTable">
-              <tbody id="overallList">
-                <tr>
-                  <th>Location</th>
-                  <th>Activity</th>
-                  <th>Time</th>
-                  <th>Priority<span data-tooltip="Rate each item; Higher rated items are given higher priority when creating your plan" data-tooltip-position="left"><i class="fa fa-question-circle faResize fa-question-circle2" style="font-size:20px; color: #fff"></i>
-                  <th>Description</th>
-                  <th>Delete</th>
-                  </span></th>
-                </tr>
-              </tbody>
-            </table> 
-          </div>
-
-          <!-- Calculate itinerary button -->
-          <div class = "text-center">
-            <button type="submit" class="btn btn-primary btn-submitButton submitButton1 finalButtons" id="calcPlan"><strong>Calculate Itinerary</strong></button>
-          </div>
-          <br>
-        </div>
-        <!-- Google map -->
-        <div class="mapProject">
-          <div id="map"></div>
-        </div>
-        <!-- Table that appears when you search the map -->
-        <div id="listing">
-            <table id="resultsTable">
-              <tbody id="results"></tbody>
-            </table>
-          </div> 
       </div>
     </div>
-    <!-- Ending Plan a Trip Code -->
+    <!-- End About Code ================================================== -->
 
     <!-- Login Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
@@ -241,7 +118,7 @@
           </div>
           <div class="modal-body">
             <form class="form-signin text-center formPadMargin">
-              <img class="mb-4" src="../imgFiles/plannedJourneysLogoMini.jpg" alt="" width="60" height="60">
+              <img class="mb-4" src="imgFiles/plannedJourneysLogoMini.jpg" alt="" width="60" height="60">
               <h3 class="h3 mb-3 font-weight-normal">Enter Account Information</h3>
               <label for="inputEmail" class="sr-only">Email or Username</label>
               <input type="text" id="" class="form-control limitForm" placeholder="Email or Username" required autofocus>
@@ -273,7 +150,7 @@
           </div>
           <div class="modal-body">
             <div class="text-center">
-              <img class="mb-4" src="../imgFiles/plannedJourneysLogoMini.jpg" alt="" width="72" height="72">
+              <img class="mb-4" src="imgFiles/plannedJourneysLogoMini.jpg" alt="" width="72" height="72">
             </div>
 
             <div class="container">
@@ -282,15 +159,9 @@
                   <fieldset><legend class="text-center">Sign Up Information <br><span class="req"><small>* required</small></span></legend>
 
                     <div class="form-group">   
-                      <label for="firstname"><span class="req">* </span> First name: </label>
+                      <label for="firstname"><span class="req">* </span> Name: </label>
                       <input class="form-control" type="text" name="firstName" id = "txt" onkeyup = "validateName(this)" required /> 
                       <div id="errFirst"></div>    
-                    </div>
-
-                    <div class="form-group">
-                      <label for="lastname"><span class="req">* </span> Last name: </label> 
-                      <input class="form-control" type="text" name="lastname" id = "txt" onkeyup = "validateName(this)" placeholder="" required />  
-                      <div id="errLast"></div>
                     </div>
 
                     <div class="form-group">
@@ -300,15 +171,8 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="username"><span class="req">* </span> User name:  <small>Minimum 6 letters, numbers, or underscores</small> </label> 
-                      <input class="form-control" type="text" name="username" id = "txt" onkeyup = "validateUsername(this)" placeholder="" required /> 
-                      <div id="errUser"></div>
-                    </div>
-
-                    <div class="form-group">
                       <label for="password"><span class="req">* </span> Password:  <small>Minimum 6 characters with 1 special, 1 uppercase, and 1 number</small></label>
                       <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="16"  id="pass1" onkeyup = "validatePassword(this)"/> </p>
-                      <input type="checkbox" onclick="showPassword()"> Show Password <br>
 
                       <div id="message">
                         <h4>Password must contain the following:</h4>
@@ -318,14 +182,11 @@
                         <p id="length" class="invalid">Minimum <b>6 characters</b></p>
                       </div>
 
-                      <label for="password"><span class="req">* </span>Password Confirm: </label>
+                      <label for="password"><span class="req">* </span>Confirm Password: </label>
                       <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="16" placeholder="Enter again to validate"  id="pass2" onkeyup="checkPass(); return false;" />
                       <span id="confirmMessage" class="confirmMessage"></span>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="phonenumber"> Phone Number:   <small>This can be used for two-factor authentication</small> </label>
-                      <input name="phonenumber" id="phone" class="form-control phone" maxlength="28" onkeyup="validatePhone(this);" placeholder="i.e. 123-456-7890"/> 
+                      <br>
+                      <input type="checkbox" onclick="showPassword()"> Show Password <br>
                     </div>
 
                     <div class="form-group">
@@ -396,7 +257,7 @@
     <footer class="container-fluid text-center">
       <div class="row limitWidth">
         <div class="col-sm-3 addPadding">
-          <a href="../index.html"><h2>Voiyag Onward</h2></a>
+          <a href="index.html"><h2>Voiyag Onward</h2></a>
         </div>
         <div class="col-sm-6 addPadding">
           <a href="ContactUs.html" class="addPadding">Contact Us</a>
@@ -417,19 +278,5 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="../jsFiles/signUp.js"></script>
-
-  <!-- Calendar Javascript -->
-  <script type="text/javascript" src="../jsFiles/Jquery/jquery.min.js"></script>
-  <script type="text/javascript" src="../jsFiles/moment-develop/min/moment.min.js"></script>
-  <script type="text/javascript" src="../jsFiles/dateRangePicker.js"></script>
-  <!-- End Calendar Javascript -->
-
-  <!-- Google Maps -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwrNqUFd-cdOvpiis6e38bDGVWio8gSGY&libraries=places&callback=initAutocomplete"
-  async defer></script>
-  <!-- End Google Maps -->
-
-  <!-- Total JS for this page including calendar / google maps -->
-  <script src="../jsFiles/planATrip.js"></script>
+  <script src="jsFiles/signUp.js"></script>
 </html>

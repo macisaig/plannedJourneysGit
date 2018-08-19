@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"> <!-- Speaking english -->
   <head>
-    <link rel="icon" href="../imgFiles/plannedJourneysLogoMini.jpg">
+    <link rel="icon" href="imgFiles/plannedJourneysLogoMini.jpg">
     <title>Plan Your Adventure</title>
     <meta charset="utf-8"> <!-- Common throughout web -->
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This is for the phone scaling -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../cssFiles/indexCss.css">
+    <link rel="stylesheet" href="cssFiles/indexCss.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   </head>
 
@@ -14,8 +14,8 @@
     <nav class="navbar navbar-expand-sm navbar-light bg-light">  <!-- Navbar -->
       <div class="container limitWidth">       <!-- Limits text to a certain width -->
         <div class="navbar-brand brandParam">
-          <a href="../index.html" id="plannedLogo">
-            <img src="../imgFiles/plannedJourneysLogoMini.jpg">
+          <a href="index.html" id="plannedLogo">
+            <img src="imgFiles/plannedJourneysLogoMini.jpg">
           </a>
         </div>
         <div class="navbar-nav" id="shiftCheck">
@@ -119,7 +119,7 @@
                 <a class="btn btn-success btn-sm" href="" role="button">Load Trip</a>
               </div>
             </div>
-            <img class="card-img-right flex-auto d-sm-block popularImg" src="../imgFiles/newRiver.jpg" alt="Card image cap">
+            <img class="card-img-right flex-auto d-sm-block popularImg" src="imgFiles/newRiver.jpg" alt="Card image cap">
           </div>
         </div>
         <div class="col-md-6">
@@ -140,7 +140,7 @@
                 <a class="btn btn-success btn-sm" href="" role="button">Load Trip</a>
               </div>
             </div>
-            <img class="card-img-right flex-auto d-sm-block popularImg" src="../imgFiles/argentina.jpg" alt="Card image cap">
+            <img class="card-img-right flex-auto d-sm-block popularImg" src="imgFiles/argentina.jpg" alt="Card image cap">
           </div>
         </div>
       </div>
@@ -164,7 +164,7 @@
                 <a class="btn btn-success btn-sm" href="" role="button">Load Trip</a>
               </div>
             </div>
-            <img class="card-img-right flex-auto d-sm-block popularImg" src="../imgFiles/climbingRocks.jpg" alt="Card image cap">
+            <img class="card-img-right flex-auto d-sm-block popularImg" src="imgFiles/climbingRocks.jpg" alt="Card image cap">
           </div>
         </div>
         <div class="col-md-6">
@@ -185,7 +185,7 @@
                 <a class="btn btn-success btn-sm" href="" role="button">Load Trip</a>
               </div>
             </div>
-            <img class="card-img-right flex-auto d-sm-block popularImg" src="../imgFiles/puffin.jpg" alt="Card image cap">
+            <img class="card-img-right flex-auto d-sm-block popularImg" src="imgFiles/puffin.jpg" alt="Card image cap">
           </div>
         </div>
       </div>
@@ -210,7 +210,7 @@
           </div>
           <div class="modal-body">
             <form class="form-signin text-center formPadMargin">
-              <img class="mb-4" src="../imgFiles/plannedJourneysLogoMini.jpg" alt="" width="60" height="60">
+              <img class="mb-4" src="imgFiles/plannedJourneysLogoMini.jpg" alt="" width="60" height="60">
               <h3 class="h3 mb-3 font-weight-normal">Enter Account Information</h3>
               <label for="inputEmail" class="sr-only">Email or Username</label>
               <input type="text" id="" class="form-control limitForm" placeholder="Email or Username" required autofocus>
@@ -242,7 +242,7 @@
           </div>
           <div class="modal-body">
             <div class="text-center">
-              <img class="mb-4" src="../imgFiles/plannedJourneysLogoMini.jpg" alt="" width="72" height="72">
+              <img class="mb-4" src="imgFiles/plannedJourneysLogoMini.jpg" alt="" width="72" height="72">
             </div>
 
             <div class="container">
@@ -251,15 +251,9 @@
                   <fieldset><legend class="text-center">Sign Up Information <br><span class="req"><small>* required</small></span></legend>
 
                     <div class="form-group">   
-                      <label for="firstname"><span class="req">* </span> First name: </label>
+                      <label for="firstname"><span class="req">* </span> Name: </label>
                       <input class="form-control" type="text" name="firstName" id = "txt" onkeyup = "validateName(this)" required /> 
                       <div id="errFirst"></div>    
-                    </div>
-
-                    <div class="form-group">
-                      <label for="lastname"><span class="req">* </span> Last name: </label> 
-                      <input class="form-control" type="text" name="lastname" id = "txt" onkeyup = "validateName(this)" placeholder="" required />  
-                      <div id="errLast"></div>
                     </div>
 
                     <div class="form-group">
@@ -269,15 +263,8 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="username"><span class="req">* </span> User name:  <small>Minimum 6 letters, numbers, or underscores</small> </label> 
-                      <input class="form-control" type="text" name="username" id = "txt" onkeyup = "validateUsername(this)" placeholder="" required /> 
-                      <div id="errUser"></div>
-                    </div>
-
-                    <div class="form-group">
                       <label for="password"><span class="req">* </span> Password:  <small>Minimum 6 characters with 1 special, 1 uppercase, and 1 number</small></label>
                       <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="16"  id="pass1" onkeyup = "validatePassword(this)"/> </p>
-                      <input type="checkbox" onclick="showPassword()"> Show Password <br>
 
                       <div id="message">
                         <h4>Password must contain the following:</h4>
@@ -287,14 +274,11 @@
                         <p id="length" class="invalid">Minimum <b>6 characters</b></p>
                       </div>
 
-                      <label for="password"><span class="req">* </span>Password Confirm: </label>
+                      <label for="password"><span class="req">* </span>Confirm Password: </label>
                       <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="16" placeholder="Enter again to validate"  id="pass2" onkeyup="checkPass(); return false;" />
                       <span id="confirmMessage" class="confirmMessage"></span>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="phonenumber"> Phone Number:   <small>This can be used for two-factor authentication</small> </label>
-                      <input name="phonenumber" id="phone" class="form-control phone" maxlength="28" onkeyup="validatePhone(this);" placeholder="i.e. 123-456-7890"/> 
+                      <br>
+                      <input type="checkbox" onclick="showPassword()"> Show Password <br>
                     </div>
 
                     <div class="form-group">
@@ -365,7 +349,7 @@
     <footer class="container-fluid text-center">
       <div class="row limitWidth">
         <div class="col-sm-3 addPadding">
-          <a href="../index.html"><h2>Voiyag Onward</h2></a>
+          <a href="index.html"><h2>Voiyag Onward</h2></a>
         </div>
         <div class="col-sm-6 addPadding">
           <a href="ContactUs.html" class="addPadding">Contact Us</a>
@@ -386,15 +370,15 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="../jsFiles/signUp.js"></script>
-  <script src="../jsFiles/ammap.js" type="text/javascript"></script>
-  <script src="../jsFiles/worldHigh.js" type="text/javascript"></script>
-  <script src="../jsFiles/darkTheme.js" type="text/javascript"></script>
-  <script src="../jsFiles/maps.js"></script>
+  <script src="jsFiles/signUp.js"></script>
+  <script src="jsFiles/ammap.js" type="text/javascript"></script>
+  <script src="jsFiles/worldHigh.js" type="text/javascript"></script>
+  <script src="jsFiles/darkTheme.js" type="text/javascript"></script>
+  <script src="jsFiles/maps.js"></script>
 
   <!-- Google Maps JS -->
-  <script type="text/javascript" src="../jsFiles/Jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="jsFiles/Jquery/jquery.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHKAAf2EcI1kTvfUwWmdpO2zZLKUMilrA&libraries=places"></script>
-  <script src="../jsFiles/googleMaps.js"></script>
+  <script src="jsFiles/googleMaps.js"></script>
   <!-- End Google Maps JS -->
 </html>

@@ -841,6 +841,7 @@ select
 	font-weight: bold;
 	padding: 2px 5px 2px 5px;
 	background: #3F86DC;
+	height: 45px;
 }
 
 /*Color black*/
@@ -988,6 +989,7 @@ select
 {
 	color:  #000090;
 	cursor: pointer;
+	font-weight: bold;
 }
 
 /*Changes color and underlines when hovering over find suggestions*/

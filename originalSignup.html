@@ -1,0 +1,90 @@
+<!-- Sign Up Modal -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="signUpLabel">Sign Up</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="text-center">
+              <img class="mb-4" src="../imgFiles/plannedJourneysLogoMini.jpg" alt="" width="72" height="72">
+            </div>
+
+            <div class="container">
+              <div class="row">
+                <form action="" method="post" id="fileForm" role="form">
+                  <fieldset><legend class="text-center">Sign Up Information <br><span class="req"><small>* required</small></span></legend>
+
+                    <div class="form-group">   
+                      <label for="firstname"><span class="req">* </span> First name: </label>
+                      <input class="form-control" type="text" name="firstName" id = "txt" onkeyup = "validateName(this)" required /> 
+                      <div id="errFirst"></div>    
+                    </div>
+
+                    <div class="form-group">
+                      <label for="lastname"><span class="req">* </span> Last name: </label> 
+                      <input class="form-control" type="text" name="lastname" id = "txt" onkeyup = "validateName(this)" placeholder="" required />  
+                      <div id="errLast"></div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="email"><span class="req">* </span> Email Address: </label> 
+                      <input class="form-control" required type="text" name="email" id = "email"  onchange="email_validate(this.value);" />   
+                      <div class="status" id="status"></div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="username"><span class="req">* </span> User name:  <small>Minimum 6 letters, numbers, or underscores</small> </label> 
+                      <input class="form-control" type="text" name="username" id = "txt" onkeyup = "validateUsername(this)" placeholder="" required /> 
+                      <div id="errUser"></div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="password"><span class="req">* </span> Password:  <small>Minimum 6 characters with 1 special, 1 uppercase, and 1 number</small></label>
+                      <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="16"  id="pass1" onkeyup = "validatePassword(this)"/> </p>
+                      <input type="checkbox" onclick="showPassword()"> Show Password <br>
+
+                      <div id="message">
+                        <h4>Password must contain the following:</h4>
+                        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                        <p id="number" class="invalid">A <b>number (0-9)</b></p>
+                        <p id="special" class="invalid">A <b>special character</b></p>
+                        <p id="length" class="invalid">Minimum <b>6 characters</b></p>
+                      </div>
+
+                      <label for="password"><span class="req">* </span>Password Confirm: </label>
+                      <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="16" placeholder="Enter again to validate"  id="pass2" onkeyup="checkPass(); return false;" />
+                      <span id="confirmMessage" class="confirmMessage"></span>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="phonenumber"> Phone Number:   <small>This can be used for two-factor authentication</small> </label>
+                      <input name="phonenumber" id="phone" class="form-control phone" maxlength="28" onkeyup="validatePhone(this);" placeholder="i.e. 123-456-7890"/> 
+                    </div>
+
+                    <div class="form-group">
+                      <hr>
+                      <div class="text-center">
+                        <input type="checkbox" required name="terms" onchange="this.setCustomValidity(validity.valueMissing ? 'Please indicate that you accept the Terms and Conditions' : '');" id="field_terms"><label for="terms"><span class="req">* </span>I agree with the <a href="terms.php" title="You may read our terms and conditions by clicking on this link">terms and conditions</a></label>
+                      </div>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <input class="btn btn-md btn-success" type="submit" name="submit_reg" value="Register">
+                    </div>
+
+                    <div class="form-group text-center">
+                      <h5>You will receive an email to complete the registration process. </h5><br>
+                      <h5>Be sure to check your spam folders. </h5>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
