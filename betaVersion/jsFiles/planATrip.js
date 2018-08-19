@@ -434,6 +434,12 @@ function addToPlan() {
     document.getElementById("errLocation").innerHTML = "";
     return submitValue;
   }
+  else if ((minuteValue.options[1].selected === true)  && (hourValue.options[1].selected === true) && (dayValue.options[1].selected === true))
+  {
+    document.getElementById("errTime").innerHTML = "<span class='smallWarning'><strong>*Please Enter a Length of Time*<strong></span>";
+    document.getElementById("errLocation").innerHTML = "";
+    return submitValue;
+  }
   else if (activityValue.options[0].selected === true)
   {
     document.getElementById("errActivity").innerHTML = "<span class='smallWarning'><strong>*Please Select an Activity Type*<strong></span>";
