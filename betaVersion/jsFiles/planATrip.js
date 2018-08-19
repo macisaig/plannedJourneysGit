@@ -66,7 +66,7 @@ $(function()
     $hour.append($('<option></option>').val(i).html(i-1 + ' Hrs'))
   }
   var $minute = $("#minuteMark");
-  for(i=1;i<=5;i++)
+  for(i=1;i<=4;i++)
   {
     x = (i-1)*15;
     $minute.append($('<option></option>').val(i).html(x + ' Min'))
@@ -410,7 +410,8 @@ function buildIWContent(place)
 }
 
 // This is adding the activity to your planned itinerary
-function addToPlan() {
+function addToPlan() 
+{
   var minuteValue = document.getElementById('minuteMark');
   var hourValue = document.getElementById('hourMark');
   var dayValue = document.getElementById('dayMark');
@@ -536,17 +537,17 @@ function addToPlan() {
     var actVal = document.createTextNode(activityValue.options[activityValue.selectedIndex].innerHTML);
   }
   
-  if (dayValue.value > 0)
+  if ((dayValue.value - 1)> 0)
   {
-    overallTime = overallTime + dayValue.value + " Days ";
+    overallTime = overallTime + (dayValue.value - 1) + " Days ";
   }
-  if (hourValue.value > 0)
+  if ((hourValue.value - 1) > 0)
   {
-    overallTime = overallTime + hourValue.value + " Hours ";
+    overallTime = overallTime + (hourValue.value - 1) + " Hours ";
   }
-  if (minuteValue.value > 0)
+  if ((minuteValue.value - 1) > 0)
   {
-    overallTime = overallTime + minuteValue.value*15 + " Minutes";
+    overallTime = overallTime + (minuteValue.value - 1)*15 + " Minutes";
   }
   var timeSpent = document.createTextNode(overallTime);
 
