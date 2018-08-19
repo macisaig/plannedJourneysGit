@@ -281,6 +281,19 @@ h3
 	/*background: #04065F;*/
 }
 
+/*Changes the color of the subject dropdown*/
+#subject option
+{
+	color: #000;
+}
+
+/*Makes all of the text inputs black / bold*/
+.boldBlack
+{
+	color: #000;
+	font-weight: bold;
+}
+
 /*/////////////////////////////////////////////////////////////////////////*/
 /*Sign Up*/
 
@@ -562,22 +575,32 @@ and makes it so that the text isn't flush with the sides*/
 /*Changing color of placeholder*/
 .placeholderColor input::-webkit-input-placeholder 
 {
-color: #FFF !important;
-}
- 
-.placeholderColor input:-moz-placeholder 
-{ /* Firefox 18- */
-color: #FFF !important;  
+	color: #C3C3C3 !important;
 }
  
 .placeholderColor input::-moz-placeholder 
 {  /* Firefox 19+ */
-color: #FFF !important;  
+	color: #FFF !important;  
 }
  
-.placeholderColor input:-ms-input-placeholder 
+.placeholderColor input::-ms-input-placeholder 
 {  
-color: #FFF !important;  
+	color: #C3C3C3 !important;  
+}
+
+.placeholderColor2 input::-webkit-input-placeholder 
+{
+	color: #C3C3C3 !important;
+}
+ 
+.placeholderColor2 input::-moz-placeholder 
+{  /* Firefox 19+ */
+	color: #C3C3C3 !important;  
+}
+ 
+.placeholderColor2 input::-ms-input-placeholder 
+{  
+	color: #C3C3C3 !important;  
 }
 
 /*Pulls To/From/Calendar slightly away from sides*/
@@ -812,7 +835,7 @@ color: #FFF !important;
 	background-image: url("../imgFiles/hawaii.jpg"); 	
 	background-position: center -120px;
 	background-repeat: no-repeat;
-	height: 480px;
+	height: 510px;
 	width: 100%;
 }
 
@@ -918,7 +941,7 @@ select
 	/*Slightly larger picture in background to account for dropped down items*/
 	#addBackground
 	{
-		height: 520px;
+		height: 550px;
 	}
 }
 

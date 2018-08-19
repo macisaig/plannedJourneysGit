@@ -109,8 +109,9 @@
           <h2 class="addPadding3">Add to your Plan<span data-tooltip="Add Activities / Locations or Destinations to your plan. Simply search, i.e. Hotels near Sydney, Australia / Kayaking in Virginia / Tokyo, choose the type of activity, then add the amount of time intended for the destination or activity, and finally confirm the details" data-tooltip-position="left"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h2>
           <hr>
           <!-- Map search bar for adding an activity or destination -->
-          
-          <input class="searchLocation" id="activityLocation" aria-describedby="First Location" placeholder="Activity / Location or Destination" type="search">
+          <div class="placeholderColor2">
+            <input class="searchLocation placeholderColor" id="activityLocation" aria-describedby="First Location" placeholder="Activity / Location or Destination" type="search">
+          </div>
           <!-- <a class="provideWidth" href="">
             <i class="fas fa-search searchMag" id="addressSearch" onclick="searchMap()"></i>
           </a> -->
@@ -144,7 +145,9 @@
           <!-- Timing error message -->
           <div class='text-center' id="errTime"></div> 
           <!-- Optional description -->
-          <input class="searchLocation" id="descriptVal" aria-describedby="Decription of Location" placeholder="Optional description:">
+          <div class="placeholderColor2">
+            <input class="searchLocation" id="descriptVal" aria-describedby="Decription of Location" placeholder="Optional description:">
+          </div>
           <br>
           <br>
           <!-- Address confirmation and add to plan button -->
@@ -191,7 +194,7 @@
       <div class="limitWidth padSides text-center">
         <!-- This is the Plan Table -->
         <div class="hidden" id="itinerary">
-          <p class="startParagraph" id="tableTitle" align="center"><strong>Summary of Plans</strong><span data-tooltip="Summary of destinations, activities, etc. that will be used to calculate your itinerary" data-tooltip-position="left"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></p>
+          <p class="startParagraph" id="tableTitle" align="center"><strong>Summary of Plans</strong><span data-tooltip="Summary of destinations, activities, etc. that will be used to generate your itinerary" data-tooltip-position="left"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></p>
 
           <div class="row addPadding" id="tableWrapper">
             <table id="myTable">
@@ -211,7 +214,7 @@
 
           <!-- Calculate itinerary button -->
           <div class = "text-center">
-            <button type="submit" class="btn btn-primary btn-submitButton submitButton1 finalButtons" id="calcPlan"><strong>Calculate Itinerary</strong></button>
+            <button type="submit" class="btn btn-primary btn-submitButton submitButton1 finalButtons" id="calcPlan"><strong>Generate Plan</strong></button>
           </div>
           <br>
         </div>
