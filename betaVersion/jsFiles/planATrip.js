@@ -19,6 +19,7 @@ $(function() {
     // Sets start and end date visible in correct format
     function cb(start, end) 
     {
+      alert("Hello");
       startDay = weekday[start.day()];
       endDay = weekday[end.day()];
       // Dates used for filling out the start / end dates in the plan per 'Update Trip'
@@ -85,8 +86,8 @@ var tableCount = 0;
 function initAutocomplete() {
   // The 3 map search inputs
   var activeLoc = document.getElementById('activityLocation');
-  var planStart = document.getElementById('toLocation');
-  var planEnd = document.getElementById('fromLocation');
+  var planStart = document.getElementById('TOLOCATION');
+  var planEnd = document.getElementById('FROMLOCATION');
   var i;
 
   // Checks window width in order to make the size of the pop-up when object clicked
