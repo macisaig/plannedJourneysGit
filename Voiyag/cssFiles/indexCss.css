@@ -1,0 +1,138 @@
+/*Globals*/
+/*///////////////////////////////////////////////////////////////////*/
+
+/*Grey background in case nothing else loads*/
+body
+{
+	/*background-color: #0E0E0E;*/
+}
+
+/*States the size and type of the fonts*/
+a
+{
+	font: 15px/1.5; /*Determines the text*/
+	font-family: "Open Sans",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+    line-height: 1.7;
+}
+
+a:hover
+{
+	text-decoration: none;
+}
+
+
+/*Solid line across screen*/
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #000;
+    margin: 1em 0;
+    padding: 0;
+    margin: -5px 0px 0px 0px;
+}
+
+/*Footer values for width, padding*/
+footer
+{
+	width: 100%;
+	padding: 0px 5px 0px 5px;
+	background-color: #002650;
+}
+
+/*Color of the footer text*/
+footer a
+{
+	color: #FFF;
+	text-align: center;
+}
+
+/*Color of the footer text when cursor is over top*/
+footer a:hover
+{
+	text-decoration: none;
+	color: #777
+}
+
+/*Changes Color, Padding, Margin, and Font size of H5*/
+h5
+{
+	color: #666;
+	padding-left: 5px;
+	margin-bottom: -20px;
+	font-size: 17px;
+}
+
+h3
+{
+	font-size: 23px;
+}
+
+/*Classes and IDs*/
+/*///////////////////////////////////////////////////////////////////*/
+
+#plannedLogo img
+{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+/*Limits the width of whatever is inside to max and centers*/
+.limitWidth
+{
+	max-width: 1300px;
+	margin: auto;
+}
+
+.space-adaptive-large
+{
+	height: 40px;
+}
+
+.space-adaptive-small
+{
+	height: 10px;
+}
+
+.NavbarFooter
+{
+    position: relative;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    /*line-height: 1.0;*/
+    text-align: center;
+    color: #fff;
+    z-index: 0;
+}
+
+.vertDivide
+{
+	padding: 7px;
+}
+
+.footerPad
+{
+	padding: 10px 0px 10px 0px;
+}
+
+small
+{
+	color: #676b7f;
+}
+
+.pointer
+{
+	cursor: pointer;
+}
+
+.pointer i:hover
+{
+	color: #999;
+}
+
+.contracts small:hover
+{
+	color: #fff;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Speaking english -->
+  <head>
+  	<link rel="icon" href="imgFiles/Logo.jpg">
+    <title>Plan Your Adventure</title>
+    <meta charset="utf-8"> <!-- Common throughout web -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This is for the phone scaling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  	<link rel="stylesheet" href="cssFiles/indexCss.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  </head>
+
+  <body>	
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">  <!-- Navbar -->
+  		<div class="container limitWidth">       <!-- Limits text to a certain width -->
+        <!-- Toggles for Plan a Trip and the collapsable button in the toolbar -->
+  			<div class="navbar-nav">
+          <a class="navbar-brand" href="#">
+            <img src="imgFiles/Logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+          </a>
+  			</div>
+  			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".myNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  			  <span class="navbar-toggler-icon"></span>
+  			</button>
+
+        <!-- Collapsable section of the navbar -->
+  			<div class="collapse navbar-collapse myNavbar" id="navbarSupportedContent">
+  			  <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="PlanATrip.html"><strong>Plan a Trip</strong></a>
+            </li>
+    				<li class="nav-item">
+    				  <a class="nav-link" href="Destinations.html"><strong>Destinations</strong></a>
+    				</li>
+    				<li class="nav-item dropdown navbar-nav">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <strong>More</strong>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="PopularTrips.html"><strong>Popular Trips</strong></a>
+                <a class="dropdown-item" href="About.html"><strong>About</strong></a>
+                <a class="dropdown-item" href="ContactUs.html"><strong>Contact Us</strong></a>
+              </div>
+            </li>
+  			  </ul>
+  			  <li class="nav-item dropdown navbar-nav">
+    				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    				  <strong>My Account</strong>
+    				</a>
+    				<div class="dropdown-menu addPadding" aria-labelledby="navbarDropdown">
+              <div class="addPaddingVert">
+      				  <button type="button" class="btn btn-primary btn-md col-xs-12 col-sm-12 col-md-12 col-lg-12" data-toggle="modal" data-target="#loginModal">
+                  Login
+                </button>
+              </div>
+              <div class="addPaddingVert">
+      				  <button type="button" class="btn btn-success btn-md col-xs-12 col-sm-12 col-md-12 col-lg-12" data-toggle="modal" data-target="#signUpModal">
+                  Sign Up
+                </button>
+              </div>
+              <div class="addPaddingVert">
+      				  <button type="button" class="btn btn-danger btn-md col-xs-12 col-sm-12 col-md-12 col-lg-12" data-toggle="modal" data-target="#tripModal">
+                  Saved Trips
+                </button>
+              </div>
+    				</div>
+  			  </li>
+  			</div>
+  		</div>
+    </nav>
+
+    <div class="modal fade" id="languageModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Language</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              Test
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              Hello
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container-fluid">
+      <div class="space-adaptive-large"></div>
+        <div class="NavbarFooter">
+          <div class="limitWidth">
+            <a class=pointer><i class="fa fa-globe" style="font-size:16px" data-toggle="modal" data-target="#languageModal"> English (US) &#9660;</i></a>
+            <div class="text-center footerPad">
+              <a href="index.html"><h3>Voiyag Onward</h3></a>
+            </div>
+            <div class="text-center footerPad">
+              <a href="About.html" class="addPadding">ABOUT</a>
+              <a class="vertDivide">|</a>
+              <a href="ContactUs.html" class="addPadding">CAREERS</a>
+              <a class="vertDivide">|</a>
+              <a href="Help.html" class="addPadding">HELP / FAQ</a>
+              <a class="vertDivide">|</a>
+              <a href="Help.html" class="addPadding">CONTACT US</a>
+            </div>
+            <div class="text-center footerPad">
+              <a href="https://www.facebook.com/PlannedJourneys-222086925035409/" class ="fab fa-facebook-f addPadding"></a>
+              <a href="https://twitter.com/PlannedJourneys" class ="fab fa-twitter addPadding"></a>
+              <a href="https://www.instagram.com/plannedjourneys/?hl=en" class ="fab fa-instagram addPadding"></a>
+              <a href="https://www.linkedin.com/in/planned-journeys-9053a715b/" class ="fab fa-linkedin addPadding"></a>
+              <a href="https://www.youtube.com/channel/UCCBDTcQADAt_Hg2dETKlF3w" class ="fab fa-youtube addPadding"></a>
+            </div>
+            <div class="space-adaptive-small"></div>
+            <div class="text-center footerPad">
+              <a href="About.html" class="addPadding contracts"><small>Privacy</small></a>
+              <a class="vertDivide"><small>|</small></a>
+              <a href="ContactUs.html" class="addPadding contracts"><small>Terms</small></a>
+              <a class="vertDivide"><small>|</small></a>
+              <a class="addPadding"><small>&#9400;2019 VOIYAG</small></a>
+            </div>
+            <div class="text-center">
+              <a class="addPadding"><small>Create the ideal trip itinerary with VOIYAG. VOIYAG automatically assembles trip itineraries based on preferences or assists in assembling your own preferred itinerary</small></a>
+            </div>
+          </div>
+        </div>
+      <div class="space-adaptive-large"></div>
+    </footer>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- Script necessary for Google Search -->
+  <script type="text/javascript" src="jsFiles/Jquery/jquery.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwrNqUFd-cdOvpiis6e38bDGVWio8gSGY&libraries=places"></script>
+  <script src="jsFiles/googleMaps.js"></script>
+  <!-- End google search -->
+  <script src="jsFiles/signUp.js"></script>
+</html>

@@ -1,0 +1,1029 @@
+/*Globals*/
+/*///////////////////////////////////////////////////////////////////*/
+
+/*Grey background in case nothing else loads*/
+body
+{
+	background-color: #0E0E0E;
+}
+
+/*States the size and type of the fonts*/
+a
+{
+	font: 15px/1.5 Helvetica,sans-serif; /*Determines the text*/
+}
+
+a:hover
+{
+	text-decoration: none;
+}
+
+
+/*Solid line across screen*/
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #000;
+    margin: 1em 0;
+    padding: 0;
+    margin: -5px 0px 0px 0px;
+}
+
+/*Footer values for width, padding*/
+footer
+{
+	width: 100%;
+	padding: 3%;
+}
+
+/*Color of the footer text*/
+footer a
+{
+	color: #FFF;
+}
+
+/*Color of the footer text when cursor is over top*/
+footer a:hover
+{
+	text-decoration: none;
+	color: #777
+}
+
+/*Changes Color, Padding, Margin, and Font size of H5*/
+h5
+{
+	color: #666;
+	padding-left: 5px;
+	margin-bottom: -20px;
+	font-size: 17px;
+}
+
+h3
+{
+	font-size: 23px;
+}
+
+/*Classes and IDs*/
+/*///////////////////////////////////////////////////////////////////*/
+
+#plannedLogo img
+{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+/*Limits the width of whatever is inside to max and centers*/
+.limitWidth
+{
+	max-width: 1100px;
+	margin: auto;
+}
+
+/*Limits the height*/
+.limitHeight
+{
+	max-height: 1100px;
+}
+
+/*Cover image*/
+#coverImg
+{
+	background-image: url("#APP_IMAGES#ImgFiles/pointSign.jpg"); 	
+	background-repeat: no-repeat;
+	background-position: center -100px;
+	background-size: cover;
+	height: 900px;
+	max-height: 900px;
+}
+
+/*The size of the branding image*/
+.brandParam
+{
+	width: 60px;
+	height: 60px;
+}
+
+/*Shifting over the Plan a Journey in the nav*/
+#shiftCheck
+{
+	margin: 0px 10px 0px -10px;
+	padding: 0px;
+}
+
+/*Making the search bar transparent*/
+#destinationLocation
+{
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #000;
+	font-size: 45px;
+	margin: 0px;
+	width: 80%;
+	font-weight: bold;
+	padding: 10px 0px 10px 10px;
+}
+
+/*Adds a bottom border*/
+.bottomBorder
+{
+	border-bottom: 1px solid black;
+}
+
+/*Add some padding to the side of the search form*/
+.form-inline
+{
+	padding-left: 5px;
+	margin-top: 5px;
+}
+
+/*Shifts the search #px from top*/
+.vertShift
+{
+	margin-top: 190px;
+}
+
+/*Adds padding*/
+.resizeSearch
+{
+	padding: 10px;
+}
+
+/*Determines the size of the "Search" magnifying glass*/
+.fa-search
+{
+	font-size: 30px;
+	color: #FFF;
+	margin: 20px 0px 0px 0px;
+}
+
+/*Solid line underneath Search when media is small*/
+.display
+{
+	margin-top: -24px;
+}
+
+/*Sets height and background color*/
+.manipCard
+{
+	height: 400px;
+	background: #F14E02;
+}
+
+/*Prevents images in cards from being too large*/
+.manipCard img
+{
+	max-height: 250px;
+}
+
+/*Sets the color of the text*/
+.manipCard h4, .manipCard h3, .manipCard h4:hover, .manipCard h3:hover
+{
+	color: #FFF;
+}
+
+/*Adding padding and margin to the footer*/
+.addPadding
+{
+	padding: 5px;
+	margin: auto;
+}
+
+/*Adds padding to the cards*/
+.addPadding2
+{
+	padding: 15px;
+}
+
+.addPaddingVert
+{
+	padding: 5px 0px 5px 0px;
+}
+
+.addPadMargin
+{
+	padding: 10px;
+	margin: 10px;
+}
+
+
+@media (max-width: 680px) 
+{ 
+  /*Determines the size of the "Search" magnifying glass*/
+  .fa-search
+  {
+  	font-size: 20px;
+  	margin-top: 3px;
+  	margin-right: -5px
+  }
+  /*Determines the size of the "Search" text*/
+  #destinationLocation
+  {
+  	font-size: 35px;
+  }
+  h5
+  {
+  	font-size: 13px;
+  }
+}
+
+/*Shows the button on bottom and has a solid line*/
+@media (max-width: 685px)
+{
+	/*Takes away border on search*/
+	.bottomBorder
+	{
+		border-bottom: none;
+	}
+	/*Doesn't display initial button*/
+	.noDisplay
+	{
+		display: none;
+	}
+	/*Resizes all H5*/
+}
+
+@media (min-width: 686px)
+{
+	/*Hides secondary button when it's larger*/
+	.display
+	{
+		display: none;
+	}
+}
+
+@media (max-width: 1400px)
+{
+	.addPadding2
+	{
+		margin-top: -100px;
+	}
+}
+
+/*/////////////////////////////////////////////////////////////////////////*/
+
+/*Contact Us*/
+.jumbotronContactUs {
+  color: #FFF;
+  background: url("#APP_IMAGES#ImgFiles.city.JPG") no-repeat center center; 
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  height: 400px;
+  margin: auto;
+}
+
+#changeContact
+{
+	background: #18191c;
+	color: #FFF;
+	font-weight: bold;
+}
+
+/*Changes the color of the subject dropdown*/
+#subject option
+{
+	color: #000;
+}
+
+/*Makes all of the text inputs black / bold*/
+.boldBlack
+{
+	color: #000;
+	font-weight: bold;
+}
+
+/*/////////////////////////////////////////////////////////////////////////*/
+/*Sign Up*/
+
+/*Sets the border and overall look of the 'sign up' modal*/
+fieldset {
+    border: thin solid #ccc; 
+    border-radius: 4px;
+    padding: 5px;
+    background: #fbfbfb;
+}
+legend {
+   color: #678;
+}
+.form-control {
+    width: 95%;
+}
+label small {
+    color: #678 !important;
+}
+span.req {
+    color:maroon;
+    font-size: 112%;
+}
+
+/*Makes the 'warning' class red*/
+.warning{
+  color: red;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
+}
+
+/*Makes the initial rules for the password hidden*/
+#message{
+  display: none;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+}
+
+/*/////////////////////////////////////////////////////////////////////////*/
+/*Load Trip*/
+
+/*The load trip option is initially hidden until log in*/
+.selectTrip
+{
+	display: none;
+}
+
+/*/////////////////////////////////////////////////////////////////////////*/
+/*About*/
+
+/*Jumbotron picture*/
+.jumbotronAbout 
+{
+  color: #FFF;
+  background: url(#APP_IMAGES#ImgFiles/backgroundPhoto.jpg) no-repeat center center; 
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  height: 300px;
+  margin: auto;
+  padding: 10px;
+}
+
+/*Resize the jumbotron height*/
+@media (min-width: 800px)
+{
+	.jumbotronAbout
+	{
+		height: 450px;
+	}
+}
+
+/*Background color for about*/
+.aboutColor
+{
+	background: #eff1f2;
+	color: #000;
+	padding: 10px;
+	margin: auto;
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////*/
+/*Popular Trips*/
+
+/*Provides all of the picture sizing*/
+.popularImg
+{
+	height: 250px;
+	width: 40%;
+	margin: auto;
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////*/
+/*Destinations*/
+
+/*Background color*/
+.destinationsColor
+{
+	background: #eff1f2;
+	margin: auto;
+}
+
+/*Sets map height*/
+#mapdiv 
+{
+  height: 550px;
+}
+
+/*Sets the size of the internal map so that it changes with width of html*/
+.mapContents
+{
+  width: 100%;
+  margin: auto;
+  font-size: 70%; 
+}
+
+/*Shifts the search #px from top*/
+.vertShift2
+{
+	margin-top: 60px;
+}
+
+/*Makes the magnifying glass black*/
+.colorMag
+{
+	color: #000;
+}
+
+.colorGrey
+{
+	color: #AEAEAE;
+}
+
+/*Pads the sides of the top part of destinations*/
+#destinationHeader
+{
+	padding: 0px 2px 0px 2px;
+}
+
+/*Making the search bar transparent*/
+#countryLocation
+{
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #000;
+	font-size: 50px;
+	margin: 0px;
+	width: 80%;
+	font-weight: bold;
+	padding: 10px 0px 10px 10px;
+}
+
+@media (max-width: 680px) 
+{ 
+  /*Determines the size of the "Search" text*/
+  #countryLocation
+  {
+  	font-size: 35px;
+  	margin-top: 10px;
+  }
+
+  /*resize header size*/
+  #destinationHeader h3
+  {
+  	font-size: 17px;
+  }
+
+  /*Changes the height of the map*/
+  #mapdiv 
+  {
+	height: 350px;
+  }
+
+}
+
+/*/////////////////////////////////////////////////////////////////////////*/
+/*Help Page*/
+
+/*This makes the text white, changes the background color, makes it centered, 
+and makes it so that the text isn't flush with the sides*/
+.helpMargin
+{
+	margin: auto;
+	color: #fff;
+	background: #181c1e;
+	padding: 20px;
+}
+
+/*White solid line across the screen*/
+.helpMargin hr
+{
+	border-top: 1px solid #fff;	
+}
+
+/*Makes it so that the help box is not taking up the entire body*/
+.autoMargin
+{
+	margin: 10px;
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////*/
+/*Plan a Trip Page*/
+
+/*Adds blue background at the top*/
+.topColor
+{
+	background: #1359D9;
+}
+
+/*Adds CSS to the calendar*/
+.topValue
+{
+	background: #3F86DC; 
+	cursor: pointer; 
+	color: #FFF;
+	height: 50px;
+	font-weight: bold;
+	padding: 12px 10px;
+}
+
+/*Floats to the right*/
+.floatRight
+{
+	float: right;
+}
+
+/*Lowers down symbols*/
+.centerI
+{
+	margin-top: 5px;
+	float: none;
+}
+
+/*Adds exchange symbol*/
+.fa-exchange-alt
+{
+	font-size: 20px;
+}
+
+/*Adds CSS to the To & From*/
+.tripLocation
+{
+    background: #3F86DC; 
+	border: none;
+	outline: none;
+	color: #FFF;
+	font-size: 18px;
+	font-weight: bold;
+	height: 50px;
+	width: 100%;
+	padding: 10px;
+}
+
+/*Adds padding to to & from & calendar*/
+.addPlanPadding
+{
+	padding: 2px;
+}
+
+/*Changing color of placeholder*/
+.placeholderColor input::-webkit-input-placeholder 
+{
+	color: #C3C3C3 !important;
+}
+ 
+.placeholderColor input::-moz-placeholder 
+{  /* Firefox 19+ */
+	color: #FFF !important;  
+}
+ 
+.placeholderColor input::-ms-input-placeholder 
+{  
+	color: #C3C3C3 !important;  
+}
+
+.placeholderColor2 input::-webkit-input-placeholder 
+{
+	color: #C3C3C3 !important;
+}
+ 
+.placeholderColor2 input::-moz-placeholder 
+{  /* Firefox 19+ */
+	color: #C3C3C3 !important;  
+}
+ 
+.placeholderColor2 input::-ms-input-placeholder 
+{  
+	color: #C3C3C3 !important;  
+}
+
+/*Pulls To/From/Calendar slightly away from sides*/
+.padSides
+{
+	width: 95%;
+	margin: auto;
+}
+
+/*Literally just providing the color white*/
+.colorWhite
+{
+	color: #fff;
+}
+
+/*Literally just providing an off-white color*/
+.colorCream
+{
+	background: #fbfbfb;
+}
+
+/*Expands the text down for start / end and makes it a white box*/
+@media (min-width: 767px)
+{
+	.placeholderColor input 
+	{
+	  transition: all 1000ms;
+	}
+	.placeholderColor input:focus 
+	{
+	  width: calc( 100% + 150px );
+	  background: #FFF;
+	  color: #000;
+	  margin-top: 60px;
+	}
+}
+
+[data-tooltip] {
+    display: inline-block;
+    position: relative;
+    cursor: help;
+    padding: 4px;
+}
+/* Tooltip styling */
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    display: none;
+    position: absolute;
+    background: #2eaa00;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 14px;
+    line-height: 1.4;
+    min-width: 160px;
+    text-align: center;
+    border-radius: 4px;
+}
+/* Dynamic horizontal centering */
+[data-tooltip-position="top"]:before,
+[data-tooltip-position="bottom"]:before {
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+/* Dynamic vertical centering */
+[data-tooltip-position="right"]:before,
+[data-tooltip-position="left"]:before {
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+[data-tooltip-position="top"]:before {
+    bottom: 100%;
+    margin-bottom: 6px;
+}
+[data-tooltip-position="right"]:before {
+    left: 100%;
+    margin-left: 6px;
+}
+[data-tooltip-position="bottom"]:before {
+    top: 100%;
+    margin-top: 6px;
+}
+[data-tooltip-position="left"]:before {
+    right: 100%;
+    margin-right: 6px;
+}
+
+/* Tooltip arrow styling/placement */
+[data-tooltip]:after {
+    content: '';
+    display: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+/* Dynamic horizontal centering for the tooltip */
+[data-tooltip-position="top"]:after,
+[data-tooltip-position="bottom"]:after {
+    left: 50%;
+    margin-left: -6px;
+}
+/* Dynamic vertical centering for the tooltip */
+[data-tooltip-position="right"]:after,
+[data-tooltip-position="left"]:after {
+    top: 50%;
+    margin-top: -6px;
+}
+[data-tooltip-position="top"]:after {
+    bottom: 100%;
+    border-width: 6px 6px 0;
+    border-top-color: #000;
+}
+[data-tooltip-position="right"]:after {
+    left: 100%;
+    border-width: 6px 6px 6px 0;
+    border-right-color: #000;
+}
+[data-tooltip-position="bottom"]:after {
+    top: 100%;
+    border-width: 0 6px 6px;
+    border-bottom-color: #000;
+}
+[data-tooltip-position="left"]:after {
+    right: 100%;
+    border-width: 6px 0 6px 6px;
+    border-left-color: #000;
+}
+/* Show the tooltip when hovering */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+    display: block;
+    z-index: 50;
+}
+
+/*Adds CSS to the To & From*/
+.searchLocation
+{
+    background: #3F86DC; 
+	border: none;
+	outline: none;
+	color: #FFF;
+	font-size: 18px;
+	font-weight: bold;
+	height: 50px;
+	width: 100%;
+	padding: 10px;
+}
+
+/*Currently hidden search mag for starting map searches*/
+.searchMag
+{
+	background: #FFF; 
+	color: #2eaa00;
+	font-weight: bold;
+	height: 100%;
+	width: 100%;
+	padding: 10px;
+	margin: 0px;
+	border-left: 1px solid black;
+}
+
+/*Provides the correct with ffor the search mag*/
+.provideWidth
+{
+	width: 20%;
+	height: 50px;
+}
+
+@media (max-width: 680px) 
+{
+	/*Change size of search mag*/
+	.provideWidth
+	{
+		width: 15%;
+	}
+	/*Change spacing of search mag*/
+	.searchMag
+	{
+		margin: 0px;
+		padding-top: 15px;
+	}
+	/*Change address search font size and padding*/
+	#activityLocation
+	{
+		font-size: 14px;
+		padding: 3px;	
+	}
+	/*Change size of dropdown options with size change*/
+	option
+	{
+		font-size: 12px;
+	}
+}
+
+/*The map itself, setting a max height and padding*/
+#map 
+{
+  height: 400px;
+  /*margin: auto;*/
+  padding: 10px 0px 0px 0px;
+}
+
+/*Allows the map to span the entirety of the page, centers map*/
+.mapProject{
+  width: 100%;
+  margin: auto;
+  padding-top: 10px;
+}
+
+/*Padding for the 'Add to your plan'*/
+.addPadding3
+{
+	padding: 10px 0px 10px 0px;
+}
+
+/*Tooltip color change*/
+.faResize
+{
+	color: #2eaa00;
+}
+
+/*Background picture for the Plan a Trip page*/
+#addBackground
+{
+	background-image: url("#APP_IMAGES#ImgFiles/hawaii.jpg"); 	
+	background-position: center -120px;
+	background-repeat: no-repeat;
+	height: 510px;
+	width: 100%;
+}
+
+/*Sets the color of the first invalid dropdown option*/
+select:required:invalid 
+{
+	color: #FFF;
+}
+/*Doesn't let you pick the first option*/
+option[value=””][disabled] 
+{
+	display: none;
+}
+/*Changes colors of dropdowns and font size*/
+option 
+{
+	color: #FFF;
+	font-size: 18px;
+	padding: 2px
+}
+
+/*Changes the color and sizing of the select*/
+select
+{
+	color: #FFF;
+	font-weight: bold;
+	padding: 2px 5px 2px 5px;
+	background: #3F86DC;
+	height: 45px;
+}
+
+/*Color black*/
+.colorBlack
+{
+	color: #000;
+}
+
+@media (max-width: 680px) 
+{
+	/*Change select size*/
+	select
+	{
+		font-size: 14px;
+		padding: 1px 2px 1px 2px;
+	}
+	/*Change option spacing*/
+	option
+	{
+		padding: 2px 0px 2px 0px;
+	}
+}
+
+/*Setting the height, cursor, and overflow for the results of the map search*/
+#listing 
+{
+  height: 200px;
+  cursor: pointer;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+/*Fills out the page width for the map search*/
+#resultsTable
+{
+	width: 100%;
+}
+
+/*Setting width of the button for adding to project*/
+#addButton
+{
+	width: 20%;
+}
+
+/*Setting wdth for the address confirmation*/
+#addressValue
+{
+	width: 80%;
+}
+
+@media (max-width: 680px)
+{
+	/*Pop up size of info when an item is clicked*/
+	#infoContent table
+	{
+		width: 100px;
+	}
+	/*Full size button when it's smaller*/
+	#addButton
+	{
+		width: 100%;
+	}
+	/*Full size address confirm and smaller text*/
+	#addressValue
+	{
+		font-size: 14px;	
+		width: 100%;
+	}
+	/*Smaller text for description*/
+	#descriptVal
+	{
+		font-size: 14px;
+	}
+	/*Slightly larger picture in background to account for dropped down items*/
+	#addBackground
+	{
+		height: 550px;
+	}
+}
+
+/*Literally a class that hides the object*/
+.hidden
+{
+	display: none;
+}
+
+/*Adds padding for the confirm address*/
+.addPadding4
+{
+	padding: 4px;
+}
+
+/*Class for a red warning object*/
+.smallWarning
+{
+	color: #e30d0d;
+}
+
+/*Padding for time*/
+.addPadding5
+{
+	padding: 0px 4px 4px 4px;
+}
+
+/*Table to display your plans*/
+#myTable
+{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Internal header details for the planning table*/
+#myTable th {
+  border: 1px solid #000;
+  background: #1bb519;
+  text-align: left;
+  padding: 8px;
+  color: #fff;
+}
+
+/*Internal TD to the planning table*/
+#myTable td {
+  border: 1px solid #000;
+  text-align: left;
+  padding: 8px 8px 0px 8px;
+  color: #000;
+}
+
+/*Planning tables max height and allowed overflow*/
+#tableWrapper
+{
+	max-height: 300px;
+	overflow: auto;
+}
+
+/*Title size for the full plan*/
+#tableTitle
+{
+	height: 10px;
+	font-size: 20px;
+}
+
+/*Find suggestions code to make it clickable*/
+#findActivity
+{
+	color:  #000090;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+/*Changes color and underlines when hovering over find suggestions*/
+#findActivity:hover
+{
+	color:  #000060;
+	border-bottom: 1px solid #000060;;
+}

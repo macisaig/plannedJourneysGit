@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Speaking english -->
+  <head>
+    <link rel="icon" href="imgFiles/plannedJourneysLogoMini.jpg">
+    <title>Plan Your Adventure</title>
+    <meta charset="utf-8"> <!-- Common throughout web -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This is for the phone scaling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="cssFiles/indexCss.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <!-- Scripts for Calendar -->
+    <link rel="stylesheet" type="text/css" href="cssFiles/dateRangePicker.css" />
+    <!-- End Calendar Scripts -->
+  </head>
+
+  <body>  
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">  <!-- Navbar -->
+      <div class="container limitWidth">       <!-- Limits text to a certain width -->
+        <div class="navbar-brand brandParam">
+          <a href="index.html" id="plannedLogo">
+            <img src="imgFiles/plannedJourneysLogoMini.jpg">
+          </a>
+        </div>
+        <div class="navbar-nav" id="shiftCheck">
+          <a class="nav-item nav-link" href="PlanATrip.html"><strong>Plan a Trip</strong></a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".myNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse myNavbar" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="Destinations.html">Destinations</a>
+            </li>
+            <li class="nav-item dropdown navbar-nav">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                More
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="PopularTrips.html">Popular Trips</a>
+                <a class="dropdown-item" href="About.html">About</a>
+                <a class="dropdown-item" href="ContactUs.html">Contact Us</a>
+              </div>
+            </li>
+          </ul>
+          <li class="nav-item dropdown navbar-nav">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              My Account
+            </a>
+            <div class="dropdown-menu addPadding" aria-labelledby="navbarDropdown">
+              <div class="addPaddingVert">
+                <button type="button" class="btn btn-primary btn-md col-xs-12 col-sm-12 col-md-12 col-lg-12" data-toggle="modal" data-target="#loginModal">
+                  Login
+                </button>
+              </div>
+              <div class="addPaddingVert">
+                <button type="button" class="btn btn-success btn-md col-xs-12 col-sm-12 col-md-12 col-lg-12" data-toggle="modal" data-target="#signUpModal">
+                  Sign Up
+                </button>
+              </div>
+              <div class="addPaddingVert">
+                <button type="button" class="btn btn-danger btn-md col-xs-12 col-sm-12 col-md-12 col-lg-12" data-toggle="modal" data-target="#tripModal">
+                  Saved Trips
+                </button>
+              </div>
+            </div>
+          </li>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Starting Plan a Trip Code -->
+    <!-- Top start / end trip dates -->
+    <div class="topColor">
+      <div class="limitWidth collapse show" id="infoCollapse">
+        <br>
+        <div class="row padSides">
+          <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12 addPlanPadding placeholderColor">
+            <input class="tripLocation" id="fromLocation" type="search" placeholder="From?" aria-label="search...">
+          </div>
+          <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12 addPlanPadding placeholderColor">
+            <input class="tripLocation" id="toLocation" type="search" placeholder="To?" aria-label="search...">
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 addPlanPadding">
+            <div id="datePicker" class="topValue">
+              <i class="fa fa-calendar"></i>&nbsp;
+              <span></span> 
+              <div class="floatRight"><i class="fa fa-caret-down floatRight centerI"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='text-center' id="errStart"></div> 
+      <!-- Buttons for toggling and adding info -->
+      <div class="text-center addPadding">
+        <a class="btn btn-danger btn-md" data-toggle="collapse" href="#infoCollapse" role="button" aria-expanded="false" aria-controls="infoCollapse">
+          Toggle Info <i class="fa fa-caret-down floatRight centerI"></i>
+        </a>
+        <a class="btn btn-success btn-md" role="button" data-toggle="" data-target="" onclick="updateEnd()">Update Trip</a>
+      </div>
+    </div>
+
+    <div class="colorCream">
+      <div id="addBackground">
+        <div class="limitWidth padSides text-center">
+          <!-- Add to your plan header -->
+          <h2 class="addPadding3">Add to your Plan<span data-tooltip="Add Activities / Locations or Destinations to your plan. Simply search, i.e. Hotels near Sydney, Australia / Kayaking in Virginia / Tokyo, choose the type of activity, then add the amount of time intended for the destination or activity, and finally confirm the details" data-tooltip-position="left"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></h2>
+          <hr>
+          <!-- Map search bar for adding an activity or destination -->
+          <div class="placeholderColor2">
+            <input class="searchLocation placeholderColor" id="activityLocation" aria-describedby="First Location" placeholder="Activity / Location or Destination" type="search">
+          </div>
+          <!-- <a class="provideWidth" href="">
+            <i class="fas fa-search searchMag" id="addressSearch" onclick="searchMap()"></i>
+          </a> -->
+          
+          <div class='text-center' id="errLocation"></div>
+          <!-- Suggestion Link -->
+          <h5>Don't know what to do? <a id="findActivity" onClick="findActivity()">Find suggestions</a></h5>
+          <br>
+          <!-- Dropdown for selecting type of activity -->
+          <select name=”browsers” id="selectActivity">
+            <option value=”” disabled selected>Type of Activity</option>
+            <option value=”stay”>Stay 1+ Nights</option>
+            <option value=”single”>Single Day Activity</option>
+            <option value=”multi”>Multi-Day Activity</option>
+          </select>
+          <!-- Activity error message -->
+          <div class='text-center' id="errActivity"></div> 
+          <!-- Timing values -->
+          <div class="container addPadding5">
+            <h4 class="colorWhite"><strong>Length of Time</strong></h4>
+            <select id="dayMark">
+              <option id="dayValue" value=”” disabled selected>Days</option>
+            </select>
+            <select id="hourMark">
+              <option id="hourValue" value=”” disabled selected>Hrs</option>
+            </select>
+            <select id="minuteMark">
+              <option id="minuteValue" value=”” disabled selected>Mins</option>
+            </select>
+          </div>
+          <!-- Timing error message -->
+          <div class='text-center' id="errTime"></div> 
+          <!-- Optional description -->
+          <div class="placeholderColor2">
+            <input class="searchLocation" id="descriptVal" aria-describedby="Decription of Location" placeholder="Optional description:">
+          </div>
+          <br>
+          <br>
+          <!-- Address confirmation and add to plan button -->
+          <div class="hidden searchLocation" id="inputValue">
+            <h4 class="colorWhite"><strong>Confirm Address</strong></h4> 
+            <hr>
+            <div class="row addPadding4">
+              <input class="searchLocation" id="addressValue" aria-describedby="Confirm Location" placeholder="Confirm location">
+              <button class="btn btn-success btn-md" id="addButton" onclick="addToPlan()"><strong>Add to Plan</strong></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='text-center' id="errAdd"></div>
+
+      <!-- This is the displayable content that appears when you click on an object in the map -->
+      <div style="display: none">
+        <div id="info-content">
+          <table>
+            <tr id="iw-url-row" class="iw_table_row">
+              <td id="iw-icon" class="iw_table_icon"></td>
+              <td id="iw-url"></td>
+            </tr>
+            <tr id="iw-address-row" class="iw_table_row">
+              <td class="iw_attribute_name">Address:</td>
+              <td id="iw-address"></td>
+            </tr>
+            <tr id="iw-phone-row" class="iw_table_row">
+              <td class="iw_attribute_name">Telephone:</td>
+              <td id="iw-phone"></td>
+            </tr>
+            <tr id="iw-rating-row" class="iw_table_row">
+              <td class="iw_attribute_name">Rating:</td>
+              <td id="iw-rating"></td>
+            </tr>
+            <tr id="iw-website-row" class="iw_table_row">
+              <td class="iw_attribute_name">Website:</td>
+              <td id="iw-website"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="limitWidth padSides text-center">
+        <!-- This is the Plan Table -->
+        <div class="hidden" id="itinerary">
+          <p class="startParagraph" id="tableTitle" align="center"><strong>Summary of Plans</strong><span data-tooltip="Summary of destinations, activities, etc. that will be used to generate your itinerary" data-tooltip-position="left"><i class="fa fa-question-circle faResize" style="font-size:20px"></i></span></p>
+
+          <div class="row addPadding" id="tableWrapper">
+            <table id="myTable">
+              <tbody id="overallList">
+                <tr>
+                  <th>Location</th>
+                  <th>Activity</th>
+                  <th>Time</th>
+                  <th>Priority<span data-tooltip="Rate each item; Higher rated items are given higher priority when creating your plan" data-tooltip-position="left"><i class="fa fa-question-circle faResize fa-question-circle2" style="font-size:20px; color: #fff"></i></span></th>
+                  <th>Description</th>
+                  <th>Delete</th>
+                </tr>
+              </tbody>
+            </table> 
+          </div>
+
+          <!-- Calculate itinerary button -->
+          <div class = "text-center">
+            <button type="submit" class="btn btn-primary btn-submitButton submitButton1 finalButtons" id="calcPlan"><strong>Generate Itinerary</strong></button>
+          </div>
+          <br>
+        </div>
+        <!-- Google map -->
+        <div class="mapProject">
+          <div id="map"></div>
+        </div>
+        <!-- Table that appears when you search the map -->
+        <div id="listing">
+            <table id="resultsTable">
+              <tbody id="results"></tbody>
+            </table>
+          </div> 
+      </div>
+    </div>
+    <!-- Ending Plan a Trip Code -->
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="loginLabel">Log In</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="form-signin text-center formPadMargin">
+              <img class="mb-4" src="imgFiles/plannedJourneysLogoMini.jpg" alt="" width="60" height="60">
+              <h3 class="h3 mb-3 font-weight-normal">Enter Account Information</h3>
+              <label for="inputEmail" class="sr-only">Email or Username</label>
+              <input type="text" class="form-control limitForm" placeholder="Email or Username" required autofocus>
+              <label for="inputPassword" class="sr-only">Password</label>
+              <input type="password" class="form-control limitForm" placeholder="Password" required>
+              <div class="checkbox mb-3">
+                <label>
+                  <input type="checkbox" value="remember-me" class="rememberMe"> Remember me
+                </label>
+              </div>
+              <button class="btn btn-primary btn-lg" type="submit">Sign in</button>
+              <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+              <a href="javascript:;" class="">Forgot your password?</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="signUpLabel">Sign Up</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="text-center">
+              <img class="mb-4" src="imgFiles/plannedJourneysLogoMini.jpg" alt="" width="72" height="72">
+            </div>
+
+            <div class="container">
+              <div class="row">
+                <form action="" method="post" id="fileForm" role="form">
+                  <fieldset><legend class="text-center">Sign Up Information <br><span class="req"><small>* required</small></span></legend>
+
+                    <div class="form-group">   
+                      <label for="firstname"><span class="req">* </span> Name: </label>
+                      <input class="form-control" type="text" name="firstName" id = "txt" onkeyup = "validateName(this)" required /> 
+                      <div id="errFirst"></div>    
+                    </div>
+
+                    <div class="form-group">
+                      <label for="email"><span class="req">* </span> Email Address: </label> 
+                      <input class="form-control" required type="text" name="email" id = "email"  onchange="email_validate(this.value);" />   
+                      <div class="status" id="status"></div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="password"><span class="req">* </span> Password:  <small>Minimum 6 characters with 1 special, 1 uppercase, and 1 number</small></label>
+                      <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="16"  id="pass1" onkeyup = "validatePassword(this)"/>
+
+                      <div id="message">
+                        <h4>Password must contain the following:</h4>
+                        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                        <p id="number" class="invalid">A <b>number (0-9)</b></p>
+                        <p id="special" class="invalid">A <b>special character</b></p>
+                        <p id="length" class="invalid">Minimum <b>6 characters</b></p>
+                      </div>
+
+                      <label for="password"><span class="req">* </span>Confirm Password: </label>
+                      <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="16" placeholder="Enter again to validate"  id="pass2" onkeyup="checkPass(); return false;" />
+                      <span id="confirmMessage" class="confirmMessage"></span>
+                      <br>
+                      <input type="checkbox" onclick="showPassword()"> Show Password <br>
+                    </div>
+
+                    <div class="form-group">
+                      <hr>
+                      <div class="text-center">
+                        <input type="checkbox" required name="terms" onchange="this.setCustomValidity(validity.valueMissing ? 'Please indicate that you accept the Terms and Conditions' : '');" id="field_terms"><label for="terms"><span class="req">* </span>I agree with the <a href="terms.php" title="You may read our terms and conditions by clicking on this link">terms and conditions</a></label>
+                      </div>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <input class="btn btn-md btn-success" type="submit" name="submit_reg" value="Register">
+                    </div>
+
+                    <div class="form-group text-center">
+                      <h5>You will receive an email to complete the registration process. </h5><br>
+                      <h5>Be sure to check your spam folders. </h5>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Saved Trips Modal -->
+    <div class="modal fade" id="tripModal" tabindex="-1" role="dialog" aria-labelledby="tripModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="tripLabel">Saved Trips</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="text-center">
+              <div class="selectTrip">
+                <h4 class="h3 mb-3 font-weight-normal" id="selectTrip">Select a Trip</h4>
+                <hr>
+                <br>
+                <div class="form-group text-center">
+                  <input class="btn btn-lg btn-success" type="submit" name="submit_reg" value="Load">
+                </div>
+              </div>
+              <div class="tripLogin">
+                <h4 class="h3 mb-3 font-weight-normal" id="tripLogin">Login to Access Saved Trips</h4>
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sign Up Jumbotron -->
+    <div class="jumbotron">
+      <h2 class="text-center">Start Planning Your Journey!</h2>
+      <hr class="my-4">
+      <div class="text-center">
+        <a class="btn btn-primary btn-lg" href="" role="button" data-toggle="modal" data-target="#signUpModal">Sign Up</a>
+        <a class="btn btn-primary btn-lg" href="" role="button" data-toggle="modal" data-target="#loginModal">Log In</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container-fluid text-center">
+      <div class="row limitWidth">
+        <div class="col-sm-3 addPadding">
+          <a href="index.html"><h2>Voiyag Onward</h2></a>
+        </div>
+        <div class="col-sm-6 addPadding">
+          <a href="ContactUs.html" class="addPadding">Contact Us</a>
+          <a href="About.html" class="addPadding">About Us</a>
+          <a href="Help.html" class="addPadding">Help</a>
+        </div>
+        <div class="col-sm-3 addPadding">
+          <a href="https://www.facebook.com/PlannedJourneys-222086925035409/" class ="fab fa-facebook-f addPadding"></a>
+          <a href="https://twitter.com/PlannedJourneys" class ="fab fa-twitter addPadding"></a>
+          <a href="https://www.instagram.com/plannedjourneys/?hl=en" class ="fab fa-instagram addPadding"></a>
+          <a href="https://www.linkedin.com/in/planned-journeys-9053a715b/" class ="fab fa-linkedin addPadding"></a>
+          <a href="https://www.youtube.com/channel/UCCBDTcQADAt_Hg2dETKlF3w" class ="fab fa-youtube addPadding"></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="jsFiles/signUp.js"></script>
+
+  <!-- Calendar Javascript -->
+  <script type="text/javascript" src="jsFiles/Jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="jsFiles/moment-develop/min/moment.min.js"></script>
+  <script type="text/javascript" src="jsFiles/dateRangePicker.js"></script>
+  <!-- End Calendar Javascript -->
+
+  <!-- Google Maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwrNqUFd-cdOvpiis6e38bDGVWio8gSGY&libraries=places&callback=initAutocomplete" async defer></script>
+  <!-- End Google Maps -->
+
+  <!-- Total JS for this page including calendar / google maps -->
+  <script src="jsFiles/planATrip.js"></script>
+</html>
+
