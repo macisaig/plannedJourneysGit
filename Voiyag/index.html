@@ -25,46 +25,41 @@
 
         <!-- Collapsable section of the navbar -->
   			<div class="collapse navbar-collapse myNavbar" id="navbarSupportedContent">
-  			  <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
+  			  <ul class="navbar-nav mr-auto" id="firstNav">
+            <li class="nav-item" id="planMain">
               <a class="nav-link" href="PlanATrip.html"><strong>Plan a Trip</strong></a>
             </li>
-    				<li class="nav-item">
-    				  <a class="nav-link" href="Destinations.html"><strong>Destinations</strong></a>
+    				<li class="nav-item" id="discoverMain">
+    				  <a class="nav-link" href="Destinations.html"><strong>Discover</strong></a>
     				</li>
-    				<li class="nav-item dropdown navbar-nav">
+            <li class="nav-item" id="popularMain">
+              <a class="nav-link" href="Destinations.html"><strong>Popular Trips</strong></a>
+            </li>
+            <li class="nav-item" id="aboutMain">
+              <a class="nav-link" href="Destinations.html"><strong>About</strong></a>
+            </li>
+            <li class="nav-item" id="contactMain">
+              <a class="nav-link" href="Destinations.html"><strong>Contact Us</strong></a>
+            </li>
+    				<li class="nav-item dropdown navbar-nav d-none" id="more">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <strong>More</strong>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="PopularTrips.html"><strong>Popular Trips</strong></a>
-                <a class="dropdown-item" href="About.html"><strong>About</strong></a>
-                <a class="dropdown-item" href="ContactUs.html"><strong>Contact Us</strong></a>
+                <a class="dropdown-item d-none" href="PopularTrips.html" id="popularSec"><strong>Popular Trips</strong></a>
+                <a class="dropdown-item d-none" href="About.html" id="aboutSec"><strong>About</strong></a>
+                <a class="dropdown-item d-none" href="ContactUs.html" id="contactSec"><strong>Contact Us</strong></a>
               </div>
             </li>
   			  </ul>
-  			  <li class="nav-item dropdown navbar-nav">
-    				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    				  <strong>My Account</strong>
-    				</a>
-    				<div class="dropdown-menu addPadding" aria-labelledby="navbarDropdown">
-              <div class="addPaddingVert">
-      				  <button type="button" class="btn btn-primary btn-md col-xs-12 col-sm-12 col-md-12 col-lg-12" data-toggle="modal" data-target="#loginModal">
-                  Login
-                </button>
-              </div>
-              <div class="addPaddingVert">
-      				  <button type="button" class="btn btn-success btn-md col-xs-12 col-sm-12 col-md-12 col-lg-12" data-toggle="modal" data-target="#signUpModal">
-                  Sign Up
-                </button>
-              </div>
-              <div class="addPaddingVert">
-      				  <button type="button" class="btn btn-danger btn-md col-xs-12 col-sm-12 col-md-12 col-lg-12" data-toggle="modal" data-target="#tripModal">
-                  Saved Trips
-                </button>
-              </div>
-    				</div>
-  			  </li>
+          <ul class="nav-item dropdown navbar-nav" id="secondNav">
+            <li class="nav-item">
+              <a class="nav-link" href="Destinations.html"><strong>Trips</strong></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Destinations.html"><strong>Login</strong></a>
+            </li>
+          </ul>
   			</div>
   		</div>
     </nav>
