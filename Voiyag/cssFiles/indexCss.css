@@ -149,14 +149,24 @@ small
 	cursor: pointer;
 }
 
-.modal-header
+#languageHeader
 {
 	background-color: #262681;
 }
 
-.modal-body
+#languageBody
 {
 	background-color: #262681;
+}
+
+#loginHeader
+{
+	background-color: #002650;
+}
+
+#loginBody
+{
+	background-color: #002650;
 }
 
 .modal-title
@@ -167,4 +177,19 @@ small
 .close
 {
 	color: #fff;
+}
+
+.colorWhite
+{
+	color: #fff;
+}
+
+#loginCheck
+{
+	cursor: pointer;
+}
+
+.footerColor
+{
+	color: #8394af;
 }
