@@ -1,6 +1,9 @@
 function initialize()
 {
-	var planStart = document.getElementById('destinationLocation');
+	var planStart = document.getElementById('toLocation');
+	new google.maps.places.Autocomplete(planStart);
+
+	var planStart = document.getElementById('fromLocation');
 	new google.maps.places.Autocomplete(planStart);
 }
 
