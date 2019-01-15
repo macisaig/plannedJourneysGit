@@ -194,3 +194,9 @@ small
 	color: #8394af;
 }
 
+/*Adds CSS to the calendar*/
+.topValue
+{
+	cursor: pointer;
+	font-weight: bold;
+}
