@@ -197,6 +197,23 @@ small
 /*Adds CSS to the calendar*/
 .topValue
 {
-	cursor: pointer;
+	background: #3F86DC; 
+	cursor: pointer; 
+	color: #FFF;
+	height: 50px;
 	font-weight: bold;
+	padding: 12px 10px;
+}
+
+/*Floats to the right*/
+.floatRight
+{
+	float: right;
+}
+
+/*Lowers down symbols*/
+.centerI
+{
+	margin-top: 5px;
+	float: none;
 }
