@@ -4,16 +4,16 @@
 /*Grey background in case nothing else loads*/
 body
 {
-	/*background-color: #0E0E0E;*/
+	font: 15px/1.5; /*Determines the text*/
+	font-family: "Open Sans",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+    line-height: 1.7;
 }
 
 /*States the size and type of the fonts*/
 a
 {
-	font: 15px/1.5; /*Determines the text*/
-	font-family: "Open Sans",Helvetica,Arial,sans-serif;
-	font-weight: 400;
-    line-height: 1.7;
+	
 }
 
 a:hover
@@ -216,4 +216,97 @@ small
 {
 	margin-top: 5px;
 	float: none;
+}
+
+.padMainInput
+{
+	padding-right: 5%;
+	padding-left: 5%;
+}
+
+/*************************/
+/*Pulls To/From/Calendar slightly away from sides*/
+.padSides
+{
+	width: 95%;
+	margin: auto;
+}
+
+
+/*Adds padding to to & from & calendar*/
+.addPlanPadding
+{
+	padding: 2px;
+}
+
+/*Changing color of placeholder*/
+.placeholderColor input::-webkit-input-placeholder 
+{
+	color: #C3C3C3 !important;
+}
+ 
+.placeholderColor input::-moz-placeholder 
+{  /* Firefox 19+ */
+	color: #FFF !important;  
+}
+ 
+.placeholderColor input::-ms-input-placeholder 
+{  
+	color: #C3C3C3 !important;  
+}
+
+.placeholderColor2 input::-webkit-input-placeholder 
+{
+	color: #C3C3C3 !important;
+}
+ 
+.placeholderColor2 input::-moz-placeholder 
+{  /* Firefox 19+ */
+	color: #C3C3C3 !important;  
+}
+ 
+.placeholderColor2 input::-ms-input-placeholder 
+{  
+	color: #C3C3C3 !important;  
+}
+
+/*Expands the text down for start / end and makes it a white box*/
+@media (min-width: 767px)
+{
+	.placeholderColor input 
+	{
+	  transition: all 1000ms;
+	}
+	.placeholderColor input:focus 
+	{
+	  width: calc( 100% + 150px );
+	  background: #FFF;
+	  color: #000;
+	  margin-top: 60px;
+	}
+}
+
+/*Adds CSS to the To & From*/
+.tripLocation
+{
+    background: #3F86DC; 
+	border: none;
+	outline: none;
+	color: #FFF;
+	font-size: 18px;
+	font-weight: bold;
+	height: 50px;
+	width: 100%;
+	padding: 10px;
+}
+
+/*Adds CSS to the calendar*/
+.topValue
+{
+	background: #3F86DC; 
+	cursor: pointer; 
+	color: #FFF;
+	height: 50px;
+	font-weight: bold;
+	padding: 12px 10px;
 }
