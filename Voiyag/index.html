@@ -15,7 +15,7 @@
   </head>
 
   <body>	
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">  <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm navbarColor">  <!-- Navbar -->
   		<div class="container limitWidth">       <!-- Limits text to a certain width -->
         <!-- Toggles for Plan a Trip and the collapsable button in the toolbar -->
   			<div class="navbar-nav">
@@ -68,8 +68,9 @@
   		</div>
     </nav>
 
-    <div class="limitWidth collapse show" id="infoCollapse">
-      <br>
+    <div class="limitWidth">
+      <div class="space-adaptive-large"></div>
+      <h1 class=padSides><strong>Start Planning Your Adventure</strong></h1>
       <div class="row padSides">
         <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12 addPlanPadding placeholderColor">
           <input class="tripLocation" id="fromLocation" type="search" placeholder="From?" aria-label="search...">
@@ -86,23 +87,7 @@
         </div>
       </div>
     </div>
-
-    <div class="padMainInput text-center limitWidth">
-      <h1><strong>Start Planning Your Adventure</strong></h1>
-        <div class="">
-          <input class="topValue" type="search" placeholder="search..." aria-label="search..." id="fromLocation">
-        </div>
-        <div class="">
-          <input class="topValue" type="search" placeholder="search..." aria-label="search..." id="toLocation">
-        </div>
-        <div class="">
-          <div id="datePicker" class="topValue">
-            <i class="fa fa-calendar"></i>&nbsp;
-            <span></span> 
-            <div class="floatRight"><i class="fa fa-caret-down floatRight centerI"></i></div>
-          </div>
-        </div>
-    </div>
+    <div class="space-adaptive-large"></div>
 
     <!-- Login Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">

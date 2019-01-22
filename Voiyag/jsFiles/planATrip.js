@@ -10,7 +10,7 @@ $(function() {
 
     // Sets the very minimum date (today) and adds an auto end-date in 29 days; Sets the weekday names
     var start = moment();
-    var end = moment().add(7, 'days');
+    var end = moment().add(5, 'days');
     var minDate = moment();
     var weekday = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
     var startDay;

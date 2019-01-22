@@ -10,12 +10,6 @@ body
     line-height: 1.7;
 }
 
-/*States the size and type of the fonts*/
-a
-{
-	
-}
-
 a:hover
 {
 	text-decoration: none;
@@ -31,6 +25,12 @@ hr {
     margin: 1em 0;
     padding: 0;
     margin: -5px 0px 0px 0px;
+}
+
+.navbarColor
+{
+	background-color: #002650;
+	color: #fff;
 }
 
 /*Footer values for width, padding*/
@@ -194,17 +194,6 @@ small
 	color: #8394af;
 }
 
-/*Adds CSS to the calendar*/
-.topValue
-{
-	background: #3F86DC; 
-	cursor: pointer; 
-	color: #FFF;
-	height: 50px;
-	font-weight: bold;
-	padding: 12px 10px;
-}
-
 /*Floats to the right*/
 .floatRight
 {
@@ -218,17 +207,12 @@ small
 	float: none;
 }
 
-.padMainInput
-{
-	padding-right: 5%;
-	padding-left: 5%;
-}
-
 /*************************/
 /*Pulls To/From/Calendar slightly away from sides*/
 .padSides
 {
-	width: 95%;
+	padding-right: 5%;
+	padding-left: 5%;
 	margin: auto;
 }
 
@@ -270,22 +254,6 @@ small
 	color: #C3C3C3 !important;  
 }
 
-/*Expands the text down for start / end and makes it a white box*/
-@media (min-width: 767px)
-{
-	.placeholderColor input 
-	{
-	  transition: all 1000ms;
-	}
-	.placeholderColor input:focus 
-	{
-	  width: calc( 100% + 150px );
-	  background: #FFF;
-	  color: #000;
-	  margin-top: 60px;
-	}
-}
-
 /*Adds CSS to the To & From*/
 .tripLocation
 {
@@ -309,4 +277,27 @@ small
 	height: 50px;
 	font-weight: bold;
 	padding: 12px 10px;
+}
+
+/*Expands the text down for start / end and makes it a white box*/
+@media (min-width: 767px)
+{
+	.placeholderColor input 
+	{
+	  transition: all 500ms;
+	}
+	.placeholderColor input:focus 
+	{
+	  width: calc( 100% + 150px );
+	  color: #000;
+	  margin-top: 60px;
+	}
+}
+
+@media (max-width: 660px)
+{
+	h1
+	{
+		font-size: 30px;
+	}
 }
