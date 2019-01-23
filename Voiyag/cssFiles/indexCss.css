@@ -27,12 +27,6 @@ hr {
     margin: -5px 0px 0px 0px;
 }
 
-.navbarColor
-{
-	background-color: #002650;
-	color: #fff;
-}
-
 /*Footer values for width, padding*/
 footer
 {
@@ -277,6 +271,23 @@ small
 	height: 50px;
 	font-weight: bold;
 	padding: 12px 10px;
+}
+
+.navbarColor
+{
+	background-color: #002650;
+	color: #fff;
+}
+
+.loginNav
+{
+	color: #fff;
+}
+
+.loginNav:hover
+{
+	text-decoration: none;
+	color: #888
 }
 
 /*Expands the text down for start / end and makes it a white box*/
