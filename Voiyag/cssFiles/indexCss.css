@@ -292,8 +292,18 @@ small
 
 #headerInfo
 {
-	color: #EA5402;
+	/*color: #EA5402;*/
+	color: #030e21;
 	font-size: 50px;
+}
+
+#search
+{
+	font-size: 25px;
+	color: #FFF;
+	background-color: #EA5402;
+	height: 50px;
+	width: 100%;
 }
 
 /*Expands the text down for start / end and makes it a white box*/
