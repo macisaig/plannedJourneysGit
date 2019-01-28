@@ -37,7 +37,6 @@ $(function() {
     }, cb);
 
     cb(start, end);
-
 });
 
 // Adds the coloring for the datepicker for the active dates & inbetween
@@ -78,8 +77,8 @@ function initialize()
   var planStart = document.getElementById('toLocation');
   new google.maps.places.Autocomplete(planStart);
 
-  var planStart = document.getElementById('fromLocation');
-  new google.maps.places.Autocomplete(planStart);
+  var planEnd = document.getElementById('fromLocation');
+  new google.maps.places.Autocomplete(planEnd);
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
@@ -131,10 +130,6 @@ $(window).resize(function(){
     {
       popularSec.classList.remove("d-none")
     }
-    if(!headerInfo.classList.contains("d-none"))
-    {
-      headerInfo.classList.add("d-none")
-    }
   }
   if(window_width >= 800)
   {
@@ -172,15 +167,11 @@ $(window).resize(function(){
     {
       popularSec.classList.add("d-none")
     }
-    if(headerInfo.classList.contains("d-none"))
-    {
-      headerInfo.classList.remove("d-none")
-    }
   }
 });
 
 $(document).ready(function(){
- var window_width = window.innerWidth;
+  var window_width = window.innerWidth;
   var popularMain = document.getElementById("popularMain"); 
   var aboutMain = document.getElementById("aboutMain");
   var contactMain = document.getElementById("contactMain");
@@ -226,10 +217,6 @@ $(document).ready(function(){
     {
       popularSec.classList.remove("d-none")
     }
-    if(!headerInfo.classList.contains("d-none"))
-    {
-      headerInfo.classList.add("d-none")
-    }
   }
   if(window_width >= 800)
   {
@@ -266,10 +253,6 @@ $(document).ready(function(){
     if(!popularSec.classList.contains("d-none"))
     {
       popularSec.classList.add("d-none")
-    }
-    if(headerInfo.classList.contains("d-none"))
-    {
-      headerInfo.classList.remove("d-none")
     }
   }
 });
