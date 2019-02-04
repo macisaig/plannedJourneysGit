@@ -104,6 +104,7 @@ $(window).resize(function(){
   var contactSec = document.getElementById("contactSec");
   var more = document.getElementById("more");
   var headerInfo = document.getElementById("headerInfo");
+  var replaceDeck = document.getElementById("replaceDeck");
 
   if(window_width < 800)
   {
@@ -118,6 +119,10 @@ $(window).resize(function(){
     if(contactSec.classList.contains("d-none"))
     {
       contactSec.classList.remove("d-none")
+    }
+    if(!replaceDeck.classList.contains("d-none"))
+    {
+      replaceDeck.classList.add("d-none")
     }
   }
   if(window_width < 740)
@@ -155,6 +160,10 @@ $(window).resize(function(){
     if(!contactSec.classList.contains("d-none"))
     {
       contactSec.classList.add("d-none")
+    }
+    if(replaceDeck.classList.contains("d-none"))
+    {
+      replaceDeck.classList.remove("d-none")
     }
   }
   if(window_width >= 740)
@@ -191,6 +200,8 @@ $(document).ready(function(){
   var contactSec = document.getElementById("contactSec");
   var more = document.getElementById("more");
   var headerInfo = document.getElementById("headerInfo");
+  var replaceDeck = document.getElementById("replaceDeck");
+  var replaceDeck2 = document.getElementById("replaceDeck2");
 
   if(window_width < 800)
   {
@@ -205,6 +216,10 @@ $(document).ready(function(){
     if(contactSec.classList.contains("d-none"))
     {
       contactSec.classList.remove("d-none")
+    }
+    if(!replaceDeck.classList.contains("d-none"))
+    {
+      replaceDeck.classList.add("d-none")
     }
   }
   if(window_width < 740)
@@ -229,6 +244,13 @@ $(document).ready(function(){
       popularSec.classList.remove("d-none")
     }
   }
+  if(window_width < 600)
+  {
+    if(!replaceDeck2.classList.contains("d-none"))
+    {
+      replaceDeck2.classList.add("d-none")
+    }
+  }
   if(window_width >= 800)
   {
     if(contactMain.classList.contains("d-none"))
@@ -242,6 +264,10 @@ $(document).ready(function(){
     if(!contactSec.classList.contains("d-none"))
     {
       contactSec.classList.add("d-none")
+    }
+    if(replaceDeck.classList.contains("d-none"))
+    {
+      replaceDeck.classList.remove("d-none")
     }
   }
   if(window_width >= 740)
@@ -266,4 +292,6 @@ $(document).ready(function(){
       popularSec.classList.add("d-none")
     }
   }
+
+
 });
