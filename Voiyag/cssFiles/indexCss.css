@@ -294,7 +294,7 @@ small
 {
 	/*color: #EA5402;*/
 	color: #030e21;
-	font-size: 50px;
+	font-size: 40px;
 }
 
 #search
@@ -307,14 +307,6 @@ small
 }
 
 /*Expands the text down for start / end and makes it a white box*/
-@media (max-width: 820px)
-{
-	#headerInfo
-	{
-		font-size: 40px;
-	}
-}
-
 @media (min-width: 767px)
 {
 	.placeholderColor input 
@@ -334,5 +326,11 @@ small
 	#headerInfo
 	{
 		font-size: 30px;
+		text-align: center;
+	}
+	#smallHeaderInfo
+	{
+		font-size: 20px;
+		text-align: center;
 	}
 }

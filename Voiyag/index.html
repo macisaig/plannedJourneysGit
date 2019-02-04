@@ -71,6 +71,7 @@
     <div class="limitWidth">
       <div class="space-adaptive-large"></div>
       <h1 class="padSides" id="headerInfo"><strong>Start Planning Your Adventure</strong></h1>
+      <h3 class="padSides" id="smallHeaderInfo">From Exploring Cities to Thrilling Safaris</h3>
       <div class="space-adaptive-small"></div>
       <div class="row padSides">
         <div class="col-md-6 col-lg-3 col-sm-12 col-xs-12 addPlanPadding placeholderColor">
@@ -87,7 +88,7 @@
           </div>
         </div>
         <div class="col-md-12 col-lg-1 col-sm-12 col-xs-12 addPlanPadding">
-          <button class="btn" id="search" role="" data-toggle="" data-target="" onclick="">
+          <button class="btn" id="search" role="" data-toggle="" data-target="" onclick="checkData()">
             <i class="fas fa-search"></i>
           </button>
         </div>
@@ -98,30 +99,30 @@
     <!-- Search Modal -->
     <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
       <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header" id="">
-            <h3 class="modal-title">Language</h3>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body" id="">
-            <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-              <div class="row" data-dismiss="modal" ><a>English (US)</a></div>
-              <div class="row" data-dismiss="modal" ><a>Español</a></div>
-              <div class="row language" data-dismiss="modal" ><a>Français</a></div>
-              <div class="row language" data-dismiss="modal" ><a>Italiano</a></div>
-              <div class="row language" data-dismiss="modal" ><a>English (US)</a></div>
+        <div class="modal-content text-center">
+          <div class="space-adaptive-large"></div>
+          <h3>You need to Select a Start or End Location</h3>
+          <div class="row">
+            <div class="col-4">
+              <div class="card">
+                <h5 class="card-header">Featured</h5>
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go</a>
+                </div>
+              </div>
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-              <div class="row language" data-dismiss="modal" ><a>Português</a></div>
-              <div class="row language" data-dismiss="modal" ><a>Polski</a></div>
-              <div class="row language" data-dismiss="modal" ><a>日本語</a></div>
-              <div class="row language" data-dismiss="modal" ><a>繁體中文</a></div>
-              <div class="row language" data-dismiss="modal" ><a>简体中文</a></div>
+            <div class="col-4">
+              <div class="card">
+                <h5 class="card-header">Featured</h5>
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go</a>
+                </div>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
@@ -129,7 +130,7 @@
 
     <!-- Login Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header" id="loginHeader">
             <h2 class="modal-title" id="loginLabel">Log In</h2>
@@ -167,7 +168,7 @@
     </div>
     
     <div class="modal fade" id="languageModal" tabindex="-1" role="dialog" aria-labelledby="languageModal" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header" id="languageHeader">
             <h3 class="modal-title">Language</h3>
@@ -241,11 +242,10 @@
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  
-
   <!-- Script necessary for Google Search -->
   <script type="text/javascript" src="jsFiles/Jquery/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <!-- <script type="text/javascript" src="jsFiles/moment-develop/min/moment.min.js"></script> -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>

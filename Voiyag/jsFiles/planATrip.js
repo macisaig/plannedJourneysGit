@@ -72,6 +72,17 @@ $(function()
   }
 });
 
+function checkData()
+{
+  var planStart = document.getElementById('fromLocation');
+  var planEnd = document.getElementById('toLocation');
+
+  if(planStart.value == "" || planEnd.value == "")
+  {
+    $('#searchModal').modal('show')
+  }
+}
+
 function initialize()
 {
   var planStart = document.getElementById('toLocation');
