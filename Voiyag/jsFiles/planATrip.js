@@ -105,6 +105,7 @@ $(window).resize(function(){
   var more = document.getElementById("more");
   var headerInfo = document.getElementById("headerInfo");
   var replaceDeck = document.getElementById("replaceDeck");
+  var replaceDeck2 = document.getElementById("replaceDeck2");
 
   if(window_width < 800)
   {
@@ -147,6 +148,13 @@ $(window).resize(function(){
       popularSec.classList.remove("d-none")
     }
   }
+  if(window_width < 600)
+  {
+    if(!replaceDeck2.classList.contains("d-none"))
+    {
+      replaceDeck2.classList.add("d-none")
+    }
+  }
   if(window_width >= 800)
   {
     if(contactMain.classList.contains("d-none"))
@@ -186,6 +194,13 @@ $(window).resize(function(){
     if(!popularSec.classList.contains("d-none"))
     {
       popularSec.classList.add("d-none")
+    }
+  }
+  if(window_width >= 600)
+  {
+    if(replaceDeck2.classList.contains("d-none"))
+    {
+      replaceDeck2.classList.remove("d-none")
     }
   }
 });
@@ -290,6 +305,13 @@ $(document).ready(function(){
     if(!popularSec.classList.contains("d-none"))
     {
       popularSec.classList.add("d-none")
+    }
+  }
+  if(window_width >= 600)
+  {
+    if(replaceDeck2.classList.contains("d-none"))
+    {
+      replaceDeck2.classList.remove("d-none")
     }
   }
 

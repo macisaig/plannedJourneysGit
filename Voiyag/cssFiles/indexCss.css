@@ -309,7 +309,7 @@ small
 	color: #030e21;
 }
 
-#search
+.search
 {
 	font-size: 25px;
 	color: #FFF;
@@ -322,6 +322,16 @@ small
 {
 	background-color: #EA5402;
 	color: #fff;
+}
+
+#envelopeSize
+{
+	font-size: 40px;
+}
+
+.emailSubscription
+{
+	background-color: #666;
 }
 
 /*Expands the text down for start / end and makes it a white box*/
