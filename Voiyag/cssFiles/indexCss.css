@@ -327,11 +327,65 @@ small
 #envelopeSize
 {
 	font-size: 40px;
+	color: #EA5402;
 }
 
 .emailSubscription
 {
-	background-color: #666;
+	background-color: #fcc36f;
+}
+
+.verticallyAlign
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: auto;
+}
+
+.addSubscribePad
+{
+	padding:5px
+}
+
+.emailSubscribe
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 0px;
+	margin: auto;
+}
+
+.searchSubscribe
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+	margin: auto;
+}
+
+.fontSubscribe
+{
+	font-size: 20px;
+}
+
+.emailSubscribeInput
+{
+	border: none;
+	outline: none;
+	color: #000;
+	font-size: 18px;
+	font-weight: bold;
+	height: 50px;
+	width: 100%;
+	padding: 10px;
+}
+
+@media (max-width: 850px)
+{
+	.fontSubscribe
+	{
+		font-size: 17px;
+	}
 }
 
 /*Expands the text down for start / end and makes it a white box*/
@@ -361,4 +415,24 @@ small
 		font-size: 20px;
 		text-align: center;
 	}
+}
+
+@media (max-width: 767px)
+{
+	.emailSubscribe
+	{
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-right: 16px;
+		margin: auto;
+	}
+
+	.searchSubscribe
+	{
+		padding-top: 0px;
+		padding-bottom: 10px;
+		padding-left: 16px;
+		margin: auto;
+	}
+
 }
