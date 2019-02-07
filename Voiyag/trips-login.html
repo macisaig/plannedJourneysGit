@@ -43,7 +43,7 @@
               <a class="nav-link" href="about.html"><span class="loginNav">About</span></a>
             </li>
             <li class="nav-item d-none" id="contactMain">
-              <a class="nav-link" href="#"><span class="loginNav">Contact Us</span></a>
+              <a class="nav-link" href="contactus.html"><span class="loginNav">Contact Us</span></a>
             </li>
             <li class="nav-item dropdown navbar-nav d-none" id="more">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -68,83 +68,46 @@
       </div>
     </nav>
 
-    <div class="limitWidth padSides">
-      <div class="contactColor">
-        <div class="jumbotron limitWidth jumbotronContactUs">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-12 col-lg-12">
-                <h1 class="h1">
-                  Contact us <br><small>Tell Us About Your Journey</small></h1>
-              </div>
+    <div class="trips-login">
+      <div class="limitWidth padSides">
+        <div class="space-adaptive-large"></div>
+        <div class="space-adaptive-large"></div>
+        <form class="form-signin text-center formPadMargin">
+          <img class="mb-4" src="imgFiles/Logo.jpg" alt="" width="60" height="60">
+          <h3 class="h3 mb-3 font-weight-normal smallHeaderInfo">View your trip by signing in, or find your trip by itinerary number</h3>
+          <label for="inputEmail" class="sr-only">Email or Username</label>
+          <input type="text" id="" class="form-control limitForm" placeholder="Email or Username*" required autofocus>
+          <div class="space-adaptive-small"></div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="inputPassword" class="sr-only">Password</label>
+              <input type="password" id="" class="form-control limitForm" placeholder="Password" required>
+            </div>
+            <div class="col-md-1">
+              <h3 class="h3 mb-3 font-weight-normal smallHeaderInfo">or</h3>
+            </div>
+            <div class="col-md-5">
+              <label for="inputPassword" class="sr-only">Itinerary Number</label>
+              <input type="text" id="" class="form-control limitForm" placeholder="Itinerary Number" required>
             </div>
           </div>
-        </div>
-        <a>Visit the <a href="faq.html">FAQ</a> to get answers to frequently asked questions</a>
-      
-
-        <div class="space-adaptive-small"></div>
-        
-        <div class="row">
-          <div class="col-md-8">
-            <div class="well well-sm">
-              <form>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="name">Name</label>
-                      <input type="text" class="form-control boldBlack" id="name" placeholder="Enter name" required="required" />
-                    </div>
-                    <div class="form-group">
-                      <label for="email">Email Address</label>
-                      <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                      <input type="email" class="form-control boldBlack" id="email" placeholder="Enter email" required="required" />
-                    </div>
-                    <div class="form-group">
-                      <label for="subject">Subject</label>
-                      <select id="subject" name="subject" class="form-control boldBlack" required="required">
-                        <option value="na" selected="">Choose One:</option>
-                        <option value="service">General Customer Service</option>
-                        <option value="comments">General Comments</option>
-                        <option value="suggestions">Suggestions</option>
-                        <option value="product">Product Support</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="name">Message</label>
-                      <textarea name="message" id="contactMessage" class="form-control boldBlack" rows="8" cols="25" required="required" placeholder="Message"></textarea>
-                    </div>
-                  </div>
-                  <div class="col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">Send Message</button>
-                  </div>
-                </div>
-              </form>
-            </div>
+          <div class="checkbox mb-3">
+            <label class="" id="loginCheck">
+              <input type="checkbox" value="remember-me" class="rememberMe"> Remember me
+            </label>
           </div>
-          <div class="col-md-4 text-center">
-            <form>
-              <br>
-              <legend><span class="glyphicon glyphicon-globe"></span> <strong>Voiyag</strong></legend>
-              <address>
-                <strong>Address:</strong><br>
-                Address Coming<br>
-                In the Future<br>
-              </address>
-              <address>
-                 <strong>Phone: </strong><br>
-                      (Phone Coming in Future) <!--(123) 456-7890 -->
-              </address>
-              <address>
-                <strong>Email: </strong><br>
-                <a href="mailto:service@voiyag.com">service@voiyag.com</a>
-              </address>
-            </form>
+          <button class="btn btn-primary btn-lg" type="submit">Sign in</button>
+          <div style="text-align: center">
+            <a href="javascript:;" class="text-muted">&copy; 2018-2019</a>
           </div>
-        </div>
-
+          <div style="text-align: center">
+            <span class="">Don't have an account?</span><a href="signUp.html"> Register Now</a>
+          </div>
+          <div style="text-align: center">
+            <a href="javascript:;" class="">Forgot your password?</a>
+          </div>
+        </form>
+        <div class="space-adaptive-large"></div>
         <div class="space-adaptive-large"></div>
       </div>
     </div>
@@ -270,7 +233,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-  
+
   <!-- End google search -->
   <script src="jsFiles/test.js"></script>
   <!-- Total JS for this page including calendar / google maps -->

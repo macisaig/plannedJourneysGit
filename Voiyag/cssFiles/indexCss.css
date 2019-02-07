@@ -380,6 +380,18 @@ small
 	padding: 10px;
 }
 
+.contactColor
+{
+	background-color: #abd1cb;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.trips-login
+{
+	background-color: #edf1f7;
+}
+
 @media (max-width: 850px)
 {
 	.fontSubscribe

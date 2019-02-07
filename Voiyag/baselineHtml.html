@@ -1,243 +1,199 @@
 <!DOCTYPE html>
 <html lang="en"> <!-- Speaking english -->
   <head>
-    <link rel="icon" href="imgFiles/plannedJourneysLogoMini.jpg">
+    <link rel="icon" href="imgFiles/Logo.jpg">
     <title>Plan Your Adventure</title>
     <meta charset="utf-8"> <!-- Common throughout web -->
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This is for the phone scaling -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="cssFiles/indexCss.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <!-- Scripts for Calendar -->
+    <link rel="stylesheet" type="text/css" href="cssFiles/dateRangePicker.css" />
+    <!-- End Calendar Scripts -->
   </head>
 
   <body>  
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">  <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-dark navbarColor">  <!-- Navbar -->
       <div class="container limitWidth">       <!-- Limits text to a certain width -->
-        <div class="navbar-brand brandParam">
-          <a href="index.html" id="plannedLogo">
-            <img src="imgFiles/plannedJourneysLogoMini.jpg">
+        <!-- Toggles for Plan a Trip and the collapsable button in the toolbar -->
+        <div class="navbar-nav">
+          <a class="navbar-brand" href="index.html">
+            <img src="imgFiles/Logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
           </a>
-        </div>
-        <div class="navbar-nav" id="shiftCheck">
-          <a class="nav-item nav-link" href="PlanATrip.html"><strong>Plan a Trip</strong></a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".myNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Collapsable section of the navbar -->
         <div class="collapse navbar-collapse myNavbar" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="Destinations.html">Destinations</a>
+              <a class="nav-link loginNav" href="PlanATrip.html"><span class="loginNav">Plan a Trip</span></a>
             </li>
-            <li class="nav-item dropdown navbar-nav">
+            <li class="nav-item" id="discoverMain">
+              <a class="nav-link" href="discover.html"><span class="loginNav">Discover</span></a>
+            </li>
+            <li class="nav-item d-none" id="popularMain">
+              <a class="nav-link" href="populartrips.html"><span class="loginNav">Popular Trips</span></a>
+            </li>
+            <li class="nav-item d-none" id="aboutMain">
+              <a class="nav-link" href="about.html"><span class="loginNav">About</span></a>
+            </li>
+            <li class="nav-item d-none" id="contactMain">
+              <a class="nav-link" href="contactus.html"><span class="loginNav">Contact Us</span></a>
+            </li>
+            <li class="nav-item dropdown navbar-nav d-none" id="more">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                More
+                <strong><span class="loginNav">More</span></strong>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="PopularTrips.html">Popular Trips</a>
-                <a class="dropdown-item" href="About.html">About</a>
-                <a class="dropdown-item" href="ContactUs.html">Contact Us</a>
+                <a class="dropdown-item d-none" href="PopularTrips.html" id="popularSec"><strong>Popular Trips</strong></a>
+                <a class="dropdown-item d-none" href="About.html" id="aboutSec"><strong>About</strong></a>
+                <a class="dropdown-item d-none" href="ContactUs.html" id="contactSec"><strong>Contact Us</strong></a>
               </div>
             </li>
           </ul>
-          <li class="nav-item dropdown navbar-nav">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              My Account
-            </a>
-            <div class="dropdown-menu addPadding" aria-labelledby="navbarDropdown">
-              <div class="addPaddingVert">
-                <button type="button" class="btn btn-primary btn-md col-xs-12 col-sm-12 col-md-12 col-lg-12" data-toggle="modal" data-target="#loginModal">
-                  Login
-                </button>
-              </div>
-              <div class="addPaddingVert">
-                <button type="button" class="btn btn-success btn-md col-xs-12 col-sm-12 col-md-12 col-lg-12" data-toggle="modal" data-target="#signUpModal">
-                  Sign Up
-                </button>
-              </div>
-              <div class="addPaddingVert">
-                <button type="button" class="btn btn-danger btn-md col-xs-12 col-sm-12 col-md-12 col-lg-12" data-toggle="modal" data-target="#tripModal">
-                  Saved Trips
-                </button>
-              </div>
-            </div>
-          </li>
+          <ul class="nav-item navbar-nav" id="secondNav">
+            <li class="nav-item">
+              <a class="nav-link" href="trips.html"><strong><span class="loginNav">Trips</span></strong></a>
+            </li>
+            <li class="nav-item">
+              <a class="pointer nav-link" data-toggle="modal" data-target="#loginModal"><strong><span class="loginNav">Login</span></strong></a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
 
+    <div class="space-adaptive-small"></div>
+
     <!-- Login Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header" id="loginHeader">
             <h2 class="modal-title" id="loginLabel">Log In</h2>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" id="loginBody">
             <form class="form-signin text-center formPadMargin">
-              <img class="mb-4" src="imgFiles/plannedJourneysLogoMini.jpg" alt="" width="60" height="60">
-              <h3 class="h3 mb-3 font-weight-normal">Enter Account Information</h3>
+              <img class="mb-4" src="imgFiles/Logo.jpg" alt="" width="60" height="60">
+              <h3 class="h3 mb-3 font-weight-normal colorWhite">Enter Account Information</h3>
               <label for="inputEmail" class="sr-only">Email or Username</label>
               <input type="text" id="" class="form-control limitForm" placeholder="Email or Username" required autofocus>
               <label for="inputPassword" class="sr-only">Password</label>
               <input type="password" id="" class="form-control limitForm" placeholder="Password" required>
               <div class="checkbox mb-3">
-                <label>
+                <label class="colorWhite" id="loginCheck">
                   <input type="checkbox" value="remember-me" class="rememberMe"> Remember me
                 </label>
               </div>
               <button class="btn btn-primary btn-lg" type="submit">Sign in</button>
-              <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
-              <a href="javascript:;" class="">Forgot your password?</a>
+              <div style="text-align: center">
+                <a href="javascript:;" class="text-muted">&copy; 2018-2019</a>
+              </div>
+              <div style="text-align: center">
+                <span class="colorWhite">Don't have an account?</span><a href="signUp.html"> Register Now</a>
+              </div>
+              <div style="text-align: center">
+                <a href="javascript:;" class="">Forgot your password?</a>
+              </div>
             </form>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Sign Up Modal -->
-    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+    
+    <!-- Language Modal -->
+    <div class="modal fade" id="languageModal" tabindex="-1" role="dialog" aria-labelledby="languageModal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title" id="signUpLabel">Sign Up</h2>
+          <div class="modal-header" id="languageHeader">
+            <h3 class="modal-title">Language</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            <div class="text-center">
-              <img class="mb-4" src="imgFiles/plannedJourneysLogoMini.jpg" alt="" width="72" height="72">
+          <div class="modal-body" id="languageBody">
+            <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <div class="row language" data-dismiss="modal" ><a>English (US)</a></div>
+              <div class="row language" data-dismiss="modal" ><a>Español</a></div>
+              <div class="row language" data-dismiss="modal" ><a>Français</a></div>
+              <div class="row language" data-dismiss="modal" ><a>Italiano</a></div>
+              <div class="row language" data-dismiss="modal" ><a>English (US)</a></div>
             </div>
-
-            <div class="container">
-              <div class="row">
-                <form action="" method="post" id="fileForm" role="form">
-                  <fieldset><legend class="text-center">Sign Up Information <br><span class="req"><small>* required</small></span></legend>
-
-                    <div class="form-group">   
-                      <label for="firstname"><span class="req">* </span> Name: </label>
-                      <input class="form-control" type="text" name="firstName" id = "txt" onkeyup = "validateName(this)" required /> 
-                      <div id="errFirst"></div>    
-                    </div>
-
-                    <div class="form-group">
-                      <label for="email"><span class="req">* </span> Email Address: </label> 
-                      <input class="form-control" required type="text" name="email" id = "email"  onchange="email_validate(this.value);" />   
-                      <div class="status" id="status"></div>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="password"><span class="req">* </span> Password:  <small>Minimum 6 characters with 1 special, 1 uppercase, and 1 number</small></label>
-                      <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="16"  id="pass1" onkeyup = "validatePassword(this)"/> </p>
-
-                      <div id="message">
-                        <h4>Password must contain the following:</h4>
-                        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                        <p id="number" class="invalid">A <b>number (0-9)</b></p>
-                        <p id="special" class="invalid">A <b>special character</b></p>
-                        <p id="length" class="invalid">Minimum <b>6 characters</b></p>
-                      </div>
-
-                      <label for="password"><span class="req">* </span>Confirm Password: </label>
-                      <input required name="password" type="password" class="form-control inputpass" minlength="4" maxlength="16" placeholder="Enter again to validate"  id="pass2" onkeyup="checkPass(); return false;" />
-                      <span id="confirmMessage" class="confirmMessage"></span>
-                      <br>
-                      <input type="checkbox" onclick="showPassword()"> Show Password <br>
-                    </div>
-
-                    <div class="form-group">
-                      <hr>
-                      <div class="text-center">
-                        <input type="checkbox" required name="terms" onchange="this.setCustomValidity(validity.valueMissing ? 'Please indicate that you accept the Terms and Conditions' : '');" id="field_terms"><label for="terms"><span class="req">* </span>I agree with the <a href="terms.php" title="You may read our terms and conditions by clicking on this link">terms and conditions</a></label>
-                      </div>
-                    </div>
-
-                    <div class="form-group text-center">
-                        <input class="btn btn-md btn-success" type="submit" name="submit_reg" value="Register">
-                    </div>
-
-                    <div class="form-group text-center">
-                      <h5>You will receive an email to complete the registration process. </h5><br>
-                      <h5>Be sure to check your spam folders. </h5>
-                    </div>
-                  </fieldset>
-                </form>
-              </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <div class="row language" data-dismiss="modal" ><a>Português</a></div>
+              <div class="row language" data-dismiss="modal" ><a>Polski</a></div>
+              <div class="row language" data-dismiss="modal" ><a>日本語</a></div>
+              <div class="row language" data-dismiss="modal" ><a>繁體中文</a></div>
+              <div class="row language" data-dismiss="modal" ><a>简体中文</a></div>
             </div>
+          </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Saved Trips Modal -->
-    <div class="modal fade" id="tripModal" tabindex="-1" role="dialog" aria-labelledby="tripModal" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title" id="tripLabel">Saved Trips</h2>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="text-center">
-              <div class="selectTrip">
-                <h4 class="h3 mb-3 font-weight-normal" id="selectTrip">Select a Trip</h4>
-                <hr>
-                <br>
-                <div class="form-group text-center">
-                  <input class="btn btn-lg btn-success" type="submit" name="submit_reg" value="Load">
-                </div>
-              </div>
-              <div class="tripLogin">
-                <h4 class="h3 mb-3 font-weight-normal" id="tripLogin">Login to Access Saved Trips</h4>
-                <hr>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sign Up Jumbotron -->
-    <div class="jumbotron">
-      <h2 class="text-center">Start Planning Your Journey!</h2>
-      <hr class="my-4">
-      <div class="text-center">
-        <a class="btn btn-primary btn-lg" href="" role="button" data-toggle="modal" data-target="#signUpModal">Sign Up</a>
-        <a class="btn btn-primary btn-lg" href="" role="button" data-toggle="modal" data-target="#loginModal">Log In</a>
       </div>
     </div>
 
     <!-- Footer -->
-    <footer class="container-fluid text-center">
-      <div class="row limitWidth">
-        <div class="col-sm-3 addPadding">
-          <a href=index.html"><h2>Voiyag Onward</h2></a>
+    <footer class="container-fluid">
+      <div class="space-adaptive-large"></div>
+        <div class="NavbarFooter">
+          <div class="limitWidth">
+            <a class=pointer><i class="fa fa-globe" style="font-size:16px" data-toggle="modal" data-target="#languageModal"> English (US) &#9660;</i></a>
+            <div class="text-center footerPad">
+              <a href="index.html"><h3>Voiyag Onward</h3></a>
+            </div>
+            <div class="text-center footerPad">
+              <a href="About.html" class="">ABOUT</a>
+              <a class="vertDivide">|</a>
+              <a href="Help.html" class="">HELP / FAQ</a>
+              <a class="vertDivide">|</a>
+              <a href="contactUs.html" class="">CONTACT US</a>
+              <a class="vertDivide">|</a>
+              <a href="careers.html" class="">CAREERS</a>
+            </div>
+            <div class="text-center footerPad">
+              <a href="https://www.facebook.com/PlannedJourneys-222086925035409/" class ="fab fa-facebook-f "></a>
+              <a href="https://twitter.com/PlannedJourneys" class ="fab fa-twitter "></a>
+              <a href="https://www.instagram.com/plannedjourneys/?hl=en" class ="fab fa-instagram "></a>
+              <a href="https://www.linkedin.com/in/planned-journeys-9053a715b/" class ="fab fa-linkedin "></a>
+              <a href="https://www.youtube.com/channel/UCCBDTcQADAt_Hg2dETKlF3w" class ="fab fa-youtube "></a>
+            </div>
+            <div class="space-adaptive-small"></div>
+            <div class="text-center">
+              <a href="privacy.html" class="contracts footerColor"><small class="footerColor">Privacy</small></a>
+              <a class="vertDivide"><small>|</small></a>
+              <a href="terms.html" class="contracts footerColor"><small class="footerColor">Terms</small></a>
+              <a class="vertDivide"><small>|</small></a>
+              <a class="footerColor"><small class="footerColor">&#9400;2019 VOIYAG</small></a>
+            </div>
+            <div class="text-center">
+              <a><small class="footerColor">Create the ideal trip itinerary with VOIYAG. VOIYAG automatically assembles trip itineraries based on preferences or assists in assembling your own preferred itinerary</small></a>
+            </div>
+          </div>
         </div>
-        <div class="col-sm-6 addPadding">
-          <a href="ContactUs.html" class="addPadding">Contact Us</a>
-          <a href="About.html" class="addPadding">About Us</a>
-          <a href="Help.html" class="addPadding">Help</a>
-        </div>
-        <div class="col-sm-3 addPadding">
-          <a href="https://www.facebook.com/PlannedJourneys-222086925035409/" class ="fab fa-facebook-f addPadding"></a>
-          <a href="https://twitter.com/PlannedJourneys" class ="fab fa-twitter addPadding"></a>
-          <a href="https://www.instagram.com/plannedjourneys/?hl=en" class ="fab fa-instagram addPadding"></a>
-          <a href="https://www.linkedin.com/in/planned-journeys-9053a715b/" class ="fab fa-linkedin addPadding"></a>
-          <a href="https://www.youtube.com/channel/UCCBDTcQADAt_Hg2dETKlF3w" class ="fab fa-youtube addPadding"></a>
-        </div>
-      </div>
+      <div class="space-adaptive-large"></div>
     </footer>
   </body>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <!-- Script necessary for Google Search -->
+  <script type="text/javascript" src="jsFiles/Jquery/jquery.min.js"></script>
+
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="jsFiles/signUp.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+  <!-- End google search -->
+  <script src="jsFiles/test.js"></script>
+  <!-- Total JS for this page including calendar / google maps -->
+  <script src="jsFiles/planATrip.js"></script>
 </html>
