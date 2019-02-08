@@ -392,6 +392,10 @@ small
 	background-color: #edf1f7;
 }
 
+.login-left {
+  border-right: 1px solid #333;
+}
+
 @media (max-width: 850px)
 {
 	.fontSubscribe
@@ -445,6 +449,10 @@ small
 		padding-bottom: 10px;
 		padding-left: 16px;
 		margin: auto;
+	}
+
+	.login-left {
+	  border-right: none;
 	}
 
 }
